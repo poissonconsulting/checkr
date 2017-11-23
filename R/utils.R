@@ -35,3 +35,6 @@ punctuate <- function(x, qualifier = "or") {
   n <- length(x)
   paste(paste(x[-n], collapse = ", "), qualifier, x[n])
 }
+
+plural <- function(x, n = 1, end = "") paste0(x, ifelse(n != 1, "s", ""), end)
+
