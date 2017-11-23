@@ -6,6 +6,9 @@ test_that("named", {
   x <- 1
   names(x) <- "y"
   expect_identical(check_named(x), x)
+  
+  vec <- c(y = 1, y = 2)
+  expect_error(check_named(vec, unique = TRUE), "names of vec must be unique")
 })
 
 test_that("unnamed", {

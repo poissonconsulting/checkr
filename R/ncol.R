@@ -29,16 +29,16 @@ check_ncol <- function(x,
   }
   if (min_ncol == max_ncol) {
     if (ncol(x) != min_ncol) {
-      on_fail(x_name, " must have ", min_ncol, " column(s)", error = error)
+      on_fail(x_name, " must have ", min_ncol, plural(" column", min_ncol), error = error)
     }
     return(invisible(x))
   }
 
   if (ncol(x) < min_ncol) {
-    on_fail(x_name, " must have at least ", min_ncol, " column(s)", error = error)
+    on_fail(x_name, " must have at least ", min_ncol, plural(" column", min_ncol), error = error)
   }
   if (ncol(x) > max_ncol) {
-    on_fail(x_name, " must not have more than ", max_ncol, " column(s)", error = error)
+    on_fail(x_name, " must not have more than ", max_ncol, plural(" column", max_ncol), error = error)
   }
   invisible(x)
 }

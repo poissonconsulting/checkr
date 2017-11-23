@@ -46,6 +46,10 @@ y <- -1
 checkor(check_count(y), check_flag(y), error = FALSE)
 ```
 
+## Inspiration
+
+[datacheckr](https://github.com/poissonconsulting/datacheckr)
+
 ## Contribution
 
 Please report any [issues](https://github.com/poissonconsulting/checkr/issues).

@@ -82,7 +82,7 @@ x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</sp
 <span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(x)
 
 <span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(x, <span class="dt">values =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">max_length =</span> <span class="dv">2</span>, <span class="dt">unique =</span> <span class="ot">TRUE</span>, <span class="dt">sorted =</span> <span class="ot">TRUE</span>, <span class="dt">named =</span> <span class="ot">TRUE</span>, <span class="dt">error =</span> <span class="ot">FALSE</span>)
-<span class="co">#&gt; Warning: x must be of class integer</span>
+<span class="co">#&gt; Warning: x must be class integer</span>
 <span class="co">#&gt; Warning: x must not include missing values</span>
 <span class="co">#&gt; Warning: x has unpermitted values 0</span>
 <span class="co">#&gt; Warning: x must not be longer than 2</span>
@@ -96,8 +96,13 @@ x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</sp
 y &lt;-<span class="st"> </span><span class="op">-</span><span class="dv">1</span>
 <span class="kw"><a href="reference/checkor.html">checkor</a></span>(<span class="kw"><a href="reference/check_count.html">check_count</a></span>(y), <span class="kw"><a href="reference/check_flag.html">check_flag</a></span>(y), <span class="dt">error =</span> <span class="ot">FALSE</span>)
 <span class="co">#&gt; Warning: </span>
-<span class="co">#&gt;   y must be of class integer OR </span>
-<span class="co">#&gt;   y must be of class logical</span></code></pre></div>
+<span class="co">#&gt;   y must be class integer OR </span>
+<span class="co">#&gt;   y must be class logical</span></code></pre></div>
+</div>
+<div id="inspiration" class="section level2">
+<h2 class="hasAnchor">
+<a href="#inspiration" class="anchor"></a>Inspiration</h2>
+<p><a href="https://github.com/poissonconsulting/datacheckr">datacheckr</a></p>
 </div>
 <div id="contribution" class="section level2">
 <h2 class="hasAnchor">

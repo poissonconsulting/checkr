@@ -5,17 +5,21 @@
 \title{Check List}
 \usage{
 check_list(x, values, min_length = 0L, max_length = .Machine$integer.max,
-  named = NA, x_name = substitute(x),
+  unique = FALSE, sorted = FALSE, named = NA, x_name = substitute(x),
   error = getOption("vectorcheckr.error", TRUE))
 }
 \arguments{
 \item{x}{The object to check.}
 
-\item{values}{An optional vector specifying the values.}
+\item{values}{An optional vector or named list specifying the values.}
 
 \item{min_length}{A count of the minimum length.}
 
 \item{max_length}{A count of the maximum length.}
+
+\item{unique}{A flag indicating whether the values must be unique.}
+
+\item{sorted}{A flag indicating whether the list must be sorted.}
 
 \item{named}{A flag (or NA) indicating whether the list must be named or unnamed (or doesn't matter).}
 
@@ -28,9 +32,4 @@ An invisible copy of x (if it doesn't throw an error).
 }
 \description{
 Check List
-}
-\examples{
-x <- list(x = 1, y = 2)
-check_list(1:2, error = FALSE)
-check_list(list(x = 1, y = 2), named = TRUE, error = FALSE)
 }

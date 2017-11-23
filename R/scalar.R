@@ -10,7 +10,6 @@
 #' check_scalar(2)
 #' check_scalar(character(0), error = FALSE)
 #' check_scalar(NULL, error = FALSE)
-#' check_scalar(list(), error = FALSE)
 check_scalar <- function(x,
                          x_name = substitute(x),
                          error = getOption("vectorcheckr.error", TRUE)) {

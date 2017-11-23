@@ -25,7 +25,7 @@ x <- c(2,1,0,1,NA)
 check_vector(x)
 
 check_vector(x, values = 1:10, max_length = 2, unique = TRUE, sorted = TRUE, named = TRUE, error = FALSE)
-#> Warning: x must be of class integer
+#> Warning: x must be class integer
 #> Warning: x must not include missing values
 #> Warning: x has unpermitted values 0
 #> Warning: x must not be longer than 2
@@ -39,9 +39,14 @@ check_vector("term", c("term1", "term2"), error = FALSE)
 y <- -1
 checkor(check_count(y), check_flag(y), error = FALSE)
 #> Warning: 
-#>   y must be of class integer OR 
-#>   y must be of class logical
+#>   y must be class integer OR 
+#>   y must be class logical
 ```
+
+Inspiration
+-----------
+
+[datacheckr](https://github.com/poissonconsulting/datacheckr)
 
 Contribution
 ------------

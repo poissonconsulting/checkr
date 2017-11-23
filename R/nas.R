@@ -1,16 +1,4 @@
-#' Check NAs
-#'
-#' @param x The object to check.
-#' @param values A vector with no, some or all NAs.
-#' @param x_name A string of the name of the object.
-#' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
-#' @return An invisible copy of x (if it doesn't throw an error).
-#'
-#' @examples
-#' check_nas(NA, 1, error = FALSE)
-#' check_nas(NA, NA, error = FALSE)
-#' check_nas(1, NA, error = FALSE)
-check_vector_nas <- function(x,
+check_nas <- function(x,
                          values,
                          x_name = substitute(x),
                          error = getOption("vectorcheckr.error", TRUE)) {

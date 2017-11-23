@@ -4,11 +4,13 @@
 \alias{check_named}
 \title{Check Named}
 \usage{
-check_named(x, x_name = substitute(x),
+check_named(x, unique = FALSE, x_name = substitute(x),
   error = getOption("vectorcheckr.error", TRUE))
 }
 \arguments{
 \item{x}{The object to check.}
+
+\item{unique}{A flag indicating whether the names must be unique.}
 
 \item{x_name}{A string of the name of the object.}
 

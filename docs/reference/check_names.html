@@ -88,8 +88,7 @@
     
 
     <pre class="usage"><span class='fu'>check_names</span>(<span class='no'>x</span>, <span class='no'>names</span>, <span class='kw'>exclusive</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>order</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>), <span class='kw'>names_name</span> <span class='kw'>=</span> <span class='st'>"names"</span>,
-  <span class='kw'>error</span> <span class='kw'>=</span> <span class='fu'>getOption</span>(<span class='st'>"datacheckr.error"</span>, <span class='fl'>TRUE</span>))</pre>
+  <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fu'>getOption</span>(<span class='st'>"datacheckr.error"</span>, <span class='fl'>TRUE</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -115,10 +114,6 @@
       <td><p>A string of the name of the object.</p></td>
     </tr>
     <tr>
-      <th>names_name</th>
-      <td><p>A string of the name of the names (used by datacheckr2::check_colnames).</p></td>
-    </tr>
-    <tr>
       <th>error</th>
       <td><p>A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.</p></td>
     </tr>
@@ -132,7 +127,7 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='no'>vec</span> <span class='kw'>&lt;-</span> <span class='fu'>c</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>z</span> <span class='kw'>=</span> <span class='fl'>0</span>)
 <span class='fu'>check_names</span>(<span class='no'>vec</span>, <span class='fu'>c</span>(<span class='st'>"y"</span>, <span class='st'>"x"</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
-<span class='fu'>check_names</span>(<span class='no'>vec</span>, <span class='fu'>c</span>(<span class='st'>"y"</span>, <span class='st'>"x"</span>), <span class='kw'>exclusive</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: names in vec must include and only include 'y' and 'x'</span></div><div class='input'><span class='fu'>check_names</span>(<span class='no'>vec</span>, <span class='fu'>c</span>(<span class='st'>"y"</span>, <span class='st'>"x"</span>), <span class='kw'>order</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: names in vec must include in the following order 'y' and 'x'</span></div><div class='input'><span class='fu'>check_names</span>(<span class='no'>vec</span>, <span class='fu'>c</span>(<span class='st'>"a"</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: names in vec must include 'a'</span></div></pre>
+<span class='fu'>check_names</span>(<span class='no'>vec</span>, <span class='fu'>c</span>(<span class='st'>"y"</span>, <span class='st'>"x"</span>), <span class='kw'>exclusive</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: vec names must include and only include 'y' and 'x'</span></div><div class='input'><span class='fu'>check_names</span>(<span class='no'>vec</span>, <span class='fu'>c</span>(<span class='st'>"y"</span>, <span class='st'>"x"</span>), <span class='kw'>order</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: vec names must include 'y' and 'x' in that order</span></div><div class='input'><span class='fu'>check_names</span>(<span class='no'>vec</span>, <span class='fu'>c</span>(<span class='st'>"a"</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: vec names must include 'a'</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

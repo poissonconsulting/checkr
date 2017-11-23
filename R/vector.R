@@ -40,7 +40,7 @@ check_vector <- function(x,
   check_atomic_internal(x)
 
   if(!missing(values))
-    check_vector_values(x, values = values, x_name = x_name, error = error)
+    check_values(x, values = values, x_name = x_name, error = error)
   
   check_length(x, min_length = min_length, max_length = max_length,
                x_name = x_name, error = error)

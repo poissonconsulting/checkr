@@ -49,8 +49,8 @@ check_key <- function(x, names = names(x), x_name = substitute(x),
 
   if (!is.character(x_name)) x_name <- deparse(x_name)
   check_string_internal(x_name)
-
-  if(!is.character(names)) error("names must be a character vector")
+  
+  check_vector(names, "", error = TRUE)
 
   if(!length(names)) return(invisible(x))
 
