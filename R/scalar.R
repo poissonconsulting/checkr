@@ -18,7 +18,7 @@ check_scalar <- function(x,
 
   check_string_internal(x_name)
 
-  check_atomic(x, x_name = x_name, error = error)
+  check_atomic_internal(x)
   check_length(x, x_name = x_name, max_length = 1, error = error)
   check_unnamed(x, x_name = x_name, error = error)
   invisible(x)

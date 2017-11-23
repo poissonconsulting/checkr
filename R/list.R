@@ -31,11 +31,7 @@ check_list <- function(x,
 
   check_string_internal(x_name)
   check_flag_internal(error)
-
-  if(!is.list(x)) {
-    on_fail("x must be a list", error = error)
-    return(invisible(x))
-  }
+  check_list_internal(x)
 
 #  if(!missing(values))
 #    check_list_values(x, values = values, x_name = x_name, error = error)

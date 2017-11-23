@@ -14,6 +14,15 @@ check_flag_internal <- function(x)
 check_count_internal <- function(x)
   if (!is_count(x)) error(substitute(x), " must be a count")
 
+check_atomic_internal <- function(x)
+  if (!is.atomic(x)) error(x, " must be an atomic vector")
+
+check_list_internal <- function(x)
+  if (!is.list(x)) error(substitute(x), " must be a list")
+
+check_data_internal <- function(x)
+  if (!is.data.frame(x)) error(substitute(x), " must be a data frame")
+
 error <- function(...) stop(..., call. = FALSE)
 
 warning <- function(...) {
@@ -37,4 +46,3 @@ punctuate <- function(x, qualifier = "or") {
 }
 
 plural <- function(x, n = 1, end = "") paste0(x, ifelse(n != 1, "s", ""), end)
-
