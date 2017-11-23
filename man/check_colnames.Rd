@@ -4,13 +4,13 @@
 \alias{check_colnames}
 \title{Check Colnames}
 \usage{
-check_colnames(x, names, exclusive = FALSE, order = FALSE,
+check_colnames(x, colnames, exclusive = FALSE, order = FALSE,
   x_name = substitute(x), error = getOption("datacheckr.error", TRUE))
 }
 \arguments{
 \item{x}{The data to check.}
 
-\item{names}{A character vector of the column names.}
+\item{colnames}{A character vector of the column names.}
 
 \item{exclusive}{A flag indicating whether other columns are permitted.}
 

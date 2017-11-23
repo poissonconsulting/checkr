@@ -5,8 +5,7 @@
 \title{Check Names}
 \usage{
 check_names(x, names, exclusive = FALSE, order = FALSE,
-  x_name = substitute(x), names_name = "names",
-  error = getOption("datacheckr.error", TRUE))
+  x_name = substitute(x), error = getOption("datacheckr.error", TRUE))
 }
 \arguments{
 \item{x}{The object to check.}
@@ -18,8 +17,6 @@ check_names(x, names, exclusive = FALSE, order = FALSE,
 \item{order}{A flag indicating whether the object names have to occur in the same order as names.}
 
 \item{x_name}{A string of the name of the object.}
-
-\item{names_name}{A string of the name of the names (used by datacheckr2::check_colnames).}
 
 \item{error}{A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.}
 }
