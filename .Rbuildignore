@@ -1,0 +1,11 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^README\.Rmd$
+^README-.*\.png$
+^CONDUCT\.md$
+^\.travis\.yml$
+^appveyor\.yml$
+^codecov\.yml$
+^docs$
+^LICENSE.md$
+^document.R$
