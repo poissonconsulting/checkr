@@ -30,16 +30,16 @@ check_nrow <- function(x,
   }
   if (min_nrow == max_nrow) {
     if (nrow(x) != min_nrow) {
-      on_fail(x_name, " must have ", min_nrow, " row(s)", error = error)
+      on_fail(x_name, " must have ", min_nrow, plural(" row", min_nrow), error = error)
     }
     return(invisible(x))
   }
 
   if (nrow(x) < min_nrow) {
-    on_fail(x_name, " must have at least ", min_nrow, " row(s)", error = error)
+    on_fail(x_name, " must have at least ", min_nrow, plural(" row", min_nrow), error = error)
   }
   if (nrow(x) > max_nrow) {
-    on_fail(x_name, " must not have more than ", max_nrow, " row(s)", error = error)
+    on_fail(x_name, " must not have more than ", max_nrow, plural(" row", max_nrow), error = error)
   }
   invisible(x)
 }
