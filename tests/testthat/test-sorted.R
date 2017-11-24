@@ -1,0 +1,12 @@
+context("check-sorted")
+
+test_that("sorted", {
+  expect_identical(check_sorted(1:2), 1:2)
+  expect_error(check_sorted(2:1), "2:1 must be sorted")
+  expect_identical(check_sorted(factor(1)), factor(1))
+  expect_identical(check_sorted(integer(0)), integer(0))
+  expect_identical(check_sorted(NA), NA)
+  expect_identical(check_sorted(c(NA, NA)), c(NA, NA))
+  expect_identical(check_sorted(factor(1:2)), factor(1:2))
+  expect_error(check_sorted(factor(2:1)), "factor[(]2:1[)] must be sorted")
+})

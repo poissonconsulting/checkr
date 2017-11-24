@@ -1,5 +1,9 @@
 #' Check Sorted
-#'
+#' 
+#' Checks whether object x is sorted.
+#' 
+#' Uses \code{!is.unsorted(x, na.rm = TRUE)} to test.
+#' 
 #' @param x The object to check.
 #' @param x_name A string of the name of the object.
 #' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.

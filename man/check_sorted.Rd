@@ -17,7 +17,10 @@ check_sorted(x, x_name = substitute(x), error = TRUE)
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Check Sorted
+Checks whether object x is sorted.
+}
+\details{
+Uses \code{!is.unsorted(x, na.rm = TRUE)} to test.
 }
 \examples{
 check_sorted(1:2, error = FALSE)
