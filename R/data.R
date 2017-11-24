@@ -20,11 +20,10 @@ check_data <- function(x,
                        key = character(0),
                        x_name = substitute(x),
                        error = TRUE) {
-  if (!is.character(x_name)) x_name <- deparse(x_name)
+  x_name <- deparse_x_name(x_name)
   
   if (!is.data.frame(x)) error(x_name, " must be a data frame")
 
-  check_string_internal(x_name)
   check_flag_internal(error)
   
   if(!missing(values)) {

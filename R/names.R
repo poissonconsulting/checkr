@@ -18,12 +18,11 @@
 check_names <- function(x, names, exclusive = FALSE, order = FALSE,
                          x_name = substitute(x),
                          error = getOption("datacheckr.error", TRUE)) {
-  if (!is.character(x_name)) x_name <- deparse(x_name)
+  x_name <- deparse_x_name(x_name)
 
   check_vector(names, "", min_length = 1, unique = FALSE, named = FALSE)
   check_flag_internal(exclusive)
   check_flag_internal(order)
-  check_string_internal(x_name)
   check_flag_internal(error)
   
   check_named(x, x_name = x_name, error = error)
@@ -72,12 +71,11 @@ check_colnames <- function(x, names, exclusive = FALSE, order = FALSE,
                          x_name = substitute(x),
                          error = getOption("datacheckr.error", TRUE)) {
 
-  if (!is.character(x_name)) x_name <- deparse(x_name)
+  x_name <- deparse_x_name(x_name)
 
   check_vector(names, "", min_length = 1, unique = FALSE, named = FALSE)
   check_flag_internal(exclusive)
   check_flag_internal(order)
-  check_string_internal(x_name)
   check_flag_internal(error)
   
   check_named(x, x_name = x_name, error = error)

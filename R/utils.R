@@ -14,6 +14,15 @@ check_flag_internal <- function(x)
 check_count_internal <- function(x)
   if (!is_count(x)) error(substitute(x), " must be a count")
 
+deparse_x_name <- function(x_name) {
+  if (!is.character(x_name)) x_name <- deparse(x_name) 
+  if (isTRUE(is.na(x_name))) x_name <- "NA"
+  
+  check_string_internal(x_name)
+
+  x_name
+}
+
 error <- function(...) stop(..., call. = FALSE)
 
 warning <- function(...) {

@@ -24,7 +24,7 @@ check_vector <- function(x,
                          named = NA,
                          x_name = substitute(x),
                          error = TRUE) {
-  if (!is.character(x_name)) x_name <- deparse(x_name)
+  x_name <- deparse_x_name(x_name)
 
   check_count_internal(min_length)
   check_count_internal(max_length)
@@ -34,7 +34,6 @@ check_vector <- function(x,
      error("named must be a flag or NA")
   }
 
-  check_string_internal(x_name)
   check_flag_internal(error)
 
   if (!is.atomic(x)) error(x_name, " must be an atomic vector")

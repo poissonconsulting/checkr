@@ -20,14 +20,13 @@ check_list <- function(x,
                        named = NA,
                        x_name = substitute(x),
                        error = TRUE) {
-  if (!is.character(x_name)) x_name <- deparse(x_name)
+  x_name <- deparse_x_name(x_name)
   
   if (!is.list(x)) error(x_name, " must be a list")
 
   if(!(identical(named, TRUE) || identical(named, FALSE) || identical(named, NA))) {
     error("named must be a flag or NA")
   }
-  check_string_internal(x_name)
   check_flag_internal(error)
   
   if(!missing(values)) {

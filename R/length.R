@@ -18,12 +18,11 @@ check_length <- function(x,
                          max_length = .Machine$integer.max,
                          x_name = substitute(x),
                          error = TRUE) {
-  if (!is.character(x_name)) x_name <- deparse(x_name)
+  x_name <- deparse_x_name(x_name)
 
   check_count_internal(min_length)
   check_count_internal(max_length)
 
-  check_string_internal(x_name)
   check_flag_internal(error)
 
   if (max_length < min_length) {

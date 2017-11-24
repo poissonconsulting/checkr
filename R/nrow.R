@@ -17,12 +17,11 @@ check_nrow <- function(x,
                          max_nrow = 2147483647L,
                          x_name = substitute(x),
                          error = getOption("checkr.error", TRUE)) {
-  if (!is.character(x_name)) x_name <- deparse(x_name)
+  x_name <- deparse_x_name(x_name)
 
   check_count_internal(min_nrow)
   check_count_internal(max_nrow)
 
-  check_string_internal(x_name)
   check_flag_internal(error)
 
   if (max_nrow < min_nrow) {

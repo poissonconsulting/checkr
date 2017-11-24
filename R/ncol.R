@@ -16,12 +16,11 @@ check_ncol <- function(x,
                          max_ncol = 2147483647L,
                          x_name = substitute(x),
                          error = getOption("checkr.error", TRUE)) {
-  if (!is.character(x_name)) x_name <- deparse(x_name)
+  x_name <- deparse_x_name(x_name)
 
   check_count_internal(min_ncol)
   check_count_internal(max_ncol)
 
-  check_string_internal(x_name)
   check_flag_internal(error)
 
   if (max_ncol < min_ncol) {

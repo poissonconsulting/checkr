@@ -13,9 +13,7 @@
 check_scalar <- function(x,
                          x_name = substitute(x),
                          error = TRUE) {
-  if (!is.character(x_name)) x_name <- deparse(x_name)
-
-  check_string_internal(x_name)
+  x_name <- deparse_x_name(x_name)
 
   if (!is.atomic(x)) error(x_name, " must be an atomic vector")
 
@@ -39,9 +37,8 @@ check_scalar <- function(x,
 check_flag <- function(x,
                        x_name = substitute(x),
                        error = TRUE) {
-  if (!is.character(x_name)) x_name <- deparse(x_name)
+  x_name <- deparse_x_name(x_name)
 
-  check_string_internal(x_name)
   check_flag_internal(error)
 
   check_vector(x, values = TRUE, min_length = 1, max_length = 1,
@@ -65,9 +62,8 @@ check_flag <- function(x,
 check_count <- function(x,
                        x_name = substitute(x),
                        error = TRUE) {
-  if (!is.character(x_name)) x_name <- deparse(x_name)
+  x_name <- deparse_x_name(x_name)
 
-  check_string_internal(x_name)
   check_flag_internal(error)
 
   check_vector(x, values = c(0L, .Machine$integer.max), min_length = 1, max_length = 1,
@@ -91,9 +87,8 @@ check_count <- function(x,
 check_string <- function(x,
                        x_name = substitute(x),
                        error = TRUE) {
-  if (!is.character(x_name)) x_name <- deparse(x_name)
+  x_name <- deparse_x_name(x_name)
 
-  check_string_internal(x_name)
   check_flag_internal(error)
 
   check_vector(x, values = character(1), min_length = 1, max_length = 1,

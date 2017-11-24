@@ -15,10 +15,9 @@
 check_named <- function(x, unique = FALSE,
                          x_name = substitute(x),
                          error = TRUE) {
-  if (!is.character(x_name)) x_name <- deparse(x_name)
+  x_name <- deparse_x_name(x_name)
 
   check_flag(unique)
-  check_string_internal(x_name)
   check_flag_internal(error)
 
   if(is.null(names(x))) {
@@ -44,9 +43,8 @@ check_named <- function(x, unique = FALSE,
 check_unnamed <- function(x,
                          x_name = substitute(x),
                          error = TRUE) {
-  if (!is.character(x_name)) x_name <- deparse(x_name)
+  x_name <- deparse_x_name(x_name)
 
-  check_string_internal(x_name)
   check_flag_internal(error)
 
   if(!is.null(names(x))) {
