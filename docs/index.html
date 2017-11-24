@@ -66,38 +66,90 @@
 <div id="checkr" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#checkr" class="anchor"></a>checkr</h1></div>
-<p><code>checkr</code> in an R package to informatively check the dimensions, classes, values, and names of vectors, lists and data frames.</p>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages("devtools")</span>
-devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"poissonconsulting/checkr"</span>)</code></pre></div>
-</div>
-<div id="demonstration" class="section level2">
-<h2 class="hasAnchor">
-<a href="#demonstration" class="anchor"></a>Demonstration</h2>
+<p><code>checkr</code> is a simple (dependency-free) R package to check the dimensions, classes, values, and names of vectors, lists and data frames. It is designed to be used in scripts or functions to provide informative warnings or errors that allow the user to quickly identify and fix any incorrect inputs.</p>
+<p>It has three main functions which are imaginatively named <code>check_vector</code>, <code>check_list</code> and <code>check_data</code>.</p>
+<div id="objects-warnings-and-errors" class="section level3">
+<h3 class="hasAnchor">
+<a href="#objects-warnings-and-errors" class="anchor"></a>Objects, Warnings and Errors</h3>
+<p>All functions either throw an informative error or return an invisible copy of the object (which allows them to be used in pipes - but see below).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(checkr)
-x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="ot">NA</span>)
-
-<span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(x)
-
-<span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(x, <span class="dt">values =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">max_length =</span> <span class="dv">2</span>, <span class="dt">unique =</span> <span class="ot">TRUE</span>, <span class="dt">sorted =</span> <span class="ot">TRUE</span>, <span class="dt">named =</span> <span class="ot">TRUE</span>, <span class="dt">error =</span> <span class="ot">FALSE</span>)
-<span class="co">#&gt; Warning: x must be class integer</span>
-<span class="co">#&gt; Warning: x must not include missing values</span>
-<span class="co">#&gt; Warning: x has unpermitted values 0</span>
-<span class="co">#&gt; Warning: x must not be longer than 2</span>
-<span class="co">#&gt; Warning: x must be unique</span>
-<span class="co">#&gt; Warning: x must be sorted</span>
-<span class="co">#&gt; Warning: x must be named</span>
-
-<span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(<span class="st">"term"</span>, <span class="kw">c</span>(<span class="st">"term1"</span>, <span class="st">"term2"</span>), <span class="dt">error =</span> <span class="ot">FALSE</span>)
-<span class="co">#&gt; Warning: the values in term must lie between 'term1' and 'term2'</span>
-
-y &lt;-<span class="st"> </span><span class="op">-</span><span class="dv">1</span>
-<span class="kw"><a href="reference/checkor.html">checkor</a></span>(<span class="kw"><a href="reference/check_count.html">check_count</a></span>(y), <span class="kw"><a href="reference/check_flag.html">check_flag</a></span>(y), <span class="dt">error =</span> <span class="ot">FALSE</span>)
-<span class="co">#&gt; Warning: </span>
-<span class="co">#&gt;   y must be class integer OR </span>
-<span class="co">#&gt;   y must be class logical</span></code></pre></div>
+y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="ot">NA</span>)
+<span class="kw"><a href="reference/check_list.html">check_list</a></span>(y)
+<span class="co">#&gt; Error: y must be a list</span>
+<span class="kw">print</span>(<span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y))
+<span class="co">#&gt; [1]  2  1  0  1 NA</span></code></pre></div>
+<p>Additional checks can be enforced by setting the various arguments.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="dt">values =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">max_length =</span> <span class="dv">2</span>, <span class="dt">unique =</span> <span class="ot">TRUE</span>, <span class="dt">sorted =</span> <span class="ot">TRUE</span>, <span class="dt">named =</span> <span class="ot">TRUE</span>, <span class="dt">error =</span> <span class="ot">FALSE</span>)
+<span class="co">#&gt; Warning: y must be class integer</span>
+<span class="co">#&gt; Warning: y must not include missing values</span>
+<span class="co">#&gt; Warning: y has unpermitted values 0</span>
+<span class="co">#&gt; Warning: y must not be longer than 2</span>
+<span class="co">#&gt; Warning: y must be unique</span>
+<span class="co">#&gt; Warning: y must be sorted</span>
+<span class="co">#&gt; Warning: y must be named</span></code></pre></div>
+<p>If the object fails a check then depending on whether the argument <code>error</code> is <code>FALSE</code> or <code>TRUE</code> one or more informative warnings are issued (and an invisible copy of the object is returned) as in the previous example or an informative error is thrown (the default behaviour), respectively.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="dt">values =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">max_length =</span> <span class="dv">2</span>, <span class="dt">unique =</span> <span class="ot">TRUE</span>, <span class="dt">sorted =</span> <span class="ot">TRUE</span>, <span class="dt">named =</span> <span class="ot">TRUE</span>)
+<span class="co">#&gt; Error: y must be class integer</span></code></pre></div>
+</div>
+<div id="values" class="section level3">
+<h3 class="hasAnchor">
+<a href="#values" class="anchor"></a>Values</h3>
+<p>The values argument can be used to check the class and range etc of a vector, elements of a list or columns of a data frame.</p>
+<div id="class" class="section level4">
+<h4 class="hasAnchor">
+<a href="#class" class="anchor"></a>Class</h4>
+<p>To check the class simply pass an object of the desired class.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="dt">values =</span> <span class="kw">numeric</span>(<span class="dv">0</span>))
+<span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="dt">values =</span> <span class="kw">integer</span>(<span class="dv">0</span>))
+<span class="co">#&gt; Error: y must be class integer</span></code></pre></div>
+</div>
+<div id="missing-values" class="section level4">
+<h4 class="hasAnchor">
+<a href="#missing-values" class="anchor"></a>Missing Values</h4>
+<p>To check that a vector does not include missing values pass a single non-missing value (of the correct class).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="dv">1</span>)
+<span class="co">#&gt; Error: y must not include missing values</span></code></pre></div>
+<p>To allow it to include missing values include a missing value.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw">c</span>(<span class="dv">1</span>, <span class="ot">NA</span>))</code></pre></div>
+<p>And to check that it only includes missing values only pass a missing value (of the correct class)</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="ot">NA</span>)
+<span class="co">#&gt; Error: y must be class logical</span>
+<span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="ot">NA_real_</span>)
+<span class="co">#&gt; Error: y must only include missing values</span></code></pre></div>
+</div>
+<div id="range" class="section level4">
+<h4 class="hasAnchor">
+<a href="#range" class="anchor"></a>Range</h4>
+<p>To check the range pass two non-missing values (as well as the missing value if required).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="ot">NA</span>))
+<span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="ot">NA</span>))
+<span class="co">#&gt; Error: the values in y must lie between 1 and 3</span>
+<span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">10</span>, <span class="ot">NA</span>))
+<span class="co">#&gt; Error: the values in y must lie between -10 and -1</span></code></pre></div>
+</div>
+<div id="specific-values" class="section level4">
+<h4 class="hasAnchor">
+<a href="#specific-values" class="anchor"></a>Specific Values</h4>
+<p>To check the vector only includes specific values pass three or more non-missing values.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="ot">NA</span>))
+<span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="ot">NA</span>))
+<span class="co">#&gt; Error: y can only include values 1 or 2</span>
+<span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="ot">NA</span>))</code></pre></div>
+</div>
+</div>
+<div id="naming-objects" class="section level3">
+<h3 class="hasAnchor">
+<a href="#naming-objects" class="anchor"></a>Naming Objects</h3>
+<p>By default, the name of an object is determined from the function call.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(<span class="kw">list</span>(<span class="dt">x =</span> <span class="dv">1</span>))
+<span class="co">#&gt; Error: list(x = 1) must be an atomic vector</span></code></pre></div>
+<p>This simplifies things but results in less informative error messages when used in a pipe.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(magrittr)
+y <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="reference/check_list.html">check_list</a></span>()
+<span class="co">#&gt; Error: . must be a list</span></code></pre></div>
+<p>The argument <code>x_name</code> can be used to define the name</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">y <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="reference/check_list.html">check_list</a></span>(<span class="dt">x_name =</span> <span class="st">"y"</span>)
+<span class="co">#&gt; Error: y must be a list</span></code></pre></div>
 </div>
 <div id="inspiration" class="section level2">
 <h2 class="hasAnchor">

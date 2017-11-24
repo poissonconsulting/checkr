@@ -22,7 +22,7 @@ check_list <- function(x,
                        error = getOption("vectorcheckr.error", TRUE)) {
   if (!is.character(x_name)) x_name <- deparse(x_name)
   
-  check_list_internal(x)
+  if (!is.list(x)) error(x_name, " must be a list")
 
   if(!(identical(named, TRUE) || identical(named, FALSE) || identical(named, NA))) {
     error("named must be a flag or NA")

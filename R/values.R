@@ -6,9 +6,9 @@ check_values <- function(x, values,
   check_string_internal(x_name)
   check_flag_internal(error)
   
-  check_atomic_internal(x)
-  check_atomic_internal(values)
-  
+  if (!is.atomic(x)) error(x_name, " must be an atomic vector")
+  if (!is.atomic(values)) error("values must be an atomic vector")
+
   check_class(x, values, x_name = x_name, error = error)
   check_nas(x, values, x_name = x_name, error = error)
   

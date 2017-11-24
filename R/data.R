@@ -22,8 +22,8 @@ check_data <- function(x,
                        error = getOption("vectorcheckr.error", TRUE)) {
   if (!is.character(x_name)) x_name <- deparse(x_name)
   
-  check_data_internal(x)
-  
+  if (!is.data.frame(x)) error(x_name, " must be a data frame")
+
   check_string_internal(x_name)
   check_flag_internal(error)
   

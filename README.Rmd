@@ -21,29 +21,98 @@ knitr::opts_chunk$set(
 
 # checkr
 
-`checkr` in an R package to informatively check the dimensions, classes, values, and names of vectors, lists and data frames.
+`checkr` is a simple (dependency-free) R package to check the dimensions, classes, values, and names of vectors, lists and data frames.
+It is designed to be used in scripts or functions to provide informative warnings or errors that allow the user to quickly identify and fix any incorrect inputs.
 
-## Installation
+It has three main functions which are imaginatively named `check_vector`, `check_list` and `check_data`.
 
-```{r gh-installation, eval = FALSE}
-# install.packages("devtools")
-devtools::install_github("poissonconsulting/checkr")
+### Objects, Warnings and Errors
+
+All functions either throw an informative error or return an invisible copy of the object (which allows them to be used in pipes - but see below).
+
+```{r, error = TRUE}
+library(checkr)
+y <- c(2,1,0,1,NA)
+check_list(y)
+print(check_vector(y))
 ```
 
-## Demonstration
+Additional checks can be enforced by setting the various arguments.
 
-```{r warning=TRUE}
-library(checkr)
-x <- c(2,1,0,1,NA)
+```{r}
+check_vector(y, values = 1:10, max_length = 2, unique = TRUE, sorted = TRUE, named = TRUE, error = FALSE)
+```
 
-check_vector(x)
+If the object fails a check then depending on whether the argument `error` is `FALSE` or `TRUE`  one or more informative warnings are issued (and an invisible copy of the object is returned) as in the previous example or an informative error is thrown (the default behaviour), respectively.
 
-check_vector(x, values = 1:10, max_length = 2, unique = TRUE, sorted = TRUE, named = TRUE, error = FALSE)
+```{r, error=TRUE}
+check_vector(y, values = 1:10, max_length = 2, unique = TRUE, sorted = TRUE, named = TRUE)
+```
 
-check_vector("term", c("term1", "term2"), error = FALSE)
+### Values
 
-y <- -1
-checkor(check_count(y), check_flag(y), error = FALSE)
+The values argument can be used to check the class and range etc of a vector, elements of a list or columns of a data frame.
+
+#### Class
+
+To check the class simply pass an object of the desired class.
+```{r, error = TRUE}
+check_vector(y, values = numeric(0))
+check_vector(y, values = integer(0))
+```
+
+#### Missing Values
+
+To check that a vector does not include missing values pass a single non-missing value (of the correct class).
+```{r, error = TRUE}
+check_vector(y, 1)
+```
+
+To allow it to include missing values include a missing value.
+```{r}
+check_vector(y, c(1, NA))
+```
+
+And to check that it only includes missing values only pass a missing value (of the correct class)
+```{r, error = TRUE}
+check_vector(y, NA)
+check_vector(y, NA_real_)
+```
+
+#### Range
+
+To check the range pass two non-missing values (as well as the missing value if required).
+```{r, error = TRUE}
+check_vector(y, c(0, 2, NA))
+check_vector(y, c(1, 3, NA))
+check_vector(y, c(-1, -10, NA))
+```
+
+#### Specific Values
+
+To check the vector only includes specific values pass three or more non-missing values.
+```{r, error = TRUE}
+check_vector(y, c(0, 1, 2, NA))
+check_vector(y, c(1, 1, 2, NA))
+check_vector(y, c(0, 1, 2, 3, NA))
+```
+
+### Naming Objects
+
+By default, the name of an object is determined from the function call.
+```{r, error=TRUE}
+check_vector(list(x = 1))
+```
+
+This simplifies things but results in less informative error messages when used in a pipe.
+```{r, error = TRUE}
+library(magrittr)
+y %>% check_list()
+```
+
+The argument `x_name` can be used to define the name
+```{r, error = TRUE}
+y %>% check_list(x_name = "y")
 ```
 
 ## Inspiration

@@ -37,7 +37,7 @@ check_vector <- function(x,
   check_string_internal(x_name)
   check_flag_internal(error)
 
-  check_atomic_internal(x)
+  if (!is.atomic(x)) error(x_name, " must be an atomic vector")
 
   if(!missing(values))
     check_values(x, values = values, x_name = x_name, error = error)
