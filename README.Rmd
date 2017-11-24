@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 
 # checkr
 
-`checkr` is a simple (dependency-free) R package to check the dimensions, classes, values, and names of vectors, lists and data frames.
+`checkr` is a dependency-free R package to check the dimensions, classes, values, and names of vectors, lists and data frames.
 It is designed to be used in scripts or functions to provide informative warnings or errors that allow the user to quickly identify and fix any incorrect inputs.
 
 It has three main functions which are imaginatively named `check_vector`, `check_list` and `check_data`.
@@ -104,8 +104,7 @@ The values argument works for any atomic vector for which `<` is defined.
 ```{r, error = TRUE}
 check_vector(TRUE, FALSE)
 check_vector("t0", c("t1", "t2"))
-check_vector(Sys.Date(), as.Date(paste0(c("2016", "2015"), "-01-01")))
-check_vector(Sys.time()-1, c(Sys.time(), Sys.time()))
+check_vector(as.Date("2017-02-20"), as.Date(paste0(c("2016", "2015"), "-01-01")))
 check_vector(factor(c("blue", "green")), "")
 check_vector(factor(c("blue", "green")), factor(""))
 check_vector(factor(c("blue", "green")), factor(c("blue", "green")))

@@ -4,8 +4,7 @@
 \alias{check_key}
 \title{Check Key}
 \usage{
-check_key(x, names = names(x), x_name = substitute(x),
-  error = getOption("datacheckr.error", TRUE))
+check_key(x, names = names(x), x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The data to check.}

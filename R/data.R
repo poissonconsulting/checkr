@@ -29,7 +29,7 @@ check_data <- function(x,
   
   if(!missing(values)) {
     if(is.list(values)) {
-      check_names(x, names = names(values), error = TRUE)
+      check_names(x, names = names(values))
       check_names(x, names = names(values), exclusive = exclusive, order = order, error = error)
 
       for(name in names(values)) {
@@ -38,7 +38,7 @@ check_data <- function(x,
     } else {
       if(!is.character(values)) error("values must be an character vector or a named list")
       
-      check_names(x, names = values, exclusive = exclusive, order = order, error = TRUE)
+      check_names(x, names = values, exclusive = exclusive, order = order)
     }
   }
   check_nrow(x, min_nrow = min_nrow, max_nrow = max_nrow,

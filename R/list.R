@@ -33,8 +33,8 @@ check_list <- function(x,
   if(!missing(values)) {
     
     if(is.list(values)) {
-      check_named(values, unique = TRUE, error = TRUE)
-      check_names(x, names = names(values), error = TRUE)
+      check_named(values, unique = TRUE)
+      check_names(x, names = names(values))
       
       for(name in names(values)) {
         check_class(x[[name]], values[[name]], x_name = paste("element", name, "of", x_name), error = error)

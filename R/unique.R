@@ -45,16 +45,16 @@ check_unique <- function(x,
 #' check_key(data, "x", error = FALSE)
 #' check_key(data, c("y", "x"), error = FALSE)
 check_key <- function(x, names = names(x), x_name = substitute(x),
-                      error = getOption("datacheckr.error", TRUE)) {
+                      error = TRUE) {
 
   if (!is.character(x_name)) x_name <- deparse(x_name)
   check_string_internal(x_name)
   
-  check_vector(names, "", error = TRUE)
+  check_vector(names, "")
 
   if(!length(names)) return(invisible(x))
 
-  check_colnames(x, names = names, x_name = x_name, error = TRUE)
+  check_colnames(x, names = names, x_name = x_name)
 
   if (anyDuplicated(x[names])) {
     on_fail(plural("column", length(names), " "),

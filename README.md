@@ -5,7 +5,7 @@
 checkr
 ======
 
-`checkr` is a simple (dependency-free) R package to check the dimensions, classes, values, and names of vectors, lists and data frames. It is designed to be used in scripts or functions to provide informative warnings or errors that allow the user to quickly identify and fix any incorrect inputs.
+`checkr` is a dependency-free R package to check the dimensions, classes, values, and names of vectors, lists and data frames. It is designed to be used in scripts or functions to provide informative warnings or errors that allow the user to quickly identify and fix any incorrect inputs.
 
 It has three main functions which are imaginatively named `check_vector`, `check_list` and `check_data`.
 
@@ -111,10 +111,8 @@ The values argument works for any atomic vector for which `<` is defined.
 check_vector(TRUE, FALSE)
 check_vector("t0", c("t1", "t2"))
 #> Error: the values in t0 must lie between 't1' and 't2'
-check_vector(Sys.Date(), as.Date(paste0(c("2016", "2015"), "-01-01")))
-#> Error: the values in Sys.Date() must lie between '2015-01-01' and '2016-01-01'
-check_vector(Sys.time()-1, c(Sys.time(), Sys.time()))
-#> Error: the values in Sys.time() - 1 must lie between '2017-11-23 17:36:02' and '2017-11-23 17:36:02'
+check_vector(as.Date("2017-02-20"), as.Date(paste0(c("2016", "2015"), "-01-01")))
+#> Error: the values in as.Date("2017-02-20") must lie between '2015-01-01' and '2016-01-01'
 check_vector(factor(c("blue", "green")), "")
 #> Error: factor(c("blue", "green")) must be class character
 check_vector(factor(c("blue", "green")), factor(""))
