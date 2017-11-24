@@ -12,7 +12,7 @@
 #' check_scalar(NULL, error = FALSE)
 check_scalar <- function(x,
                          x_name = substitute(x),
-                         error = getOption("vectorcheckr.error", TRUE)) {
+                         error = TRUE) {
   if (!is.character(x_name)) x_name <- deparse(x_name)
 
   check_string_internal(x_name)
@@ -38,7 +38,7 @@ check_scalar <- function(x,
 #' check_flag(c(FALSE, TRUE), error = FALSE)
 check_flag <- function(x,
                        x_name = substitute(x),
-                       error = getOption("vectorcheckr.error", TRUE)) {
+                       error = TRUE) {
   if (!is.character(x_name)) x_name <- deparse(x_name)
 
   check_string_internal(x_name)
@@ -64,7 +64,7 @@ check_flag <- function(x,
 #' check_count(1, error = FALSE)
 check_count <- function(x,
                        x_name = substitute(x),
-                       error = getOption("vectorcheckr.error", TRUE)) {
+                       error = TRUE) {
   if (!is.character(x_name)) x_name <- deparse(x_name)
 
   check_string_internal(x_name)
@@ -90,7 +90,7 @@ check_count <- function(x,
 #' check_string(c("1", "2"), error = FALSE)
 check_string <- function(x,
                        x_name = substitute(x),
-                       error = getOption("vectorcheckr.error", TRUE)) {
+                       error = TRUE) {
   if (!is.character(x_name)) x_name <- deparse(x_name)
 
   check_string_internal(x_name)

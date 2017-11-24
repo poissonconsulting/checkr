@@ -114,7 +114,7 @@ check_vector("t0", c("t1", "t2"))
 check_vector(Sys.Date(), as.Date(paste0(c("2016", "2015"), "-01-01")))
 #> Error: the values in Sys.Date() must lie between '2015-01-01' and '2016-01-01'
 check_vector(Sys.time()-1, c(Sys.time(), Sys.time()))
-#> Error: the values in Sys.time() - 1 must lie between '2017-11-23 17:31:49' and '2017-11-23 17:31:49'
+#> Error: the values in Sys.time() - 1 must lie between '2017-11-23 17:36:02' and '2017-11-23 17:36:02'
 check_vector(factor(c("blue", "green")), "")
 #> Error: factor(c("blue", "green")) must be class character
 check_vector(factor(c("blue", "green")), factor(""))

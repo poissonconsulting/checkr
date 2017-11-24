@@ -4,8 +4,7 @@
 \alias{check_unique}
 \title{Check Unique}
 \usage{
-check_unique(x, x_name = substitute(x),
-  error = getOption("vectorcheckr.error", TRUE))
+check_unique(x, x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}

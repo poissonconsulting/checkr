@@ -14,7 +14,7 @@
 #' check_named(x, error = FALSE)
 check_named <- function(x, unique = FALSE,
                          x_name = substitute(x),
-                         error = getOption("vectorcheckr.error", TRUE)) {
+                         error = TRUE) {
   if (!is.character(x_name)) x_name <- deparse(x_name)
 
   check_flag(unique)
@@ -43,7 +43,7 @@ check_named <- function(x, unique = FALSE,
 #' check_unnamed(x, error = FALSE)
 check_unnamed <- function(x,
                          x_name = substitute(x),
-                         error = getOption("vectorcheckr.error", TRUE)) {
+                         error = TRUE) {
   if (!is.character(x_name)) x_name <- deparse(x_name)
 
   check_string_internal(x_name)

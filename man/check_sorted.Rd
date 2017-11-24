@@ -4,8 +4,7 @@
 \alias{check_sorted}
 \title{Check Sorted}
 \usage{
-check_sorted(x, x_name = substitute(x),
-  error = getOption("vectorcheckr.error", TRUE))
+check_sorted(x, x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}

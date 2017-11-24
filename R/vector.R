@@ -23,7 +23,7 @@ check_vector <- function(x,
                          sorted = FALSE,
                          named = NA,
                          x_name = substitute(x),
-                         error = getOption("vectorcheckr.error", TRUE)) {
+                         error = TRUE) {
   if (!is.character(x_name)) x_name <- deparse(x_name)
 
   check_count_internal(min_length)

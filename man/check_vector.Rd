@@ -6,7 +6,7 @@
 \usage{
 check_vector(x, values, min_length = 0L, max_length = .Machine$integer.max,
   unique = FALSE, sorted = FALSE, named = NA, x_name = substitute(x),
-  error = getOption("vectorcheckr.error", TRUE))
+  error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}

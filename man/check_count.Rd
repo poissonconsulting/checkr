@@ -4,8 +4,7 @@
 \alias{check_count}
 \title{Check Count}
 \usage{
-check_count(x, x_name = substitute(x),
-  error = getOption("vectorcheckr.error", TRUE))
+check_count(x, x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}

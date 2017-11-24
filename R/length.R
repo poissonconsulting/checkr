@@ -17,7 +17,7 @@ check_length <- function(x,
                          min_length = 1L,
                          max_length = .Machine$integer.max,
                          x_name = substitute(x),
-                         error = getOption("vectorcheckr.error", TRUE)) {
+                         error = TRUE) {
   if (!is.character(x_name)) x_name <- deparse(x_name)
 
   check_count_internal(min_length)

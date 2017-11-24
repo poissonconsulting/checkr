@@ -4,7 +4,7 @@
 \alias{checkor}
 \title{Check OR}
 \usage{
-checkor(..., error = getOption("vectorcheckr.error", TRUE))
+checkor(..., error = TRUE)
 }
 \arguments{
 \item{...}{The checks to check.}

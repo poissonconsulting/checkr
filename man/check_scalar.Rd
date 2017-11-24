@@ -4,8 +4,7 @@
 \alias{check_scalar}
 \title{Check Scalar}
 \usage{
-check_scalar(x, x_name = substitute(x),
-  error = getOption("vectorcheckr.error", TRUE))
+check_scalar(x, x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}

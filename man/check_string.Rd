@@ -4,8 +4,7 @@
 \alias{check_string}
 \title{Check String}
 \usage{
-check_string(x, x_name = substitute(x),
-  error = getOption("vectorcheckr.error", TRUE))
+check_string(x, x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}

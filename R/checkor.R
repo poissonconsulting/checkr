@@ -11,7 +11,7 @@
 #' checkor(check_null(NULL), check_null(1), error = FALSE)
 #' checkor(check_null(1), check_null(1), error = FALSE)
 #' checkor(check_null(1), check_null(2), error = FALSE)
-checkor <- function(..., error = getOption("vectorcheckr.error", TRUE)) {
+checkor <- function(..., error = TRUE) {
   args <- substitute(list(...))
   args <- args[-1]
   n <- length(args)

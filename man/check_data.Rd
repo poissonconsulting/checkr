@@ -6,7 +6,7 @@
 \usage{
 check_data(x, values, min_nrow = 0L, max_nrow = .Machine$integer.max,
   exclusive = FALSE, order = FALSE, key = character(0),
-  x_name = substitute(x), error = getOption("vectorcheckr.error", TRUE))
+  x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}

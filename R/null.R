@@ -11,7 +11,7 @@
 #' check_null(NULL, error = FALSE)
 check_null <- function(x,
                          x_name = substitute(x),
-                         error = getOption("vectorcheckr.error", TRUE)) {
+                         error = TRUE) {
   if (!is.character(x_name)) x_name <- deparse(x_name)
 
   check_string_internal(x_name)

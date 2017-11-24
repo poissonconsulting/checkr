@@ -5,7 +5,7 @@
 \title{Check Length}
 \usage{
 check_length(x, min_length = 1L, max_length = .Machine$integer.max,
-  x_name = substitute(x), error = getOption("vectorcheckr.error", TRUE))
+  x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}

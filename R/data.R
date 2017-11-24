@@ -19,7 +19,7 @@ check_data <- function(x,
                        order = FALSE,
                        key = character(0),
                        x_name = substitute(x),
-                       error = getOption("vectorcheckr.error", TRUE)) {
+                       error = TRUE) {
   if (!is.character(x_name)) x_name <- deparse(x_name)
   
   if (!is.data.frame(x)) error(x_name, " must be a data frame")

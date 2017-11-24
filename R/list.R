@@ -19,7 +19,7 @@ check_list <- function(x,
                        sorted = FALSE,
                        named = NA,
                        x_name = substitute(x),
-                       error = getOption("vectorcheckr.error", TRUE)) {
+                       error = TRUE) {
   if (!is.character(x_name)) x_name <- deparse(x_name)
   
   if (!is.list(x)) error(x_name, " must be a list")
