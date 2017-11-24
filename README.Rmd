@@ -28,7 +28,7 @@ It has three main functions which are imaginatively named `check_vector`, `check
 
 ### Objects, Warnings and Errors
 
-All functions either throw an informative error or return an invisible copy of the object (which allows them to be used in pipes - but see below).
+All functions either throw an informative error or return an invisible copy of the object (which allows them to be used in pipes - see below).
 
 ```{r, error = TRUE}
 library(checkr)
@@ -51,7 +51,7 @@ check_vector(y, values = 1:10, max_length = 2, unique = TRUE, sorted = TRUE, nam
 
 ### Values
 
-The values argument can be used to check the class and range etc of a vector, elements of a list or columns of a data frame.
+The values argument can be used to check the class and range etc of a vector, element of a list or column of a data frame.
 
 #### Class
 
@@ -81,7 +81,7 @@ check_vector(y, NA_real_)
 
 #### Range
 
-To check the range pass two non-missing values (as well as the missing value if required).
+To check the range of a vector pass two non-missing values (as well as the missing value if required).
 ```{r, error = TRUE}
 check_vector(y, c(0, 2, NA))
 check_vector(y, c(1, 3, NA))
@@ -95,6 +95,22 @@ To check the vector only includes specific values pass three or more non-missing
 check_vector(y, c(0, 1, 2, NA))
 check_vector(y, c(1, 1, 2, NA))
 check_vector(y, c(0, 1, 2, 3, NA))
+```
+
+#### Other Classes
+
+The values argument works for any atomic vector for which `<` is defined.
+
+```{r, error = TRUE}
+check_vector(TRUE, FALSE)
+check_vector("t0", c("t1", "t2"))
+check_vector(Sys.Date(), as.Date(paste0(c("2016", "2015"), "-01-01")))
+check_vector(Sys.time()-1, c(Sys.time(), Sys.time()))
+check_vector(factor(c("blue", "green")), "")
+check_vector(factor(c("blue", "green")), factor(""))
+check_vector(factor(c("blue", "green")), factor(c("blue", "green")))
+check_vector(ordered(c("blue", "green")), ordered(c("blue", "green")))
+check_vector(factor(c("blue", "green")), factor(c("blue", "green", "red")))
 ```
 
 ### Naming Objects
@@ -113,6 +129,32 @@ y %>% check_list()
 The argument `x_name` can be used to define the name
 ```{r, error = TRUE}
 y %>% check_list(x_name = "y")
+```
+
+### Data Frames
+
+Consider the following data frame
+
+```{r}
+library(tibble)
+
+z <- data_frame(
+  Count = c(0L, 3L, 3L, 0L, NA), 
+  Longitude = c(0, 0, 90, 90, 180), 
+  Latitude = c(0, 90, 90.2, 100, -180),
+  Type = factor(c("Good", "Bad", "Bad", "Bad", "Bad"), levels = c("Good", "Bad")),
+  Extra = TRUE,
+  Comments = c("In Greenwich", "Somewhere else", "I'm lost", "I didn't see any", "Help"))
+
+z
+```
+
+```{r, error = TRUE}
+check_data(z, values = list(
+  Count = 1,
+  Extra = NA,
+  Latitude = c(45, 90)
+  ), exclusive = TRUE, order = TRUE, min_nrow = 10L, key = "Longitude", error = FALSE)
 ```
 
 ## Inspiration

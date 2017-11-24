@@ -71,7 +71,7 @@
 <div id="objects-warnings-and-errors" class="section level3">
 <h3 class="hasAnchor">
 <a href="#objects-warnings-and-errors" class="anchor"></a>Objects, Warnings and Errors</h3>
-<p>All functions either throw an informative error or return an invisible copy of the object (which allows them to be used in pipes - but see below).</p>
+<p>All functions either throw an informative error or return an invisible copy of the object (which allows them to be used in pipes - see below).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(checkr)
 y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="ot">NA</span>)
 <span class="kw"><a href="reference/check_list.html">check_list</a></span>(y)
@@ -94,7 +94,7 @@ y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</sp
 <div id="values" class="section level3">
 <h3 class="hasAnchor">
 <a href="#values" class="anchor"></a>Values</h3>
-<p>The values argument can be used to check the class and range etc of a vector, elements of a list or columns of a data frame.</p>
+<p>The values argument can be used to check the class and range etc of a vector, element of a list or column of a data frame.</p>
 <div id="class" class="section level4">
 <h4 class="hasAnchor">
 <a href="#class" class="anchor"></a>Class</h4>
@@ -120,7 +120,7 @@ y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</sp
 <div id="range" class="section level4">
 <h4 class="hasAnchor">
 <a href="#range" class="anchor"></a>Range</h4>
-<p>To check the range pass two non-missing values (as well as the missing value if required).</p>
+<p>To check the range of a vector pass two non-missing values (as well as the missing value if required).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="ot">NA</span>))
 <span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="ot">NA</span>))
 <span class="co">#&gt; Error: the values in y must lie between 1 and 3</span>
@@ -136,6 +136,28 @@ y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</sp
 <span class="co">#&gt; Error: y can only include values 1 or 2</span>
 <span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="ot">NA</span>))</code></pre></div>
 </div>
+<div id="other-classes" class="section level4">
+<h4 class="hasAnchor">
+<a href="#other-classes" class="anchor"></a>Other Classes</h4>
+<p>The values argument works for any atomic vector for which <code>&lt;</code> is defined.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>)
+<span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(<span class="st">"t0"</span>, <span class="kw">c</span>(<span class="st">"t1"</span>, <span class="st">"t2"</span>))
+<span class="co">#&gt; Error: the values in t0 must lie between 't1' and 't2'</span>
+<span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(<span class="kw">Sys.Date</span>(), <span class="kw">as.Date</span>(<span class="kw">paste0</span>(<span class="kw">c</span>(<span class="st">"2016"</span>, <span class="st">"2015"</span>), <span class="st">"-01-01"</span>)))
+<span class="co">#&gt; Error: the values in Sys.Date() must lie between '2015-01-01' and '2016-01-01'</span>
+<span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(<span class="kw">Sys.time</span>()<span class="op">-</span><span class="dv">1</span>, <span class="kw">c</span>(<span class="kw">Sys.time</span>(), <span class="kw">Sys.time</span>()))
+<span class="co">#&gt; Error: the values in Sys.time() - 1 must lie between '2017-11-23 17:31:51' and '2017-11-23 17:31:51'</span>
+<span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(<span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">"blue"</span>, <span class="st">"green"</span>)), <span class="st">""</span>)
+<span class="co">#&gt; Error: factor(c("blue", "green")) must be class character</span>
+<span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(<span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">"blue"</span>, <span class="st">"green"</span>)), <span class="kw">factor</span>(<span class="st">""</span>))
+<span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(<span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">"blue"</span>, <span class="st">"green"</span>)), <span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">"blue"</span>, <span class="st">"green"</span>)))
+<span class="co">#&gt; Warning in Ops.factor(x_nona[1], values[1]): '&lt;' not meaningful for factors</span>
+<span class="co">#&gt; Warning in Ops.factor(x_nona[length(x_nona)], values[2]): '&gt;' not</span>
+<span class="co">#&gt; meaningful for factors</span>
+<span class="co">#&gt; Error in if (x_nona[1] &lt; values[1] || x_nona[length(x_nona)] &gt; values[2]) {: missing value where TRUE/FALSE needed</span>
+<span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(<span class="kw">ordered</span>(<span class="kw">c</span>(<span class="st">"blue"</span>, <span class="st">"green"</span>)), <span class="kw">ordered</span>(<span class="kw">c</span>(<span class="st">"blue"</span>, <span class="st">"green"</span>)))
+<span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(<span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">"blue"</span>, <span class="st">"green"</span>)), <span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">"blue"</span>, <span class="st">"green"</span>, <span class="st">"red"</span>)))</code></pre></div>
+</div>
 </div>
 <div id="naming-objects" class="section level3">
 <h3 class="hasAnchor">
@@ -150,6 +172,42 @@ y <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a hre
 <p>The argument <code>x_name</code> can be used to define the name</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">y <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="reference/check_list.html">check_list</a></span>(<span class="dt">x_name =</span> <span class="st">"y"</span>)
 <span class="co">#&gt; Error: y must be a list</span></code></pre></div>
+</div>
+<div id="data-frames" class="section level3">
+<h3 class="hasAnchor">
+<a href="#data-frames" class="anchor"></a>Data Frames</h3>
+<p>Consider the following data frame</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tibble)
+
+z &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/tibble/topics/tibble">data_frame</a></span>(
+  <span class="dt">Count =</span> <span class="kw">c</span>(0L, 3L, 3L, 0L, <span class="ot">NA</span>), 
+  <span class="dt">Longitude =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">90</span>, <span class="dv">90</span>, <span class="dv">180</span>), 
+  <span class="dt">Latitude =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">90</span>, <span class="fl">90.2</span>, <span class="dv">100</span>, <span class="op">-</span><span class="dv">180</span>),
+  <span class="dt">Type =</span> <span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">"Good"</span>, <span class="st">"Bad"</span>, <span class="st">"Bad"</span>, <span class="st">"Bad"</span>, <span class="st">"Bad"</span>), <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">"Good"</span>, <span class="st">"Bad"</span>)),
+  <span class="dt">Extra =</span> <span class="ot">TRUE</span>,
+  <span class="dt">Comments =</span> <span class="kw">c</span>(<span class="st">"In Greenwich"</span>, <span class="st">"Somewhere else"</span>, <span class="st">"I'm lost"</span>, <span class="st">"I didn't see any"</span>, <span class="st">"Help"</span>))
+
+z
+<span class="co">#&gt; # A tibble: 5 x 6</span>
+<span class="co">#&gt;   Count Longitude Latitude   Type Extra         Comments</span>
+<span class="co">#&gt;   &lt;int&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;fctr&gt; &lt;lgl&gt;            &lt;chr&gt;</span>
+<span class="co">#&gt; 1     0         0      0.0   Good  TRUE     In Greenwich</span>
+<span class="co">#&gt; 2     3         0     90.0    Bad  TRUE   Somewhere else</span>
+<span class="co">#&gt; 3     3        90     90.2    Bad  TRUE         I'm lost</span>
+<span class="co">#&gt; 4     0        90    100.0    Bad  TRUE I didn't see any</span>
+<span class="co">#&gt; 5    NA       180   -180.0    Bad  TRUE             Help</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/check_data.html">check_data</a></span>(z, <span class="dt">values =</span> <span class="kw">list</span>(
+  <span class="dt">Count =</span> <span class="dv">1</span>,
+  <span class="dt">Extra =</span> <span class="ot">NA</span>,
+  <span class="dt">Latitude =</span> <span class="kw">c</span>(<span class="dv">45</span>, <span class="dv">90</span>)
+  ), <span class="dt">exclusive =</span> <span class="ot">TRUE</span>, <span class="dt">order =</span> <span class="ot">TRUE</span>, <span class="dt">min_nrow =</span> 10L, <span class="dt">key =</span> <span class="st">"Longitude"</span>, <span class="dt">error =</span> <span class="ot">FALSE</span>)
+<span class="co">#&gt; Warning: x names must be identical to 'Count', 'Extra' and 'Latitude'</span>
+<span class="co">#&gt; Warning: column Count of z must be class numeric</span>
+<span class="co">#&gt; Warning: column Count of z must not include missing values</span>
+<span class="co">#&gt; Warning: column Extra of z must only include missing values</span>
+<span class="co">#&gt; Warning: the values in column Latitude of z must lie between 45 and 90</span>
+<span class="co">#&gt; Warning: z must have at least 10 rows</span>
+<span class="co">#&gt; Warning: column 'Longitude' in x must be a unique key</span></code></pre></div>
 </div>
 <div id="inspiration" class="section level2">
 <h2 class="hasAnchor">

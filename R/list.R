@@ -47,7 +47,7 @@ check_list <- function(x,
       if(!is.atomic(values)) error("values must be an atomic vector or a named list")
       
       for(name in names(x)) {
-        check_class(x[[name]], values, x_name = paste("element", name, "of", x_name), error = error)
+        check_values(x[[name]], values, x_name = paste("element", name, "of", x_name), error = error)
       }
     }
   }

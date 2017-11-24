@@ -11,7 +11,7 @@ It has three main functions which are imaginatively named `check_vector`, `check
 
 ### Objects, Warnings and Errors
 
-All functions either throw an informative error or return an invisible copy of the object (which allows them to be used in pipes - but see below).
+All functions either throw an informative error or return an invisible copy of the object (which allows them to be used in pipes - see below).
 
 ``` r
 library(checkr)
@@ -44,7 +44,7 @@ check_vector(y, values = 1:10, max_length = 2, unique = TRUE, sorted = TRUE, nam
 
 ### Values
 
-The values argument can be used to check the class and range etc of a vector, elements of a list or columns of a data frame.
+The values argument can be used to check the class and range etc of a vector, element of a list or column of a data frame.
 
 #### Class
 
@@ -82,7 +82,7 @@ check_vector(y, NA_real_)
 
 #### Range
 
-To check the range pass two non-missing values (as well as the missing value if required).
+To check the range of a vector pass two non-missing values (as well as the missing value if required).
 
 ``` r
 check_vector(y, c(0, 2, NA))
@@ -101,6 +101,30 @@ check_vector(y, c(0, 1, 2, NA))
 check_vector(y, c(1, 1, 2, NA))
 #> Error: y can only include values 1 or 2
 check_vector(y, c(0, 1, 2, 3, NA))
+```
+
+#### Other Classes
+
+The values argument works for any atomic vector for which `<` is defined.
+
+``` r
+check_vector(TRUE, FALSE)
+check_vector("t0", c("t1", "t2"))
+#> Error: the values in t0 must lie between 't1' and 't2'
+check_vector(Sys.Date(), as.Date(paste0(c("2016", "2015"), "-01-01")))
+#> Error: the values in Sys.Date() must lie between '2015-01-01' and '2016-01-01'
+check_vector(Sys.time()-1, c(Sys.time(), Sys.time()))
+#> Error: the values in Sys.time() - 1 must lie between '2017-11-23 17:31:49' and '2017-11-23 17:31:49'
+check_vector(factor(c("blue", "green")), "")
+#> Error: factor(c("blue", "green")) must be class character
+check_vector(factor(c("blue", "green")), factor(""))
+check_vector(factor(c("blue", "green")), factor(c("blue", "green")))
+#> Warning in Ops.factor(x_nona[1], values[1]): '<' not meaningful for factors
+#> Warning in Ops.factor(x_nona[length(x_nona)], values[2]): '>' not
+#> meaningful for factors
+#> Error in if (x_nona[1] < values[1] || x_nona[length(x_nona)] > values[2]) {: missing value where TRUE/FALSE needed
+check_vector(ordered(c("blue", "green")), ordered(c("blue", "green")))
+check_vector(factor(c("blue", "green")), factor(c("blue", "green", "red")))
 ```
 
 ### Naming Objects
@@ -125,6 +149,47 @@ The argument `x_name` can be used to define the name
 ``` r
 y %>% check_list(x_name = "y")
 #> Error: y must be a list
+```
+
+### Data Frames
+
+Consider the following data frame
+
+``` r
+library(tibble)
+
+z <- data_frame(
+  Count = c(0L, 3L, 3L, 0L, NA), 
+  Longitude = c(0, 0, 90, 90, 180), 
+  Latitude = c(0, 90, 90.2, 100, -180),
+  Type = factor(c("Good", "Bad", "Bad", "Bad", "Bad"), levels = c("Good", "Bad")),
+  Extra = TRUE,
+  Comments = c("In Greenwich", "Somewhere else", "I'm lost", "I didn't see any", "Help"))
+
+z
+#> # A tibble: 5 x 6
+#>   Count Longitude Latitude   Type Extra         Comments
+#>   <int>     <dbl>    <dbl> <fctr> <lgl>            <chr>
+#> 1     0         0      0.0   Good  TRUE     In Greenwich
+#> 2     3         0     90.0    Bad  TRUE   Somewhere else
+#> 3     3        90     90.2    Bad  TRUE         I'm lost
+#> 4     0        90    100.0    Bad  TRUE I didn't see any
+#> 5    NA       180   -180.0    Bad  TRUE             Help
+```
+
+``` r
+check_data(z, values = list(
+  Count = 1,
+  Extra = NA,
+  Latitude = c(45, 90)
+  ), exclusive = TRUE, order = TRUE, min_nrow = 10L, key = "Longitude", error = FALSE)
+#> Warning: x names must be identical to 'Count', 'Extra' and 'Latitude'
+#> Warning: column Count of z must be class numeric
+#> Warning: column Count of z must not include missing values
+#> Warning: column Extra of z must only include missing values
+#> Warning: the values in column Latitude of z must lie between 45 and 90
+#> Warning: z must have at least 10 rows
+#> Warning: column 'Longitude' in x must be a unique key
 ```
 
 Inspiration

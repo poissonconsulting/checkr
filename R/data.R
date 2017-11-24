@@ -29,10 +29,11 @@ check_data <- function(x,
   
   if(!missing(values)) {
     if(is.list(values)) {
-      check_names(x, names = names(values), exclusive = exclusive, order = order, error = TRUE)
-      
+      check_names(x, names = names(values), error = TRUE)
+      check_names(x, names = names(values), exclusive = exclusive, order = order, error = error)
+
       for(name in names(values)) {
-        check_class(x[[name]], values[[name]], x_name = paste("element", name, "of", x_name), error = error)
+        check_values(x[[name]], values[[name]], x_name = paste("column", name, "of", x_name), error = error)
       }
     } else {
       if(!is.character(values)) error("values must be an character vector or a named list")
