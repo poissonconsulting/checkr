@@ -21,14 +21,35 @@ knitr::opts_chunk$set(
 
 # checkr
 
-`checkr` is a dependency-free R package to check the dimensions, classes, values, and names of vectors, lists and data frames.
-It is designed to be used in scripts or functions to provide informative warnings or errors that allow the user to quickly identify and fix any incorrect inputs.
+`checkr` is an R package to check the dimensions, classes, values, and names of vectors, lists and data frames.
+The various functions provide informative errors (or warnings) that allow users to quickly identify and fix any problems.
 
-It has three main functions which are imaginatively named `check_vector`, `check_list` and `check_data`.
+The following code demonstrates its use
+```{r, error = TRUE}
+z <- data.frame(
+  Count = c(0L, 3L, 3L, 0L, NA), 
+  Longitude = c(0, 0, 90, 90, 180), 
+  Latitude = c(0, 90, 90.2, 100, -180),
+  Type = factor(c("Good", "Bad", "Bad", "Bad", "Bad"), levels = c("Good", "Bad")),
+  Extra = TRUE,
+  Comments = c("In Greenwich", "Somewhere else", "I'm lost", "I didn't see any", "Help"), stringsAsFactors = FALSE)
+
+print(z)
+
+library(checkr)
+
+check_data(z, values = list(
+  Count = 1,
+  Extra = NA,
+  Latitude = c(45, 90)
+  ), exclusive = TRUE, order = TRUE, min_nrow = 10L, key = "Longitude", error = FALSE)
+```
+
+The two other main functions are `check_vector` and `check_list`.
 
 ### Objects, Warnings and Errors
 
-All functions either throw an informative error or return an invisible copy of the object (which allows them to be used in pipes - see below).
+All functions either throw an informative error or return an invisible copy of the object (which allows them to be used in pipes).
 
 ```{r, error = TRUE}
 library(checkr)
@@ -65,6 +86,7 @@ check_vector(y, values = integer(0))
 
 To check that a vector does not include missing values pass a single non-missing value (of the correct class).
 ```{r, error = TRUE}
+check_vector(y, 1L)
 check_vector(y, 1)
 ```
 
@@ -97,21 +119,6 @@ check_vector(y, c(1, 1, 2, NA))
 check_vector(y, c(0, 1, 2, 3, NA))
 ```
 
-#### Other Classes
-
-The values argument works for any atomic vector for which `<` is defined.
-
-```{r, error = TRUE}
-check_vector(TRUE, FALSE)
-check_vector("t0", c("t1", "t2"))
-check_vector(as.Date("2017-02-20"), as.Date(paste0(c("2016", "2015"), "-01-01")))
-check_vector(factor(c("blue", "green")), "")
-check_vector(factor(c("blue", "green")), factor(""))
-check_vector(factor(c("blue", "green")), factor(c("blue", "green")))
-check_vector(ordered(c("blue", "green")), ordered(c("blue", "green")))
-check_vector(factor(c("blue", "green")), factor(c("blue", "green", "red")))
-```
-
 ### Naming Objects
 
 By default, the name of an object is determined from the function call.
@@ -130,31 +137,7 @@ The argument `x_name` can be used to define the name
 y %>% check_list(x_name = "y")
 ```
 
-### Data Frames
 
-Consider the following data frame
-
-```{r}
-library(tibble)
-
-z <- data_frame(
-  Count = c(0L, 3L, 3L, 0L, NA), 
-  Longitude = c(0, 0, 90, 90, 180), 
-  Latitude = c(0, 90, 90.2, 100, -180),
-  Type = factor(c("Good", "Bad", "Bad", "Bad", "Bad"), levels = c("Good", "Bad")),
-  Extra = TRUE,
-  Comments = c("In Greenwich", "Somewhere else", "I'm lost", "I didn't see any", "Help"))
-
-z
-```
-
-```{r, error = TRUE}
-check_data(z, values = list(
-  Count = 1,
-  Extra = NA,
-  Latitude = c(45, 90)
-  ), exclusive = TRUE, order = TRUE, min_nrow = 10L, key = "Longitude", error = FALSE)
-```
 
 ## Inspiration
 
