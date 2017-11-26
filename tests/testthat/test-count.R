@@ -15,6 +15,7 @@ test_that("check_count errors", {
 test_that("check_count coercion", {
   expect_error(check_count(1), "1 must be class integer")
   expect_identical(check_count(1, coerce = TRUE), 1L)
+  expect_error(check_count(c(1,1), coerce = TRUE), "c[(]1, 1[)] must be length 1")
   expect_error(check_count(1.01, coerce = TRUE), "1.01 must be class integer")
   expect_identical(check_count(1.000000000000000000000001, coerce = TRUE), 1L)
 })

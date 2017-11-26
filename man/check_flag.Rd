@@ -17,7 +17,7 @@ check_flag(x, x_name = substitute(x), error = TRUE)
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Check Flag
+Checks if x is a flag (non-missing logical scalar).
 }
 \examples{
 check_flag(1, error = FALSE)
