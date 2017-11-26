@@ -60,7 +60,7 @@ check_data <- function(x,
   check_nrow(x, min_nrow = min_nrow, max_nrow = max_nrow,
              x_name = x_name, error = error)
   
-  check_key(x, names = key, error = error)
+  check_key(x, key = key, error = error)
   
   invisible(x)
 }

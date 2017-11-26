@@ -9,13 +9,3 @@ test_that("names", {
   expect_error(check_names(vec, c("y", "x"), order = TRUE), "vec names must include 'y' and 'x' in that order") 
   expect_error(check_names(vec, c("a")), "vec names must include 'a'")
 })
-
-test_that("colnames", {
-  
-  data <- data.frame(x = 1, y = 2, z = 0)
-  expect_identical(check_colnames(data, c("y", "x")), data)
-  
-  expect_error(check_colnames(data, c("y", "x"), exclusive = TRUE), "data column names must include and only include 'y' and 'x'")
-  expect_error(check_colnames(data, c("y", "x"), order = TRUE), "data column names must include 'y' and 'x' in that order") 
-  expect_error(check_colnames(data, c("a")), "data column names must include 'a'")
-})
