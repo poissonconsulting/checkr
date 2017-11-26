@@ -5,7 +5,7 @@
 \title{Check Colnames}
 \usage{
 check_colnames(x, names, exclusive = FALSE, order = FALSE,
-  x_name = substitute(x), error = getOption("datacheckr.error", TRUE))
+  x_name = substitute(x), error = getOption("checkr.error", TRUE))
 }
 \arguments{
 \item{x}{The data to check.}

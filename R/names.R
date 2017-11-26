@@ -17,7 +17,7 @@
 #' check_names(vec, c("a"), error = FALSE)
 check_names <- function(x, names, exclusive = FALSE, order = FALSE,
                          x_name = substitute(x),
-                         error = getOption("datacheckr.error", TRUE)) {
+                         error = getOption("checkr.error", TRUE)) {
   x_name <- deparse_x_name(x_name)
 
   check_vector(names, "", min_length = 1, unique = FALSE, named = FALSE)
@@ -69,7 +69,7 @@ check_names <- function(x, names, exclusive = FALSE, order = FALSE,
 #' check_colnames(data, c("a"), error = FALSE)
 check_colnames <- function(x, names, exclusive = FALSE, order = FALSE,
                          x_name = substitute(x),
-                         error = getOption("datacheckr.error", TRUE)) {
+                         error = getOption("checkr.error", TRUE)) {
 
   x_name <- deparse_x_name(x_name)
 
