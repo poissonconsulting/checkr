@@ -4,10 +4,12 @@
 \alias{check_count}
 \title{Check Count}
 \usage{
-check_count(x, x_name = substitute(x), error = TRUE)
+check_count(x, coerce = FALSE, x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}
+
+\item{coerce}{A flag indicating whether to coerce a non-negative numeric (real) whole number to a count.}
 
 \item{x_name}{A string of the name of the object.}
 
@@ -17,10 +19,12 @@ check_count(x, x_name = substitute(x), error = TRUE)
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Checks if object is a non-negative integer.
+Checks if object is a non-negative integer (or non-negative real whole number).
 }
 \examples{
 check_count(-1L, error = FALSE)
 check_count(1L, error = FALSE)
 check_count(1, error = FALSE)
+check_count(1, coerce = TRUE, error = FALSE)
+check_count(1.01, coerce = TRUE, error = FALSE)
 }
