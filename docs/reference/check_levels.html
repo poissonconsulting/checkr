@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Check Key — check_key • checkr</title>
+<title>Check Levels — check_levels • checkr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -80,25 +80,35 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Check Key</h1>
+    <h1>Check Levels</h1>
     </div>
 
     
-    <p>Checks that columns in a data frame represent a unique key.</p>
+    <p>Check Levels</p>
     
 
-    <pre class="usage"><span class='fu'>check_key</span>(<span class='no'>x</span>, <span class='kw'>key</span> <span class='kw'>=</span> <span class='fu'>names</span>(<span class='no'>x</span>), <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>check_levels</span>(<span class='no'>x</span>, <span class='no'>levels</span>, <span class='kw'>exclusive</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>order</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fu'>getOption</span>(<span class='st'>"checkr.error"</span>, <span class='fl'>TRUE</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>The data to check.</p></td>
+      <td><p>The object to check.</p></td>
     </tr>
     <tr>
-      <th>key</th>
-      <td><p>A character vector of the column names representing the key.</p></td>
+      <th>levels</th>
+      <td><p>A character vector of the levels.</p></td>
+    </tr>
+    <tr>
+      <th>exclusive</th>
+      <td><p>A flag indicating whether other levels are permitted.</p></td>
+    </tr>
+    <tr>
+      <th>order</th>
+      <td><p>A flag indicating whether the object levels have to occur in the same order as names. To check whether x is an ordered factor use
+<code><a href='check_vector.html'>check_vector(x, ordered(1))</a></code>.</p></td>
     </tr>
     <tr>
       <th>x_name</th>
@@ -114,14 +124,9 @@
 
     <p>An invisible copy of x (if it doesn't throw an error).</p>
     
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>By default all the columns are checked.</p>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>data</span> <span class='kw'>&lt;-</span> <span class='fu'>data.frame</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>1</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>2</span>)
-<span class='fu'>check_key</span>(<span class='no'>data</span>, <span class='st'>"x"</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: column 'x' in data must be a unique key</span></div><div class='input'><span class='fu'>check_key</span>(<span class='no'>data</span>, <span class='fu'>c</span>(<span class='st'>"y"</span>, <span class='st'>"x"</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>check_levels</span>(<span class='fl'>1</span>, <span class='fu'>c</span>(<span class='st'>"x"</span>, <span class='st'>"y"</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: 1 must have a levels attribute</span></div><div class='output co'>#&gt; <span class='warning'>Warning: 1 levels must be identical to 'x' and 'y'</span></div><div class='input'><span class='fu'>check_levels</span>(<span class='fu'>factor</span>(<span class='fl'>1</span>), <span class='fu'>c</span>(<span class='st'>"x"</span>, <span class='st'>"y"</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: factor(1) levels must be identical to 'x' and 'y'</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -129,8 +134,6 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-
-      <li><a href="#details">Details</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

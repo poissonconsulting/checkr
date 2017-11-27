@@ -50,6 +50,7 @@ The two other main functions are `check_vector()` and `check_list()`.
 If the object fails a check then depending on whether the argument `error` is `FALSE` or `TRUE`  one or more informative warnings are issued (and an invisible copy of the object is returned) as in the previous example or an informative error is thrown (the default behaviour), respectively.
 
 ```{r, error=TRUE}
+y <- c(2,1,0,1,NA)
 check_vector(y, values = 1:10, max_length = 2, unique = TRUE, sorted = TRUE, named = TRUE)
 ```
 

@@ -84,10 +84,10 @@
     </div>
 
     
-    <p>Checks if object is a string.</p>
+    <p>Checks if object is a string (non-missing character scalar or if <code>coerce = TRUE</code> a non-missing factor scalar).</p>
     
 
-    <pre class="usage"><span class='fu'>check_string</span>(<span class='no'>x</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>check_string</span>(<span class='no'>x</span>, <span class='kw'>coerce</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -95,6 +95,10 @@
     <tr>
       <th>x</th>
       <td><p>The object to check.</p></td>
+    </tr>
+    <tr>
+      <th>coerce</th>
+      <td><p>A flag indicating whether to coerce a factor scalar to a string.</p></td>
     </tr>
     <tr>
       <th>x_name</th>

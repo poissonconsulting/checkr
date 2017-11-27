@@ -4,15 +4,13 @@
 \alias{check_nrow}
 \title{Check nrow}
 \usage{
-check_nrow(x, min_nrow = 1L, max_nrow = 2147483647L,
-  x_name = substitute(x), error = getOption("checkr.error", TRUE))
+check_nrow(x, nrow = c(1L, 2147483647L), x_name = substitute(x),
+  error = getOption("checkr.error", TRUE))
 }
 \arguments{
 \item{x}{The data to check.}
 
-\item{min_nrow}{A count of the minimum number of rows.}
-
-\item{max_nrow}{A count of the maximum number of rows.}
+\item{nrow}{A count or count range of the number of rows.}
 
 \item{x_name}{A string of the name of the object.}
 
@@ -27,5 +25,5 @@ Check nrow
 \examples{
 check_nrow(data.frame(x = 1), error = FALSE)
 check_nrow(data.frame(x = integer(0)), error = FALSE)
-check_nrow(data.frame(x = 1:2), max_nrow = 1, error = FALSE)
+check_nrow(data.frame(x = 1:2), nrow = 1, error = FALSE)
 }

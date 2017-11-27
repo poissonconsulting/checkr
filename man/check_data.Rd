@@ -4,18 +4,16 @@
 \alias{check_data}
 \title{Check Data}
 \usage{
-check_data(x, values, min_nrow = 0L, max_nrow = .Machine$integer.max,
-  exclusive = FALSE, order = FALSE, key = character(0),
-  x_name = substitute(x), error = TRUE)
+check_data(x, values, nrow = c(0L, 2147483647L), exclusive = FALSE,
+  order = FALSE, key = character(0), x_name = substitute(x),
+  error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}
 
 \item{values}{An optional character vector specifying the column names or a named list specifying the column names and values.}
 
-\item{min_nrow}{A count of the minimum number of rows}
-
-\item{max_nrow}{A count of the maximum number of rows.}
+\item{nrow}{A count or count range of the number of rows.}
 
 \item{exclusive}{A flag indicating whether other columns are permitted.}
 
@@ -48,5 +46,5 @@ check_data(z, values = list(
   Count = 1,
   Extra = NA,
   Latitude = c(45, 90)
-  ), exclusive = TRUE, order = TRUE, min_nrow = 10L, key = "Longitude", error = FALSE)
+  ), exclusive = TRUE, order = TRUE, nrow = 10L, key = "Longitude", error = FALSE)
 }

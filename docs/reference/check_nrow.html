@@ -87,8 +87,8 @@
     <p>Check nrow</p>
     
 
-    <pre class="usage"><span class='fu'>check_nrow</span>(<span class='no'>x</span>, <span class='kw'>min_nrow</span> <span class='kw'>=</span> <span class='fl'>1L</span>, <span class='kw'>max_nrow</span> <span class='kw'>=</span> <span class='fl'>2147483647L</span>,
-  <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fu'>getOption</span>(<span class='st'>"checkr.error"</span>, <span class='fl'>TRUE</span>))</pre>
+    <pre class="usage"><span class='fu'>check_nrow</span>(<span class='no'>x</span>, <span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>1L</span>, <span class='fl'>2147483647L</span>), <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>),
+  <span class='kw'>error</span> <span class='kw'>=</span> <span class='fu'>getOption</span>(<span class='st'>"checkr.error"</span>, <span class='fl'>TRUE</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -98,12 +98,8 @@
       <td><p>The data to check.</p></td>
     </tr>
     <tr>
-      <th>min_nrow</th>
-      <td><p>A count of the minimum number of rows.</p></td>
-    </tr>
-    <tr>
-      <th>max_nrow</th>
-      <td><p>A count of the maximum number of rows.</p></td>
+      <th>nrow</th>
+      <td><p>A count or count range of the number of rows.</p></td>
     </tr>
     <tr>
       <th>x_name</th>
@@ -122,7 +118,7 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>check_nrow</span>(<span class='fu'>data.frame</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
-<span class='fu'>check_nrow</span>(<span class='fu'>data.frame</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'>integer</span>(<span class='fl'>0</span>)), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: data.frame(x = integer(0)) must have at least 1 row</span></div><div class='input'><span class='fu'>check_nrow</span>(<span class='fu'>data.frame</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>2</span>), <span class='kw'>max_nrow</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: data.frame(x = 1:2) must have 1 row</span></div></pre>
+<span class='fu'>check_nrow</span>(<span class='fu'>data.frame</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'>integer</span>(<span class='fl'>0</span>)), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: data.frame(x = integer(0)) must have at least 1 row</span></div><div class='input'><span class='fu'>check_nrow</span>(<span class='fu'>data.frame</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>2</span>), <span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: data.frame(x = 1:2) must have 1 row</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
