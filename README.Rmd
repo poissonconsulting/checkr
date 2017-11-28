@@ -42,7 +42,7 @@ check_data(z, values = list(
   Count = 1,
   Extra = NA,
   Latitude = c(45, 90)
-  ), exclusive = TRUE, order = TRUE, min_nrow = 10L, key = "Longitude", error = FALSE)
+  ), exclusive = TRUE, order = TRUE, nrow = 10L, key = "Longitude", error = FALSE)
 ```
 
 The two other main functions are `check_vector()` and `check_list()`.
@@ -51,7 +51,7 @@ If the object fails a check then depending on whether the argument `error` is `F
 
 ```{r, error=TRUE}
 y <- c(2,1,0,1,NA)
-check_vector(y, values = 1:10, max_length = 2, unique = TRUE, sorted = TRUE, named = TRUE)
+check_vector(y, values = 1:10, length = 2, unique = TRUE, sorted = TRUE, named = TRUE, error = FALSE)
 ```
 
 ### Values

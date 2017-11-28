@@ -5,7 +5,7 @@
 \title{Check Pattern}
 \usage{
 check_pattern(x, pattern, all = TRUE, x_name = substitute(x),
-  error = getOption("checkr.error", TRUE))
+  error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}

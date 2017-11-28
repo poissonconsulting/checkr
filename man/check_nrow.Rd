@@ -5,7 +5,7 @@
 \title{Check nrow}
 \usage{
 check_nrow(x, nrow = c(1L, 2147483647L), x_name = substitute(x),
-  error = getOption("checkr.error", TRUE))
+  error = TRUE)
 }
 \arguments{
 \item{x}{The data to check.}

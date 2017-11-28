@@ -4,18 +4,15 @@
 \alias{check_list}
 \title{Check List}
 \usage{
-check_list(x, values, min_length = 0L, max_length = .Machine$integer.max,
-  unique = FALSE, sorted = FALSE, named = NA, x_name = substitute(x),
-  error = TRUE)
+check_list(x, values, length = c(0L, .Machine$integer.max), unique = FALSE,
+  sorted = FALSE, named = NA, x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}
 
 \item{values}{An optional vector or named list specifying the values.}
 
-\item{min_length}{A count of the minimum length.}
-
-\item{max_length}{A count of the maximum length.}
+\item{length}{A count of the length or count range of the minimum and maximum length.}
 
 \item{unique}{A flag indicating whether the values must be unique.}
 

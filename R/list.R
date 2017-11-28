@@ -2,8 +2,7 @@
 #'
 #' @param x The object to check.
 #' @param values An optional vector or named list specifying the values.
-#' @param min_length A count of the minimum length.
-#' @param max_length A count of the maximum length.
+#' @param length A count of the length or count range of the minimum and maximum length.
 #' @param unique A flag indicating whether the values must be unique.
 #' @param sorted A flag indicating whether the list must be sorted.
 #' @param named A flag (or NA) indicating whether the list must be named or unnamed (or doesn't matter).
@@ -13,8 +12,7 @@
 #' @export
 check_list <- function(x,
                        values,
-                       min_length = 0L,
-                       max_length = .Machine$integer.max,
+                       length = c(0L, .Machine$integer.max),
                        unique = FALSE,
                        sorted = FALSE,
                        named = NA,
@@ -51,8 +49,7 @@ check_list <- function(x,
     }
   }
   
-  check_length(x, min_length = min_length, max_length = max_length,
-               x_name = x_name, error = error)
+  check_length(x, length = length, x_name = x_name, error = error)
   
   if(unique) check_unique(x, x_name = x_name, error = error)
   if(sorted) check_sorted(x, x_name = x_name, error = error)

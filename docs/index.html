@@ -90,13 +90,25 @@
   <span class="dt">Count =</span> <span class="dv">1</span>,
   <span class="dt">Extra =</span> <span class="ot">NA</span>,
   <span class="dt">Latitude =</span> <span class="kw">c</span>(<span class="dv">45</span>, <span class="dv">90</span>)
-  ), <span class="dt">exclusive =</span> <span class="ot">TRUE</span>, <span class="dt">order =</span> <span class="ot">TRUE</span>, <span class="dt">min_nrow =</span> 10L, <span class="dt">key =</span> <span class="st">"Longitude"</span>, <span class="dt">error =</span> <span class="ot">FALSE</span>)
-<span class="co">#&gt; Error in check_data(z, values = list(Count = 1, Extra = NA, Latitude = c(45, : unused argument (min_nrow = 10)</span></code></pre></div>
+  ), <span class="dt">exclusive =</span> <span class="ot">TRUE</span>, <span class="dt">order =</span> <span class="ot">TRUE</span>, <span class="dt">nrow =</span> 10L, <span class="dt">key =</span> <span class="st">"Longitude"</span>, <span class="dt">error =</span> <span class="ot">FALSE</span>)
+<span class="co">#&gt; Warning: x names must be identical to 'Count', 'Extra' and 'Latitude'</span>
+<span class="co">#&gt; Warning: column Count of z must be class numeric</span>
+<span class="co">#&gt; Warning: column Count of z must not include missing values</span>
+<span class="co">#&gt; Warning: column Extra of z must only include missing values</span>
+<span class="co">#&gt; Warning: the values in column Latitude of z must lie between 45 and 90</span>
+<span class="co">#&gt; Warning: z must have 10 rows</span>
+<span class="co">#&gt; Warning: column 'Longitude' in x must be a unique key</span></code></pre></div>
 <p>The two other main functions are <code><a href="reference/check_vector.html">check_vector()</a></code> and <code><a href="reference/check_list.html">check_list()</a></code>.</p>
 <p>If the object fails a check then depending on whether the argument <code>error</code> is <code>FALSE</code> or <code>TRUE</code> one or more informative warnings are issued (and an invisible copy of the object is returned) as in the previous example or an informative error is thrown (the default behaviour), respectively.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="ot">NA</span>)
-<span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="dt">values =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">max_length =</span> <span class="dv">2</span>, <span class="dt">unique =</span> <span class="ot">TRUE</span>, <span class="dt">sorted =</span> <span class="ot">TRUE</span>, <span class="dt">named =</span> <span class="ot">TRUE</span>)
-<span class="co">#&gt; Error: y must be class integer</span></code></pre></div>
+<span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="dt">values =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">length =</span> <span class="dv">2</span>, <span class="dt">unique =</span> <span class="ot">TRUE</span>, <span class="dt">sorted =</span> <span class="ot">TRUE</span>, <span class="dt">named =</span> <span class="ot">TRUE</span>, <span class="dt">error =</span> <span class="ot">FALSE</span>)
+<span class="co">#&gt; Warning: y must be class integer</span>
+<span class="co">#&gt; Warning: y must not include missing values</span>
+<span class="co">#&gt; Warning: y has unpermitted values 0</span>
+<span class="co">#&gt; Warning: y must have 2 elements</span>
+<span class="co">#&gt; Warning: y must be unique</span>
+<span class="co">#&gt; Warning: y must be sorted</span>
+<span class="co">#&gt; Warning: y must be named</span></code></pre></div>
 <div id="values" class="section level3">
 <h3 class="hasAnchor">
 <a href="#values" class="anchor"></a>Values</h3>

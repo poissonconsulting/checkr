@@ -13,7 +13,7 @@
 #' check_nrow(data.frame(x = 1:2), nrow = 1, error = FALSE)
 check_nrow <- function(x, nrow = c(1L, 2147483647L),
                          x_name = substitute(x),
-                         error = getOption("checkr.error", TRUE)) {
+                         error = TRUE) {
   x_name <- deparse_x_name(x_name)
 
   check_count_range_internal(nrow)

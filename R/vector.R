@@ -2,8 +2,7 @@
 #'
 #' @param x The object to check.
 #' @param values An optional vector specifying the values.
-#' @param min_length A count of the minimum length.
-#' @param max_length A count of the maximum length.
+#' @param length A count of the length or count range of the minimum and maximum length.
 #' @param unique A flag indicating whether the values must be unique.
 #' @param sorted A flag indicating whether the vector must be sorted.
 #' @param named A flag (or NA) indicating whether the vector must be named or unnamed (or doesn't matter).
@@ -13,12 +12,11 @@
 #' @export
 #'
 #' @examples
-#' check_vector(2:1, min_length = 3, sorted = TRUE, named = TRUE, error = FALSE)
+#' check_vector(2:1, length = 3, sorted = TRUE, named = TRUE, error = FALSE)
 #' check_vector(c("one", "two", "four"), values = c("one", "two", "two"), error = FALSE)
 check_vector <- function(x,
                          values,
-                         min_length = 0L,
-                         max_length = .Machine$integer.max,
+                         length = c(0L, .Machine$integer.max),
                          unique = FALSE,
                          sorted = FALSE,
                          named = NA,
@@ -26,8 +24,7 @@ check_vector <- function(x,
                          error = TRUE) {
   x_name <- deparse_x_name(x_name)
 
-  check_count_internal(min_length)
-  check_count_internal(max_length)
+  check_count_range_internal(length)
   check_flag_internal(unique)
   check_flag_internal(sorted)
   if(!(identical(named, TRUE) || identical(named, FALSE) || identical(named, NA))) {
@@ -41,8 +38,7 @@ check_vector <- function(x,
   if(!missing(values))
     check_values(x, values = values, x_name = x_name, error = error)
   
-  check_length(x, min_length = min_length, max_length = max_length,
-               x_name = x_name, error = error)
+  check_length(x, length = length, x_name = x_name, error = error)
 
   if(unique) check_unique(x, x_name = x_name, error = error)
   if(sorted) check_sorted(x, x_name = x_name, error = error)

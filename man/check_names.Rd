@@ -5,7 +5,7 @@
 \title{Check Names}
 \usage{
 check_names(x, names, exclusive = FALSE, order = FALSE,
-  x_name = substitute(x), error = getOption("checkr.error", TRUE))
+  x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}

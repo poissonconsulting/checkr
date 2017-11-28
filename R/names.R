@@ -17,10 +17,10 @@
 #' check_names(vec, c("a"), error = FALSE)
 check_names <- function(x, names, exclusive = FALSE, order = FALSE,
                          x_name = substitute(x),
-                         error = getOption("checkr.error", TRUE)) {
+                         error = TRUE) {
   x_name <- deparse_x_name(x_name)
 
-  check_vector(names, "", min_length = 1, unique = FALSE, named = FALSE)
+  check_vector(names, "", length = c(1L, .Machine$integer.max), unique = FALSE, named = FALSE)
   check_flag_internal(exclusive)
   check_flag_internal(order)
   check_flag_internal(error)

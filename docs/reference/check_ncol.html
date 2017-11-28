@@ -87,8 +87,8 @@
     <p>Check Number of Columns</p>
     
 
-    <pre class="usage"><span class='fu'>check_ncol</span>(<span class='no'>x</span>, <span class='kw'>min_ncol</span> <span class='kw'>=</span> <span class='fl'>1L</span>, <span class='kw'>max_ncol</span> <span class='kw'>=</span> <span class='fl'>2147483647L</span>,
-  <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fu'>getOption</span>(<span class='st'>"checkr.error"</span>, <span class='fl'>TRUE</span>))</pre>
+    <pre class="usage"><span class='fu'>check_ncol</span>(<span class='no'>x</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>1L</span>, <span class='fl'>2147483647L</span>), <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>),
+  <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -98,12 +98,8 @@
       <td><p>The data to check.</p></td>
     </tr>
     <tr>
-      <th>min_ncol</th>
-      <td><p>A count of the minimum number of columns,</p></td>
-    </tr>
-    <tr>
-      <th>max_ncol</th>
-      <td><p>A count of the maximum number of columns.</p></td>
+      <th>ncol</th>
+      <td><p>A count of the number of columns or a count range of the minimum and maximum number of columns.</p></td>
     </tr>
     <tr>
       <th>x_name</th>
@@ -122,7 +118,7 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>check_ncol</span>(<span class='fu'>data.frame</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
-<span class='fu'>check_ncol</span>(<span class='fu'>data.frame</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>2</span>), <span class='kw'>max_ncol</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div></pre>
+<span class='fu'>check_ncol</span>(<span class='fu'>data.frame</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>2</span>), <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

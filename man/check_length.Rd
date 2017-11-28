@@ -4,15 +4,13 @@
 \alias{check_length}
 \title{Check Length}
 \usage{
-check_length(x, min_length = 1L, max_length = .Machine$integer.max,
+check_length(x, length = c(1L, .Machine$integer.max),
   x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}
 
-\item{min_length}{A count of the minimum length.}
-
-\item{max_length}{A count of the maximum length.}
+\item{length}{A count of the length or count range of the minimum and maximum length.}
 
 \item{x_name}{A string of the name of the object.}
 
@@ -26,7 +24,7 @@ Check Length
 }
 \examples{
 check_length(2)
-check_length(character(0), min_length = 0)
+check_length(character(0), length = 0)
 check_length(NULL, error = FALSE)
 check_length(list(), error = FALSE)
 }

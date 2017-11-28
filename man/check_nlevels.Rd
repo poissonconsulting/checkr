@@ -4,15 +4,13 @@
 \alias{check_nlevels}
 \title{Check nlevels}
 \usage{
-check_nlevels(x, min_nlevels = 1L, max_nlevels = 2147483647L,
-  x_name = substitute(x), error = getOption("checkr.error", TRUE))
+check_nlevels(x, nlevels = c(1L, .Machine$integer.max),
+  x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The data to check.}
 
-\item{min_nlevels}{A count of the minimum number of rows.}
-
-\item{max_nlevels}{A count of the maximum number of rows.}
+\item{nlevels}{A count of the number of rows or a count range of the minimum and maximum number of rows.}
 
 \item{x_name}{A string of the name of the object.}
 
@@ -26,5 +24,5 @@ Check nlevels
 }
 \examples{
 check_nlevels(factor(1), error = FALSE)
-check_nlevels(factor(1), min_nlevel = 2, error = FALSE)
+check_nlevels(factor(1), nlevels = 2, error = FALSE)
 }

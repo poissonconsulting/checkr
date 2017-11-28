@@ -17,7 +17,7 @@ check_scalar <- function(x,
 
   if (!is.atomic(x)) error(x_name, " must be an atomic vector")
 
-  check_length(x, x_name = x_name, max_length = 1, error = error)
+  check_length(x, x_name = x_name, length = 1, error = error)
   check_unnamed(x, x_name = x_name, error = error)
   invisible(x)
 }
@@ -43,7 +43,7 @@ check_flag <- function(x,
 
   check_flag_internal(error)
 
-  check_vector(x, values = TRUE, min_length = 1, max_length = 1,
+  check_vector(x, values = TRUE, length = 1,
                x_name = x_name, error = error)
 }
 
@@ -76,7 +76,7 @@ check_count <- function(x, coerce = FALSE,
     x <- as.integer(x)     
   }
   
-  check_vector(x, values = c(0L, .Machine$integer.max), min_length = 1, max_length = 1,
+  check_vector(x, values = c(0L, .Machine$integer.max), length = 1,
                x_name = x_name, error = error)
 }
 
@@ -107,6 +107,6 @@ check_string <- function(x,
   if(coerce && is.factor(x))
     x <- as.character(x)
 
-  check_vector(x, values = character(1), min_length = 1, max_length = 1,
+  check_vector(x, values = character(1), length = 1,
                x_name = x_name, error = error)
 }

@@ -4,7 +4,7 @@
 \alias{check_vector}
 \title{Check Vector}
 \usage{
-check_vector(x, values, min_length = 0L, max_length = .Machine$integer.max,
+check_vector(x, values, length = c(0L, .Machine$integer.max),
   unique = FALSE, sorted = FALSE, named = NA, x_name = substitute(x),
   error = TRUE)
 }
@@ -13,9 +13,7 @@ check_vector(x, values, min_length = 0L, max_length = .Machine$integer.max,
 
 \item{values}{An optional vector specifying the values.}
 
-\item{min_length}{A count of the minimum length.}
-
-\item{max_length}{A count of the maximum length.}
+\item{length}{A count of the length or count range of the minimum and maximum length.}
 
 \item{unique}{A flag indicating whether the values must be unique.}
 
@@ -34,6 +32,6 @@ An invisible copy of x (if it doesn't throw an error).
 Check Vector
 }
 \examples{
-check_vector(2:1, min_length = 3, sorted = TRUE, named = TRUE, error = FALSE)
+check_vector(2:1, length = 3, sorted = TRUE, named = TRUE, error = FALSE)
 check_vector(c("one", "two", "four"), values = c("one", "two", "two"), error = FALSE)
 }

@@ -32,8 +32,14 @@ check_data(z, values = list(
   Count = 1,
   Extra = NA,
   Latitude = c(45, 90)
-  ), exclusive = TRUE, order = TRUE, min_nrow = 10L, key = "Longitude", error = FALSE)
-#> Error in check_data(z, values = list(Count = 1, Extra = NA, Latitude = c(45, : unused argument (min_nrow = 10)
+  ), exclusive = TRUE, order = TRUE, nrow = 10L, key = "Longitude", error = FALSE)
+#> Warning: x names must be identical to 'Count', 'Extra' and 'Latitude'
+#> Warning: column Count of z must be class numeric
+#> Warning: column Count of z must not include missing values
+#> Warning: column Extra of z must only include missing values
+#> Warning: the values in column Latitude of z must lie between 45 and 90
+#> Warning: z must have 10 rows
+#> Warning: column 'Longitude' in x must be a unique key
 ```
 
 The two other main functions are `check_vector()` and `check_list()`.
@@ -42,8 +48,14 @@ If the object fails a check then depending on whether the argument `error` is `F
 
 ``` r
 y <- c(2,1,0,1,NA)
-check_vector(y, values = 1:10, max_length = 2, unique = TRUE, sorted = TRUE, named = TRUE)
-#> Error: y must be class integer
+check_vector(y, values = 1:10, length = 2, unique = TRUE, sorted = TRUE, named = TRUE, error = FALSE)
+#> Warning: y must be class integer
+#> Warning: y must not include missing values
+#> Warning: y has unpermitted values 0
+#> Warning: y must have 2 elements
+#> Warning: y must be unique
+#> Warning: y must be sorted
+#> Warning: y must be named
 ```
 
 ### Values

@@ -6,7 +6,7 @@ test_that("check_flag errors", {
   y <- 2
   expect_error(check_flag(y), "y must be class logical")
   y <- c(TRUE, TRUE)
-  expect_error(check_flag(y), "y must be length 1")
+  expect_error(check_flag(y), "y must have 1 element")
   y <- NA
   expect_error(check_flag(y), "y must not include missing values")
   expect_identical(check_flag(FALSE), FALSE)
