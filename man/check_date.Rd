@@ -24,4 +24,5 @@ Checks if x is a date (non-missing Date scalar).
 \examples{
 check_date(Sys.Date(), error = FALSE)
 check_date(Sys.time(), error = FALSE)
+check_date(Sys.time(), coerce = TRUE, error = FALSE)
 }
