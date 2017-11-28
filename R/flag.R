@@ -1,0 +1,24 @@
+#' Check Flag
+#' 
+#' Checks if x is a flag (non-missing logical scalar).
+#'
+#' @param x The object to check.
+#' @param x_name A string of the name of the object.
+#' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
+#' @return An invisible copy of x (if it doesn't throw an error).
+#' @export
+#'
+#' @examples
+#' check_flag(1, error = FALSE)
+#' check_flag(FALSE, error = FALSE)
+#' check_flag(c(FALSE, TRUE), error = FALSE)
+check_flag <- function(x,
+                       x_name = substitute(x),
+                       error = TRUE) {
+  x_name <- deparse_x_name(x_name)
+
+  check_flag_internal(error)
+
+  check_vector(x, values = TRUE, length = 1,
+               x_name = x_name, error = error)
+}

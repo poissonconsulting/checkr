@@ -22,3 +22,10 @@ test_that("is_range", {
   expect_false(is_count_range(1.1))
 })
 
+test_that("is.POSIXt", {
+  expect_true(is.POSIXt(Sys.time()))
+})
+
+
+
+

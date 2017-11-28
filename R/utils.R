@@ -1,5 +1,7 @@
 is_flag <- function(x)  is.logical(x) && length(x) == 1 && !is.na(x)
 
+is.POSIXt <- function(x) inherits(x, "POSIXt")
+  
 is_string <- function(x)  (is.character(x) || is.factor(x)) && length(x) == 1 && !is.na(x)
 
 is_count <- function(x)  (is.integer(x) || is.numeric(x)) && length(x) == 1 &&
@@ -52,3 +54,10 @@ punctuate <- function(x, qualifier = "or") {
 }
 
 plural <- function(x, n = 1, end = "") paste0(x, ifelse(n != 1, "s", ""), end)
+
+tz <- function(x) {
+  tz <- attr(x, "tzone")
+  if(identical(tz, "") || is.null(tz))
+    tz <- "UTC"
+  tz
+}

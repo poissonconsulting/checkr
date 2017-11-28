@@ -3,6 +3,7 @@
 export(check_colnames)
 export(check_count)
 export(check_data)
+export(check_date)
 export(check_flag)
 export(check_key)
 export(check_length)
