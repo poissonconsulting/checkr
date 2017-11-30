@@ -31,6 +31,15 @@ deparse_x_name <- function(x_name) {
   x_name
 }
 
+deparse_y_name <- function(y_name) {
+  if (!is.character(y_name)) y_name <- deparse(y_name) 
+  if (isTRUE(is.na(y_name))) y_name <- "NA"
+  
+  check_string_internal(y_name)
+
+  y_name
+}
+
 error <- function(...) stop(..., call. = FALSE)
 
 warning <- function(...) {

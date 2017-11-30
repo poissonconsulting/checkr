@@ -21,13 +21,12 @@ check_colnames <- function(x, colnames, exclusive = FALSE, order = FALSE,
 
   x_name <- deparse_x_name(x_name)
 
-  check_vector(colnames, "", length = c(1L, .Machine$integer.max), unique = FALSE, named = FALSE)
+  check_vector(colnames, "", length = c(1L, .Machine$integer.max), unique = TRUE)
   check_flag_internal(exclusive)
   check_flag_internal(order)
   check_flag_internal(error)
-  
-  check_named(x, x_name = x_name, error = error)
 
+  names(colnames) <- NULL
   x_colnames <- colnames(x)
   
   if(is.null(x_colnames)) on_fail(x_name, " must have column names", error = error)
