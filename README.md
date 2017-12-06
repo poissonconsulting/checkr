@@ -1,11 +1,23 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-[![stability-unstable](https://img.shields.io/badge/stability-unstable-yellow.svg)](https://github.com/joethorley/stability-badges#unstable) [![Travis-CI Build Status](https://travis-ci.org/poissonconsulting/checkr.svg?branch=master)](https://travis-ci.org/poissonconsulting/checkr) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/checkr?branch=master&svg=true)](https://ci.appveyor.com/project/poissonconsulting/checkr) [![Coverage Status](https://img.shields.io/codecov/c/github/poissonconsulting/checkr/master.svg)](https://codecov.io/github/poissonconsulting/checkr?branch=master) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/checkr)](https://cran.r-project.org/package=checkr)
 
-checkr
-======
+[![stability-unstable](https://img.shields.io/badge/stability-unstable-yellow.svg)](https://github.com/joethorley/stability-badges#unstable)
+[![Travis-CI Build
+Status](https://travis-ci.org/poissonconsulting/checkr.svg?branch=master)](https://travis-ci.org/poissonconsulting/checkr)
+[![AppVeyor Build
+Status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/checkr?branch=master&svg=true)](https://ci.appveyor.com/project/poissonconsulting/checkr)
+[![Coverage
+Status](https://img.shields.io/codecov/c/github/poissonconsulting/checkr/master.svg)](https://codecov.io/github/poissonconsulting/checkr?branch=master)
+[![License:
+MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/checkr)](https://cran.r-project.org/package=checkr)
 
-`checkr` is an R package to check the dimensions, classes, values, and names of vectors, lists and data frames. The various functions provide informative errors (or warnings) that allow users to quickly identify and fix any problems.
+# checkr
+
+`checkr` is an R package to check the dimensions, classes, values, and
+names of vectors, lists and data frames. The various functions provide
+informative errors (or warnings) that allow users to quickly identify
+and fix any problems.
 
 The following code demonstrates its use
 
@@ -44,7 +56,11 @@ check_data(z, values = list(
 
 The two other main functions are `check_vector()` and `check_list()`.
 
-If the object fails a check then depending on whether the argument `error` is `FALSE` or `TRUE` one or more informative warnings are issued (and an invisible copy of the object is returned) as in the previous example or an informative error is thrown (the default behaviour), respectively.
+If the object fails a check then depending on whether the argument
+`error` is `FALSE` or `TRUE` one or more informative warnings are issued
+(and an invisible copy of the object is returned) as in the previous
+example or an informative error is thrown (the default behaviour),
+respectively.
 
 ``` r
 y <- c(2,1,0,1,NA)
@@ -60,7 +76,8 @@ check_vector(y, values = 1:10, length = 2, unique = TRUE, sorted = TRUE, named =
 
 ### Values
 
-The values argument can be used to check the class and range etc of a vector, element of a list or column of a data frame.
+The values argument can be used to check the class and range etc of a
+vector, element of a list or column of a data frame.
 
 #### Class
 
@@ -74,7 +91,8 @@ check_vector(y, values = integer(0))
 
 #### Missing Values
 
-To check that a vector does not include missing values pass a single non-missing value (of the correct class).
+To check that a vector does not include missing values pass a single
+non-missing value (of the correct class).
 
 ``` r
 check_vector(y, 1L)
@@ -89,7 +107,8 @@ To allow it to include missing values include a missing value.
 check_vector(y, c(1, NA))
 ```
 
-And to check that it only includes missing values only pass a missing value (of the correct class)
+And to check that it only includes missing values only pass a missing
+value (of the correct class)
 
 ``` r
 check_vector(y, NA)
@@ -100,7 +119,8 @@ check_vector(y, NA_real_)
 
 #### Range
 
-To check the range of a vector pass two non-missing values (as well as the missing value if required).
+To check the range of a vector pass two non-missing values (as well as
+the missing value if required).
 
 ``` r
 check_vector(y, c(0, 2, NA))
@@ -112,7 +132,8 @@ check_vector(y, c(-1, -10, NA))
 
 #### Specific Values
 
-To check the vector only includes specific values pass three or more non-missing values.
+To check the vector only includes specific values pass three or more
+non-missing values.
 
 ``` r
 check_vector(y, c(0, 1, 2, NA))
@@ -123,7 +144,13 @@ check_vector(y, c(0, 1, 2, 3, NA))
 
 ### Objects, Warnings and Errors
 
-Almost all functions either throw an informative error or return an invisible copy of the object (which allows them to be used in pipes). The only exceptions are `checkor()` which returns an invisible TRUE if one or more checks passes or an invisible FALSE otherwise (if `error = FALSE`) and `check_count()` and `check_string()` with `coerce = TRUE` which accept and coerce non-negative whole real scalars and single element ordered or unordered factors, respectively.
+Almost all functions either throw an informative error or return an
+invisible copy of the object (which allows them to be used in pipes).
+The only exceptions are `checkor()` which returns an invisible TRUE if
+one or more checks passes or an invisible FALSE otherwise (if `error =
+FALSE`) and `check_count()` and `check_string()` with `coerce = TRUE`
+which accept and coerce non-negative whole real scalars and single
+element ordered or unordered factors, respectively.
 
 ### Naming Objects
 
@@ -134,7 +161,8 @@ check_vector(list(x = 1))
 #> Error: list(x = 1) must be an atomic vector
 ```
 
-This simplifies things but results in less informative error messages when used in a pipe.
+This simplifies things but results in less informative error messages
+when used in a pipe.
 
 ``` r
 library(magrittr)
@@ -149,16 +177,18 @@ y %>% check_list(x_name = "y")
 #> Error: y must be a list
 ```
 
-Inspiration
------------
+## Inspiration
 
 [datacheckr](https://github.com/poissonconsulting/datacheckr)
 
-Contribution
-------------
+## Contribution
 
-Please report any [issues](https://github.com/poissonconsulting/checkr/issues).
+Please report any
+[issues](https://github.com/poissonconsulting/checkr/issues).
 
-[Pull requests](https://github.com/poissonconsulting/checkr/pulls) are always welcome.
+[Pull requests](https://github.com/poissonconsulting/checkr/pulls) are
+always welcome.
 
-Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
+Please note that this project is released with a [Contributor Code of
+Conduct](CONDUCT.md). By participating in this project you agree to
+abide by its terms.
