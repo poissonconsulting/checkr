@@ -6,10 +6,10 @@ test_that("check_datetime errors", {
   y <- c(y,y)
   expect_error(check_datetime(y), "y must have 1 element")
   y <- 2
-  expect_error(check_datetime(y), "y must be class POSIXt")
+  expect_error(check_datetime(y), "y must be class POSIXct")
 
   y <- as.Date("2002-01-02")
-  expect_error(check_datetime(y), "y must be class POSIXt")
+  expect_error(check_datetime(y), "y must be class POSIXct")
   y <- NULL
-  expect_error(check_datetime(y), "y must be class POSIXt")
+  expect_error(check_datetime(y), "y must be class POSIXct")
 })

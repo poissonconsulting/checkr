@@ -6,8 +6,7 @@ check_class <- function(x,
 
   check_flag_internal(error)
 
-  class <- class(values)
-  class <- class[length(class)]
+  class <- class(values)[1]
 
   if (!inherits(x, class)) {
     on_fail(x_name, " must be class ", class, error = error)
