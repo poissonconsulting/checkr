@@ -43,21 +43,23 @@ check_data <- function(x,
   
   if(!missing(values)) {
     if(is.list(values)) {
-      check_names(x, names = names(values))
-      check_names(x, names = names(values), exclusive = exclusive, order = order, error = error)
+      check_colnames(x, colnames = names(values), x_name = x_name)
+      check_colnames(x, colnames = names(values), x_name = x_name, 
+                     exclusive = exclusive, order = order, error = error)
 
       for(name in names(values)) {
-        check_values(x[[name]], values[[name]], x_name = paste("column", name, "of", x_name), error = error)
+        check_values(x[[name]], values[[name]], 
+                     x_name = paste("column", name, "of", x_name), error = error)
       }
     } else {
       if(!is.character(values)) error("values must be an character vector or a named list")
       
-      check_names(x, names = values, exclusive = exclusive, order = order)
+      check_colnames(x, colnames = values, x_name = x_name, exclusive = exclusive, order = order)
     }
   }
   check_nrow(x, nrow = nrow, x_name = x_name, error = error)
   
-  check_key(x, key = key, error = error)
+  check_key(x, key = key, x_name = x_name, error = error)
   
   invisible(x)
 }

@@ -12,7 +12,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-[![stability-unstable](https://img.shields.io/badge/stability-unstable-yellow.svg)](https://github.com/joethorley/stability-badges#unstable)
+[![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)](https://github.com/joethorley/stability-badges#stable)
 [![Travis-CI Build Status](https://travis-ci.org/poissonconsulting/checkr.svg?branch=master)](https://travis-ci.org/poissonconsulting/checkr)
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/checkr?branch=master&svg=true)](https://ci.appveyor.com/project/poissonconsulting/checkr)
 [![Coverage Status](https://img.shields.io/codecov/c/github/poissonconsulting/checkr/master.svg)](https://codecov.io/github/poissonconsulting/checkr?branch=master)
@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 
 # checkr
 
-`checkr` is an R package to check the dimensions, classes, values, and names of vectors, lists and data frames.
+`checkr` is an R package to check the dimensions, classes, values, and names of scalars, vectors, lists and data frames.
 The various functions provide informative errors (or warnings) that allow users to quickly identify and fix any problems.
 
 The following code demonstrates its use

@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-[![stability-unstable](https://img.shields.io/badge/stability-unstable-yellow.svg)](https://github.com/joethorley/stability-badges#unstable)
+[![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)](https://github.com/joethorley/stability-badges#stable)
 [![Travis-CI Build
 Status](https://travis-ci.org/poissonconsulting/checkr.svg?branch=master)](https://travis-ci.org/poissonconsulting/checkr)
 [![AppVeyor Build
@@ -15,9 +15,9 @@ MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org
 # checkr
 
 `checkr` is an R package to check the dimensions, classes, values, and
-names of vectors, lists and data frames. The various functions provide
-informative errors (or warnings) that allow users to quickly identify
-and fix any problems.
+names of scalars, vectors, lists and data frames. The various functions
+provide informative errors (or warnings) that allow users to quickly
+identify and fix any problems.
 
 The following code demonstrates its use
 
@@ -45,13 +45,14 @@ check_data(z, values = list(
   Extra = NA,
   Latitude = c(45, 90)
   ), exclusive = TRUE, order = TRUE, nrow = 10L, key = "Longitude", error = FALSE)
-#> Warning: x names must be identical to 'Count', 'Extra' and 'Latitude'
+#> Warning: z column names must be identical to 'Count', 'Extra' and
+#> 'Latitude'
 #> Warning: column Count of z must be class numeric
 #> Warning: column Count of z must not include missing values
 #> Warning: column Extra of z must only include missing values
 #> Warning: the values in column Latitude of z must lie between 45 and 90
 #> Warning: z must have 10 rows
-#> Warning: column 'Longitude' in x must be a unique key
+#> Warning: column 'Longitude' in z must be a unique key
 ```
 
 The two other main functions are `check_vector()` and `check_list()`.

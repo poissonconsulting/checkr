@@ -1,10 +1,10 @@
 Package: checkr
 Title: Check R
-Version: 0.0.0.9009
-Date: 2017-12-12
+Version: 0.0.1
+Date: 2017-12-13
 Authors@R: person("Joe", "Thorley", email = "joe@poissonconsulting.ca", role = c("aut", "cre"))
 Description: Informatively checks the dimensions, classes, values, and names of 
-    vectors, lists and data frames.
+    scalar, vectors, lists and data frames.
 License: MIT + file LICENSE
 URL: https://github.com/poissonconsulting/checkr
 BugReports: https://github.com/poissonconsulting/checkr/issues

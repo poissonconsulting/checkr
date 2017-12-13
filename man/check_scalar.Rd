@@ -19,8 +19,3 @@ An invisible copy of x (if it doesn't throw an error).
 \description{
 Check Scalar
 }
-\examples{
-check_scalar(2)
-check_scalar(character(0), error = FALSE)
-check_scalar(NULL, error = FALSE)
-}
