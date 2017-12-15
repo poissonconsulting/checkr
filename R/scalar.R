@@ -10,7 +10,7 @@ check_scalar <- function(x,
                          x_name = substitute(x),
                          error = TRUE) {
   
-  .Deprecated("check_length(length = 1)")
+  .Deprecated("check_length1()")
   # replace with check_scalar that includes checking of class (as more commonly required)
   x_name <- deparse_x_name(x_name)
 
