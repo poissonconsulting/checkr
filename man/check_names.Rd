@@ -4,7 +4,7 @@
 \alias{check_names}
 \title{Check Names}
 \usage{
-check_names(x, names, exclusive = FALSE, order = FALSE,
+check_names(x, names = character(0), exclusive = FALSE, order = FALSE,
   x_name = substitute(x), error = TRUE)
 }
 \arguments{

@@ -15,19 +15,26 @@
 #' check_names(vec, c("y", "x"), exclusive = TRUE, error = FALSE)
 #' check_names(vec, c("y", "x"), order = TRUE, error = FALSE)
 #' check_names(vec, c("a"), error = FALSE)
-check_names <- function(x, names, exclusive = FALSE, order = FALSE,
+check_names <- function(x, names = character(0), exclusive = FALSE, order = FALSE,
                          x_name = substitute(x),
                          error = TRUE) {
   x_name <- deparse_x_name(x_name)
 
-  check_vector(names, "", length = c(1L, .Machine$integer.max), unique = FALSE, named = FALSE)
+  check_vector(names, "", unique = FALSE)
   check_flag_internal(exclusive)
   check_flag_internal(order)
   check_flag_internal(error)
   
   check_named(x, x_name = x_name, error = error)
 
+  names(names) <- NULL
   x_names <- names(x)
+  
+  if(!length(names)) {
+    if(exclusive && length(x_names))
+        on_fail(x_name, " must not have any elements", error = error)
+    return(x)
+  }
 
   if (exclusive) {
     if (order) {

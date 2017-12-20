@@ -4,8 +4,8 @@
 \alias{check_colnames}
 \title{Check Colnames}
 \usage{
-check_colnames(x, colnames, exclusive = FALSE, order = FALSE,
-  x_name = substitute(x), error = TRUE)
+check_colnames(x, colnames = character(0), exclusive = FALSE,
+  order = FALSE, x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The data to check.}
