@@ -34,7 +34,7 @@ check_list <- function(x,
       check_names(x, names = names(values))
       
       for(name in names(values)) {
-        check_class(x[[name]], values[[name]], x_name = paste("element", name, "of", x_name), error = error)
+        check_class_internal(x[[name]], values[[name]], x_name = paste("element", name, "of", x_name), error = error)
       }
       if(identical(named, FALSE)) {
         warning(x_name, " cannot be unnamed as named values supplied - setting named = TRUE")

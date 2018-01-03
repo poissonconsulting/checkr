@@ -1,0 +1,33 @@
+context("classes")
+
+test_that("check_classes", {
+  x <- list()
+  class(x) <- c("a", "b")
+  
+  expect_identical(check_classes(x, "a"), x)
+  expect_identical(check_classes(x, "b"), x)
+  expect_error(check_classes(x, "c"), "x must inherit from class c")
+  expect_identical(check_classes(x, c("a", "b")), x)
+  expect_identical(check_classes(x, c("b", "a")), x)
+  expect_identical(check_classes(x, c("a", "b"), exclusive = TRUE), x)
+  expect_identical(check_classes(x, c("b", "a"), exclusive = TRUE), x)
+  expect_identical(check_classes(x, c("a", "b"), order = TRUE), x)
+  expect_error(check_classes(x, c("b", "a"), order = TRUE), "x classes must include 'b' and 'a' in that order")
+  expect_identical(check_classes(x, c("a", "b"), exclusive = TRUE, order = TRUE), x)
+  expect_error(check_classes(x, c("b", "a"), exclusive = TRUE, order = TRUE), "x classes must be identical to 'b' and 'a'")
+})
+
+test_that("check_classes", {
+  x <- list()
+  class(x) <- c("a", "b", "c")
+  
+  expect_identical(check_classes(x, "a"), x)
+  expect_identical(check_classes(x, c("a", "b")), x)
+  expect_identical(check_classes(x, c("b", "a")), x)
+  expect_error(check_classes(x, c("a", "b"), exclusive = TRUE), "x classes must include and only include 'a' and 'b'")
+  expect_error(check_classes(x, c("b", "a"), exclusive = TRUE), "x classes must include and only include 'b' and 'a'")
+  expect_identical(check_classes(x, c("a", "b"), order = TRUE), x)
+  expect_error(check_classes(x, c("b", "a"), order = TRUE), "x classes must include 'b' and 'a' in that order")
+  expect_error(check_classes(x, c("a", "b"), exclusive = TRUE, order = TRUE), "x classes must be identical to 'a' and 'b'")
+  expect_error(check_classes(x, c("b", "a"), exclusive = TRUE, order = TRUE), "x classes must be identical to 'b' and 'a'")
+})

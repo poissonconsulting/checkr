@@ -37,9 +37,9 @@ check_data <- function(x,
                        error = TRUE) {
   x_name <- deparse_x_name(x_name)
   
-  if (!is.data.frame(x)) error(x_name, " must be a data frame")
+  check_inherits(x, "data.frame", x_name = x_name)
 
-  check_flag_internal(error)
+  check_flag(error)
   
   if(!missing(values)) {
     if(is.list(values)) {

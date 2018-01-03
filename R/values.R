@@ -8,7 +8,7 @@ check_values <- function(x, values,
   if (!is.atomic(x)) error(x_name, " must be an atomic vector")
   if (!is.atomic(values)) error("values must be an atomic vector")
 
-  check_class(x, values, x_name = x_name, error = error)
+  check_class_internal(x, values, x_name = x_name, error = error)
   check_nas(x, values, x_name = x_name, error = error)
   
   x_nona <- x[!is.na(x)]

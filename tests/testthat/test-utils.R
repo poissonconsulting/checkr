@@ -26,6 +26,16 @@ test_that("is.POSIXt", {
   expect_true(is.POSIXt(Sys.time()))
 })
 
+test_that("check_class_internal", {
+  expect_identical(check_class_internal(TRUE, NA), TRUE)
+  expect_identical(check_class_internal(TRUE, c(TRUE, FALSE)), TRUE)
+  date <- as.Date("2000-01-01")
+  expect_identical(check_class_internal(date, date), date)
+  expect_identical(check_class_internal(factor(1), factor(2)), factor(1))
+  expect_identical(check_class_internal(ordered(1), ordered(2)), ordered(1))
+  time <- Sys.time()
+  expect_identical(check_class_internal(time, time), time)
+})
 
 
 
