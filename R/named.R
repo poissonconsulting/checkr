@@ -23,6 +23,7 @@ check_named <- function(x, unique = FALSE,
   if(is.null(names(x))) {
     on_fail(x_name, " must be named", error = error)
   }
-  check_unique(names(x), x_name = paste("names of", x_name), error = error)
+  if(unique)
+    check_unique(names(x), x_name = paste("names of", x_name), error = error)
   invisible(x)
 }

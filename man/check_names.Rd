@@ -5,7 +5,7 @@
 \title{Check Names}
 \usage{
 check_names(x, names = character(0), exclusive = FALSE, order = FALSE,
-  x_name = substitute(x), error = TRUE)
+  unique = FALSE, x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}
@@ -15,6 +15,8 @@ check_names(x, names = character(0), exclusive = FALSE, order = FALSE,
 \item{exclusive}{A flag indicating whether other names are permitted.}
 
 \item{order}{A flag indicating whether the object names have to occur in the same order as names.}
+
+\item{unique}{A flag indicating whether all the object names have to be unique.}
 
 \item{x_name}{A string of the name of the object.}
 

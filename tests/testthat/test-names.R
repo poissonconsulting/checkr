@@ -12,8 +12,17 @@ test_that("names", {
   expect_identical(check_names(vec), vec)
   expect_error(check_names(vec, exclusive = TRUE), "vec must not have any elements")
   
+  vec <- c(vec, z = 1)
+
+  expect_identical(check_names(vec), vec)
+  expect_identical(check_names(vec, c("x", "y", "z", "z"), order = TRUE, exclusive = TRUE), vec)
+  expect_error(check_names(vec, c("x", "y", "z", "z"), unique = TRUE), "names must be unique")
+  
+  expect_error(check_names(vec, unique = TRUE), "names of vec must be unique")
+  
   vec <- numeric(0)
   names(vec) <- character(0)
   expect_identical(check_names(vec), vec)
   expect_identical(check_names(vec, exclusive = TRUE), vec)
+  expect_identical(check_names(vec, exclusive = TRUE, unique = TRUE), vec)
 })

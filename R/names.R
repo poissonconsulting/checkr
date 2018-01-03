@@ -4,6 +4,7 @@
 #' @param names A character vector of the names.
 #' @param exclusive A flag indicating whether other names are permitted.
 #' @param order A flag indicating whether the object names have to occur in the same order as names.
+#' @param unique A flag indicating whether all the object names have to be unique.
 #' @param x_name A string of the name of the object.
 #' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
 #' @return An invisible copy of x (if it doesn't throw an error).
@@ -16,16 +17,18 @@
 #' check_names(vec, c("y", "x"), order = TRUE, error = FALSE)
 #' check_names(vec, c("a"), error = FALSE)
 check_names <- function(x, names = character(0), exclusive = FALSE, order = FALSE,
+                        unique = FALSE,
                          x_name = substitute(x),
                          error = TRUE) {
   x_name <- deparse_x_name(x_name)
 
-  check_vector(names, "", unique = FALSE)
+  check_flag_internal(unique)
+  check_vector(names, "", unique = unique)
   check_flag_internal(exclusive)
   check_flag_internal(order)
   check_flag_internal(error)
   
-  check_named(x, x_name = x_name, error = error)
+  check_named(x, x_name = x_name, unique = unique, error = error)
 
   names(names) <- NULL
   x_names <- names(x)
