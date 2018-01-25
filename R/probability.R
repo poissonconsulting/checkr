@@ -1,4 +1,4 @@
-#' Check Probabilyt
+#' Check Probability
 #' 
 #' Checks if x is a probability (non-missing numeric scalar between 0 and 1 inclusive).
 #'

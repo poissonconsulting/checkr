@@ -2,7 +2,7 @@
 % Please edit documentation in R/probability.R
 \name{check_probability}
 \alias{check_probability}
-\title{Check Probabilyt}
+\title{Check Probability}
 \usage{
 check_probability(x, coerce = FALSE, x_name = substitute(x), error = TRUE)
 }

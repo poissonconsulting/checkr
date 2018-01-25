@@ -25,7 +25,7 @@ An invisible copy of x (if it doesn't throw an error).
 }
 \description{
 Checks that the columns in data frame x form a many-to-one
-join with the correponding columns in y.
+join with the corresponding columns in y.
 }
 \examples{
 data1 <- data.frame(x = 1:2)

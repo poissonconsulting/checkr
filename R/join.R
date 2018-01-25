@@ -1,7 +1,7 @@
 #' Check Join
 #' 
 #' Checks that the columns in data frame x form a many-to-one
-#' join with the correponding columns in y.
+#' join with the corresponding columns in y.
 #'
 #' @param x The object to check.
 #' @param y The parent data frame.

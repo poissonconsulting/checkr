@@ -9,3 +9,4 @@
 ^docs$
 ^LICENSE.md$
 ^document.R$
+^cran-comments\.md$
