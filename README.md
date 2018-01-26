@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-[![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)](https://github.com/joethorley/stability-badges#stable)
+[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![Travis-CI Build
 Status](https://travis-ci.org/poissonconsulting/checkr.svg?branch=master)](https://travis-ci.org/poissonconsulting/checkr)
 [![AppVeyor Build
@@ -22,46 +22,28 @@ identify and fix any problems.
 The following code demonstrates its use
 
 ``` r
-z <- data.frame(
-  Count = c(0L, 3L, 3L, 0L, NA), 
-  Longitude = c(0, 0, 90, 90, 180), 
-  Latitude = c(0, 90, 90.2, 100, -180),
-  Type = factor(c("Good", "Bad", "Bad", "Bad", "Bad"), levels = c("Good", "Bad")),
-  Extra = TRUE,
-  Comments = c("In Greenwich", "Somewhere else", "I'm lost", "I didn't see any", "Help"), stringsAsFactors = FALSE)
-
-print(z)
-#>   Count Longitude Latitude Type Extra         Comments
-#> 1     0         0      0.0 Good  TRUE     In Greenwich
-#> 2     3         0     90.0  Bad  TRUE   Somewhere else
-#> 3     3        90     90.2  Bad  TRUE         I'm lost
-#> 4     0        90    100.0  Bad  TRUE I didn't see any
-#> 5    NA       180   -180.0  Bad  TRUE             Help
-
 library(checkr)
 
-check_data(z, values = list(
-  Count = 1,
-  Extra = NA,
-  Latitude = c(45, 90)
-  ), exclusive = TRUE, order = TRUE, nrow = 10L, key = "Longitude", error = FALSE)
-#> Warning: z column names must be identical to 'Count', 'Extra' and
-#> 'Latitude'
-#> Warning: column Count of z must be class numeric
-#> Warning: column Count of z must not include missing values
-#> Warning: column Extra of z must only include missing values
-#> Warning: the values in column Latitude of z must lie between 45 and 90
-#> Warning: z must have 10 rows
-#> Warning: column 'Longitude' in z must be a unique key
+# the starwars data frame in the dplyr package fails many of these checks
+check_data(dplyr::starwars, values = list(
+  height = c(66L, 264L),
+  name = "",
+  mass = c(20,1358, NA),
+  hair_color = c("blond", "brown", "black", NA),
+  gender = c("male", "female", "hermaphrodite", "none", NA)), 
+    order = TRUE, nrow = c(81, 84), key = "hair_color", error = FALSE)
+#> Warning: dplyr::starwars column names must include 'height', 'name',
+#> 'mass', 'hair_color' and 'gender' in that order
+#> Warning: column height of dplyr::starwars must not include missing values
+#> Warning: the values in column mass of dplyr::starwars must lie between 20
+#> and 1358
+#> Warning: column hair_color of dplyr::starwars can only include values
+#> 'black', 'blond' or 'brown'
+#> Warning: dplyr::starwars must not have more than 84 rows
+#> Warning: column 'hair_color' in dplyr::starwars must be a unique key
 ```
 
 The two other main functions are `check_vector()` and `check_list()`.
-
-If the object fails a check then depending on whether the argument
-`error` is `FALSE` or `TRUE` one or more informative warnings are issued
-(and an invisible copy of the object is returned) as in the previous
-example or an informative error is thrown (the default behaviour),
-respectively.
 
 ``` r
 y <- c(2,1,0,1,NA)
@@ -77,8 +59,8 @@ check_vector(y, values = 1:10, length = 2, unique = TRUE, sorted = TRUE, named =
 
 ### Values
 
-The values argument can be used to check the class and range etc of a
-vector, element of a list or column of a data frame.
+The values argument can be used to check the values of a vector, element
+of a list or column of a data frame.
 
 #### Class
 
@@ -96,8 +78,6 @@ To check that a vector does not include missing values pass a single
 non-missing value (of the correct class).
 
 ``` r
-check_vector(y, 1L)
-#> Error: y must be class integer
 check_vector(y, 1)
 #> Error: y must not include missing values
 ```
@@ -112,8 +92,6 @@ And to check that it only includes missing values only pass a missing
 value (of the correct class)
 
 ``` r
-check_vector(y, NA)
-#> Error: y must be class logical
 check_vector(y, NA_real_)
 #> Error: y must only include missing values
 ```
@@ -125,8 +103,6 @@ the missing value if required).
 
 ``` r
 check_vector(y, c(0, 2, NA))
-check_vector(y, c(1, 3, NA))
-#> Error: the values in y must lie between 1 and 3
 check_vector(y, c(-1, -10, NA))
 #> Error: the values in y must lie between -10 and -1
 ```
@@ -140,18 +116,7 @@ non-missing values.
 check_vector(y, c(0, 1, 2, NA))
 check_vector(y, c(1, 1, 2, NA))
 #> Error: y can only include values 1 or 2
-check_vector(y, c(0, 1, 2, 3, NA))
 ```
-
-### Objects, Warnings and Errors
-
-Almost all functions either throw an informative error or return an
-invisible copy of the object (which allows them to be used in pipes).
-The only exceptions are `checkor()` which returns an invisible TRUE if
-one or more checks passes or an invisible FALSE otherwise (if `error =
-FALSE`) and `check_count()` and `check_string()` with `coerce = TRUE`
-which accept and coerce non-negative whole real scalars and single
-element ordered or unordered factors, respectively.
 
 ### Naming Objects
 
@@ -171,7 +136,7 @@ y %>% check_list()
 #> Error: . must be a list
 ```
 
-The argument `x_name` can be used to define the name
+The argument `x_name` can be used to override the name.
 
 ``` r
 y %>% check_list(x_name = "y")

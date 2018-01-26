@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Check R • checkr</title>
+<title>Check Object Classes, Values, Names and Dimensions • checkr</title>
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
@@ -69,39 +69,26 @@
 <section id="checkr" class="level1"><div class="page-header"><h1>checkr</h1></div>
 <p><code>checkr</code> is an R package to check the dimensions, classes, values, and names of scalars, vectors, lists and data frames. The various functions provide informative errors (or warnings) that allow users to quickly identify and fix any problems.</p>
 <p>The following code demonstrates its use</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">z &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">  <span class="dt">Count =</span> <span class="kw">c</span>(0L, 3L, 3L, 0L, <span class="ot">NA</span>), </a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">  <span class="dt">Longitude =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">90</span>, <span class="dv">90</span>, <span class="dv">180</span>), </a>
-<a class="sourceLine" id="cb1-4" data-line-number="4">  <span class="dt">Latitude =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">90</span>, <span class="fl">90.2</span>, <span class="dv">100</span>, <span class="dv">-180</span>),</a>
-<a class="sourceLine" id="cb1-5" data-line-number="5">  <span class="dt">Type =</span> <span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">"Good"</span>, <span class="st">"Bad"</span>, <span class="st">"Bad"</span>, <span class="st">"Bad"</span>, <span class="st">"Bad"</span>), <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">"Good"</span>, <span class="st">"Bad"</span>)),</a>
-<a class="sourceLine" id="cb1-6" data-line-number="6">  <span class="dt">Extra =</span> <span class="ot">TRUE</span>,</a>
-<a class="sourceLine" id="cb1-7" data-line-number="7">  <span class="dt">Comments =</span> <span class="kw">c</span>(<span class="st">"In Greenwich"</span>, <span class="st">"Somewhere else"</span>, <span class="st">"I'm lost"</span>, <span class="st">"I didn't see any"</span>, <span class="st">"Help"</span>), <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb1-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="kw">print</span>(z)</a>
-<a class="sourceLine" id="cb1-10" data-line-number="10"><span class="co">#&gt;   Count Longitude Latitude Type Extra         Comments</span></a>
-<a class="sourceLine" id="cb1-11" data-line-number="11"><span class="co">#&gt; 1     0         0      0.0 Good  TRUE     In Greenwich</span></a>
-<a class="sourceLine" id="cb1-12" data-line-number="12"><span class="co">#&gt; 2     3         0     90.0  Bad  TRUE   Somewhere else</span></a>
-<a class="sourceLine" id="cb1-13" data-line-number="13"><span class="co">#&gt; 3     3        90     90.2  Bad  TRUE         I'm lost</span></a>
-<a class="sourceLine" id="cb1-14" data-line-number="14"><span class="co">#&gt; 4     0        90    100.0  Bad  TRUE I didn't see any</span></a>
-<a class="sourceLine" id="cb1-15" data-line-number="15"><span class="co">#&gt; 5    NA       180   -180.0  Bad  TRUE             Help</span></a>
-<a class="sourceLine" id="cb1-16" data-line-number="16"></a>
-<a class="sourceLine" id="cb1-17" data-line-number="17"><span class="kw">library</span>(checkr)</a>
-<a class="sourceLine" id="cb1-18" data-line-number="18"></a>
-<a class="sourceLine" id="cb1-19" data-line-number="19"><span class="kw"><a href="reference/check_data.html">check_data</a></span>(z, <span class="dt">values =</span> <span class="kw">list</span>(</a>
-<a class="sourceLine" id="cb1-20" data-line-number="20">  <span class="dt">Count =</span> <span class="dv">1</span>,</a>
-<a class="sourceLine" id="cb1-21" data-line-number="21">  <span class="dt">Extra =</span> <span class="ot">NA</span>,</a>
-<a class="sourceLine" id="cb1-22" data-line-number="22">  <span class="dt">Latitude =</span> <span class="kw">c</span>(<span class="dv">45</span>, <span class="dv">90</span>)</a>
-<a class="sourceLine" id="cb1-23" data-line-number="23">  ), <span class="dt">exclusive =</span> <span class="ot">TRUE</span>, <span class="dt">order =</span> <span class="ot">TRUE</span>, <span class="dt">nrow =</span> 10L, <span class="dt">key =</span> <span class="st">"Longitude"</span>, <span class="dt">error =</span> <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb1-24" data-line-number="24"><span class="co">#&gt; Warning: z column names must be identical to 'Count', 'Extra' and</span></a>
-<a class="sourceLine" id="cb1-25" data-line-number="25"><span class="co">#&gt; 'Latitude'</span></a>
-<a class="sourceLine" id="cb1-26" data-line-number="26"><span class="co">#&gt; Warning: column Count of z must be class numeric</span></a>
-<a class="sourceLine" id="cb1-27" data-line-number="27"><span class="co">#&gt; Warning: column Count of z must not include missing values</span></a>
-<a class="sourceLine" id="cb1-28" data-line-number="28"><span class="co">#&gt; Warning: column Extra of z must only include missing values</span></a>
-<a class="sourceLine" id="cb1-29" data-line-number="29"><span class="co">#&gt; Warning: the values in column Latitude of z must lie between 45 and 90</span></a>
-<a class="sourceLine" id="cb1-30" data-line-number="30"><span class="co">#&gt; Warning: z must have 10 rows</span></a>
-<a class="sourceLine" id="cb1-31" data-line-number="31"><span class="co">#&gt; Warning: column 'Longitude' in z must be a unique key</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(checkr)</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co"># the starwars data frame in the dplyr package fails many of these checks</span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="kw"><a href="reference/check_data.html">check_data</a></span>(dplyr<span class="op">::</span>starwars, <span class="dt">values =</span> <span class="kw">list</span>(</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">  <span class="dt">height =</span> <span class="kw">c</span>(66L, 264L),</a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">  <span class="dt">name =</span> <span class="st">""</span>,</a>
+<a class="sourceLine" id="cb1-7" data-line-number="7">  <span class="dt">mass =</span> <span class="kw">c</span>(<span class="dv">20</span>,<span class="dv">1358</span>, <span class="ot">NA</span>),</a>
+<a class="sourceLine" id="cb1-8" data-line-number="8">  <span class="dt">hair_color =</span> <span class="kw">c</span>(<span class="st">"blond"</span>, <span class="st">"brown"</span>, <span class="st">"black"</span>, <span class="ot">NA</span>),</a>
+<a class="sourceLine" id="cb1-9" data-line-number="9">  <span class="dt">gender =</span> <span class="kw">c</span>(<span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"hermaphrodite"</span>, <span class="st">"none"</span>, <span class="ot">NA</span>)), </a>
+<a class="sourceLine" id="cb1-10" data-line-number="10">    <span class="dt">order =</span> <span class="ot">TRUE</span>, <span class="dt">nrow =</span> <span class="kw">c</span>(<span class="dv">81</span>, <span class="dv">84</span>), <span class="dt">key =</span> <span class="st">"hair_color"</span>, <span class="dt">error =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb1-11" data-line-number="11"><span class="co">#&gt; Warning: dplyr::starwars column names must include 'height', 'name',</span></a>
+<a class="sourceLine" id="cb1-12" data-line-number="12"><span class="co">#&gt; 'mass', 'hair_color' and 'gender' in that order</span></a>
+<a class="sourceLine" id="cb1-13" data-line-number="13"><span class="co">#&gt; Warning: column height of dplyr::starwars must not include missing values</span></a>
+<a class="sourceLine" id="cb1-14" data-line-number="14"><span class="co">#&gt; Warning: the values in column mass of dplyr::starwars must lie between 20</span></a>
+<a class="sourceLine" id="cb1-15" data-line-number="15"><span class="co">#&gt; and 1358</span></a>
+<a class="sourceLine" id="cb1-16" data-line-number="16"><span class="co">#&gt; Warning: column hair_color of dplyr::starwars can only include values</span></a>
+<a class="sourceLine" id="cb1-17" data-line-number="17"><span class="co">#&gt; 'black', 'blond' or 'brown'</span></a>
+<a class="sourceLine" id="cb1-18" data-line-number="18"><span class="co">#&gt; Warning: dplyr::starwars must not have more than 84 rows</span></a>
+<a class="sourceLine" id="cb1-19" data-line-number="19"><span class="co">#&gt; Warning: column 'hair_color' in dplyr::starwars must be a unique key</span></a></code></pre></div>
 <p>The two other main functions are <code><a href="reference/check_vector.html">check_vector()</a></code> and <code><a href="reference/check_list.html">check_list()</a></code>.</p>
-<p>If the object fails a check then depending on whether the argument <code>error</code> is <code>FALSE</code> or <code>TRUE</code> one or more informative warnings are issued (and an invisible copy of the object is returned) as in the previous example or an informative error is thrown (the default behaviour), respectively.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="ot">NA</span>)</a>
 <a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="dt">values =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">length =</span> <span class="dv">2</span>, <span class="dt">unique =</span> <span class="ot">TRUE</span>, <span class="dt">sorted =</span> <span class="ot">TRUE</span>, <span class="dt">named =</span> <span class="ot">TRUE</span>, <span class="dt">error =</span> <span class="ot">FALSE</span>)</a>
 <a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt; Warning: y must be class integer</span></a>
@@ -112,7 +99,7 @@
 <a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt; Warning: y must be sorted</span></a>
 <a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#&gt; Warning: y must be named</span></a></code></pre></div>
 <section id="values" class="level3"><h3>Values</h3>
-<p>The values argument can be used to check the class and range etc of a vector, element of a list or column of a data frame.</p>
+<p>The values argument can be used to check the values of a vector, element of a list or column of a data frame.</p>
 <section id="class" class="level4"><h4>Class</h4>
 <p>To check the class simply pass an object of the desired class.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="dt">values =</span> <span class="kw">numeric</span>(<span class="dv">0</span>))</a>
@@ -120,33 +107,24 @@
 <a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">#&gt; Error: y must be class integer</span></a></code></pre></div>
 </section><section id="missing-values" class="level4"><h4>Missing Values</h4>
 <p>To check that a vector does not include missing values pass a single non-missing value (of the correct class).</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, 1L)</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; Error: y must be class integer</span></a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt; Error: y must not include missing values</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; Error: y must not include missing values</span></a></code></pre></div>
 <p>To allow it to include missing values include a missing value.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw">c</span>(<span class="dv">1</span>, <span class="ot">NA</span>))</a></code></pre></div>
 <p>And to check that it only includes missing values only pass a missing value (of the correct class)</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="ot">NA</span>)</a>
-<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="co">#&gt; Error: y must be class logical</span></a>
-<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="ot">NA_real_</span>)</a>
-<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co">#&gt; Error: y must only include missing values</span></a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="ot">NA_real_</span>)</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="co">#&gt; Error: y must only include missing values</span></a></code></pre></div>
 </section><section id="range" class="level4"><h4>Range</h4>
 <p>To check the range of a vector pass two non-missing values (as well as the missing value if required).</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="ot">NA</span>))</a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="ot">NA</span>))</a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="co">#&gt; Error: the values in y must lie between 1 and 3</span></a>
-<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">-10</span>, <span class="ot">NA</span>))</a>
-<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="co">#&gt; Error: the values in y must lie between -10 and -1</span></a></code></pre></div>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">-10</span>, <span class="ot">NA</span>))</a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="co">#&gt; Error: the values in y must lie between -10 and -1</span></a></code></pre></div>
 </section><section id="specific-values" class="level4"><h4>Specific Values</h4>
 <p>To check the vector only includes specific values pass three or more non-missing values.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="ot">NA</span>))</a>
 <a class="sourceLine" id="cb8-2" data-line-number="2"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="ot">NA</span>))</a>
-<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="co">#&gt; Error: y can only include values 1 or 2</span></a>
-<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="ot">NA</span>))</a></code></pre></div>
-</section></section><section id="objects-warnings-and-errors" class="level3"><h3>Objects, Warnings and Errors</h3>
-<p>Almost all functions either throw an informative error or return an invisible copy of the object (which allows them to be used in pipes). The only exceptions are <code><a href="reference/checkor.html">checkor()</a></code> which returns an invisible TRUE if one or more checks passes or an invisible FALSE otherwise (if <code>error = FALSE</code>) and <code><a href="reference/check_count.html">check_count()</a></code> and <code><a href="reference/check_string.html">check_string()</a></code> with <code>coerce = TRUE</code> which accept and coerce non-negative whole real scalars and single element ordered or unordered factors, respectively.</p>
-</section><section id="naming-objects" class="level3"><h3>Naming Objects</h3>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="co">#&gt; Error: y can only include values 1 or 2</span></a></code></pre></div>
+</section></section><section id="naming-objects" class="level3"><h3>Naming Objects</h3>
 <p>By default, the name of an object is determined from the function call.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(<span class="kw">list</span>(<span class="dt">x =</span> <span class="dv">1</span>))</a>
 <a class="sourceLine" id="cb9-2" data-line-number="2"><span class="co">#&gt; Error: list(x = 1) must be an atomic vector</span></a></code></pre></div>
@@ -154,7 +132,7 @@
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">library</span>(magrittr)</a>
 <a class="sourceLine" id="cb10-2" data-line-number="2">y <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="reference/check_list.html">check_list</a></span>()</a>
 <a class="sourceLine" id="cb10-3" data-line-number="3"><span class="co">#&gt; Error: . must be a list</span></a></code></pre></div>
-<p>The argument <code>x_name</code> can be used to define the name</p>
+<p>The argument <code>x_name</code> can be used to override the name.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">y <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="reference/check_list.html">check_list</a></span>(<span class="dt">x_name =</span> <span class="st">"y"</span>)</a>
 <a class="sourceLine" id="cb11-2" data-line-number="2"><span class="co">#&gt; Error: y must be a list</span></a></code></pre></div>
 </section><section id="inspiration" class="level2"><h2>Inspiration</h2>
@@ -184,7 +162,7 @@
 </ul>
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/joethorley/stability-badges#stable"><img src="https://img.shields.io/badge/stability-stable-green.svg" alt="stability-stable"></a></li>
+<li><a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="lifecycle"></a></li>
 <li><a href="https://travis-ci.org/poissonconsulting/checkr"><img src="https://travis-ci.org/poissonconsulting/checkr.svg?branch=master" alt="Travis-CI Build Status"></a></li>
 <li><a href="https://ci.appveyor.com/project/poissonconsulting/checkr"><img src="https://ci.appveyor.com/api/projects/status/github/poissonconsulting/checkr?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a></li>
 <li><a href="https://codecov.io/github/poissonconsulting/checkr?branch=master"><img src="https://img.shields.io/codecov/c/github/poissonconsulting/checkr/master.svg" alt="Coverage Status"></a></li>
