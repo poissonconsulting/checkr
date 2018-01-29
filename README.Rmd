@@ -108,9 +108,11 @@ The argument `x_name` can be used to override the name.
 y %>% check_list(x_name = "y")
 ```
 
-## Inspiration
+## Citation
 
-[datacheckr](https://github.com/poissonconsulting/datacheckr)
+```{r, comment="", echo=FALSE}
+citation(package = 'checkr')
+```
 
 ## Contribution
 
@@ -119,3 +121,8 @@ Please report any [issues](https://github.com/poissonconsulting/checkr/issues).
 [Pull requests](https://github.com/poissonconsulting/checkr/pulls) are always welcome.
 
 Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
+
+## Inspiration
+
+[datacheckr](https://github.com/poissonconsulting/datacheckr)
+

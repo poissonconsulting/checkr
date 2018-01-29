@@ -143,9 +143,26 @@ y %>% check_list(x_name = "y")
 #> Error: y must be a list
 ```
 
-## Inspiration
+## Citation
 
-[datacheckr](https://github.com/poissonconsulting/datacheckr)
+``` 
+
+To cite package 'checkr' in publications use:
+
+  Joe Thorley (2018). checkr: Check Object Classes, Values, Names
+  and Dimensions. R package version 0.0.2.9000.
+  https://github.com/poissonconsulting/checkr
+
+A BibTeX entry for LaTeX users is
+
+  @Manual{,
+    title = {checkr: Check Object Classes, Values, Names and Dimensions},
+    author = {Joe Thorley},
+    year = {2018},
+    note = {R package version 0.0.2.9000},
+    url = {https://github.com/poissonconsulting/checkr},
+  }
+```
 
 ## Contribution
 
@@ -158,3 +175,7 @@ always welcome.
 Please note that this project is released with a [Contributor Code of
 Conduct](CONDUCT.md). By participating in this project you agree to
 abide by its terms.
+
+## Inspiration
+
+[datacheckr](https://github.com/poissonconsulting/datacheckr)
