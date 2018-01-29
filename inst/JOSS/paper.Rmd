@@ -1,48 +1,27 @@
 ---
-title: "checkr: An R package to check object values"
+title: 'checkr: An R package to check object values'
 authors:
-- name: Joe Thorley
+- affiliation: 1
+  name: Joe Thorley
   orcid: 0000-0002-7683-4592
-  affiliation: 1
-output:
-  html_document:
-    keep_md: yes
-tags:
-- R
+date: "`r Sys.Date()`"
+output: pdf_document
+tags: R
 affiliations:
   index: 1
   name: Poisson Consulting, Nelson, British Columbia
-date: "`r Sys.Date()`"
 ---
 
 ```{r options, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, messages = FALSE, fig.width = 8, fig.height = 12)
 ```
 
-## Introduction
+## Summary
 
-`checkr` is a lightweight R package to check the dimensions, classes, values, and names of scalars, vectors, lists and data frames.
+`checkr` is a lightweight (dependency-free) R package to check the values of common objects. 
+In particular it can check the dimensions, classes, values, and names of scalars, vectors, lists and data frames.
 The various functions provide informative errors (or warnings) that allow users to quickly identify and fix any problems.
 
-## Demonstration
+It is intended to be used in scripts and in packages to check the values of arguments.
 
-The following code demonstrates its use
-```{r, warning = TRUE}
-library(checkr)
-
-# the starwars data frame in the dplyr package fails many of these checks
-check_data(dplyr::starwars, values = list(
-  height = c(66L, 264L),
-  name = "",
-  mass = c(20,1358, NA),
-  hair_color = c("blond", "brown", "black", NA),
-  gender = c("male", "female", "hermaphrodite", "none", NA)), 
-    order = TRUE, nrow = c(81, 84), key = "hair_color", error = FALSE)
-```
-
-The two other main functions are `check_vector()` and `check_list()`.
-
-```{r, warning = TRUE}
-y <- c(2,1,0,1,NA)
-check_vector(y, values = 1:10, length = 2, unique = TRUE, sorted = TRUE, named = TRUE, error = FALSE)
-```
+The software archive is at <https://github.com/poissonconsulting/checkr>.
