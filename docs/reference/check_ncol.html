@@ -90,19 +90,18 @@
     <p>Check Number of Columns</p>
     
 
-    <pre class="usage"><span class='fu'>check_ncol</span>(<span class='no'>x</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>1L</span>, <span class='fl'>2147483647L</span>), <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>),
-  <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>check_ncol</span>(<span class='no'>x</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>The data to check.</p></td>
+      <td><p>The object to check.</p></td>
     </tr>
     <tr>
       <th>ncol</th>
-      <td><p>A count of the number of columns or a count range of the minimum and maximum number of columns.</p></td>
+      <td><p>A flag indicating whether x should have columns (versus no columns) or a missing value indicating no requirements or a count or count range of the number of columns.</p></td>
     </tr>
     <tr>
       <th>x_name</th>

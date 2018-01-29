@@ -1,8 +1,8 @@
 #' Check Vector
 #'
+#' @inheritParams check_length
 #' @param x The object to check.
 #' @param values An optional vector specifying the values.
-#' @param length A count of the length or count range of the minimum and maximum length.
 #' @param unique A flag indicating whether the values must be unique.
 #' @param sorted A flag indicating whether the vector must be sorted.
 #' @param named A flag (or NA) indicating whether the vector must be named or unnamed (or doesn't matter).
@@ -16,7 +16,7 @@
 #' check_vector(c("one", "two", "four"), values = c("one", "two", "two"), error = FALSE)
 check_vector <- function(x,
                          values,
-                         length = c(0L, .Machine$integer.max),
+                         length = NA,
                          unique = FALSE,
                          sorted = FALSE,
                          named = NA,
@@ -24,7 +24,6 @@ check_vector <- function(x,
                          error = TRUE) {
   x_name <- deparse_x_name(x_name)
 
-  check_count_range_internal(length)
   check_flag_internal(unique)
   check_flag_internal(sorted)
   if(!(identical(named, TRUE) || identical(named, FALSE) || identical(named, NA))) {

@@ -4,8 +4,7 @@
 \alias{check_function}
 \title{Check Function}
 \usage{
-check_function(x, nargs = c(0L, .Machine$integer.max),
-  x_name = substitute(x), error = TRUE)
+check_function(x, nargs = NA, x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}

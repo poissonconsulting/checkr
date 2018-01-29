@@ -1,3 +1,5 @@
+- lengths can now be specified using `TRUE`, `FALSE` or `NA` (# 2)
+
 # checkr 0.0.2
 
 - added `check_inherits()` and `check_classes()` functions

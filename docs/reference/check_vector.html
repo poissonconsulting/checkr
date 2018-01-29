@@ -90,9 +90,8 @@
     <p>Check Vector</p>
     
 
-    <pre class="usage"><span class='fu'>check_vector</span>(<span class='no'>x</span>, <span class='no'>values</span>, <span class='kw'>length</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>0L</span>, <span class='no'>.Machine</span>$<span class='no'>integer.max</span>),
-  <span class='kw'>unique</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>sorted</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>named</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>),
-  <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>check_vector</span>(<span class='no'>x</span>, <span class='no'>values</span>, <span class='kw'>length</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>unique</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>sorted</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>named</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -107,7 +106,7 @@
     </tr>
     <tr>
       <th>length</th>
-      <td><p>A count of the length or count range of the minimum and maximum length.</p></td>
+      <td><p>A flag indicating whether x should have elements (versus no elements) or a missing value indicating no requirements or a count or count range of the number of elements.</p></td>
     </tr>
     <tr>
       <th>unique</th>

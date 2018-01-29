@@ -4,16 +4,15 @@
 \alias{check_data}
 \title{Check Data}
 \usage{
-check_data(x, values, nrow = c(0L, 2147483647L), exclusive = FALSE,
-  order = FALSE, key = character(0), x_name = substitute(x),
-  error = TRUE)
+check_data(x, values, nrow = NA, exclusive = FALSE, order = FALSE,
+  key = character(0), x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}
 
 \item{values}{An optional character vector specifying the column names or a named list specifying the column names and values.}
 
-\item{nrow}{A count or count range of the number of rows.}
+\item{nrow}{A flag indicating whether x should have rows (versus no rows) or a missing value indicating no requirements or a count or count range of the number of rows.}
 
 \item{exclusive}{A flag indicating whether other columns are permitted.}
 

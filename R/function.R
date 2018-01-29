@@ -13,12 +13,12 @@
 #' check_function(character, error = FALSE)
 #' check_function(character, nargs = 0L, error = FALSE)
 check_function <- function(x, 
-                           nargs = c(0L, .Machine$integer.max),
+                           nargs = NA,
                            x_name = substitute(x),
                            error = TRUE) {
   x_name <- deparse_x_name(x_name)
   
-  check_count_range_internal(nargs)
+  check_length_internal(nargs)
 
   check_flag_internal(error)
   

@@ -10,8 +10,8 @@ test_that("check_ncol requires a data frame", {
 test_that("check_ncol requires counts", {
   x <- data.frame(y = 2)
   expect_identical(check_ncol(x), x)
-  expect_error(check_ncol(x, ncol = -1), "ncol must be one or two counts")
-  expect_error(check_ncol(x, ncol = 1.5), "ncol must be one or two counts")
+  expect_error(check_ncol(x, ncol = -1), "ncol must be a flag, a missing value, a count or a count range")
+  expect_error(check_ncol(x, ncol = 1.5), "ncol must be a flag, a missing value, a count or a count range")
 })
 
 test_that("check_ncol checks ncol", {

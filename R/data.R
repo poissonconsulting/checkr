@@ -1,8 +1,8 @@
 #' Check Data
 #'
+#' @inheritParams check_nrow
 #' @param x The object to check.
 #' @param values An optional character vector specifying the column names or a named list specifying the column names and values.
-#' @param nrow A count or count range of the number of rows.
 #' @param exclusive A flag indicating whether other columns are permitted.
 #' @param order A flag indicating whether the columns have to occur in the same order as values.
 #' @param key A character vector of the columns that represent a unique key.
@@ -29,7 +29,7 @@
 #'   ), exclusive = TRUE, order = TRUE, nrow = 10L, key = "Longitude", error = FALSE)
 check_data <- function(x,
                        values,
-                       nrow = c(0L, 2147483647L),
+                       nrow = NA,
                        exclusive = FALSE,
                        order = FALSE,
                        key = character(0),

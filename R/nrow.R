@@ -1,9 +1,7 @@
 #' Check nrow
 #'
-#' @param x The data to check.
-#' @param nrow A count or count range of the number of rows.
-#' @param x_name A string of the name of the object.
-#' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
+#' @inheritParams check_length
+#' @param nrow A flag indicating whether x should have rows (versus no rows) or a missing value indicating no requirements or a count or count range of the number of rows.
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @export
 #'
@@ -11,12 +9,12 @@
 #' check_nrow(data.frame(x = 1), error = FALSE)
 #' check_nrow(data.frame(x = integer(0)), error = FALSE)
 #' check_nrow(data.frame(x = 1:2), nrow = 1, error = FALSE)
-check_nrow <- function(x, nrow = c(1L, 2147483647L),
+check_nrow <- function(x, nrow = TRUE,
                          x_name = substitute(x),
                          error = TRUE) {
   x_name <- deparse_x_name(x_name)
 
-  check_count_range_internal(nrow)
+  check_length_internal(nrow)
 
   check_flag_internal(error)
   

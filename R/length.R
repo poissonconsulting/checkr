@@ -1,7 +1,7 @@
 #' Check Length
 #'
 #' @param x The object to check.
-#' @param length A count of the length or count range of the minimum and maximum length.
+#' @param length A flag indicating whether x should have elements (versus no elements) or a missing value indicating no requirements or a count or count range of the number of elements.
 #' @param x_name A string of the name of the object.
 #' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
 #' @return An invisible copy of x (if it doesn't throw an error).
@@ -13,12 +13,12 @@
 #' check_length(NULL, error = FALSE)
 #' check_length(list(), error = FALSE)
 check_length <- function(x,
-                         length = c(1L, .Machine$integer.max),
+                         length = TRUE,
                          x_name = substitute(x),
                          error = TRUE) {
   x_name <- deparse_x_name(x_name)
 
-  check_count_range_internal(length)
+  check_length_internal(length)
 
   check_flag_internal(error)
   

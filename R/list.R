@@ -1,8 +1,8 @@
 #' Check List
 #'
+#' @inheritParams check_length
 #' @param x The object to check.
 #' @param values An optional vector or named list specifying the values.
-#' @param length A count of the length or count range of the minimum and maximum length.
 #' @param unique A flag indicating whether the values must be unique.
 #' @param sorted A flag indicating whether the list must be sorted.
 #' @param named A flag (or NA) indicating whether the list must be named or unnamed (or doesn't matter).
@@ -12,7 +12,7 @@
 #' @export
 check_list <- function(x,
                        values,
-                       length = c(0L, .Machine$integer.max),
+                       length = NA,
                        unique = FALSE,
                        sorted = FALSE,
                        named = NA,

@@ -1,4 +1,11 @@
 check_n <- function(x, n, range, x_name, n_name, error) {
+  if(is_NA(range)) return(x)
+  
+  if(is_flag(range) && range) {
+    range <- c(1L, .Machine$integer.max)
+  } else if(is_flag(range) && !range)
+    range <- 0L
+
   if (identical(length(range), 1L)) {
     if (n != range) {
       on_fail(x_name, " must have ", range, " ", plural(n_name, range), error = error)

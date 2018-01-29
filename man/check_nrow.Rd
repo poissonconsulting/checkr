@@ -4,13 +4,12 @@
 \alias{check_nrow}
 \title{Check nrow}
 \usage{
-check_nrow(x, nrow = c(1L, 2147483647L), x_name = substitute(x),
-  error = TRUE)
+check_nrow(x, nrow = TRUE, x_name = substitute(x), error = TRUE)
 }
 \arguments{
-\item{x}{The data to check.}
+\item{x}{The object to check.}
 
-\item{nrow}{A count or count range of the number of rows.}
+\item{nrow}{A flag indicating whether x should have rows (versus no rows) or a missing value indicating no requirements or a count or count range of the number of rows.}
 
 \item{x_name}{A string of the name of the object.}
 
