@@ -10,3 +10,4 @@
 ^LICENSE.md$
 ^document.R$
 ^cran-comments\.md$
+^codemeta.json$
