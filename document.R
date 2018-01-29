@@ -1,5 +1,5 @@
 devtools::document()
 if(file.exists("DESCRIPTION")) unlink("docs", recursive = TRUE)
-codemetar::write_codemeta("testthat")
+codemetar::write_codemeta()
 pkgdown::build_site()
 devtools::check()

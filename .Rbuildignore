@@ -11,3 +11,4 @@
 ^document.R$
 ^cran-comments\.md$
 ^codemeta.json$
+^codemeta\.json$
