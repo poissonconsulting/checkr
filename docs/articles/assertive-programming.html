@@ -81,7 +81,7 @@
     
     
 <div class="contents">
-<p>Assertive programming follows the principles of fail fast and fail visibly. It is implemented by issuing an informative error message if the function arguments fail satisfy specific criteria. This is particularly important in R because it is not a compiled language.</p>
+<p>Assertive programming follows the principles of fail fast and fail visibly. It is implemented by issuing an informative error message if the function arguments fail to satisfy specific criteria. This is particularly important in R because it is not a compiled language.</p>
 <p>There are a host of R packages to facilitate assertive programming. Here I am interested in those packages that are</p>
 <ol type="1">
 <li>on CRAN;</li>
@@ -121,7 +121,7 @@
 <p>Perhaps the neatest feature is the ability to set your own error message for an assertion function using <code><a href="http://www.rdocumentation.org/packages/assertthat/topics/on_failure">on_failure()</a></code>.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">is.character2 &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">is.character</span>(x)</a>
 <a class="sourceLine" id="cb5-2" data-line-number="2"><span class="kw"><a href="http://www.rdocumentation.org/packages/assertthat/topics/on_failure">on_failure</a></span>(is.character2) &lt;-<span class="st"> </span><span class="cf">function</span>(call, env) {</a>
-<a class="sourceLine" id="cb5-3" data-line-number="3">    <span class="kw">paste0</span>(<span class="kw">deparse</span>(call<span class="op">$</span>x), <span class="st">" must be a character - sort it out!"</span>)</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">  <span class="kw">paste0</span>(<span class="kw">deparse</span>(call<span class="op">$</span>x), <span class="st">" must be a character - sort it out!"</span>)</a>
 <a class="sourceLine" id="cb5-4" data-line-number="4">}</a>
 <a class="sourceLine" id="cb5-5" data-line-number="5"><span class="kw"><a href="http://www.rdocumentation.org/packages/assertthat/topics/assert_that">assert_that</a></span>(<span class="kw">is.character2</span>(height))</a>
 <a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">#&gt; Error: height must be a character - sort it out!</span></a></code></pre></div>
@@ -161,7 +161,7 @@
 <a class="sourceLine" id="cb12-2" data-line-number="2"><span class="kw">my_fun</span>(height)</a>
 <a class="sourceLine" id="cb12-3" data-line-number="3"><span class="co">#&gt; Error: height must be class character</span></a></code></pre></div>
 </section><section id="speed" class="level3"><h3>Speed</h3>
-<p>Much of the <code>checkmate</code> package is written in <code>C</code> to minimize execution time. A speed comparison would be interesting.</p>
+<p>Much of the <code>checkmate</code> package is written in <code>C</code> to minimize execution time.</p>
 </section><section id="dependencies" class="level3"><h3>Dependencies</h3>
 <p>Whereas the <code>checkmate</code> package depends on <code>backports</code> and <code>utils</code>, and <code>assertthat</code> depends on <code>tools</code> both <code>base</code> and <code>checkr</code> are dependency-free.</p>
 </section></section>

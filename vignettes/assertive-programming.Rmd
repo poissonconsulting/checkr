@@ -12,14 +12,12 @@ vignette: >
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>",
-  tidy.opts = list(width.cutoff = 60),
-  tidy = TRUE
+  comment = "#>"
 )
 ```
 
 Assertive programming follows the principles of fail fast and fail visibly.
-It is implemented by issuing an informative error message if the function arguments fail satisfy specific criteria.
+It is implemented by issuing an informative error message if the function arguments fail to satisfy specific criteria.
 This is particularly important in R because it is not a compiled language.
 
 There are a host of R packages to facilitate assertive programming.
@@ -151,7 +149,6 @@ my_fun(height)
 ### Speed
 
 Much of the `checkmate` package is written in `C` to minimize execution time.
-A speed comparison would be interesting.
 
 ### Dependencies
 

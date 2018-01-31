@@ -1,3 +1,4 @@
+- added `check_number()` to check that object is a scalar real
 - added `assertive-programming` vignette
 - vector length are now checked before values
 - lengths can now be specified using `TRUE`, `FALSE` or `NA` (# 2)
