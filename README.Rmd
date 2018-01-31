@@ -22,8 +22,10 @@ knitr::opts_chunk$set(
 # checkr
 
 `checkr` is a dependency-free, pipe-friendly R package of expressive, assertive functions to check the properties of common R objects.
+
 In the case of failure the functions, which are designed to be used in scripts and packages,
 issue informative error messages.
+
 For a comparison with similar packages see the `assertive-programming` vignette.
 
 ## Demonstration
@@ -51,9 +53,8 @@ check_vector(y, values = 1:10, length = 2, unique = TRUE, sorted = TRUE, named =
 
 ## Values
 
-Perhaps the most interesting feature of `checkr` is the use of objects to check 
-the values of other objects.
-The expressive yet elegant syntax that makes this possible is described below.
+The most interesting and unique feature of `checkr` is the use of objects to check 
+the values of other objects using an elegant and expressive syntax.
 
 #### Class
 

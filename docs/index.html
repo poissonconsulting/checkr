@@ -79,7 +79,9 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 <section id="checkr" class="level1"><div class="page-header"><h1>checkr</h1></div>
-<p><code>checkr</code> is a dependency-free, pipe-friendly R package of expressive, assertive functions to check the properties of common R objects. In the case of failure the functions, which are designed to be used in scripts and packages, issue informative error messages. For a comparison with similar packages see the <code>assertive-programming</code> vignette.</p>
+<p><code>checkr</code> is a dependency-free, pipe-friendly R package of expressive, assertive functions to check the properties of common R objects.</p>
+<p>In the case of failure the functions, which are designed to be used in scripts and packages, issue informative error messages.</p>
+<p>For a comparison with similar packages see the <code>assertive-programming</code> vignette.</p>
 <section id="demonstration" class="level2"><h2>Demonstration</h2>
 <p>The following code demonstrates the <code><a href="reference/check_data.html">check_data()</a></code> function</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(checkr)</a>
@@ -112,7 +114,7 @@
 <a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt; Warning: y must be sorted</span></a>
 <a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#&gt; Warning: y must be named</span></a></code></pre></div>
 </section><section id="values" class="level2"><h2>Values</h2>
-<p>Perhaps the most interesting feature of <code>checkr</code> is the use of objects to check the values of other objects. The expressive yet elegant syntax that makes this possible is described below.</p>
+<p>The most interesting and unique feature of <code>checkr</code> is the use of objects to check the values of other objects using an elegant and expressive syntax.</p>
 <section id="class" class="level4"><h4>Class</h4>
 <p>To check the class simply pass an object of the desired class.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="dt">values =</span> <span class="kw">numeric</span>(<span class="dv">0</span>))</a>
