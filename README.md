@@ -14,12 +14,15 @@ MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org
 
 # checkr
 
-`checkr` is an R package to check the dimensions, classes, values, and
-names of scalars, vectors, lists and data frames. The various functions
-provide informative errors (or warnings) that allow users to quickly
-identify and fix any problems.
+`checkr` is a dependency-free, pipe-friendly R package of expressive,
+assertive functions to check the properties of common R objects. In the
+case of failure the functions, which are designed to be used in scripts
+and packages, issue informative error messages. For a comparison with
+similar packages see the `assertive-programming` vignette.
 
-The following code demonstrates its use
+## Demonstration
+
+The following code demonstrates the `check_data()` function
 
 ``` r
 library(checkr)
@@ -48,19 +51,20 @@ The two other main functions are `check_vector()` and `check_list()`.
 ``` r
 y <- c(2,1,0,1,NA)
 check_vector(y, values = 1:10, length = 2, unique = TRUE, sorted = TRUE, named = TRUE, error = FALSE)
+#> Warning: y must have 2 elements
 #> Warning: y must be class integer
 #> Warning: y must not include missing values
 #> Warning: y has unpermitted values 0
-#> Warning: y must have 2 elements
 #> Warning: y must be unique
 #> Warning: y must be sorted
 #> Warning: y must be named
 ```
 
-### Values
+## Values
 
-The values argument can be used to check the values of a vector, element
-of a list or column of a data frame.
+Perhaps the most interesting feature of `checkr` is the use of objects
+to check the values of other objects. The expressive yet elegant syntax
+that makes this possible is described below.
 
 #### Class
 
@@ -149,17 +153,17 @@ y %>% check_list(x_name = "y")
 
 To cite package 'checkr' in publications use:
 
-  Joe Thorley (2018). checkr: Check Object Classes, Values, Names
-  and Dimensions. R package version 0.0.2.9000.
+  Joe Thorley (2018). checkr: Check the Properties of Common R
+  Objects. R package version 0.0.2.9001.
   https://github.com/poissonconsulting/checkr
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
-    title = {checkr: Check Object Classes, Values, Names and Dimensions},
+    title = {checkr: Check the Properties of Common R Objects},
     author = {Joe Thorley},
     year = {2018},
-    note = {R package version 0.0.2.9000},
+    note = {R package version 0.0.2.9001},
     url = {https://github.com/poissonconsulting/checkr},
   }
 ```

@@ -1,0 +1,159 @@
+---
+title: "Packages for Assertive Programming"
+author: "Joe Thorley"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Packages for Assertive Programming}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  tidy.opts = list(width.cutoff = 60),
+  tidy = TRUE
+)
+```
+
+Assertive programming follows the principles of fail fast and fail visibly.
+It is implemented by issuing an informative error message if the function arguments fail satisfy specific criteria.
+This is particularly important in R because it is not a compiled language.
+
+There are a host of R packages to facilitate assertive programming.
+Here I am interested in those packages that are
+
+1) on CRAN;
+2) lightweight (few or no dependencies);
+3) can be used to test the types and values of common R objects (not just data frames);
+4) issue error messages.
+
+The most useful packages that I am aware of that satisfy these criteria are
+
+- [base](https://github.com/hadley/assertthat)
+- [assertthat](https://github.com/hadley/assertthat)
+- [checkmate](https://github.com/mllg/checkmate)
+- [checkr](https://github.com/poissonconsulting/checkr)
+
+This vignette consists of an overview of each package followed by a comparison.
+
+## Package Overview
+
+### base
+
+The `base` package offers the `stopifnot()` function.
+
+```{r, error = TRUE}
+height <- dplyr::starwars$height
+stopifnot(is.character(height))
+```
+The error message is not that helpful if the user doesn't know what `is.character()` tests for.
+
+In a function it behaves as follows:
+```{r, error = TRUE}
+my_fun <- function(x) stopifnot(is.character(x))
+my_fun(height)
+```
+
+### assertthat
+
+The [`assertthat`](https://github.com/hadley/assertthat) package offers `assert_that()`.
+```{r, error=TRUE}
+library(assertthat)
+assert_that(is.character(height))
+```
+The error message is a big improvement on `stopifnot()`'s.
+
+In a function it behaves as follows:
+```{r, error = TRUE}
+my_fun <- function(x) assert_that(is.character(x))
+my_fun(dplyr::starwars$height)
+```
+
+Perhaps the neatest feature is the ability to set your own error message for an assertion function using `on_failure()`.
+```{r, error = TRUE}
+is.character2 <- function(x) is.character(x)
+on_failure(is.character2) <- function(call, env) {
+  paste0(deparse(call$x), " must be a character - sort it out!")
+}
+assert_that(is.character2(height))
+```
+
+```{r, echo = FALSE}
+detach("package:assertthat")
+```
+
+### checkmate
+
+The [`checkmate`](https://github.com/mllg/checkmate) package provides a plethora of functions to check the type and related properties of common objects.
+
+```{r, error = TRUE}
+library(checkmate)
+assert_character(height)
+```
+
+In a function it behaves as follows
+```{r, error = TRUE}
+my_fun <- function(x) assert_character(x)
+my_fun(height)
+```
+
+In addition, the `assert()` function allows multiple alternative `check**` functions (those which return a string of the error message on failure and a `TRUE` on success) to be combined into one assertion.
+```{r, error = TRUE}
+assert(checkCharacter(height), checkFactor(height))
+```
+
+```{r, echo = FALSE}
+detach("package:checkmate")
+```
+
+### checkr
+
+The [`checkr`](https://github.com/poissonconsulting/checkr) package provides a handful of expressive functions to test the values of objects.
+
+```{r, error = TRUE}
+library(checkr)
+check_vector(height, "")
+```
+
+In a function it behaves as follows:
+```{r, error = TRUE}
+my_fun <- function(x) check_vector(x, "")
+my_fun(height)
+```
+
+And multiple alternative checks can be combined using the `checkor()` function.
+```{r, error = TRUE}
+checkor(check_vector(height, ""), check_vector(height, 1))
+```
+
+## Package Comparison
+
+### Return Values
+
+If all checks are passed `stopifnot()` returns an invisible `NULL`,
+while `assert_that()` returns `TRUE`.
+In contrast, `checkmate::assert_**` and `checkr::check_**`
+return a copy of the original object which allows them to be used in pipes.
+
+### Custom Error Messages
+
+Although there is no way to customize the error message produced by `stopifnot()`,
+`assert_that()` allows the programmer to specify the message for a individual test using the `msg` argument.
+In the case of `checkmate` and `checkr` the programmer can specify the variable name using the `.var.name` and `x_name` argument, respectively. This can be very helpful in functions.
+```{r, error = TRUE}
+my_fun <- function(x) check_vector(x, "", x_name = substitute(x))
+my_fun(height)
+```
+
+### Speed
+
+Much of the `checkmate` package is written in `C` to minimize execution time.
+A speed comparison would be interesting.
+
+### Dependencies
+
+Whereas the `checkmate` package depends on `backports` and `utils`,
+and `assertthat` depends on `tools` both `base` and `checkr` are dependency-free.

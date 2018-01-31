@@ -8,7 +8,7 @@ test_that("check_date errors", {
   y <- 2
   expect_error(check_date(y), "y must be class Date")
   y <- NULL
-  expect_error(check_date(y), "y must be class Date")
+  expect_error(check_date(y), "y must have 1 element")
 })
 
 test_that("check_date coercion", {

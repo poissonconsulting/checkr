@@ -1,21 +1,26 @@
 Package: checkr
-Title: Check Object Classes, Values, Names and Dimensions
-Version: 0.0.2.9000
-Date: 2018-01-29
+Title: Check the Properties of Common R Objects
+Version: 0.0.2.9001
+Date: 2018-01-30
 Authors@R: person("Joe", "Thorley", email = "joe@poissonconsulting.ca", role = c("aut", "cre"))
-Description: Checks the classes, values, names and dimensions of 
-    scalar, vectors, lists and data frames. 
-    Issues an informative error (or warning) if checks fail.
-    Otherwise it returns the original object allowing it to be used in pipes.
+Description: Expressive assertive pipe-friendly functions to check the properties of common R objects.
+  In the case of failure the functions issue informative error messages that 
+  (hopefully!) allow users to quickly identify and fix any problems.
+  The functions are designed to be used in scripts and packages.
 License: MIT + file LICENSE
 URL: https://github.com/poissonconsulting/checkr
 BugReports: https://github.com/poissonconsulting/checkr/issues
 Depends: R (>= 3.1.0)
-Suggests: 
+Suggests:
+    assertthat,
+    checkmate,
     covr,
     magrittr,
     dplyr,
-    testthat
+    testthat,
+    knitr,
+    rmarkdown
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
+VignetteBuilder: knitr

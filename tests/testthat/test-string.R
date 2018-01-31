@@ -6,7 +6,7 @@ test_that("check_string errors", {
   y <- 2
   expect_error(check_string(y), "y must be class character")
   y <- c(TRUE, TRUE)
-  expect_error(check_string(y), "y must be class character")
+  expect_error(check_string(y), "y must have 1 element")
   y <- character(0)
   expect_error(check_string(y), "y must have 1 element")})
 

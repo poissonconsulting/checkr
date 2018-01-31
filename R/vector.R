@@ -34,11 +34,11 @@ check_vector <- function(x,
 
   if (!is.atomic(x)) error(x_name, " must be an atomic vector")
 
+  check_length(x, length = length, x_name = x_name, error = error)
+
   if(!missing(values))
     check_values(x, values = values, x_name = x_name, error = error)
   
-  check_length(x, length = length, x_name = x_name, error = error)
-
   if(unique) check_unique(x, x_name = x_name, error = error)
   if(sorted) check_sorted(x, x_name = x_name, error = error)
   if(identical(named, TRUE)) {

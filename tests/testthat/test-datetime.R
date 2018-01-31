@@ -11,5 +11,5 @@ test_that("check_datetime errors", {
   y <- as.Date("2002-01-02")
   expect_error(check_datetime(y), "y must be class POSIXct")
   y <- NULL
-  expect_error(check_datetime(y), "y must be class POSIXct")
+  expect_error(check_datetime(y), "y must have 1 element")
 })
