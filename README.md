@@ -11,6 +11,8 @@ Status](https://img.shields.io/codecov/c/github/poissonconsulting/checkr/master.
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/checkr)](https://cran.r-project.org/package=checkr)
+[![CRAN
+Downloads](http://cranlogs.r-pkg.org/badges/grand-total/checkr)](https://CRAN.R-project.org/package=checkr)
 
 # checkr
 

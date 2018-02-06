@@ -105,7 +105,7 @@ That is to say the join is a unique key in y and all the rows in
 x have a match in y.</p>
     
 
-    <pre class="usage"><span class='fu'>check_join</span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='kw'>by</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>all</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>),
+    <pre class="usage"><span class='fu'>check_join</span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='kw'>by</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>all_y</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>),
   <span class='kw'>y_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>y</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
@@ -124,7 +124,7 @@ x have a match in y.</p>
       <td><p>A character vector or named character vector of the columns to join by.</p></td>
     </tr>
     <tr>
-      <th>all</th>
+      <th>all_y</th>
       <td><p>A flag indicating whether all the rows in y should have a match in x.</p></td>
     </tr>
     <tr>

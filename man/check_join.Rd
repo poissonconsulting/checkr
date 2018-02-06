@@ -4,7 +4,7 @@
 \alias{check_join}
 \title{Check Join}
 \usage{
-check_join(x, y, by = NULL, all = FALSE, x_name = substitute(x),
+check_join(x, y, by = NULL, all_y = FALSE, x_name = substitute(x),
   y_name = substitute(y), error = TRUE)
 }
 \arguments{
@@ -14,7 +14,7 @@ check_join(x, y, by = NULL, all = FALSE, x_name = substitute(x),
 
 \item{by}{A character vector or named character vector of the columns to join by.}
 
-\item{all}{A flag indicating whether all the rows in y should have a match in x.}
+\item{all_y}{A flag indicating whether all the rows in y should have a match in x.}
 
 \item{x_name}{A string of the name of the object x.}
 

@@ -1,4 +1,4 @@
-- added `all = TRUE` argument to `check_join()` to check all rows in y in join
+- added `all_y = TRUE` argument to `check_join()` to check all rows in y in join
 - changed `check_join()` error message to  
     *...join in x and y must include all the rows in x* as opposed to
     *...join in x and y violates referential integrity*

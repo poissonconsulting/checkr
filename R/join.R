@@ -8,7 +8,7 @@
 #' @param x The object to check.
 #' @param y The parent data frame.
 #' @param by A character vector or named character vector of the columns to join by. 
-#' @param all A flag indicating whether all the rows in y should have a match in x.
+#' @param all_y A flag indicating whether all the rows in y should have a match in x.
 #' @param x_name A string of the name of the object x.
 #' @param y_name A string of the name of the object y.
 #' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
@@ -22,7 +22,7 @@
 #' check_join(data1, data2, by = c(x = "y"), error = FALSE)
 check_join <- function(x, y,
                        by = NULL,
-                       all = FALSE,
+                       all_y = FALSE,
                        x_name = substitute(x),
                        y_name = substitute(y),
                        error = TRUE) {
@@ -34,7 +34,7 @@ check_join <- function(x, y,
   check_flag_internal(error)
   
   checkor(check_null(by), check_vector(by, "", length = TRUE))
-  check_flag(all)
+  check_flag(all_y)
   
   if(is.null(by)) {
     by <- intersect(colnames(x), colnames(y))
@@ -50,7 +50,7 @@ check_join <- function(x, y,
 
   check_key(y, by, x_name = y_name, error = error)
   
-  if(!all && !nrow(x)) return(invisible(x))
+  if(!all_y && !nrow(x)) return(invisible(x))
   
   check_missing_colnames(x, "..ID")
   check_missing_colnames(y, "..ID")
@@ -66,7 +66,7 @@ check_join <- function(x, y,
   if(!identical(sort(unique(z$..ID.x)), sort(..ID.x))) {
         on_fail("join between ", x_name, " and ", y_name, " must include all the rows in ", x_name, error = error)
   }
-  if(all && !identical(sort(unique(z$..ID.y)), sort(..ID.y))) {
+  if(all_y && !identical(sort(unique(z$..ID.y)), sort(..ID.y))) {
         on_fail("join between ", x_name, " and ", y_name, " must include all the rows in ", y_name, error = error)
   }
   
