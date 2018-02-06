@@ -157,7 +157,7 @@ y %>% check_list(x_name = "y")
 To cite package 'checkr' in publications use:
 
   Joe Thorley (2018). checkr: Check the Properties of Common R
-  Objects. R package version 0.0.2.9002.
+  Objects. R package version 0.0.2.9003.
   https://github.com/poissonconsulting/checkr
 
 A BibTeX entry for LaTeX users is
@@ -166,7 +166,7 @@ A BibTeX entry for LaTeX users is
     title = {checkr: Check the Properties of Common R Objects},
     author = {Joe Thorley},
     year = {2018},
-    note = {R package version 0.0.2.9002},
+    note = {R package version 0.0.2.9003},
     url = {https://github.com/poissonconsulting/checkr},
   }
 ```

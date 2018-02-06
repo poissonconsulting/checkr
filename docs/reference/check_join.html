@@ -100,10 +100,12 @@
 
     
     <p>Checks that the columns in data frame x form a many-to-one
-join with the corresponding columns in y.</p>
+join with the corresponding columns in y.
+That is to say the join is a unique key in y and all the rows in
+x have a match in y.</p>
     
 
-    <pre class="usage"><span class='fu'>check_join</span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='kw'>by</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>),
+    <pre class="usage"><span class='fu'>check_join</span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='kw'>by</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>all</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>),
   <span class='kw'>y_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>y</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
@@ -120,6 +122,10 @@ join with the corresponding columns in y.</p>
     <tr>
       <th>by</th>
       <td><p>A character vector or named character vector of the columns to join by.</p></td>
+    </tr>
+    <tr>
+      <th>all</th>
+      <td><p>A flag indicating whether all the rows in y should have a match in x.</p></td>
     </tr>
     <tr>
       <th>x_name</th>
@@ -143,7 +149,7 @@ join with the corresponding columns in y.</p>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='no'>data1</span> <span class='kw'>&lt;-</span> <span class='fu'>data.frame</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>2</span>)
 <span class='no'>data2</span> <span class='kw'>&lt;-</span> <span class='fu'>data.frame</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>3</span>:<span class='fl'>5</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>2L</span>)
-<span class='fu'>check_join</span>(<span class='no'>data1</span>, <span class='no'>data2</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: join between data1 and data2 violates referential integrity</span></div><div class='input'><span class='fu'>check_join</span>(<span class='no'>data1</span>, <span class='no'>data2</span>, <span class='kw'>by</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"y"</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: column 'y' in data2 must be a unique key</span></div><div class='output co'>#&gt; <span class='warning'>Warning: join between data1 and data2 violates referential integrity</span></div></pre>
+<span class='fu'>check_join</span>(<span class='no'>data1</span>, <span class='no'>data2</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: join between data1 and data2 must include all the rows in data1</span></div><div class='input'><span class='fu'>check_join</span>(<span class='no'>data1</span>, <span class='no'>data2</span>, <span class='kw'>by</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"y"</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: column 'y' in data2 must be a unique key</span></div><div class='output co'>#&gt; <span class='warning'>Warning: join between data1 and data2 must include all the rows in data1</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

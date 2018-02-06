@@ -1,3 +1,7 @@
+- added `all = TRUE` argument to `check_join()` to check all rows in y in join
+- changed `check_join()` error message to  
+    *...join in x and y must include all the rows in x* as opposed to
+    *...join in x and y violates referential integrity*
 - added `check_number()` to check that object is a scalar real
 - added `assertive-programming` vignette
 - vector length are now checked before values

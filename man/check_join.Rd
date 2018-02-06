@@ -4,7 +4,7 @@
 \alias{check_join}
 \title{Check Join}
 \usage{
-check_join(x, y, by = NULL, x_name = substitute(x),
+check_join(x, y, by = NULL, all = FALSE, x_name = substitute(x),
   y_name = substitute(y), error = TRUE)
 }
 \arguments{
@@ -13,6 +13,8 @@ check_join(x, y, by = NULL, x_name = substitute(x),
 \item{y}{The parent data frame.}
 
 \item{by}{A character vector or named character vector of the columns to join by.}
+
+\item{all}{A flag indicating whether all the rows in y should have a match in x.}
 
 \item{x_name}{A string of the name of the object x.}
 
@@ -26,6 +28,8 @@ An invisible copy of x (if it doesn't throw an error).
 \description{
 Checks that the columns in data frame x form a many-to-one
 join with the corresponding columns in y.
+That is to say the join is a unique key in y and all the rows in
+x have a match in y.
 }
 \examples{
 data1 <- data.frame(x = 1:2)
