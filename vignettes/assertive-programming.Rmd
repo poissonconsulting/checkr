@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 
 Assertive programming follows the principles of fail fast and fail visibly.
 It is implemented by issuing an informative error message if the function arguments fail to satisfy specific criteria.
-This is particularly important in R because it is not a compiled language.
+This is particularly important in R because it is a dynamically typed language.
 
 There are a host of R packages to facilitate assertive programming.
 Here I am interested in those packages that are
