@@ -9,4 +9,5 @@ test_that("named", {
   
   vec <- c(y = 1, y = 2)
   expect_error(check_named(vec, unique = TRUE), "names of vec must be unique")
+  expect_error(check_named(vec, regex = "x"), "names of vec must match regular expression 'x'")
 })

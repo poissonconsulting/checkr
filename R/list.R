@@ -5,7 +5,7 @@
 #' @param values An optional vector or named list specifying the values.
 #' @param unique A flag indicating whether the values must be unique.
 #' @param sorted A flag indicating whether the list must be sorted.
-#' @param named A flag (or NA) indicating whether the list must be named or unnamed (or doesn't matter).
+#' @param named A flag indicating whether the list must be named or unnamed or a regular expression that must match all the names or NA if it doesn't matter if the list is named.
 #' @param x_name A string of the name of the object.
 #' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
 #' @return An invisible copy of x (if it doesn't throw an error).
@@ -22,9 +22,15 @@ check_list <- function(x,
   
   if (!is.list(x)) error(x_name, " must be a list")
 
-  if(!(identical(named, TRUE) || identical(named, FALSE) || identical(named, NA))) {
-    error("named must be a flag or NA")
+  if(!(is_flag(named) || is_string(named) || identical(named, NA))) 
+    error("named must be a flag a string or NA")
+  
+  regex <- ".*"
+  if(is_string(named)) {
+    regex <- named
+    named <- TRUE
   }
+  
   check_flag_internal(error)
   
   if(!missing(values)) {
@@ -55,7 +61,7 @@ check_list <- function(x,
   if(sorted) check_sorted(x, x_name = x_name, error = error)
   
   if(identical(named, TRUE)) {
-    check_named(x, x_name = x_name, error = error)
+    check_named(x, regex = regex, x_name = x_name, error = error)
   } else if(identical(named, FALSE))
     check_unnamed(x, x_name = x_name, error = error)
   

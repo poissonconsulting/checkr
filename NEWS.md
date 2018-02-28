@@ -1,3 +1,6 @@
+- check_vector() and check_list() now allow `named` argument to be a regular expression
+- added `regex = ".*"` argument to `check_named()`
+- added `check_regex()` function
 - added `all_y = TRUE` argument to `check_join()` to check all rows in y in join
 - changed `check_join()` error message to  
     *...join in x and y must include all the rows in x* as opposed to

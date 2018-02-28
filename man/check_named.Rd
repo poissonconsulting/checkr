@@ -4,10 +4,13 @@
 \alias{check_named}
 \title{Check Named}
 \usage{
-check_named(x, unique = FALSE, x_name = substitute(x), error = TRUE)
+check_named(x, regex = ".*", unique = FALSE, x_name = substitute(x),
+  error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}
+
+\item{regex}{A string of the regular expression that must match all names.}
 
 \item{unique}{A flag indicating whether the names must be unique.}
 
