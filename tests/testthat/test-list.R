@@ -7,5 +7,5 @@ test_that("list", {
   expect_error(check_list(x, named = FALSE), "x must be unnamed")
   expect_identical(check_list(x, named = ".*"), x)
   expect_error(check_list(x, named = ".+"), "names of x must match regular expression")
-  expect_error(check_list(x, named = 1), "elements of names of x must have 1 character")
+  expect_error(check_list(x, named = 1), "names of x must have 1 character")
 })

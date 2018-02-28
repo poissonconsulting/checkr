@@ -18,7 +18,7 @@ check_nchar <- function(x, nchar = TRUE, x_name = substitute(x),
   if(!(is_flag(nchar) || is_NA(nchar) || is_count(nchar) || is_count_range(nchar)))
     error("nchar must be a flag, NA, count or count range")
 
-  check_n(x, n = nchar(x), range = nchar, x_name = paste("elements of", x_name), n_name = "character", error = error)
+  check_n(x, n = nchar(x), range = nchar, x_name = x_name, n_name = "character", error = error)
 
   invisible(x)
 }
