@@ -10,7 +10,7 @@
   "issueTracker": "https://github.com/poissonconsulting/checkr/issues",
   "datePublished": "2018-02-28",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "0.0.2.9004",
+  "version": "0.0.2.9005",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
@@ -140,5 +140,5 @@
   "contIntegration": "https://travis-ci.org/poissonconsulting/checkr",
   "releaseNotes": "https://github.com/poissonconsulting/checkr/blob/master/NEWS.md",
   "readme": "https://github.com/poissonconsulting/checkr/blob/master/README.md",
-  "fileSize": "240.302KB"
+  "fileSize": "240.702KB"
 }

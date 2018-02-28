@@ -1,4 +1,5 @@
-- check_vector() and check_list() now allow `named` argument to be a regular expression
+- added `check_nchar()` function
+- `check_vector()` and `check_list()` now allow `named` argument to be a regular expression
 - added `regex = ".*"` argument to `check_named()`
 - added `check_regex()` function
 - added `all_y = TRUE` argument to `check_join()` to check all rows in y in join

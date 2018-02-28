@@ -22,7 +22,7 @@ check_list <- function(x,
   
   if (!is.list(x)) error(x_name, " must be a list")
 
-  if(!(is_flag(named) || is_string(named) || identical(named, NA))) 
+  if(!(is_flag(named) || is_string(named) || is_NA(named))) 
     error("named must be a flag a string or NA")
   
   regex <- ".*"
@@ -60,9 +60,9 @@ check_list <- function(x,
   if(unique) check_unique(x, x_name = x_name, error = error)
   if(sorted) check_sorted(x, x_name = x_name, error = error)
   
-  if(identical(named, TRUE)) {
+  if(is_flag(named) && named) {
     check_named(x, regex = regex, x_name = x_name, error = error)
-  } else if(identical(named, FALSE))
+  } else if(is_flag(named) && !named)
     check_unnamed(x, x_name = x_name, error = error)
   
   invisible(x)
