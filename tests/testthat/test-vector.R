@@ -1,7 +1,6 @@
 context("vector")
 
 test_that("vector", {
-  
   expect_error(check_vector(2, named  = TRUE), "2 must be named")
   x <- 1
   names(x) <- "y"
@@ -9,4 +8,8 @@ test_that("vector", {
   
   vec <- c(y = 1, y = 2)
   expect_error(check_vector(vec, named = "x"), "names of vec must match regular expression 'x'")
+  
+  vec <- c(y = 1, y = 2)
+  expect_error(check_vector(vec, named = 2), "elements of names of vec must have 2 characters")
+  expect_error(check_vector(vec, named = FALSE), "vec must be unnamed")
 })

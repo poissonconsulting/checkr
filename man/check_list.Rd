@@ -18,7 +18,7 @@ check_list(x, values, length = NA, unique = FALSE, sorted = FALSE,
 
 \item{sorted}{A flag indicating whether the list must be sorted.}
 
-\item{named}{A flag indicating whether the list must be named or unnamed or a regular expression that must match all the names or NA if it doesn't matter if the list is named.}
+\item{named}{A flag indicating whether the list must be named or unnamed or a regular expression that must match all the names or count or count range of the number of characters in the names or NA if it doesn't matter if the list is named.}
 
 \item{x_name}{A string of the name of the object.}
 

@@ -1,6 +1,6 @@
 Package: checkr
 Title: Check the Properties of Common R Objects
-Version: 0.0.2.9005
+Version: 0.0.2.9006
 Date: 2018-02-28
 Authors@R: person("Joe", "Thorley", email = "joe@poissonconsulting.ca", role = c("aut", "cre"))
 Description: Expressive assertive pipe-friendly functions to check the properties of common R objects.

@@ -6,11 +6,11 @@ is.POSIXt <- function(x) inherits(x, "POSIXt")
   
 is_string <- function(x)  (is.character(x) || is.factor(x)) && length(x) == 1 && !is.na(x)
 
-is_count <- function(x)  (is.integer(x) || is.numeric(x)) && length(x) == 1 &&
+is_count <- function(x)  is.numeric(x) && length(x) == 1 &&
   !is.na(x) && x >= 0 && identical(as.numeric(x), floor(x))
 
-is_count_range <- function(x)
-  length(x) %in% 1:2 && all(!is.na(x) & x >= 0 & identical(as.numeric(x), floor(x)))
+is_count_range <- function(x) is.numeric(x) && length(x) %in% 1:2 && 
+  all(!is.na(x) & x >= 0 & identical(as.numeric(x), floor(x)))
 
 is_length <- function(x) is_flag(x) || is_NA(x) || is_count_range(x)
 
