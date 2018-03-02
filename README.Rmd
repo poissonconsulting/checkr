@@ -116,10 +116,30 @@ The argument `x_name` can be used to override the name.
 y %>% check_list(x_name = "y")
 ```
 
+## Installation
+
+To install the latest official release from [CRAN](https://CRAN.R-project.org/package=checkr)
+```
+install.packages("checkr")
+```
+
+To install the latest development version from [GitHub](https://github.com/poissonconsulting/checkr)
+```
+# install.packages("devtools")
+devtools::install_github("poissonconsulting/checkr")
+```
+
+To install the latest development version from the Poisson drat [repository](https://github.com/poissonconsulting/drat)
+```
+# install.packages("drat")
+drat::addRepo("poissonconsulting")
+install.packages("checkr")
+```
+
 ## Citation
 
 ```{r, comment="", echo=FALSE}
-citation(package = 'checkr')
+citation(package = "checkr")
 ```
 
 ## Contribution

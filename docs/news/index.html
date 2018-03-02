@@ -100,6 +100,41 @@
     </div>
 
     <div class="contents">
+    <div class="section level1">
+<h1>checkr 0.1.0</h1>
+<ul>
+<li>added <code><a href="../reference/check_nchar.html">check_nchar()</a></code> function</li>
+<li>
+<code><a href="../reference/check_vector.html">check_vector()</a></code> and <code><a href="../reference/check_list.html">check_list()</a></code> now allow <code>named</code> argument to be a regular expression or count range</li>
+<li>added <code>nchar = c(0L, .Machine$max.integer)</code> and <code>regex = ".*"</code> arguments to <code><a href="../reference/check_named.html">check_named()</a></code>
+</li>
+<li>added <code><a href="../reference/check_regex.html">check_regex()</a></code> function</li>
+<li>added <code>all_y = TRUE</code> argument to <code><a href="../reference/check_join.html">check_join()</a></code> to check all rows in y in join</li>
+<li>changed <code><a href="../reference/check_join.html">check_join()</a></code> error message to<br><em>…join in x and y must include all the rows in x</em> as opposed to <em>…join in x and y violates referential integrity</em>
+</li>
+<li>added <code><a href="../reference/check_number.html">check_number()</a></code> to check that object is a scalar real</li>
+<li>added <code>assertive-programming</code> vignette</li>
+<li>vector length are now checked before values</li>
+<li>lengths can now be specified using <code>TRUE</code>, <code>FALSE</code> or <code>NA</code> (# 2)</li>
+</ul>
+</div>
+    <div class="section level1">
+<h1>checkr 0.0.2</h1>
+<ul>
+<li>added <code><a href="../reference/check_inherits.html">check_inherits()</a></code> and <code><a href="../reference/check_classes.html">check_classes()</a></code> functions</li>
+<li>
+<code><a href="../reference/check_named.html">check_named()</a></code> now only checks unique when <code>unique = TRUE</code>
+</li>
+<li>
+<code><a href="../reference/check_names.html">check_names()</a></code> (and <code><a href="../reference/check_colnames.html">check_colnames()</a></code>) can now check names are unique and also accept <code>names = character(0)</code> (and <code>colnames = character(0)</code>)</li>
+</ul>
+</div>
+    <div class="section level1">
+<h1>checkr 0.0.1</h1>
+<ul>
+<li>first official release</li>
+</ul>
+</div>
     </div>
   </div>
 
@@ -107,6 +142,9 @@
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
+        <li><a href="#NA">0.1.0</a></li>
+        <li><a href="#NA">0.0.2</a></li>
+        <li><a href="#NA">0.0.1</a></li>
       </ul>
     </div>
   </div>

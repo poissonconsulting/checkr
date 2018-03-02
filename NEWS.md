@@ -1,3 +1,5 @@
+# checkr 0.1.0
+
 - added `check_nchar()` function
 - `check_vector()` and `check_list()` now allow `named` argument to be a regular expression or count range
 - added `nchar = c(0L, .Machine$max.integer)` and `regex = ".*"` arguments to `check_named()`

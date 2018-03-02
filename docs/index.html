@@ -78,11 +78,15 @@
 <div class="contents">
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<section id="checkr" class="level1"><div class="page-header"><h1>checkr</h1></div>
+<div id="checkr" class="section level1">
+<div class="page-header"><h1 class="hasAnchor">
+<a href="#checkr" class="anchor"></a>checkr</h1></div>
 <p><code>checkr</code> is a dependency-free, pipe-friendly R package of expressive, assertive functions to check the properties of common R objects.</p>
 <p>In the case of failure the functions, which are designed to be used in scripts and packages, issue informative error messages.</p>
 <p>For a comparison with similar packages see the <code>assertive-programming</code> vignette.</p>
-<section id="demonstration" class="level2"><h2>Demonstration</h2>
+<div id="demonstration" class="section level2">
+<h2 class="hasAnchor">
+<a href="#demonstration" class="anchor"></a>Demonstration</h2>
 <p>The following code demonstrates the <code><a href="reference/check_data.html">check_data()</a></code> function</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(checkr)</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2"></a>
@@ -113,14 +117,22 @@
 <a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt; Warning: y must be unique</span></a>
 <a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt; Warning: y must be sorted</span></a>
 <a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#&gt; Warning: y must be named</span></a></code></pre></div>
-</section><section id="values" class="level2"><h2>Values</h2>
+</div>
+<div id="values" class="section level2">
+<h2 class="hasAnchor">
+<a href="#values" class="anchor"></a>Values</h2>
 <p>The most interesting and unique feature of <code>checkr</code> is the use of objects to check the values of other objects using an elegant and expressive syntax.</p>
-<section id="class" class="level4"><h4>Class</h4>
+<div id="class" class="section level4">
+<h4 class="hasAnchor">
+<a href="#class" class="anchor"></a>Class</h4>
 <p>To check the class simply pass an object of the desired class.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="dt">values =</span> <span class="kw">numeric</span>(<span class="dv">0</span>))</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="dt">values =</span> <span class="kw">integer</span>(<span class="dv">0</span>))</a>
 <a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">#&gt; Error: y must be class integer</span></a></code></pre></div>
-</section><section id="missing-values" class="level4"><h4>Missing Values</h4>
+</div>
+<div id="missing-values" class="section level4">
+<h4 class="hasAnchor">
+<a href="#missing-values" class="anchor"></a>Missing Values</h4>
 <p>To check that a vector does not include missing values pass a single non-missing value (of the correct class).</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="dv">1</span>)</a>
 <a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; Error: y must not include missing values</span></a></code></pre></div>
@@ -129,17 +141,26 @@
 <p>And to check that it only includes missing values only pass a missing value (of the correct class)</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="ot">NA_real_</span>)</a>
 <a class="sourceLine" id="cb6-2" data-line-number="2"><span class="co">#&gt; Error: y must only include missing values</span></a></code></pre></div>
-</section><section id="range" class="level4"><h4>Range</h4>
+</div>
+<div id="range" class="section level4">
+<h4 class="hasAnchor">
+<a href="#range" class="anchor"></a>Range</h4>
 <p>To check the range of a vector pass two non-missing values (as well as the missing value if required).</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="ot">NA</span>))</a>
 <a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">-10</span>, <span class="ot">NA</span>))</a>
 <a class="sourceLine" id="cb7-3" data-line-number="3"><span class="co">#&gt; Error: the values in y must lie between -10 and -1</span></a></code></pre></div>
-</section><section id="specific-values" class="level4"><h4>Specific Values</h4>
+</div>
+<div id="specific-values" class="section level4">
+<h4 class="hasAnchor">
+<a href="#specific-values" class="anchor"></a>Specific Values</h4>
 <p>To check the vector only includes specific values pass three or more non-missing values.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="ot">NA</span>))</a>
 <a class="sourceLine" id="cb8-2" data-line-number="2"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="ot">NA</span>))</a>
 <a class="sourceLine" id="cb8-3" data-line-number="3"><span class="co">#&gt; Error: y can only include values 1 or 2</span></a></code></pre></div>
-</section><section id="naming-objects" class="level3"><h3>Naming Objects</h3>
+</div>
+<div id="naming-objects" class="section level3">
+<h3 class="hasAnchor">
+<a href="#naming-objects" class="anchor"></a>Naming Objects</h3>
 <p>By default, the name of an object is determined from the function call.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(<span class="kw">list</span>(<span class="dt">x =</span> <span class="dv">1</span>))</a>
 <a class="sourceLine" id="cb9-2" data-line-number="2"><span class="co">#&gt; Error: list(x = 1) must be an atomic vector</span></a></code></pre></div>
@@ -150,12 +171,29 @@
 <p>The argument <code>x_name</code> can be used to override the name.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">y <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="reference/check_list.html">check_list</a></span>(<span class="dt">x_name =</span> <span class="st">"y"</span>)</a>
 <a class="sourceLine" id="cb11-2" data-line-number="2"><span class="co">#&gt; Error: y must be a list</span></a></code></pre></div>
-</section></section><section id="citation" class="level2"><h2>Citation</h2>
+</div>
+</div>
+<div id="installation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#installation" class="anchor"></a>Installation</h2>
+<p>To install the latest official release from <a href="https://CRAN.R-project.org/package=checkr">CRAN</a></p>
+<pre><code>install.packages("checkr")</code></pre>
+<p>To install the latest development version from <a href="https://github.com/poissonconsulting/checkr">GitHub</a></p>
+<pre><code><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github"># install.packages("devtools")
+devtools::install_github("poissonconsulting/checkr")</a></code></pre>
+<p>To install the latest development version from the Poisson drat <a href="https://github.com/poissonconsulting/drat">repository</a></p>
+<pre><code><a href="http://www.rdocumentation.org/packages/drat/topics/addRepo"># install.packages("drat")
+drat::addRepo("poissonconsulting")
+install.packages("checkr")</a></code></pre>
+</div>
+<div id="citation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#citation" class="anchor"></a>Citation</h2>
 <pre><code>
 To cite package 'checkr' in publications use:
 
   Joe Thorley (2018). checkr: Check the Properties of Common R
-  Objects. R package version 0.0.2.9006.
+  Objects. R package version 0.1.0.
   https://github.com/poissonconsulting/checkr
 
 A BibTeX entry for LaTeX users is
@@ -164,16 +202,23 @@ A BibTeX entry for LaTeX users is
     title = {checkr: Check the Properties of Common R Objects},
     author = {Joe Thorley},
     year = {2018},
-    note = {R package version 0.0.2.9006},
+    note = {R package version 0.1.0},
     url = {https://github.com/poissonconsulting/checkr},
   }</code></pre>
-</section><section id="contribution" class="level2"><h2>Contribution</h2>
+</div>
+<div id="contribution" class="section level2">
+<h2 class="hasAnchor">
+<a href="#contribution" class="anchor"></a>Contribution</h2>
 <p>Please report any <a href="https://github.com/poissonconsulting/checkr/issues">issues</a>.</p>
 <p><a href="https://github.com/poissonconsulting/checkr/pulls">Pull requests</a> are always welcome.</p>
 <p>Please note that this project is released with a <a href="CONDUCT.md">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</p>
-</section><section id="inspiration" class="level2"><h2>Inspiration</h2>
+</div>
+<div id="inspiration" class="section level2">
+<h2 class="hasAnchor">
+<a href="#inspiration" class="anchor"></a>Inspiration</h2>
 <p><a href="https://github.com/poissonconsulting/datacheckr">datacheckr</a></p>
-</section></section>
+</div>
+</div>
 </div>
   </div>
 
