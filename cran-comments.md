@@ -5,10 +5,13 @@
 
 ## R CMD check results
 
-0 errors | 0 warnings | 1 note
+* checking CRAN incoming feasibility ... Note_to_CRAN_maintainers
+Maintainer: ‘Joe Thorley <joe@poissonconsulting.ca>’
 
-* This is a new release.
+0 errors | 0 warnings | 1 note
 
 ## Reverse dependencies
 
-This is a new release, so there are no reverse dependencies.
+* I have run R CMD check on the 1 downstream dependency.
+
+No ERRORs or WARNINGs found :)
