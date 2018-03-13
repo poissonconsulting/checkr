@@ -179,7 +179,7 @@ To install the latest development version from the Poisson drat
 To cite package 'checkr' in publications use:
 
   Joe Thorley (2018). checkr: Check the Properties of Common R
-  Objects. R package version 0.1.0.
+  Objects. R package version 0.1.0.9000.
   https://github.com/poissonconsulting/checkr
 
 A BibTeX entry for LaTeX users is
@@ -188,7 +188,7 @@ A BibTeX entry for LaTeX users is
     title = {checkr: Check the Properties of Common R Objects},
     author = {Joe Thorley},
     year = {2018},
-    note = {R package version 0.1.0},
+    note = {R package version 0.1.0.9000},
     url = {https://github.com/poissonconsulting/checkr},
   }
 ```

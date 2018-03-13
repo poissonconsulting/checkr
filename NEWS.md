@@ -1,3 +1,5 @@
+- added `check_flag_na()` to check is scalar logical
+
 # checkr 0.1.0
 
 - added `check_nchar()` function
