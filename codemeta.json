@@ -8,9 +8,9 @@
   "description": "Expressive assertive pipe-friendly functions to check the properties of common R objects.\n  In the case of failure the functions issue informative error messages that \n  (hopefully!) allow users to quickly identify and fix any problems.\n  The functions are designed to be used in scripts and packages.",
   "name": "checkr: Check the Properties of Common R Objects",
   "issueTracker": "https://github.com/poissonconsulting/checkr/issues",
-  "datePublished": "2018-03-12",
+  "datePublished": "2018-03-13",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "0.1.0.9000",
+  "version": "0.1.0.9001",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
@@ -140,5 +140,5 @@
   "contIntegration": "https://travis-ci.org/poissonconsulting/checkr",
   "releaseNotes": "https://github.com/poissonconsulting/checkr/blob/master/NEWS.md",
   "readme": "https://github.com/poissonconsulting/checkr/blob/master/README.md",
-  "fileSize": "241.462KB"
+  "fileSize": "242.638KB"
 }

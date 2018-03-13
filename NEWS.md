@@ -1,3 +1,4 @@
+- added `check_homogenous()` to check object's elements are the same class
 - added `check_flag_na()` to check is scalar logical
 
 # checkr 0.1.0
