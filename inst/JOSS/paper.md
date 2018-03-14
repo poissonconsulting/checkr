@@ -5,7 +5,7 @@ authors:
   name: Joe Thorley
   orcid: 0000-0002-7683-4592
 affiliations:
-  index: 1
+- index: 1
   name: Poisson Consulting, Nelson, British Columbia
 tags: 
   - R
