@@ -17,10 +17,6 @@ If you are considering a pull request, you may want to open an issue first to di
 * Push up to your account
 * Submit a pull request to home base (likely master branch, but check to make sure) at `poissonconsulting/checkr`
 
-### Discussion forum
-
-Check out our [discussion forum](https://discuss.ropensci.org) if you think your issue requires a longer form discussion.
-
 ### Prefer to Email? 
 
 Email the person listed as maintainer in the `DESCRIPTION` file of this repo.
