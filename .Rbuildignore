@@ -13,3 +13,5 @@
 ^codemeta.json$
 ^codemeta\.json$
 ^revdep$
+^.github$
+
