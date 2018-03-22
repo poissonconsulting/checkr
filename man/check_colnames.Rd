@@ -12,7 +12,7 @@ check_colnames(x, colnames = character(0), exclusive = FALSE,
 
 \item{colnames}{A character vector of the column names.}
 
-\item{exclusive}{A flag indicating whether other columns are permitted.}
+\item{exclusive}{A flag indicating whether other columns are not permitted.}
 
 \item{order}{A flag indicating whether the columns have to occur in the same order as names.}
 

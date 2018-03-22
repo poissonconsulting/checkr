@@ -12,7 +12,7 @@ check_names(x, names = character(0), exclusive = FALSE, order = FALSE,
 
 \item{names}{A character vector of the names.}
 
-\item{exclusive}{A flag indicating whether other names are permitted.}
+\item{exclusive}{A flag indicating whether other names are not permitted.}
 
 \item{order}{A flag indicating whether the object names have to occur in the same order as names.}
 

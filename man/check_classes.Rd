@@ -12,7 +12,7 @@ check_classes(x, classes = character(0), exclusive = FALSE, order = FALSE,
 
 \item{classes}{A character vector of the classes x should inherit from.}
 
-\item{exclusive}{A flag indicating whether other classes are permitted.}
+\item{exclusive}{A flag indicating whether other classes are not permitted.}
 
 \item{order}{A flag indicating whether the object classes have to occur in the same order as classes.}
 

@@ -2,7 +2,7 @@
 #'
 #' @param x The object to check.
 #' @param names A character vector of the names.
-#' @param exclusive A flag indicating whether other names are permitted.
+#' @param exclusive A flag indicating whether other names are not permitted.
 #' @param order A flag indicating whether the object names have to occur in the same order as names.
 #' @param unique A flag indicating whether all the object names have to be unique.
 #' @param x_name A string of the name of the object.

@@ -14,7 +14,7 @@ check_data(x, values, nrow = NA, exclusive = FALSE, order = FALSE,
 
 \item{nrow}{A flag indicating whether x should have rows (versus no rows) or a missing value indicating no requirements or a count or count range of the number of rows.}
 
-\item{exclusive}{A flag indicating whether other columns are permitted.}
+\item{exclusive}{A flag indicating whether other columns are not permitted.}
 
 \item{order}{A flag indicating whether the columns have to occur in the same order as values.}
 

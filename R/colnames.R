@@ -2,7 +2,7 @@
 #'
 #' @param x The data to check.
 #' @param colnames A character vector of the column names.
-#' @param exclusive A flag indicating whether other columns are permitted.
+#' @param exclusive A flag indicating whether other columns are not permitted.
 #' @param order A flag indicating whether the columns have to occur in the same order as names.
 #' @param x_name A string of the name of the object.
 #' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.

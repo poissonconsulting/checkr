@@ -2,7 +2,7 @@
 #'
 #' @param x The object to check.
 #' @param levels A character vector of the levels.
-#' @param exclusive A flag indicating whether other levels are permitted.
+#' @param exclusive A flag indicating whether other levels are not permitted.
 #' @param order A flag indicating whether the object levels have to occur in the same order as names. To check whether x is an ordered factor use
 #' \code{check_vector(x, ordered(1))}.
 #' @param x_name A string of the name of the object.

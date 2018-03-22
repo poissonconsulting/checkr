@@ -12,7 +12,7 @@ check_levels(x, levels, exclusive = TRUE, order = TRUE,
 
 \item{levels}{A character vector of the levels.}
 
-\item{exclusive}{A flag indicating whether other levels are permitted.}
+\item{exclusive}{A flag indicating whether other levels are not permitted.}
 
 \item{order}{A flag indicating whether the object levels have to occur in the same order as names. To check whether x is an ordered factor use
 \code{check_vector(x, ordered(1))}.}
