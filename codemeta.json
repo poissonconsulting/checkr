@@ -14,10 +14,10 @@
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
-    "version": "3.4.3",
+    "version": "3.4.4",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 3.4.3 Patched (2017-12-05 r73849)",
+  "runtimePlatform": "R version 3.4.4 (2018-03-15)",
   "provider": {
     "@id": "https://cran.r-project.org",
     "@type": "Organization",
@@ -140,5 +140,5 @@
   "contIntegration": "https://travis-ci.org/poissonconsulting/checkr",
   "releaseNotes": "https://github.com/poissonconsulting/checkr/blob/master/NEWS.md",
   "readme": "https://github.com/poissonconsulting/checkr/blob/master/README.md",
-  "fileSize": "243.079KB"
+  "fileSize": "243.101KB"
 }

@@ -4,10 +4,12 @@
 \alias{check_unused}
 \title{Check Unused}
 \usage{
-check_unused(..., error = TRUE)
+check_unused(..., x_name = "...", error = TRUE)
 }
 \arguments{
 \item{...}{The arguments to check.}
+
+\item{x_name}{A string of the name of the object.}
 
 \item{error}{A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.}
 }
