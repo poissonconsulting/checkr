@@ -55,8 +55,8 @@ check_join <- function(x, y,
   check_missing_colnames(x, "..ID")
   check_missing_colnames(y, "..ID")
   
-  ..ID.x <- 1:nrow(x)
-  ..ID.y <- 1:nrow(y)
+  ..ID.x <- seq_len(nrow(x))
+  ..ID.y <- seq_len(nrow(y))
   
   x$..ID.x <- ..ID.x
   y$..ID.y <- ..ID.y
