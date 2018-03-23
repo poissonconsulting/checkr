@@ -1,4 +1,8 @@
 #' Check Classes
+#' 
+#' Checks that an object inherits from one or more classes.
+#' 
+#' The classes of an object can be returned using the `class()` function.
 #'
 #' @param x The object to check.
 #' @param classes A character vector of the classes x should inherit from.
@@ -7,6 +11,7 @@
 #' @param x_name A string of the name of the object.
 #' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
 #' @return An invisible copy of x (if it doesn't throw an error).
+#' @seealso \code{\link{check_inherits}}
 #' @export
 #'
 #' @examples

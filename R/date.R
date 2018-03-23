@@ -7,6 +7,7 @@
 #' @param coerce A flag indicating whether to coerce a date time (POSIXt scalar) to a Date.
 #' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
 #' @return An invisible copy of x (if it doesn't throw an error).
+#' @seealso \code{\link{check_datetime}}
 #' @export
 #'
 #' @examples

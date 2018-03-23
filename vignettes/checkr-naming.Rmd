@@ -1,0 +1,72 @@
+---
+title: "checkr Naming Schemes"
+author: "Joe Thorley"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{checkr Naming Schemes}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+The `checkr` packages provides a series of functions that can be used to check the values and classes of common R objects.
+Before attempting to use the functions it is worth understanding the checkr function naming schemes.
+
+## Primary Objects
+
+As discussed in the [Data Structures](http://adv-r.had.co.nz/Data-structures.html) chapter in Advanced R by Hadley Wickham, the five main object types are defined by their dimensionality (1d, 2d and nd) and whether they are homogenous or heterogenous.
+Currently the `check_vector()`, `check_list()` and `check_data()` functions allow the user to check the type and values of the three main type of (atomic) vectors, lists and data frames.
+The `check_matrix()` and `check_array()` equivalents have yet to be implemented.
+The functions are named according to the type of the object they check.
+
+It is worth noting that a while a vector, matrix or array will definitely pass the `check_homogenous()` function, a list or data frame may pass it if all its elements have identical classes.
+
+## Scalars
+
+In addition to (atomic) vectors the checkr package also identifies scalars which in R are (atomic) vectors with one element.
+They can be tested using the `check_scalar()` function. 
+Currently the `check_scalar()` function does not allow the user to check the values of a scalar but this will be implemented in a future version.
+
+Often function arguments are scalars of a particular type. For example the default `mean()` function has an argument `na.rm` which is a logical indicating whether `NA` values should be stripped. The checkr package provides the following functions to test whether objects are non-missing scalars of particular types:
+
+- `check_flag()`: a non-missing logical scalar i.e. `TRUE` or `FALSE`
+- `check_count()`: an non-missing non-negative integer i.e. 1L
+- `check_number()`: an non-missing double scalar i.e. 1.1
+- `check_probability()`: a non-missing double scalar between zero and one, i.e. 0.35
+- `check_string()`: a non-missing character scalar, i.e. `"text"`
+- `check_date()`: a non-missing Date scalar i.e. `as.Date("2001-02-03")`
+- `check_datetime()`: a non-missing POSIXct scalar
+
+It is also worth noting that almost all the scalar functions include an argument `coerce` which if set to `TRUE` test whether the object satisfies the condition after coercing to the required type.
+If the test passes then the function returns the coerced object.
+
+## Other Objects
+
+Functions to test whether an object is another type of object include `check_null()`, `check_environment()` and `check_function()`.
+
+In addition the `check_classes()` and `check_inherits()` functions can be used to check the classes or inheritance of an object.
+
+## Function Functions
+
+Many other checking functions are named according to the main base function that they use.
+Thus the `check_nrow()` function uses the `nrow()` function to check the number of rows while the `check_nlevels()` function uses the `nlevels()` function.
+It is important to realize that these functions do not check the type of an object but simply whether the return value of the base function(s) is consistent with the user defined conditions.
+
+Functions which fall in this category include `check_class()`, `check_colnames()`, `check_length()`, `check_levels()`, `check_names()`, `check_nchar()`, `check_ncol()`, `check_nlevels()`, `check_nrow()` and `check_sorted()`.
+
+## Data Functions
+
+The `check_join()` function tests whether the columns in one data frame form a many-to-one join with corresponding columns in a second data frame.
+The `check_key()` function tests wether specific columns are unique.
+They are useful for testing whether a set of data frames can be archived in an  relational database.
+
+## Miscellaneous Functions
+
+The remaining functions which are not captured by the above naming schemes include `checkor()`, `check_named()`, `check_pattern()`, `check_regex()`, `check_sorted()`, `check_tz()`, `check_unique()`, `check_unnamed()` and `check_unused()`.

@@ -27,7 +27,7 @@
 <script src="../pkgdown.js"></script>
 <meta property="og:title" content="Check Classes — check_classes" />
 
-<meta property="og:description" content="Check Classes" />
+<meta property="og:description" content="Checks that an object inherits from one or more classes." />
 <meta name="twitter:card" content="summary" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
@@ -74,6 +74,9 @@
     <li>
       <a href="../articles/assertive-programming.html">Packages for Assertive Programming</a>
     </li>
+    <li>
+      <a href="../articles/checkr-naming.html">checkr Naming Schemes</a>
+    </li>
   </ul>
 </li>
 <li>
@@ -104,7 +107,7 @@
     </div>
 
     
-    <p>Check Classes</p>
+    <p>Checks that an object inherits from one or more classes.</p>
     
 
     <pre class="usage"><span class='fu'>check_classes</span>(<span class='no'>x</span>, <span class='kw'>classes</span> <span class='kw'>=</span> <span class='fu'>character</span>(<span class='fl'>0</span>), <span class='kw'>exclusive</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>order</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
@@ -143,6 +146,14 @@
 
     <p>An invisible copy of x (if it doesn't throw an error).</p>
     
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The classes of an object can be returned using the `class()` function.</p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <p><code><a href='check_inherits.html'>check_inherits</a></code></p>
+    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>check_classes</span>(<span class='fu'>list</span>())
@@ -155,6 +166,10 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
+
+      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

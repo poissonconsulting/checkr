@@ -1,6 +1,6 @@
 #' Check Date Time
 #' 
-#' Checks if x is a datetime (non-missing POSIXt scalar).
+#' Checks if x is a datetime (non-missing POSIXct scalar).
 #'
 #' @param x The object to check.
 #' @param x_name A string of the name of the object.

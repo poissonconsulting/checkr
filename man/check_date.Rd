@@ -26,3 +26,6 @@ check_date(Sys.Date(), error = FALSE)
 check_date(Sys.time(), error = FALSE)
 check_date(Sys.time(), coerce = TRUE, error = FALSE)
 }
+\seealso{
+\code{\link{check_datetime}}
+}

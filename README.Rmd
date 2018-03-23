@@ -27,7 +27,7 @@ knitr::opts_chunk$set(
 In the case of failure the functions, which are designed to be used in scripts and packages,
 issue informative error messages.
 
-For a comparison with similar packages see the `assertive-programming` vignette.
+For an overview of the functions see the `checkr-naming` vignette and for a comparison with similar packages see the `assertive-programming` vignette.
 
 ## Demonstration
 

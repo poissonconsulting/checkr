@@ -19,7 +19,7 @@ check_count(x, coerce = FALSE, x_name = substitute(x), error = TRUE)
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Checks if object is a count (non-negative integer or if \code{coerce = TRUE} non-negative numeric whole number).
+Checks if an object is a count (non-negative integer or if \code{coerce = TRUE} non-negative numeric whole number).
 }
 \examples{
 check_count(-1L, error = FALSE)

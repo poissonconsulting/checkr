@@ -28,7 +28,9 @@ check_data(x, values, nrow = NA, exclusive = FALSE, order = FALSE,
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Check Data
+Checks whether an object is a data frame. Can also check
+the number of rows, the names and order and values of the columns as 
+well as whether particular columns form a unique key.
 }
 \examples{
 z <- data.frame(
@@ -46,4 +48,7 @@ check_data(z, values = list(
   Extra = NA,
   Latitude = c(45, 90)
   ), exclusive = TRUE, order = TRUE, nrow = 10L, key = "Longitude", error = FALSE)
+}
+\seealso{
+\code{\link{check_colnames}}, \code{\link{check_nrow}} and \code{\link{check_key}}
 }

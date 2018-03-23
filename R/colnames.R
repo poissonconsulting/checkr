@@ -1,12 +1,17 @@
 #' Check Colnames
+#' 
+#' Checks the colnames of a data frame.
+#' 
+#' The column names of an object can be returned using the `colnames()` function.
 #'
 #' @param x The data to check.
 #' @param colnames A character vector of the column names.
 #' @param exclusive A flag indicating whether other columns are not permitted.
-#' @param order A flag indicating whether the columns have to occur in the same order as names.
+#' @param order A flag indicating whether the columns have to occur in the same order as colnames.
 #' @param x_name A string of the name of the object.
 #' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
 #' @return An invisible copy of x (if it doesn't throw an error).
+#' @seealso \code{\link{check_data}}
 #' @export
 #'
 #' @examples

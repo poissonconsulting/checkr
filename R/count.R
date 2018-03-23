@@ -1,6 +1,6 @@
 #' Check Count
 #'
-#' Checks if object is a count (non-negative integer or if \code{coerce = TRUE} non-negative numeric whole number).
+#' Checks if an object is a count (non-negative integer or if \code{coerce = TRUE} non-negative numeric whole number).
 #'
 #' @param x The object to check.
 #' @param coerce A flag indicating whether to coerce a non-negative numeric (real) whole number to a count.

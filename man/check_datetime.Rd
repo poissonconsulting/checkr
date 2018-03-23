@@ -17,7 +17,7 @@ check_datetime(x, x_name = substitute(x), error = TRUE)
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Checks if x is a datetime (non-missing POSIXt scalar).
+Checks if x is a datetime (non-missing POSIXct scalar).
 }
 \examples{
 check_datetime(Sys.Date(), error = FALSE)
