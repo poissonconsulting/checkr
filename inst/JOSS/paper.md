@@ -5,29 +5,73 @@ authors:
   name: Joe Thorley
   orcid: 0000-0002-7683-4592
 affiliations:
-- index: 1
+  index: 1
   name: Poisson Consulting, Nelson, British Columbia
 tags: 
   - R
-  - error checking
-  - assertive programming
+  - programming
+  - assertive
 bibliography: paper.bib
-date: "2018-03-12"
+date: "2018-03-26"
 output: 
   html_document: 
     keep_md: yes
 ---
 
+
+
 ## Summary
 
-The purpose of the `checkr` package is allow R programmers to quickly check that the inputs to their functions are of the correct type and to issue a helpful error message if they are not. 
-Such assertive programming facilitates software development, use and debugging by ensuring a problem is quickly and obviously identified [@shore_fail_2004]. 
-It is particularly important in R because it is a dynamically typed language [@hutchison_evaluating_2012].
+Assertive programming follows the principles of fail fast and fail visibly [@shore_fail_2004].
+It is implemented by issuing an informative error message if function arguments fail to satisfy specific criteria.
+This is particularly important in R because it is dynamically-typed language [@hutchison_evaluating_2012].
 
-`checkr` is light-weight, pipe-friendly and dependency-free with customizable error messages. 
-Objects can be used to define the permitted types and values of other objects using an elegant and expressive syntax and multiple alternative checks can be combined using the `checkor()` function.
+`checkr` is a dependency-free, pipe-friendly R package of assertive functions to check the properties of common R objects.
+In the case of failure, the functions, which are designed to be used in scripts and packages, issue informative error messages.
+
+The most interesting and unique feature of `checkr` is the use of objects to check the values of other objects using an elegant and expressive syntax. 
+For example the values in the `height`, `name`, `mass`, `hair_color` and `gender` columns in the `starwars` data frame are checked using the checkr syntax.
+
+
+```r
+library(checkr)
+
+check_data(dplyr::starwars, values = list(
+  height = c(66L, 264L),
+  name = "",
+  mass = c(20,1358, NA),
+  hair_color = c("blond", "brown", "black", NA),
+  gender = c("male", "female", "hermaphrodite", "none", NA)), 
+    order = TRUE, nrow = c(81, 84), key = "hair_color", error = FALSE)
+```
+
+```
+## Warning: dplyr::starwars column names must include 'height', 'name',
+## 'mass', 'hair_color' and 'gender' in that order
+```
+
+```
+## Warning: column height of dplyr::starwars must not include missing values
+```
+
+```
+## Warning: the values in column mass of dplyr::starwars must lie between 20
+## and 1358
+```
+
+```
+## Warning: column hair_color of dplyr::starwars can only include values
+## 'black', 'blond' or 'brown'
+```
+
+```
+## Warning: dplyr::starwars must not have more than 84 rows
+```
+
+```
+## Warning: column 'hair_color' in dplyr::starwars must be a unique key
+```
+
 The software archive is at <https://github.com/poissonconsulting/checkr>.
-
-The `checkr` R package is used by the `rpdo` [@thorley_rpdo_2018] and `mcmcr` [@thorley_mcmcr_2018] packages.
 
 ## References

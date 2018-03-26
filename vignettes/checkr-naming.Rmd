@@ -69,4 +69,4 @@ They are useful for testing whether a set of data frames can be archived in an  
 
 ## Miscellaneous Functions
 
-The remaining functions which are not captured by the above naming schemes include `checkor()`, `check_named()`, `check_pattern()`, `check_regex()`, `check_sorted()`, `check_tz()`, `check_unique()`, `check_unnamed()` and `check_unused()`.
+The remaining functions which are not captured by the above naming schemes include `checkor()`, `check_named()`, `check_pattern()`, `check_regex()`, `check_sorted()`, `check_tzone()`, `check_unique()`, `check_unnamed()` and `check_unused()`.
