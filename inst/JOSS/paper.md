@@ -30,7 +30,7 @@ This is particularly important in R because it is dynamically-typed language [@h
 In the case of failure, the functions, which are designed to be used in scripts and packages, issue informative error messages.
 
 The most interesting and unique feature of `checkr` is the use of objects to check the values of other objects using an elegant and expressive syntax. 
-For example the values in the `height`, `name`, `mass`, `hair_color` and `gender` columns in the `starwars` data frame are checked using the checkr syntax.
+For example the values in the `height`, `name`, `mass`, `hair_color` and `gender` columns in the `starwars` data frame are checked using the syntax.
 
 
 ```r
@@ -38,16 +38,8 @@ library(checkr)
 
 check_data(dplyr::starwars, values = list(
   height = c(66L, 264L),
-  name = "",
   mass = c(20,1358, NA),
-  hair_color = c("blond", "brown", "black", NA),
-  gender = c("male", "female", "hermaphrodite", "none", NA)), 
-    order = TRUE, nrow = c(81, 84), key = "hair_color", error = FALSE)
-```
-
-```
-## Warning: dplyr::starwars column names must include 'height', 'name',
-## 'mass', 'hair_color' and 'gender' in that order
+  hair_color = c("blond", "brown", "black", NA)), error = FALSE)
 ```
 
 ```
@@ -62,14 +54,6 @@ check_data(dplyr::starwars, values = list(
 ```
 ## Warning: column hair_color of dplyr::starwars can only include values
 ## 'black', 'blond' or 'brown'
-```
-
-```
-## Warning: dplyr::starwars must not have more than 84 rows
-```
-
-```
-## Warning: column 'hair_color' in dplyr::starwars must be a unique key
 ```
 
 The software archive is at <https://github.com/poissonconsulting/checkr>.
