@@ -26,3 +26,6 @@ check_string(1, error = FALSE)
 check_string("1", error = FALSE)
 check_string(c("1", "2"), error = FALSE)
 }
+\seealso{
+\code{\link{check_scalar}}
+}

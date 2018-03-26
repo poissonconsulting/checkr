@@ -1,7 +1,7 @@
 Package: checkr
 Title: Check the Properties of Common R Objects
-Version: 0.1.0.9003
-Date: 2018-03-22
+Version: 0.1.0.9004
+Date: 2018-03-26
 Authors@R: person("Joe", "Thorley", email = "joe@poissonconsulting.ca", role = c("aut", "cre"))
 Description: Expressive assertive pipe-friendly, dependency-free functions 
   to check the properties of common R objects.
@@ -16,6 +16,7 @@ Suggests:
     assertthat,
     checkmate,
     covr,
+    datasets,
     magrittr,
     dplyr,
     testthat,

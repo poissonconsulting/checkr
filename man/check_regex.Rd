@@ -19,9 +19,12 @@ check_regex(x, regex = ".*", x_name = substitute(x), error = TRUE)
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Check Matches Regular Expression
+Checks whether all the elements of an object match a regular expression.
 }
 \examples{
 check_regex("foo", "fo")
 check_regex("foo", "fo$", error = FALSE)
+}
+\seealso{
+\code{\link{check_nchar}} and \code{\link{check_pattern}}
 }

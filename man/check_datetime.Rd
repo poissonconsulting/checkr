@@ -23,3 +23,6 @@ Checks if x is a datetime (non-missing POSIXct scalar).
 check_datetime(Sys.Date(), error = FALSE)
 check_datetime(Sys.time(), error = FALSE)
 }
+\seealso{
+\code{\link{check_scalar}}
+}

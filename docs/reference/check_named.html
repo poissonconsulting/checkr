@@ -27,7 +27,7 @@
 <script src="../pkgdown.js"></script>
 <meta property="og:title" content="Check Named — check_named" />
 
-<meta property="og:description" content="Check Named" />
+<meta property="og:description" content="Checks whether an object is named." />
 <meta name="twitter:card" content="summary" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
@@ -107,7 +107,7 @@
     </div>
 
     
-    <p>Check Named</p>
+    <p>Checks whether an object is named.</p>
     
 
     <pre class="usage"><span class='fu'>check_named</span>(<span class='no'>x</span>, <span class='kw'>nchar</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>0L</span>, <span class='no'>.Machine</span>$<span class='no'>integer.max</span>), <span class='kw'>regex</span> <span class='kw'>=</span> <span class='st'>".*"</span>,
@@ -146,6 +146,10 @@
 
     <p>An invisible copy of x (if it doesn't throw an error).</p>
     
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <p><code><a href='check_unnamed.html'>check_unnamed</a></code>, <code><a href='check_names.html'>check_names</a></code> and <code><a href='check_missing_names.html'>check_missing_names</a></code></p>
+    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>check_named</span>(<span class='fl'>2</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: 2 must be named</span></div><div class='input'><span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fl'>1</span>
@@ -158,6 +162,8 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

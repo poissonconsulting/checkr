@@ -1,12 +1,13 @@
 #' Check Probability
 #' 
-#' Checks if x is a probability (non-missing numeric scalar between 0 and 1 inclusive).
+#' Checks if x is a probability (non-missing double scalar between 0 and 1 inclusive or if \code{coerce = TRUE} an integer of 0 or 1).
 #'
 #' @param x The object to check.
 #' @param coerce A flag indicating whether to coerce an integer to numeric.
 #' @param x_name A string of the name of the object.
 #' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
 #' @return An invisible copy of x (if it doesn't throw an error).
+#' @seealso \code{\link{check_number}} and \code{\link{check_scalar}}
 #' @export
 #'
 #' @examples

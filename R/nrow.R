@@ -1,8 +1,11 @@
-#' Check nrow
+#' Check Number of Rows
+#' 
+#' Checks the number of rows of a data frame.
 #'
 #' @inheritParams check_length
 #' @param nrow A flag indicating whether x should have rows (versus no rows) or a missing value indicating no requirements or a count or count range of the number of rows.
 #' @return An invisible copy of x (if it doesn't throw an error).
+#' @seealso \code{\link{check_ncol}} and \code{\link{check_data}} 
 #' @export
 #'
 #' @examples

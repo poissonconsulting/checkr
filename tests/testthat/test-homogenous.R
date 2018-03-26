@@ -29,4 +29,7 @@ test_that("length1", {
   zz[[1]][[1]] <- 1
   expect_identical(check_homogenous(zz, strict = TRUE), zz)
   expect_error(check_homogenous(zz, strict = TRUE, recursive = TRUE), "elements in elements in zz must have identical classes")
+  
+  expect_identical(check_homogenous(datasets::mtcars), datasets::mtcars)
+  expect_error(check_homogenous(datasets::ChickWeight), "all elements in datasets::ChickWeight must inherit from the same class")
 })

@@ -2,7 +2,7 @@
 % Please edit documentation in R/nrow.R
 \name{check_nrow}
 \alias{check_nrow}
-\title{Check nrow}
+\title{Check Number of Rows}
 \usage{
 check_nrow(x, nrow = TRUE, x_name = substitute(x), error = TRUE)
 }
@@ -19,10 +19,13 @@ check_nrow(x, nrow = TRUE, x_name = substitute(x), error = TRUE)
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Check nrow
+Checks the number of rows of a data frame.
 }
 \examples{
 check_nrow(data.frame(x = 1), error = FALSE)
 check_nrow(data.frame(x = integer(0)), error = FALSE)
 check_nrow(data.frame(x = 1:2), nrow = 1, error = FALSE)
+}
+\seealso{
+\code{\link{check_ncol}} and \code{\link{check_data}}
 }

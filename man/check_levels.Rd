@@ -25,9 +25,13 @@ check_levels(x, levels, exclusive = TRUE, order = TRUE,
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Check Levels
+Checks the levels in a factor including the order and 
+whether other levels are permitted.
 }
 \examples{
 check_levels(1, c("x", "y"), error = FALSE)
 check_levels(factor(1), c("x", "y"), error = FALSE)
+}
+\seealso{
+\code{\link{check_nlevels}} and \code{\link{check_vector}}
 }

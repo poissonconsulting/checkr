@@ -17,12 +17,12 @@ check_sorted(x, x_name = substitute(x), error = TRUE)
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Checks whether object x is sorted.
-}
-\details{
-Uses \code{!is.unsorted(x, na.rm = TRUE)} to test.
+Checks whether object x is sorted using \code{!is.unsorted(x, na.rm = TRUE)}.
 }
 \examples{
 check_sorted(1:2, error = FALSE)
 check_sorted(2:1, error = FALSE)
+}
+\seealso{
+\code{\link{check_vector}} and \code{\link{check_list}}
 }

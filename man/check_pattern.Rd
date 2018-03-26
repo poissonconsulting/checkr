@@ -28,3 +28,6 @@ Checks whether all or some of the elements of x match pattern using \code{\link{
 check_pattern("b ", "b", error = FALSE)
 check_pattern("b ", "^b$", error = FALSE)
 }
+\seealso{
+\code{\link{check_nchar}} and \code{\link{check_regex}}
+}

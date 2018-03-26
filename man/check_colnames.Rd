@@ -24,10 +24,8 @@ check_colnames(x, colnames = character(0), exclusive = FALSE,
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Checks the colnames of a data frame.
-}
-\details{
-The column names of an object can be returned using the `colnames()` function.
+Checks the column names of a data frame as returned by the `colnames()` function. 
+The function can check the order of the columns and whether other columns are permitted.
 }
 \examples{
 data <- data.frame(x = 1, y = 2, z = 0)
@@ -37,5 +35,5 @@ check_colnames(data, c("y", "x"), order = TRUE, error = FALSE)
 check_colnames(data, c("a"), error = FALSE)
 }
 \seealso{
-\code{\link{check_data}}
+\code{\link{check_missing_colnames}} and \code{\link{check_data}}
 }

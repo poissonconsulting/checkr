@@ -1,20 +1,27 @@
 #' Check List
+#' 
+#' Checks whether an object is a list and optionally the names and values
+#' of its elements.
 #'
 #' @inheritParams check_length
 #' @param x The object to check.
 #' @param values An optional vector or named list specifying the values.
 #' @param unique A flag indicating whether the values must be unique.
-#' @param sorted A flag indicating whether the list must be sorted.
 #' @param named A flag indicating whether the list must be named or unnamed or a regular expression that must match all the names or count or count range of the number of characters in the names or NA if it doesn't matter if the list is named.
 #' @param x_name A string of the name of the object.
 #' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
 #' @return An invisible copy of x (if it doesn't throw an error).
+#' @seealso \code{\link{check_length}} and \code{\link{check_unique}}
 #' @export
+#' 
+#' @examples
+#' check_list(list())
+#' check_list(list(x1 = 2, x2 = 1:2), values = list(x1 = 1, x2 = 1L),
+#'   length = 2, unique = TRUE)
 check_list <- function(x,
                        values,
                        length = NA,
                        unique = FALSE,
-                       sorted = FALSE,
                        named = NA,
                        x_name = substitute(x),
                        error = TRUE) {
@@ -62,8 +69,7 @@ check_list <- function(x,
   check_length(x, length = length, x_name = x_name, error = error)
   
   if(unique) check_unique(x, x_name = x_name, error = error)
-  if(sorted) check_sorted(x, x_name = x_name, error = error)
-  
+
   if(is_flag(named) && named) {
     check_named(x, nchar = nchar, regex = regex, x_name = x_name, error = error)
   } else if(is_flag(named) && !named)

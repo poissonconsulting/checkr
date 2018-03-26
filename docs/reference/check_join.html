@@ -28,9 +28,8 @@
 <meta property="og:title" content="Check Join — check_join" />
 
 <meta property="og:description" content="Checks that the columns in data frame x form a many-to-one
-join with the corresponding columns in y.
-That is to say the join is a unique key in y and all the rows in
-x have a match in y." />
+join with the corresponding columns in y, ie, 
+the join is a unique key in y and all the rows in x have a match in y." />
 <meta name="twitter:card" content="summary" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
@@ -111,9 +110,8 @@ x have a match in y." />
 
     
     <p>Checks that the columns in data frame x form a many-to-one
-join with the corresponding columns in y.
-That is to say the join is a unique key in y and all the rows in
-x have a match in y.</p>
+join with the corresponding columns in y, ie, 
+the join is a unique key in y and all the rows in x have a match in y.</p>
     
 
     <pre class="usage"><span class='fu'>check_join</span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='kw'>by</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>all_y</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>),
@@ -156,6 +154,10 @@ x have a match in y.</p>
 
     <p>An invisible copy of x (if it doesn't throw an error).</p>
     
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <p><code><a href='check_data.html'>check_data</a></code></p>
+    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='no'>data1</span> <span class='kw'>&lt;-</span> <span class='fu'>data.frame</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>2</span>)
@@ -168,6 +170,8 @@ x have a match in y.</p>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

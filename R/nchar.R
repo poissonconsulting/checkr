@@ -1,10 +1,13 @@
 #' Check Number of Characters
+#' 
+#' Checks the number of characters in the elements of an object.
 #'
 #' @param x The object to check.
 #' @param nchar A flag indicating whether x should have characters or a missing value indicating no requirements or a count or count range of the number of characters.
 #' @param x_name A string of the name of the object.
 #' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
 #' @return An invisible copy of x (if it doesn't throw an error).
+#' @seealso \code{\link{check_pattern}} and \code{\link{check_regex}}
 #' @export
 #'
 #' @examples

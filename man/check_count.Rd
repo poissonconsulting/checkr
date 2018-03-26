@@ -28,3 +28,6 @@ check_count(1, error = FALSE)
 check_count(1, coerce = TRUE, error = FALSE)
 check_count(1.01, coerce = TRUE, error = FALSE)
 }
+\seealso{
+\code{\link{check_scalar}}
+}

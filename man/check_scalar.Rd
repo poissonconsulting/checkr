@@ -17,5 +17,8 @@ check_scalar(x, x_name = substitute(x), error = TRUE)
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Check Scalar
+Checks whether an object is an atomic vector with one element.
+}
+\seealso{
+\code{\link{check_vector}}
 }

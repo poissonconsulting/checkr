@@ -1,5 +1,8 @@
 #' Check Names
 #'
+#'#' Checks the names of an object as returned by the `names()` function. 
+#' The function can check the order of the names and whether other names are permitted.
+#' 
 #' @param x The object to check.
 #' @param names A character vector of the names.
 #' @param exclusive A flag indicating whether other names are not permitted.
@@ -8,6 +11,7 @@
 #' @param x_name A string of the name of the object.
 #' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
 #' @return An invisible copy of x (if it doesn't throw an error).
+#' @seealso \code{\link{check_named}}
 #' @export
 #'
 #' @examples

@@ -1,4 +1,6 @@
 #' Check NULL
+#' 
+#' Checks whether an object is NULL.
 #'
 #' @param x The object to check.
 #' @param x_name A string of the name of the object.

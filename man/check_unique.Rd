@@ -17,7 +17,7 @@ check_unique(x, x_name = substitute(x), error = TRUE)
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Check Unique
+Checks whether all elements of an object are unique.
 }
 \examples{
 check_unique(2, error = FALSE)
@@ -26,4 +26,7 @@ check_unique(1:2, error = FALSE)
 check_unique(character(0), error = FALSE)
 check_unique(NULL, error = FALSE)
 check_unique(list(), error = FALSE)
+}
+\seealso{
+\code{\link{check_vector}}
 }

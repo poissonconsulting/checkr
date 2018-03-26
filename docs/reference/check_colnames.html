@@ -27,7 +27,8 @@
 <script src="../pkgdown.js"></script>
 <meta property="og:title" content="Check Colnames — check_colnames" />
 
-<meta property="og:description" content="Checks the colnames of a data frame." />
+<meta property="og:description" content="Checks the column names of a data frame as returned by the `colnames()` function. 
+The function can check the order of the columns and whether other columns are permitted." />
 <meta name="twitter:card" content="summary" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
@@ -107,7 +108,8 @@
     </div>
 
     
-    <p>Checks the colnames of a data frame.</p>
+    <p>Checks the column names of a data frame as returned by the `colnames()` function. 
+The function can check the order of the columns and whether other columns are permitted.</p>
     
 
     <pre class="usage"><span class='fu'>check_colnames</span>(<span class='no'>x</span>, <span class='kw'>colnames</span> <span class='kw'>=</span> <span class='fu'>character</span>(<span class='fl'>0</span>), <span class='kw'>exclusive</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
@@ -146,13 +148,9 @@
 
     <p>An invisible copy of x (if it doesn't throw an error).</p>
     
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>The column names of an object can be returned using the `colnames()` function.</p>
-    
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><code><a href='check_data.html'>check_data</a></code></p>
+    <p><code><a href='check_missing_colnames.html'>check_missing_colnames</a></code> and <code><a href='check_data.html'>check_data</a></code></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -166,8 +164,6 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-
-      <li><a href="#details">Details</a></li>
 
       <li><a href="#see-also">See also</a></li>
       

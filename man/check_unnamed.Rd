@@ -17,11 +17,14 @@ check_unnamed(x, x_name = substitute(x), error = TRUE)
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Check Unnamed
+Checks whether an objects is unnamed.
 }
 \examples{
 check_unnamed(2, error = FALSE)
 x <- 1
 names(x) <- "y"
 check_unnamed(x, error = FALSE)
+}
+\seealso{
+\code{\link{check_named}}, \code{\link{check_names}} and \code{\link{check_missing_names}}
 }

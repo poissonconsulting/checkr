@@ -23,9 +23,14 @@ An invisible copy of x (if it doesn't throw an error).
 }
 \description{
 Checks whether the elements of x are all of the same class.
+It works on vectors, matrices and arrays which, by definition will always
+be homogenous and lists and data frames which may or may not be homogenous.
 }
 \examples{
 check_homogenous(1:2)
 check_homogenous(list(1,2))
 check_homogenous(list(1,TRUE), error = FALSE)
+}
+\seealso{
+\code{\link{check_vector}}, \code{\link{check_list}} and \code{\link{check_data}}
 }

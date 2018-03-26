@@ -13,12 +13,7 @@ In the case of failure the functions issue informative error messages that
 The functions are designed to be used in scripts and packages.
 }
 \seealso{
-Useful links:
-\itemize{
-  \item \url{https://github.com/poissonconsulting/checkr}
-  \item Report bugs at \url{https://github.com/poissonconsulting/checkr/issues}
-}
-
+\code{\link{check_vector}}, \code{\link{check_list}} and \code{\link{check_data}}
 }
 \author{
 \strong{Maintainer}: Joe Thorley \email{joe@poissonconsulting.ca}

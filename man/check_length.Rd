@@ -19,11 +19,15 @@ check_length(x, length = TRUE, x_name = substitute(x), error = TRUE)
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Check Length
+Checks whether the number of elements in an object is an exact number, 
+within a range or 0 vs positive.
 }
 \examples{
 check_length(2)
 check_length(character(0), length = 0)
 check_length(NULL, error = FALSE)
 check_length(list(), error = FALSE)
+}
+\seealso{
+\code{\link{check_vector}}, \code{\link{check_list}} and \code{\link{check_data}}
 }

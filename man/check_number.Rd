@@ -19,11 +19,14 @@ check_number(x, coerce = FALSE, x_name = substitute(x), error = TRUE)
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Checks if object is a number (scalar real or if \code{coerce = TRUE} scalar integer).
+Checks if object is a number (scalar double or if \code{coerce = TRUE} scalar integer).
 }
 \examples{
 check_number(1.0)
 check_number(c(1.0, 2.0), error = FALSE)
 check_number(1L, error = FALSE)
 check_number(1L, coerce = TRUE, error = FALSE)
+}
+\seealso{
+\code{\link{check_probability}} and \code{\link{check_vector}}
 }

@@ -24,11 +24,14 @@ check_named(x, nchar = c(0L, .Machine$integer.max), regex = ".*",
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Check Named
+Checks whether an object is named.
 }
 \examples{
 check_named(2, error = FALSE)
 x <- 1
 names(x) <- "y"
 check_named(x, error = FALSE)
+}
+\seealso{
+\code{\link{check_unnamed}}, \code{\link{check_names}} and \code{\link{check_missing_names}}
 }

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Check nrow — check_nrow • checkr</title>
+<title>Check Number of Rows — check_nrow • checkr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -25,9 +25,9 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-<meta property="og:title" content="Check nrow — check_nrow" />
+<meta property="og:title" content="Check Number of Rows — check_nrow" />
 
-<meta property="og:description" content="Check nrow" />
+<meta property="og:description" content="Checks the number of rows of a data frame." />
 <meta name="twitter:card" content="summary" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
@@ -102,12 +102,12 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Check nrow</h1>
+    <h1>Check Number of Rows</h1>
     <small>Source: <a href='https:/github.com/poissonconsulting/checkr/blob/master/R/nrow.R'><code>R/nrow.R</code></a></small>
     </div>
 
     
-    <p>Check nrow</p>
+    <p>Checks the number of rows of a data frame.</p>
     
 
     <pre class="usage"><span class='fu'>check_nrow</span>(<span class='no'>x</span>, <span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
@@ -137,6 +137,10 @@
 
     <p>An invisible copy of x (if it doesn't throw an error).</p>
     
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <p><code><a href='check_ncol.html'>check_ncol</a></code> and <code><a href='check_data.html'>check_data</a></code></p>
+    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>check_nrow</span>(<span class='fu'>data.frame</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
@@ -148,6 +152,8 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

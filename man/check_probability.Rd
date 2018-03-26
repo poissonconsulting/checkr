@@ -19,10 +19,13 @@ check_probability(x, coerce = FALSE, x_name = substitute(x), error = TRUE)
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Checks if x is a probability (non-missing numeric scalar between 0 and 1 inclusive).
+Checks if x is a probability (non-missing double scalar between 0 and 1 inclusive or if \code{coerce = TRUE} an integer of 0 or 1).
 }
 \examples{
 check_probability(1, error = FALSE)
 check_probability(1.1, error = FALSE)
 check_probability(c(0, 1), error = FALSE)
+}
+\seealso{
+\code{\link{check_number}} and \code{\link{check_scalar}}
 }

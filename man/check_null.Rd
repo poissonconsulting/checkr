@@ -17,7 +17,7 @@ check_null(x, x_name = substitute(x), error = TRUE)
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Check NULL
+Checks whether an object is NULL.
 }
 \examples{
 check_null(1, error = FALSE)

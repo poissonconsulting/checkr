@@ -1,6 +1,8 @@
 #' Check Homogenous
 #' 
 #' Checks whether the elements of x are all of the same class.
+#' It works on vectors, matrices and arrays which, by definition will always
+#' be homogenous and lists and data frames which may or may not be homogenous.
 #'
 #' @param x The object to check.
 #' @param strict A flag indicating whether all the objects must have identical classes or just share one or more classes.
@@ -8,6 +10,7 @@
 #' @param x_name A string of the name of the object.
 #' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
 #' @return An invisible copy of x (if it doesn't throw an error).
+#' @seealso \code{\link{check_vector}}, \code{\link{check_list}} and \code{\link{check_data}} 
 #' @export
 #'
 #' @examples

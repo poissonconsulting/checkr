@@ -27,13 +27,15 @@ An invisible copy of x (if it doesn't throw an error).
 }
 \description{
 Checks that the columns in data frame x form a many-to-one
-join with the corresponding columns in y.
-That is to say the join is a unique key in y and all the rows in
-x have a match in y.
+join with the corresponding columns in y, ie, 
+the join is a unique key in y and all the rows in x have a match in y.
 }
 \examples{
 data1 <- data.frame(x = 1:2)
 data2 <- data.frame(x = 3:5, y = 2L)
 check_join(data1, data2, error = FALSE)
 check_join(data1, data2, by = c(x = "y"), error = FALSE)
+}
+\seealso{
+\code{\link{check_data}}
 }

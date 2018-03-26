@@ -24,3 +24,6 @@ check_flag(1, error = FALSE)
 check_flag(FALSE, error = FALSE)
 check_flag(c(FALSE, TRUE), error = FALSE)
 }
+\seealso{
+\code{\link{check_scalar}}
+}

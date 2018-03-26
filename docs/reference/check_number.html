@@ -27,7 +27,7 @@
 <script src="../pkgdown.js"></script>
 <meta property="og:title" content="Check Number — check_number" />
 
-<meta property="og:description" content="Checks if object is a number (scalar real or if coerce = TRUE scalar integer)." />
+<meta property="og:description" content="Checks if object is a number (scalar double or if coerce = TRUE scalar integer)." />
 <meta name="twitter:card" content="summary" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
@@ -107,7 +107,7 @@
     </div>
 
     
-    <p>Checks if object is a number (scalar real or if <code>coerce = TRUE</code> scalar integer).</p>
+    <p>Checks if object is a number (scalar double or if <code>coerce = TRUE</code> scalar integer).</p>
     
 
     <pre class="usage"><span class='fu'>check_number</span>(<span class='no'>x</span>, <span class='kw'>coerce</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
@@ -137,6 +137,10 @@
 
     <p>An invisible copy of x (if it doesn't throw an error).</p>
     
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <p><code><a href='check_probability.html'>check_probability</a></code> and <code><a href='check_vector.html'>check_vector</a></code></p>
+    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>check_number</span>(<span class='fl'>1.0</span>)
@@ -148,6 +152,8 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

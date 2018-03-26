@@ -20,12 +20,13 @@ An invisible copy of x (if it doesn't throw an error).
 }
 \description{
 Checks that columns in a data frame represent a unique key.
-}
-\details{
 By default all the columns are checked.
 }
 \examples{
 data <- data.frame(x = 1:1, y = 1:2)
 check_key(data, "x", error = FALSE)
 check_key(data, c("y", "x"), error = FALSE)
+}
+\seealso{
+\code{\link{check_data}}
 }

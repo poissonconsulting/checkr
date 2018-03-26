@@ -19,8 +19,11 @@ check_nchar(x, nchar = TRUE, x_name = substitute(x), error = TRUE)
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Check Number of Characters
+Checks the number of characters in the elements of an object.
 }
 \examples{
 check_nchar(c("foo", "bar"), nchar = 3)
+}
+\seealso{
+\code{\link{check_pattern}} and \code{\link{check_regex}}
 }

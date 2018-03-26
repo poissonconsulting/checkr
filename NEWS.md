@@ -1,3 +1,4 @@
+- deprecated `check_tz()` for `check_tzone()`
 - added `check_unused()` to check `...` is unused within a function
 - added `check_homogenous()` to check object's elements are the same class
 - added `check_flag_na()` to check is scalar logical

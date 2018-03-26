@@ -19,9 +19,12 @@ check_inherits(x, class, x_name = substitute(x), error = TRUE)
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Check Inherits
+Checks if an object inherits from a class.
 }
 \examples{
 check_inherits(list(), "list")
 check_inherits(list(), "numeric", error = FALSE)
+}
+\seealso{
+\code{\link{check_classes}}
 }

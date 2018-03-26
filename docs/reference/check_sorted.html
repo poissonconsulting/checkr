@@ -27,7 +27,7 @@
 <script src="../pkgdown.js"></script>
 <meta property="og:title" content="Check Sorted — check_sorted" />
 
-<meta property="og:description" content="Checks whether object x is sorted." />
+<meta property="og:description" content="Checks whether object x is sorted using !is.unsorted(x, na.rm = TRUE)." />
 <meta name="twitter:card" content="summary" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
@@ -107,7 +107,7 @@
     </div>
 
     
-    <p>Checks whether object x is sorted.</p>
+    <p>Checks whether object x is sorted using <code>!is.unsorted(x, na.rm = TRUE)</code>.</p>
     
 
     <pre class="usage"><span class='fu'>check_sorted</span>(<span class='no'>x</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
@@ -133,9 +133,9 @@
 
     <p>An invisible copy of x (if it doesn't throw an error).</p>
     
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p>Uses <code>!is.unsorted(x, na.rm = TRUE)</code> to test.</p>
+    <p><code><a href='check_vector.html'>check_vector</a></code> and <code><a href='check_list.html'>check_list</a></code></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -149,7 +149,7 @@
       
       <li><a href="#value">Value</a></li>
 
-      <li><a href="#details">Details</a></li>
+      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

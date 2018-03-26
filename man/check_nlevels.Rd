@@ -19,9 +19,12 @@ check_nlevels(x, nlevels = TRUE, x_name = substitute(x), error = TRUE)
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Check nlevels
+Checks the number of levels of an object.
 }
 \examples{
 check_nlevels(factor(1), error = FALSE)
 check_nlevels(factor(1), nlevels = 2, error = FALSE)
+}
+\seealso{
+\code{\link{check_levels}} and \code{\link{check_vector}}
 }

@@ -4,8 +4,8 @@
 \alias{check_list}
 \title{Check List}
 \usage{
-check_list(x, values, length = NA, unique = FALSE, sorted = FALSE,
-  named = NA, x_name = substitute(x), error = TRUE)
+check_list(x, values, length = NA, unique = FALSE, named = NA,
+  x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}
@@ -15,8 +15,6 @@ check_list(x, values, length = NA, unique = FALSE, sorted = FALSE,
 \item{length}{A flag indicating whether x should have elements (versus no elements) or a missing value indicating no requirements or a count or count range of the number of elements.}
 
 \item{unique}{A flag indicating whether the values must be unique.}
-
-\item{sorted}{A flag indicating whether the list must be sorted.}
 
 \item{named}{A flag indicating whether the list must be named or unnamed or a regular expression that must match all the names or count or count range of the number of characters in the names or NA if it doesn't matter if the list is named.}
 
@@ -28,5 +26,14 @@ check_list(x, values, length = NA, unique = FALSE, sorted = FALSE,
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Check List
+Checks whether an object is a list and optionally the names and values
+of its elements.
+}
+\examples{
+check_list(list())
+check_list(list(x1 = 2, x2 = 1:2), values = list(x1 = 1, x2 = 1L),
+  length = 2, unique = TRUE)
+}
+\seealso{
+\code{\link{check_length}} and \code{\link{check_unique}}
 }
