@@ -10,6 +10,7 @@ Status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/che
 Status](https://img.shields.io/codecov/c/github/poissonconsulting/checkr/master.svg)](https://codecov.io/github/poissonconsulting/checkr?branch=master)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1208141.svg)](https://doi.org/10.5281/zenodo.1208141)
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/checkr)](https://cran.r-project.org/package=checkr)
 [![CRAN
 Downloads](http://cranlogs.r-pkg.org/badges/grand-total/checkr)](https://CRAN.R-project.org/package=checkr)
@@ -171,7 +172,7 @@ To install the latest development version from the Poisson drat
 To cite package 'checkr' in publications use:
 
   Joe Thorley (2018). checkr: Check the Properties of Common R
-  Objects. R package version 0.2.0.
+  Objects. R package version 0.2.0.9000.
   https://github.com/poissonconsulting/checkr
 
 A BibTeX entry for LaTeX users is
@@ -180,7 +181,7 @@ A BibTeX entry for LaTeX users is
     title = {checkr: Check the Properties of Common R Objects},
     author = {Joe Thorley},
     year = {2018},
-    note = {R package version 0.2.0},
+    note = {R package version 0.2.0.9000},
     url = {https://github.com/poissonconsulting/checkr},
   }
 ```
