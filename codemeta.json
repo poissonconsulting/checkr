@@ -10,7 +10,7 @@
   "issueTracker": "https://github.com/poissonconsulting/checkr/issues",
   "datePublished": "2018-03-26",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "0.2.0.9000",
+  "version": "0.2.0.9001",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
@@ -145,5 +145,31 @@
   "contIntegration": "https://travis-ci.org/poissonconsulting/checkr",
   "releaseNotes": "https://github.com/poissonconsulting/checkr/blob/master/NEWS.md",
   "readme": "https://github.com/poissonconsulting/checkr/blob/master/README.md",
-  "fileSize": "246.897KB"
+  "fileSize": "247.168KB",
+  "citation": [
+    {
+      "@type": "ScholarlyArticle",
+      "datePublished": "2018",
+      "author": [
+        {
+          "@type": "Person",
+          "givenName": "Joe",
+          "familyName": "Thorley"
+        }
+      ],
+      "name": "checkr: {An} {R} package for {Assertive} {Programming}",
+      "url": "http://joss.theoj.org/papers/10.21105/joss.00624",
+      "paginiation": "624",
+      "isPartOf": {
+        "@type": "PublicationIssue",
+        "issueNumber": "23",
+        "datePublished": "2018",
+        "isPartOf": {
+          "@type": ["PublicationVolume", "Periodical"],
+          "volumeNumber": "3",
+          "name": "Journal of Open Source Software"
+        }
+      }
+    }
+  ]
 }

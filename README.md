@@ -10,10 +10,10 @@ Status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/che
 Status](https://img.shields.io/codecov/c/github/poissonconsulting/checkr/master.svg)](https://codecov.io/github/poissonconsulting/checkr?branch=master)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1208141.svg)](https://doi.org/10.5281/zenodo.1208141)
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/checkr)](https://cran.r-project.org/package=checkr)
 [![CRAN
 Downloads](http://cranlogs.r-pkg.org/badges/grand-total/checkr)](https://CRAN.R-project.org/package=checkr)
+[![JOSS](http://joss.theoj.org/papers/10.21105/joss.00624/status.svg)](https://doi.org/10.21105/joss.00624)
 
 # checkr
 
@@ -169,20 +169,23 @@ To install the latest development version from the Poisson drat
 
 ``` 
 
-To cite package 'checkr' in publications use:
+To cite checkr in publications use:
 
-  Joe Thorley (2018). checkr: Check the Properties of Common R
-  Objects. R package version 0.2.0.9000.
-  https://github.com/poissonconsulting/checkr
+  Joe Thorley (2018). checkr: An R package for Assertive
+  Programming. Journal of Open Source Software, 3(23), 624. URL
+  https://doi.org/10.21105/joss.00624
 
 A BibTeX entry for LaTeX users is
 
-  @Manual{,
-    title = {checkr: Check the Properties of Common R Objects},
+  @Article{,
+    title = {checkr: {An} {R} package for {Assertive} {Programming}},
     author = {Joe Thorley},
+    journal = {Journal of Open Source Software},
     year = {2018},
-    note = {R package version 0.2.0.9000},
-    url = {https://github.com/poissonconsulting/checkr},
+    volume = {3},
+    number = {23},
+    pages = {624},
+    url = {http://joss.theoj.org/papers/10.21105/joss.00624},
   }
 ```
 
