@@ -48,6 +48,7 @@ check_data <- function(x,
   
   if(!missing(values)) {
     if(is.list(values)) {
+      check_colnames(x, colnames = names(values), x_name = x_name)
       check_colnames(x, colnames = names(values), x_name = x_name, 
                      exclusive = exclusive, order = order, error = error)
 
