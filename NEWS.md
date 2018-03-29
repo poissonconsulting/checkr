@@ -1,3 +1,5 @@
+- added `check_rbind()` to check two data frames can be smoothly `rbind`ed
+
 # checkr 0.2.0
 
 - deprecated `check_tz()` for `check_tzone()`
