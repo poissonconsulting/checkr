@@ -4,10 +4,15 @@
 \alias{check_scalar}
 \title{Check Scalar}
 \usage{
-check_scalar(x, x_name = substitute(x), error = TRUE)
+check_scalar(x, values, named = FALSE, x_name = substitute(x),
+  error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}
+
+\item{values}{An optional vector specifying the values.}
+
+\item{named}{A flag indicating whether the scalar must be named or unnamed or NA if it doesn't matter if the vector is named.}
 
 \item{x_name}{A string of the name of the object.}
 
@@ -18,6 +23,11 @@ An invisible copy of x (if it doesn't throw an error).
 }
 \description{
 Checks whether an object is an atomic vector with one element.
+}
+\examples{
+check_scalar(1)
+check_scalar(c(1,2), error = FALSE)
+check_scalar(1, c(2,3), error = FALSE)
 }
 \seealso{
 \code{\link{check_vector}}
