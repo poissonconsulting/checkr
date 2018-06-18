@@ -6,6 +6,8 @@
 #' @param unique A flag indicating whether the values must be unique.
 #' @param sorted A flag indicating whether the vector must be sorted.
 #' @param named A flag indicating whether the vector must be named or unnamed or a regular expression that must match all the names or count or count range of the number of characters in the names or NA if it doesn't matter if the vector is named.
+#' @param only A flag indicating whether only the actual values are permitted.
+#' It only affects values with less one or two non-missing elements.
 #' @param x_name A string of the name of the object.
 #' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
 #' @return An invisible copy of x (if it doesn't throw an error).
@@ -20,6 +22,7 @@ check_vector <- function(x,
                          unique = FALSE,
                          sorted = FALSE,
                          named = NA,
+                         only = FALSE,
                          x_name = substitute(x),
                          error = TRUE) {
   x_name <- deparse_x_name(x_name)
@@ -39,14 +42,18 @@ check_vector <- function(x,
     named <- TRUE
   }
   
+  check_flag_internal(only)
   check_flag_internal(error)
   
   if (!is.atomic(x)) error(x_name, " must be an atomic vector")
   
   check_length(x, length = length, x_name = x_name, error = error)
   
-  if(!missing(values))
-    check_values(x, values = values, x_name = x_name, error = error)
+  if(!missing(values)) {
+    check_values(x, values = values, only = only, 
+                 x_name = x_name, error = error)
+  } else if(only)
+    warning("only is TRUE but values is undefined")
   
   if(unique) check_unique(x, x_name = x_name, error = error)
   if(sorted) check_sorted(x, x_name = x_name, error = error)

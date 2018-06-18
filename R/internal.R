@@ -64,6 +64,7 @@ check_class_internal <- function(x,
 }
 
 check_values <- function(x, values,
+                         only = FALSE,
                          x_name = substitute(x),
                          error = TRUE) {
   x_name <- deparse_x_name(x_name)
@@ -80,12 +81,12 @@ check_values <- function(x, values,
   if(!length(x_nona)) return(invisible(x))
   
   values <- values[!is.na(values)]
-  if(length(values) < 2) return(invisible(x))
+  if(!only && length(values) < 2) return(invisible(x))
   
   x_nona <- sort(x_nona)
   values <- sort(values)
   
-  if(identical(length(values), 2L)) {
+  if(!only && identical(length(values), 2L)) {
     if(x_nona[1] < values[1] || x_nona[length(x_nona)] > values[2]) {
       on_fail("the values in ", x_name,
               " must lie between ", punctuate(values[1]), " and ", punctuate(values[2]), error = error)
