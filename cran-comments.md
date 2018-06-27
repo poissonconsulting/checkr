@@ -12,6 +12,6 @@ Maintainer: ‘Joe Thorley <joe@poissonconsulting.ca>’
 
 ## Reverse dependencies
 
-* I have run R CMD check on the 1 downstream dependency.
+* I have run R CMD check on the 2 downstream dependencies.
 
 No ERRORs or WARNINGs found :)
