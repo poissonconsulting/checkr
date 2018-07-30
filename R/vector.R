@@ -1,4 +1,4 @@
-#' Check Vector
+#' Check Atomic Vector
 #'
 #' @inheritParams check_length
 #' @param x The object to check.

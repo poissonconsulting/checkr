@@ -19,6 +19,8 @@ check_attributes <- function(x,
                              error = TRUE) {
   x_name <- deparse_x_name(x_name)
   
+  check_flag_internal(error)
+
   attr <- attributes(x)
   if(is.null(attr)) error(x_name, "must have attributes")
   

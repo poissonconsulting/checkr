@@ -2,7 +2,7 @@
 % Please edit documentation in R/vector.R
 \name{check_vector}
 \alias{check_vector}
-\title{Check Vector}
+\title{Check Atomic Vector}
 \usage{
 check_vector(x, values, length = NA, unique = FALSE, sorted = FALSE,
   named = NA, only = FALSE, x_name = substitute(x), error = TRUE)
@@ -31,7 +31,7 @@ It only affects values with less one or two non-missing elements.}
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Check Vector
+Check Atomic Vector
 }
 \examples{
 check_vector(2:1, length = 3, sorted = TRUE, named = TRUE, error = FALSE)
