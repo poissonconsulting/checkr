@@ -1,4 +1,6 @@
-- added `exclusive = FALSE` and `order = FALSE` to `check_list`
+- added `exclusive = FALSE` and `order = FALSE` to `check_list` and removed
+`unique = FALSE`, `length = NA` and `named = NA`
+- added `check_attributes()`
 
 # checkr 0.3.0
 

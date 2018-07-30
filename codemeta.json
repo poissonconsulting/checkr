@@ -9,7 +9,7 @@
   "name": "checkr: Check the Properties of Common R Objects",
   "issueTracker": "https://github.com/poissonconsulting/checkr/issues",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "0.3.0.9001",
+  "version": "0.3.0.9002",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
@@ -154,7 +154,7 @@
   "contIntegration": "https://travis-ci.org/poissonconsulting/checkr",
   "releaseNotes": "https://github.com/poissonconsulting/checkr/blob/master/NEWS.md",
   "readme": "https://github.com/poissonconsulting/checkr/blob/master/README.md",
-  "fileSize": "248.728KB",
+  "fileSize": "248.69KB",
   "citation": [
     {
       "@type": "ScholarlyArticle",
