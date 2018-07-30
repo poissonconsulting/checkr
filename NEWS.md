@@ -1,3 +1,5 @@
+- added `exclusive = FALSE` and `order = FALSE` to `check_list`
+
 # checkr 0.3.0
 
 - redefined `check_scalar` (following previous deprecation)

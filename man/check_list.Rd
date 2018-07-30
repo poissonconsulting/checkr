@@ -5,7 +5,8 @@
 \title{Check List}
 \usage{
 check_list(x, values, length = NA, unique = FALSE, named = NA,
-  x_name = substitute(x), error = TRUE)
+  exclusive = FALSE, order = FALSE, x_name = substitute(x),
+  error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}
@@ -14,9 +15,13 @@ check_list(x, values, length = NA, unique = FALSE, named = NA,
 
 \item{length}{A flag indicating whether x should have elements (versus no elements) or a missing value indicating no requirements or a count or count range of the number of elements.}
 
-\item{unique}{A flag indicating whether the values must be unique.}
+\item{unique}{A flag indicating whether _all_ the elements must be unique.}
 
 \item{named}{A flag indicating whether the list must be named or unnamed or a regular expression that must match all the names or count or count range of the number of characters in the names or NA if it doesn't matter if the list is named.}
+
+\item{exclusive}{A flag indicating whether other elements are not permitted.}
+
+\item{order}{A flag indicating whether the elements have to occur in the same order as values.}
 
 \item{x_name}{A string of the name of the object.}
 
