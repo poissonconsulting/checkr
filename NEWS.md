@@ -1,7 +1,8 @@
-- added `check_intersection()` to check the intersection between two atomic vectorsi
+- added `check_intersection()` to check the intersection between two atomic vectors
 - added `exclusive = FALSE` and `order = FALSE` to `check_list` and removed
 `unique = FALSE`, `length = NA` and `named = NA`
 - added `check_attributes()` to check an objects attributes
+- added `complete = TRUE` argument to `check_names()`
 
 # checkr 0.3.0
 

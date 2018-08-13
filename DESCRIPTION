@@ -1,7 +1,7 @@
 Package: checkr
 Title: Check the Properties of Common R Objects
-Version: 0.3.0.9003
-Date: 2018-07-30
+Version: 0.3.0.9004
+Date: 2018-08-13
 Authors@R: person("Joe", "Thorley", email = "joe@poissonconsulting.ca", role = c("aut", "cre"))
 Description: Expressive assertive pipe-friendly, dependency-free functions 
   to check the properties of common R objects.
@@ -24,5 +24,5 @@ Suggests:
     rmarkdown
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.0
 VignetteBuilder: knitr

@@ -6,11 +6,11 @@
 \alias{checkr-package}
 \title{checkr: Check the Properties of Common R Objects}
 \description{
-Expressive assertive pipe-friendly, dependency-free functions
-to check the properties of common R objects.
-In the case of failure the functions issue informative error messages that
-(hopefully!) allow users to quickly identify and fix any problems.
-The functions are designed to be used in scripts and packages.
+Expressive assertive pipe-friendly, dependency-free functions 
+  to check the properties of common R objects.
+  In the case of failure the functions issue informative error messages that 
+  (hopefully!) allow users to quickly identify and fix any problems.
+  The functions are designed to be used in scripts and packages.
 }
 \seealso{
 \code{\link{check_vector}}, \code{\link{check_list}} and \code{\link{check_data}}

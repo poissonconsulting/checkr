@@ -4,8 +4,9 @@
 \alias{check_names}
 \title{Check Names}
 \usage{
-check_names(x, names = character(0), exclusive = FALSE, order = FALSE,
-  unique = FALSE, x_name = substitute(x), error = TRUE)
+check_names(x, names = character(0), exclusive = FALSE,
+  order = FALSE, unique = FALSE, complete = TRUE,
+  x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}
@@ -18,15 +19,18 @@ check_names(x, names = character(0), exclusive = FALSE, order = FALSE,
 
 \item{unique}{A flag indicating whether all the object names have to be unique.}
 
+\item{complete}{A flag indicating whether all the possible names have to be represented.}
+
 \item{x_name}{A string of the name of the object.}
 
-\item{error}{A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.}
+\item{error}{A flag indicating whether to throw an informative error or 
+immediately generate an informative message if the check fails.}
 }
 \value{
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-#' Checks the names of an object as returned by the `names()` function. 
+Checks the names of an object as returned by the `names()` function. 
 The function can check the order of the names and whether other names are permitted.
 }
 \examples{
