@@ -57,7 +57,7 @@ check_data <- function(x,
                      x_name = paste("column", name, "of", x_name), error = error)
       }
     } else {
-      if(!is.character(values)) error("values must be an character vector or a named list")
+      if(!is.character(values)) err("values must be an character vector or a named list")
       
       check_colnames(x, colnames = values, x_name = x_name, exclusive = exclusive, order = order)
     }

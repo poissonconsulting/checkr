@@ -30,7 +30,7 @@ check_vector <- function(x,
   check_flag_internal(unique)
   check_flag_internal(sorted)
   if(!(is_flag(named) || is_string(named) || is_NA(named) || is_count(named) || is_count_range(named))) 
-    error("named must be a flag, string, count, count range or NA")
+    err("named must be a flag, string, count, count range or NA")
   
   regex <- ".*"
   nchar <- c(0L, .Machine$integer.max)
@@ -45,7 +45,7 @@ check_vector <- function(x,
   check_flag_internal(only)
   check_flag_internal(error)
   
-  if (!is.atomic(x)) error(x_name, " must be an atomic vector")
+  if (!is.atomic(x)) err(x_name, " must be an atomic vector")
   
   check_length(x, length = length, x_name = x_name, error = error)
   
@@ -53,7 +53,7 @@ check_vector <- function(x,
     check_values(x, values = values, only = only, 
                  x_name = x_name, error = error)
   } else if(only)
-    warning("only is TRUE but values is undefined")
+    wrn("only is TRUE but values is undefined")
   
   if(unique) check_unique(x, x_name = x_name, error = error)
   if(sorted) check_sorted(x, x_name = x_name, error = error)

@@ -15,17 +15,17 @@ is_count_range <- function(x) is.numeric(x) && length(x) %in% 1:2 &&
 is_length <- function(x) is_flag(x) || is_NA(x) || is_count_range(x)
 
 check_string_internal <- function(x)
-  if (!is_string(x)) error(substitute(x), " must be a string")
+  if (!is_string(x)) err(substitute(x), " must be a string")
 
 check_flag_internal <- function(x)
-  if (!is_flag(x)) error(substitute(x), " must be a flag")
+  if (!is_flag(x)) err(substitute(x), " must be a flag")
 
 check_count_internal <- function(x)
-  if (!is_count(x)) error(substitute(x), " must be a count")
+  if (!is_count(x)) err(substitute(x), " must be a count")
 
 check_length_internal <- function(x)
   if(!is_length(x))
-    error(substitute(x), " must be a flag, a missing value, a count or a count range")
+    err(substitute(x), " must be a flag, a missing value, a count or a count range")
 
 deparse_x_name <- function(x_name) {
   if (!is.character(x_name)) x_name <- deparse(x_name) 
@@ -45,15 +45,9 @@ deparse_y_name <- function(y_name) {
   y_name
 }
 
-error <- function(...) stop(..., call. = FALSE)
-
-warning <- function(...) {
-  base::warning(..., call. = FALSE, immediate. = TRUE, noBreaks. = TRUE)
-}
-
 on_fail <- function(..., error) {
-  if (error) error(...)
-  warning(...)
+  if (error) err(...)
+  wrn(...)
 }
 
 tz <- function(x) {

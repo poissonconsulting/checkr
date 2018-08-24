@@ -20,7 +20,7 @@ check_scalar <- function(x,
                          x_name = substitute(x),
                          error = TRUE) {
   x_name <- deparse_x_name(x_name)
-  if(!(is_flag(named) || is_NA(named))) error("named must be a flag or NA")
+  if(!(is_flag(named) || is_NA(named))) err("named must be a flag or NA")
   
   check_vector(x, values = values, length = 1L, named = named, 
                x_name =  x_name, error = error)

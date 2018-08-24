@@ -34,7 +34,7 @@ check_classes <- function(x, classes = character(0),
   x_classes <- class(x)
   
   if(!length(classes) && exclusive) 
-    error("all objects must have a class (define classes or set exclusive = FALSE)")
+    err("all objects must have a class (define classes or set exclusive = FALSE)")
   
   if (identical(length(classes), 1L) && !exclusive) {
     check_inherits(x, classes, x_name = x_name, error = error)

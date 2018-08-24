@@ -71,8 +71,8 @@ check_values <- function(x, values,
   
   check_flag_internal(error)
   
-  if (!is.atomic(x)) error(x_name, " must be an atomic vector")
-  if (!is.atomic(values)) error("values must be an atomic vector")
+  if (!is.atomic(x)) err(x_name, " must be an atomic vector")
+  if (!is.atomic(values)) err("values must be an atomic vector")
 
   check_class_internal(x, values, x_name = x_name, error = error)
   check_nas(x, values, x_name = x_name, error = error)

@@ -26,7 +26,7 @@ check_list <- function(x,
                        error = TRUE) {
   x_name <- deparse_x_name(x_name)
   
-  if (!is.list(x)) error(x_name, " must be a list")
+  if (!is.list(x)) err(x_name, " must be a list")
   
   check_flag_internal(error)
   
@@ -39,7 +39,7 @@ check_list <- function(x,
         check_values(x[[name]], values[[name]], x_name = paste("element", name, "of", x_name), error = error)
       }
     } else {
-      if(!is.atomic(values)) error("values must be an atomic vector or a named list")
+      if(!is.atomic(values)) err("values must be an atomic vector or a named list")
       check_names(x, names = values, exclusive = exclusive, order = order)
     }
   }
