@@ -12,7 +12,6 @@ Description: Expressive assertive pipe-friendly, functions
 License: MIT + file LICENSE
 URL: https://github.com/poissonconsulting/checkr
 BugReports: https://github.com/poissonconsulting/checkr/issues
-Depends: R (>= 3.1.0)
 Imports: err
 Suggests:
     assertthat,
