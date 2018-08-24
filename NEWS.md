@@ -1,3 +1,4 @@
+- added `err` as dependency for message generation
 - added `check_intersection()` to check the intersection between two atomic vectors
 - added `exclusive = FALSE` and `order = FALSE` to `check_list` and removed
 `unique = FALSE`, `length = NA` and `named = NA`

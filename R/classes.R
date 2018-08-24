@@ -44,19 +44,19 @@ check_classes <- function(x, classes = character(0),
   if (exclusive) {
     if (order) {
       if (!identical(x_classes, classes))
-        on_fail(x_name, " classes must be identical to ", punctuate(classes, "and"), error = error)
+        on_fail(x_name, " classes must be identical to ", cc_and(classes), error = error)
     } else {
       if (!identical(sort(x_classes), sort(classes)))
-        on_fail(x_name, " classes must include and only include ", punctuate(classes, "and"), error = error)
+        on_fail(x_name, " classes must include and only include ", cc_and(classes), error = error)
     }
   } else {
     x_classes <- x_classes[x_classes %in% classes]
     if (order) {
       if (!identical(x_classes, classes))
-        on_fail(x_name, " classes must include ", punctuate(classes, "and"), " in that order", error = error)
+        on_fail(x_name, " classes must include ", cc_and(classes), " in that order", error = error)
     } else {
       if (!identical(sort(x_classes), sort(classes)))
-        on_fail(x_name, " classes must include ", punctuate(classes, "and"), error = error)
+        on_fail(x_name, " classes must include ", cc_and(classes), error = error)
     }
   }
   invisible(x)

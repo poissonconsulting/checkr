@@ -10,16 +10,16 @@ check_n <- function(x, n, range, x_name, n_name, error) {
 
   if (identical(length(range), 1L)) {
     if (any(n != range)) {
-      on_fail(x_name, " must have ", range, " ", plural(n_name, range), error = error)
+      on_fail(x_name, " must have ", range, " ", n_name, cn(range, "%s"), error = error)
     }
     return(x)
   }
 
   if (any(n < min(range))) {
-    on_fail(x_name, " must have at least ", min(range), " ", plural(n_name, min(range)), error = error)
+    on_fail(x_name, " must have at least ", min(range), " ", n_name, cn(min(range), "%s"), error = error)
   }
   if (any(n > max(range))) {
-    on_fail(x_name, " must not have more than ", max(range), " ", plural(n_name, max(range)), error = error)
+    on_fail(x_name, " must not have more than ", max(range), " ", n_name, cn(max(range), "%s"), error = error)
   }
   x
 }
@@ -89,16 +89,16 @@ check_values <- function(x, values,
   if(!only && identical(length(values), 2L)) {
     if(x_nona[1] < values[1] || x_nona[length(x_nona)] > values[2]) {
       on_fail("the values in ", x_name,
-              " must lie between ", punctuate(values[1]), " and ", punctuate(values[2]), error = error)
+              " must lie between ", cc_and(values[1:2]), error = error)
     }
   } else if (!all(x_nona %in% values)) {
     unpermitted <- x_nona[!x_nona %in% values]
     unpermitted <- unique(unpermitted)
     values <- unique(values)
     if(length(values) < 10) {
-      on_fail(x_name, " can only include values ", punctuate(values), error = error)
+      on_fail(x_name, " can only include values ", cc_or(values), error = error)
     } else if(length(unpermitted) < 10) {
-      on_fail(x_name, " has unpermitted values ", punctuate(unpermitted, "and"), error = error)
+      on_fail(x_name, " has unpermitted values ", cc_and(unpermitted), error = error)
     } else
       on_fail(x_name, " has unpermitted values ", error = error)
   }

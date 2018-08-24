@@ -34,19 +34,19 @@ check_levels <- function(x, levels, exclusive = TRUE, order = TRUE,
   if (exclusive) {
     if (order) {
       if (!identical(x_levels, levels))
-        on_fail(x_name, " levels must be identical to ", punctuate(levels, "and"), error = error)
+        on_fail(x_name, " levels must be identical to ", cc_and(levels), error = error)
     } else {
       if (!identical(sort(x_levels), sort(levels)))
-        on_fail(x_name, " levels must include and only include ", punctuate(levels, "and"), error = error)
+        on_fail(x_name, " levels must include and only include ", cc_and(levels), error = error)
     }
   } else {
     x_levels <- x_levels[x_levels %in% levels]
     if (order) {
       if (!identical(x_levels, levels))
-        on_fail(x_name, " levels must include ", punctuate(levels, "and"), " in that order", error = error)
+        on_fail(x_name, " levels must include ", cc_and(levels), " in that order", error = error)
     } else {
       if (!identical(sort(x_levels), sort(levels)))
-        on_fail(x_name, " levels must include ", punctuate(levels, "and"), error = error)
+        on_fail(x_name, " levels must include ", cc_and(levels), error = error)
     }
   }
   invisible(x)

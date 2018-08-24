@@ -30,7 +30,7 @@ issue informative error messages.
 
 For an overview of the functions see the `checkr-naming` vignette and for a comparison with similar packages see the `assertive-programming` vignette.
 
-The `checkr` package is recommended over the alternatives if you are looking for a set of expressive, dependency-free, pipe-friendly assertive functions with customisable object names.
+The `checkr` package is recommended over the alternatives if you are looking for a set of expressive, light-weight, pipe-friendly assertive functions with customisable object names.
 
 ## Demonstration
 

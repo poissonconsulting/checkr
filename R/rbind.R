@@ -43,8 +43,8 @@ check_rbind <- function(x,
   
   else if(!exclusive && order) {
     if(!identical(colnames, intersect(colnames(x), colnames))) {
-      on_fail("x column names must include ", punctuate(colnames, "and"), 
-              " in that order", error = error)
+      on_fail(co_and(colnames, "x column names must include %c in that order")
+              , error = error)
     }
   }
   
@@ -55,7 +55,8 @@ check_rbind <- function(x,
   
   if(!all(identical)) {
     different <- names(identical[!identical])
-    on_fail(plural("column", length(different), " "), punctuate(different, "and"), " in ", x_name, " and ", y_name, " must have the same classes", error = error)
+    on_fail(co_and(different, "column%s %c in "), x_name, " and ", y_name, 
+                   " must have the same classes", error = error)
   }
   invisible(x)
 }

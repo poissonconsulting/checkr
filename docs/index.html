@@ -10,7 +10,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Check the Properties of Common R Objects">
-<meta property="og:description" content="Expressive assertive pipe-friendly, dependency-free functions 
+<meta property="og:description" content="Expressive assertive pipe-friendly, functions 
   to check the properties of common R objects.
   In the case of failure the functions issue informative error messages that 
   (hopefully!) allow users to quickly identify and fix any problems.
@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">checkr</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.0.9004</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.0.9005</span>
       </span>
     </div>
 
@@ -97,7 +97,7 @@
 <p><code>checkr</code> is an R package of assertive functions to check the properties of common R objects.</p>
 <p>In the case of failure the functions, which are designed to be used in scripts and packages, issue informative error messages.</p>
 <p>For an overview of the functions see the <code>checkr-naming</code> vignette and for a comparison with similar packages see the <code>assertive-programming</code> vignette.</p>
-<p>The <code>checkr</code> package is recommended over the alternatives if you are looking for a set of expressive, dependency-free, pipe-friendly assertive functions with customisable object names.</p>
+<p>The <code>checkr</code> package is recommended over the alternatives if you are looking for a set of expressive, light-weight, pipe-friendly assertive functions with customisable object names.</p>
 <div id="demonstration" class="section level2">
 <h2 class="hasAnchor">
 <a href="#demonstration" class="anchor"></a>Demonstration</h2>
@@ -115,8 +115,8 @@
 <a class="sourceLine" id="cb1-11" data-line-number="11"><span class="co">#&gt; Warning: dplyr::starwars column names must include 'height', 'name',</span></a>
 <a class="sourceLine" id="cb1-12" data-line-number="12"><span class="co">#&gt; 'mass', 'hair_color' and 'gender' in that order</span></a>
 <a class="sourceLine" id="cb1-13" data-line-number="13"><span class="co">#&gt; Warning: column height of dplyr::starwars must not include missing values</span></a>
-<a class="sourceLine" id="cb1-14" data-line-number="14"><span class="co">#&gt; Warning: the values in column mass of dplyr::starwars must lie between 20</span></a>
-<a class="sourceLine" id="cb1-15" data-line-number="15"><span class="co">#&gt; and 1358</span></a>
+<a class="sourceLine" id="cb1-14" data-line-number="14"><span class="co">#&gt; Warning: the values in column mass of dplyr::starwars must lie between '20'</span></a>
+<a class="sourceLine" id="cb1-15" data-line-number="15"><span class="co">#&gt; and '1358'</span></a>
 <a class="sourceLine" id="cb1-16" data-line-number="16"><span class="co">#&gt; Warning: column hair_color of dplyr::starwars can only include values</span></a>
 <a class="sourceLine" id="cb1-17" data-line-number="17"><span class="co">#&gt; 'black', 'blond' or 'brown'</span></a>
 <a class="sourceLine" id="cb1-18" data-line-number="18"><span class="co">#&gt; Warning: dplyr::starwars must not have more than 84 rows</span></a>
@@ -153,7 +153,7 @@
 <p>To check the range of a vector pass two non-missing values (as well as the missing value if required).</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="ot">NA</span>))</a>
 <a class="sourceLine" id="cb6-2" data-line-number="2"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">-10</span>, <span class="ot">NA</span>))</a>
-<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="co">#&gt; Error: the values in y must lie between -10 and -1</span></a></code></pre></div>
+<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="co">#&gt; Error: the values in y must lie between '-10' and '-1'</span></a></code></pre></div>
 </div>
 <div id="specific-values" class="section level4">
 <h4 class="hasAnchor">
@@ -161,7 +161,7 @@
 <p>To check the vector only includes specific values pass three or more non-missing values.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="ot">NA</span>))</a>
 <a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="ot">NA</span>))</a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="co">#&gt; Error: y can only include values 1 or 2</span></a></code></pre></div>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="co">#&gt; Error: y can only include values '1' or '2'</span></a></code></pre></div>
 </div>
 <div id="naming-objects" class="section level3">
 <h3 class="hasAnchor">
@@ -257,7 +257,7 @@ A BibTeX entry for LaTeX users is
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>Joe Thorley <br><small class="roles"> Author, maintainer </small>  </li>
+<li>Joe Thorley <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-7683-4592" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" height="16"></a> </li>
 </ul>
 </div>
 

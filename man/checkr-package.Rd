@@ -6,7 +6,7 @@
 \alias{checkr-package}
 \title{checkr: Check the Properties of Common R Objects}
 \description{
-Expressive assertive pipe-friendly, dependency-free functions 
+Expressive assertive pipe-friendly, functions 
   to check the properties of common R objects.
   In the case of failure the functions issue informative error messages that 
   (hopefully!) allow users to quickly identify and fix any problems.
@@ -16,7 +16,7 @@ Expressive assertive pipe-friendly, dependency-free functions
 \code{\link{check_vector}}, \code{\link{check_list}} and \code{\link{check_data}}
 }
 \author{
-\strong{Maintainer}: Joe Thorley \email{joe@poissonconsulting.ca}
+\strong{Maintainer}: Joe Thorley \email{joe@poissonconsulting.ca} (0000-0002-7683-4592)
 
 }
 \keyword{internal}

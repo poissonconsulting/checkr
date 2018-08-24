@@ -26,9 +26,8 @@ check_key <- function(x, key = names(x), x_name = substitute(x),
 
   check_colnames(x, colnames = key, x_name = x_name)
 
-  if (anyDuplicated(x[key])) {
-    on_fail(plural("column", length(key), " "),
-            punctuate(key, "and"), " in ", x_name, " must be a unique key",
+  if (anyDuplicated(x[key])) { 
+    on_fail(co_and(key, "column%s %c in "), x_name, " must be a unique key",
             error = error)
   }
   invisible(x)

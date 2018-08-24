@@ -56,19 +56,6 @@ on_fail <- function(..., error) {
   warning(...)
 }
 
-punctuate <- function(x, qualifier = "or") {
-  if (is.logical(x) || is.integer(x) || is.numeric(x)) {
-    x <- as.character(x)
-  } else
-    x <- paste0("'", as.character(x), "'")
-  if (length(x) == 1)
-    return(x)
-  n <- length(x)
-  paste(paste(x[-n], collapse = ", "), qualifier, x[n])
-}
-
-plural <- function(x, n = 1, end = "") paste0(x, ifelse(n != 1, "s", ""), end)
-
 tz <- function(x) {
   tz <- attr(x, "tzone")
   if(identical(tz, "") || is.null(tz))
