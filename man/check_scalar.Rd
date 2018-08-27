@@ -4,15 +4,17 @@
 \alias{check_scalar}
 \title{Check Scalar}
 \usage{
-check_scalar(x, values, named = FALSE, x_name = substitute(x),
-  error = TRUE)
+check_scalar(x, values, named = FALSE, attributes = named,
+  x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}
 
 \item{values}{An optional vector specifying the values.}
 
-\item{named}{A flag indicating whether the scalar must be named or unnamed or NA if it doesn't matter if the vector is named.}
+\item{named}{A flag indicating whether the scalar must be named or unnamed or NA if it doesn't matter if the scalar is named.}
+
+\item{attributes}{A flag indicating whether the scalar must or must not have attributes or NA if it doesn't matter if the scalar is named.}
 
 \item{x_name}{A string of the name of the object.}
 

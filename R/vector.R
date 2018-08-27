@@ -5,7 +5,8 @@
 #' @param values An optional vector specifying the values.
 #' @param unique A flag indicating whether the values must be unique.
 #' @param sorted A flag indicating whether the vector must be sorted.
-#' @param named A flag indicating whether the vector must be named or unnamed or a regular expression that must match all the names or count or count range of the number of characters in the names or NA if it doesn't matter if the vector is named.
+#' @param named A flag indicating whether the vector must be named or unnamed or NA if it doesn't matter.
+#' @param attributes A flag indicating whether the vector must or must not have attributes or NA if it doesn't matter.
 #' @param only A flag indicating whether only the actual values are permitted.
 #' It only affects values with less one or two non-missing elements.
 #' @param x_name A string of the name of the object.
@@ -22,6 +23,7 @@ check_vector <- function(x,
                          unique = FALSE,
                          sorted = FALSE,
                          named = NA,
+                         attributes = named,
                          only = FALSE,
                          x_name = substitute(x),
                          error = TRUE) {
@@ -29,19 +31,15 @@ check_vector <- function(x,
   
   check_flag_internal(unique)
   check_flag_internal(sorted)
-  if(!(is_flag(named) || is_string(named) || is_NA(named) || is_count(named) || is_count_range(named))) 
-    err("named must be a flag, string, count, count range or NA")
+  if(!(is_flag(named) || is_NA(named))) 
+    err("named must be a flag or NA")
+
+  if(!(is_flag(attributes) || is_NA(attributes))) 
+    err("attributes must be a flag or NA")
   
-  regex <- ".*"
-  nchar <- c(0L, .Machine$integer.max)
-  if(is_string(named)) {
-    regex <- named
-    named <- TRUE
-  } else if(is_count(named) || is_count_range(named)) {
-    nchar <- named
-    named <- TRUE
-  }
-  
+  if(!is_NA(named) && named && !is_NA(attributes) && !attributes)
+    err("names are attributes")
+
   check_flag_internal(only)
   check_flag_internal(error)
   
@@ -59,9 +57,15 @@ check_vector <- function(x,
   if(sorted) check_sorted(x, x_name = x_name, error = error)
   
   if(is_flag(named) && named) {
-    check_named(x, nchar = nchar, regex = regex, x_name = x_name, error = error)
+    check_named(x, x_name = x_name, error = error)
   } else if(is_flag(named) && !named)
     check_unnamed(x, x_name = x_name, error = error)
   
+  if(is_flag(attributes) && attributes) {
+    check_attributes(x, x_name = x_name, error = error)
+  } else if(is_flag(attributes) && !attributes) {
+    check_no_attributes(x, x_name = x_name, error = error)
+  }
+    
   invisible(x)
 }

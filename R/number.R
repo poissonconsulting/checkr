@@ -19,13 +19,6 @@ check_number <- function(x, coerce = FALSE,
                        x_name = substitute(x),
                        error = TRUE) {
   x_name <- deparse_x_name(x_name)
-
-  check_flag_internal(coerce)
-  check_flag_internal(error)
-
-  if(coerce && is.numeric(x)) {
-    x <- as.numeric(x)     
-  }
   
-  check_vector(x, values = 1, length = 1, x_name = x_name, error = error)
+  check_dbl(x, coerce = coerce, x_name = x_name, error = error)
 }

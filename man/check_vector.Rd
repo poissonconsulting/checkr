@@ -5,7 +5,8 @@
 \title{Check Atomic Vector}
 \usage{
 check_vector(x, values, length = NA, unique = FALSE, sorted = FALSE,
-  named = NA, only = FALSE, x_name = substitute(x), error = TRUE)
+  named = NA, attributes = named, only = FALSE,
+  x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}
@@ -18,7 +19,9 @@ check_vector(x, values, length = NA, unique = FALSE, sorted = FALSE,
 
 \item{sorted}{A flag indicating whether the vector must be sorted.}
 
-\item{named}{A flag indicating whether the vector must be named or unnamed or a regular expression that must match all the names or count or count range of the number of characters in the names or NA if it doesn't matter if the vector is named.}
+\item{named}{A flag indicating whether the vector must be named or unnamed or NA if it doesn't matter.}
+
+\item{attributes}{A flag indicating whether the vector must or must not have attributes or NA if it doesn't matter.}
 
 \item{only}{A flag indicating whether only the actual values are permitted.
 It only affects values with less one or two non-missing elements.}

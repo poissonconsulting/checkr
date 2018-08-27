@@ -1,9 +1,11 @@
 - added `err` as dependency for message generation
+- added `attributes` argument to `check_vector()` and `check_scalar()` which now only accept a flag for named
 - added `check_intersection()` to check the intersection between two atomic vectors
 - added `exclusive = FALSE` and `order = FALSE` to `check_list` and removed
 `unique = FALSE`, `length = NA` and `named = NA`
-- added `check_attributes()` to check an objects attributes
+- added `check_attributes()` to check an objects attributes and `check_no_attributes()`
 - added `complete = TRUE` argument to `check_names()`
+- added `check_int()` and `check_dbl()` both of which do coercion
 
 # checkr 0.3.0
 

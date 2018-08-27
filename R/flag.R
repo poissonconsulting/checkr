@@ -20,7 +20,7 @@ check_flag <- function(x,
 
   check_flag_internal(error)
 
-  check_vector(x, values = TRUE, length = 1,
+  check_scalar(x, values = TRUE,
                x_name = x_name, error = error)
 }
 
@@ -49,7 +49,7 @@ check_flag_na <- function(x,
 
   check_flag_internal(error)
 
-  check_vector(x, values = c(TRUE, NA), length = 1,
+  check_scalar(x, values = c(TRUE, NA),
                x_name = x_name, error = error)
 }
 
