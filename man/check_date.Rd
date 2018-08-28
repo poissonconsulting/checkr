@@ -2,9 +2,12 @@
 % Please edit documentation in R/date.R
 \name{check_date}
 \alias{check_date}
+\alias{check_day}
 \title{Check Date}
 \usage{
 check_date(x, coerce = FALSE, x_name = substitute(x), error = TRUE)
+
+check_day(x, coerce = FALSE, x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}

@@ -28,3 +28,14 @@ check_date <- function(x,
   check_scalar(x, values = as.Date("2001-01-01"), attributes = TRUE,
                x_name = x_name, error = error)
 }
+
+#' @rdname check_date
+#' @export
+check_day <- function(x,
+                       coerce = FALSE,
+                       x_name = substitute(x),
+                       error = TRUE) {
+  x_name <- deparse_x_name(x_name)
+  
+  check_date(x, coerce = coerce, x_name = x_name, error = error)
+}

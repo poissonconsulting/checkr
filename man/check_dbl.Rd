@@ -2,9 +2,12 @@
 % Please edit documentation in R/dbl.R
 \name{check_dbl}
 \alias{check_dbl}
+\alias{check_number}
 \title{Check Dbl}
 \usage{
 check_dbl(x, coerce = FALSE, x_name = substitute(x), error = TRUE)
+
+check_number(x, coerce = FALSE, x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}

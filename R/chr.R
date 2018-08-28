@@ -11,10 +11,10 @@
 #' @export
 #'
 #' @examples
-#' check_string(1, error = FALSE)
-#' check_string("1", error = FALSE)
-#' check_string(c("1", "2"), error = FALSE)
-check_string <- function(x,
+#' check_chr(1, error = FALSE)
+#' check_chr("1", error = FALSE)
+#' check_chr(c("1", "2"), error = FALSE)
+check_chr <- function(x,
                          coerce = FALSE,
                          x_name = substitute(x),
                          error = TRUE) {
@@ -29,3 +29,15 @@ check_string <- function(x,
   }
   check_scalar(x, values = character(1), x_name = x_name, error = error)
 }
+
+#' @rdname check_chr
+#' @export
+check_string <- function(x,
+                         coerce = FALSE,
+                         x_name = substitute(x),
+                         error = TRUE) {
+  x_name <- deparse_x_name(x_name)
+  
+  check_chr(x, coerce = coerce, x_name = x_name, error = error)
+}
+

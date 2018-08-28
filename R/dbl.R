@@ -29,3 +29,14 @@ check_dbl <- function(x, coerce = FALSE,
   
   check_scalar(x, values = 1, x_name = x_name, error = error)
 }
+
+#' @rdname check_dbl
+#' @export
+check_number <- function(x, coerce = FALSE,
+                       x_name = substitute(x),
+                       error = TRUE) {
+  x_name <- deparse_x_name(x_name)
+  
+  check_dbl(x, coerce = coerce, x_name = x_name, error = error)
+}
+

@@ -8,6 +8,8 @@
 - added `check_int()` and `check_dbl()` both of which do coercion
 - added `coerce` argument to flag
 - `coerce = TRUE` now also strips attributes for flag, int, dbl and string.
+- added `check_prop()` and deprecated `check_probability()`
+- added `check_lgl()`, `check_chr()` and `check_day()`
 
 # checkr 0.3.0
 

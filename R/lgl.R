@@ -11,10 +11,10 @@
 #' @export
 #'
 #' @examples
-#' check_flag(1, error = FALSE)
-#' check_flag(FALSE, error = FALSE)
-#' check_flag(c(FALSE, TRUE), error = FALSE)
-check_flag <- function(x, coerce = FALSE,
+#' check_lgl(1, error = FALSE)
+#' check_lgl(FALSE, error = FALSE)
+#' check_lgl(c(FALSE, TRUE), error = FALSE)
+check_lgl <- function(x, coerce = FALSE,
                        x_name = substitute(x),
                        error = TRUE) {
   x_name <- deparse_x_name(x_name)
@@ -26,6 +26,16 @@ check_flag <- function(x, coerce = FALSE,
     attributes(x) <- NULL
 
   check_scalar(x, values = TRUE, x_name = x_name, error = error)
+}
+
+#' @rdname check_lgl
+#' @export
+check_flag <- function(x, coerce = FALSE,
+                       x_name = substitute(x),
+                       error = TRUE) {
+  x_name <- deparse_x_name(x_name)
+  
+  check_lgl(x, coerce = coerce, x_name = x_name, error = error)
 }
 
 #' Check Flag or NA
@@ -57,3 +67,4 @@ check_flag_na <- function(x, coerce = TRUE,
 
   check_scalar(x, values = c(TRUE, NA), x_name = x_name, error = error)
 }
+

@@ -29,7 +29,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">checkr</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.0.9007</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.0.9008</span>
       </span>
     </div>
 
@@ -85,7 +85,7 @@
       <h1>checkr Naming Schemes</h1>
                         <h4 class="author">Joe Thorley</h4>
             
-            <h4 class="date">2018-08-27</h4>
+            <h4 class="date">2018-08-28</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/poissonconsulting/checkr/blob/master/vignettes/checkr-naming.Rmd"><code>vignettes/checkr-naming.Rmd</code></a></small>
       <div class="hidden name"><code>checkr-naming.Rmd</code></div>
@@ -108,16 +108,16 @@
 <p>Often function arguments are scalars of a particular type. For example the default <code>mean()</code> function has an argument <code>na.rm</code> which is a logical indicating whether <code>NA</code> values should be stripped. The checkr package provides the following functions to test whether objects are non-missing scalars of particular types:</p>
 <ul>
 <li>
-<code><a href="../reference/check_flag.html">check_flag()</a></code>: a non-missing logical scalar i.e. <code>TRUE</code> or <code>FALSE</code>
+<code><a href="../reference/check_lgl.html">check_flag()</a></code>: a non-missing logical scalar i.e. <code>TRUE</code> or <code>FALSE</code>
 </li>
 <li>
 <code><a href="../reference/check_count.html">check_count()</a></code>: an non-missing non-negative integer i.e. 1L</li>
 <li>
-<code><a href="../reference/check_number.html">check_number()</a></code>: an non-missing double scalar i.e. 1.1</li>
+<code><a href="../reference/check_dbl.html">check_number()</a></code>: an non-missing double scalar i.e. 1.1</li>
 <li>
-<code><a href="../reference/check_probability.html">check_probability()</a></code>: a non-missing double scalar between zero and one, i.e. 0.35</li>
+<code><a href="../reference/check_prop.html">check_probability()</a></code>: a non-missing double scalar between zero and one, i.e. 0.35</li>
 <li>
-<code><a href="../reference/check_string.html">check_string()</a></code>: a non-missing character scalar, i.e. <code>"text"</code>
+<code><a href="../reference/check_chr.html">check_string()</a></code>: a non-missing character scalar, i.e. <code>"text"</code>
 </li>
 <li>
 <code><a href="../reference/check_date.html">check_date()</a></code>: a non-missing Date scalar i.e. <code>as.Date("2001-02-03")</code>
