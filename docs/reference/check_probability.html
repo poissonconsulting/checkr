@@ -32,7 +32,7 @@
 
 <meta property="og:title" content="Check Probability — check_probability" />
 
-<meta property="og:description" content="Checks if x is a probability (non-missing double scalar between 0 and 1 inclusive or if coerce = TRUE an integer of 0 or 1)." />
+<meta property="og:description" content="Checks if x is a probability (non-missing dbl between 0 and 1 inclusive with no attributes including names)." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -61,7 +61,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">checkr</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.0.9005</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.0.9007</span>
       </span>
     </div>
 
@@ -122,7 +122,7 @@
 
     <div class="ref-description">
     
-    <p>Checks if x is a probability (non-missing double scalar between 0 and 1 inclusive or if <code>coerce = TRUE</code> an integer of 0 or 1).</p>
+    <p>Checks if x is a probability (non-missing dbl between 0 and 1 inclusive with no attributes including names).</p>
     
     </div>
 
@@ -138,7 +138,7 @@
     </tr>
     <tr>
       <th>coerce</th>
-      <td><p>A flag indicating whether to coerce an integer to numeric.</p></td>
+      <td><p>A flag indicating whether to coerce an integer to a probability and drop attributes including names.</p></td>
     </tr>
     <tr>
       <th>x_name</th>

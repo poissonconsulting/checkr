@@ -8,7 +8,7 @@
 #' @param named A flag indicating whether the vector must be named or unnamed or NA if it doesn't matter.
 #' @param attributes A flag indicating whether the vector must or must not have attributes or NA if it doesn't matter.
 #' @param only A flag indicating whether only the actual values are permitted.
-#' It only affects values with less one or two non-missing elements.
+#' It only affects values with two or less non-missing elements.
 #' @param x_name A string of the name of the object.
 #' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
 #' @return An invisible copy of x (if it doesn't throw an error).

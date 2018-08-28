@@ -2,11 +2,7 @@
 #'
 #' Checks if object is a number (scalar double or if \code{coerce = TRUE} scalar integer).
 #'
-#' @param x The object to check.
-#' @param coerce A flag indicating whether to coerce a scalar integer to a real.
-#' @param x_name A string of the name of the object.
-#' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
-#' @return An invisible copy of x (if it doesn't throw an error).
+#' @inheritParams check_dbl
 #' @seealso \code{\link{check_probability}} and \code{\link{check_vector}}
 #' @export
 #'

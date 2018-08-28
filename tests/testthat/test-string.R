@@ -8,7 +8,14 @@ test_that("check_string errors", {
   y <- c(TRUE, TRUE)
   expect_error(check_string(y), "y must have 1 element")
   y <- character(0)
-  expect_error(check_string(y), "y must have 1 element")})
+  expect_error(check_string(y), "y must have 1 element")
+  
+  y <- as.factor("1")
+  attr(y, "new") <- "new" 
+  expect_error(check_string(y), "y must be class character")
+  expect_identical(check_string(y, coerce = TRUE), "1")
+})
+
 
 test_that("check_string coerce", {
   expect_error(check_string(factor('1')), 'factor[(]"1"[)] must be class character')

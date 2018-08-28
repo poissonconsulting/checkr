@@ -9,7 +9,7 @@ check_string(x, coerce = FALSE, x_name = substitute(x), error = TRUE)
 \arguments{
 \item{x}{The object to check.}
 
-\item{coerce}{A flag indicating whether to coerce a factor scalar to a string.}
+\item{coerce}{A flag indicating whether to coerce a factor scalar to a string and drop attributes including names.}
 
 \item{x_name}{A string of the name of the object.}
 
@@ -19,7 +19,7 @@ check_string(x, coerce = FALSE, x_name = substitute(x), error = TRUE)
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Checks if object is a string (non-missing character scalar or if \code{coerce = TRUE} a non-missing factor scalar).
+Checks if object is a string (non-missing character scalar with no attributes including names).
 }
 \examples{
 check_string(1, error = FALSE)

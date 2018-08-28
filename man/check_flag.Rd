@@ -4,10 +4,12 @@
 \alias{check_flag}
 \title{Check Flag}
 \usage{
-check_flag(x, x_name = substitute(x), error = TRUE)
+check_flag(x, coerce = FALSE, x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}
+
+\item{coerce}{A flag indicating whether to drop attributes including names.}
 
 \item{x_name}{A string of the name of the object.}
 
@@ -17,7 +19,7 @@ check_flag(x, x_name = substitute(x), error = TRUE)
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Checks if x is a flag (non-missing logical scalar).
+Checks if x is a flag (non-missing logical scalar with no attributes including names).
 }
 \examples{
 check_flag(1, error = FALSE)

@@ -61,7 +61,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">checkr</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.0.9005</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.0.9007</span>
       </span>
     </div>
 
@@ -127,7 +127,8 @@
     </div>
 
     <pre class="usage"><span class='fu'>check_vector</span>(<span class='no'>x</span>, <span class='no'>values</span>, <span class='kw'>length</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>unique</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>sorted</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>named</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>only</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+  <span class='kw'>named</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>attributes</span> <span class='kw'>=</span> <span class='no'>named</span>, <span class='kw'>only</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -154,12 +155,16 @@
     </tr>
     <tr>
       <th>named</th>
-      <td><p>A flag indicating whether the vector must be named or unnamed or a regular expression that must match all the names or count or count range of the number of characters in the names or NA if it doesn't matter if the vector is named.</p></td>
+      <td><p>A flag indicating whether the vector must be named or unnamed or NA if it doesn't matter.</p></td>
+    </tr>
+    <tr>
+      <th>attributes</th>
+      <td><p>A flag indicating whether the vector must or must not have attributes or NA if it doesn't matter.</p></td>
     </tr>
     <tr>
       <th>only</th>
       <td><p>A flag indicating whether only the actual values are permitted.
-It only affects values with less one or two non-missing elements.</p></td>
+It only affects values with two or less non-missing elements.</p></td>
     </tr>
     <tr>
       <th>x_name</th>
@@ -177,7 +182,7 @@ It only affects values with less one or two non-missing elements.</p></td>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>check_vector</span>(<span class='fl'>2</span>:<span class='fl'>1</span>, <span class='kw'>length</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>sorted</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>named</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: 2:1 must have 3 elements</span></div><div class='output co'>#&gt; <span class='warning'>Warning: 2:1 must be sorted</span></div><div class='output co'>#&gt; <span class='warning'>Warning: 2:1 must be named</span></div><div class='input'><span class='fu'>check_vector</span>(<span class='fu'>c</span>(<span class='st'>"one"</span>, <span class='st'>"two"</span>, <span class='st'>"four"</span>), <span class='kw'>values</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"one"</span>, <span class='st'>"two"</span>, <span class='st'>"two"</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: c("one", "two", "four") can only include values 'one' or 'two'</span></div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>check_vector</span>(<span class='fl'>2</span>:<span class='fl'>1</span>, <span class='kw'>length</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>sorted</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>named</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: 2:1 must have 3 elements</span></div><div class='output co'>#&gt; <span class='warning'>Warning: 2:1 must be sorted</span></div><div class='output co'>#&gt; <span class='warning'>Warning: 2:1 must be named</span></div><div class='output co'>#&gt; <span class='warning'>Warning: 2:1 must have attributes</span></div><div class='input'><span class='fu'>check_vector</span>(<span class='fu'>c</span>(<span class='st'>"one"</span>, <span class='st'>"two"</span>, <span class='st'>"four"</span>), <span class='kw'>values</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"one"</span>, <span class='st'>"two"</span>, <span class='st'>"two"</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: c("one", "two", "four") can only include values 'one' or 'two'</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

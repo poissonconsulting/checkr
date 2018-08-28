@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>checkr: Check the Properties of Common R Objects — checkr-package • checkr</title>
+<title>Check Int — check_int • checkr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,13 +30,9 @@
 
 
 
-<meta property="og:title" content="checkr: Check the Properties of Common R Objects — checkr-package" />
+<meta property="og:title" content="Check Int — check_int" />
 
-<meta property="og:description" content="Expressive assertive pipe-friendly, functions 
-  to check the properties of common R objects.
-  In the case of failure the functions issue informative error messages that 
-  (hopefully!) allow users to quickly identify and fix any problems.
-  The functions are designed to be used in scripts and packages." />
+<meta property="og:description" content="Checks if x is a int (non-missing integer scalar with no attributes including names)." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -119,39 +115,64 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>checkr: Check the Properties of Common R Objects</h1>
-    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/checkr/blob/master/R/checkr-package.R'><code>R/checkr-package.R</code></a></small>
-    <div class="hidden name"><code>checkr-package.Rd</code></div>
+    <h1>Check Int</h1>
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/checkr/blob/master/R/int.R'><code>R/int.R</code></a></small>
+    <div class="hidden name"><code>check_int.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Expressive assertive pipe-friendly, functions 
-  to check the properties of common R objects.
-  In the case of failure the functions issue informative error messages that 
-  (hopefully!) allow users to quickly identify and fix any problems.
-  The functions are designed to be used in scripts and packages.</p>
+    <p>Checks if x is a int (non-missing integer scalar with no attributes including names).</p>
     
     </div>
 
-        
+    <pre class="usage"><span class='fu'>check_int</span>(<span class='no'>x</span>, <span class='kw'>coerce</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p>The object to check.</p></td>
+    </tr>
+    <tr>
+      <th>coerce</th>
+      <td><p>A flag indicating whether to coerce a numeric (dbl) whole number to an int and drop attributes including names.</p></td>
+    </tr>
+    <tr>
+      <th>x_name</th>
+      <td><p>A string of the name of the object.</p></td>
+    </tr>
+    <tr>
+      <th>error</th>
+      <td><p>A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.</p></td>
+    </tr>
+    </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>An invisible copy of x (if it doesn't throw an error).</p>
+    
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='check_vector.html'>check_vector</a></code>, <code><a href='check_list.html'>check_list</a></code> and <code><a href='check_data.html'>check_data</a></code></p></div>
+    <div class='dont-index'><p><code><a href='check_scalar.html'>check_scalar</a></code></p></div>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>check_int</span>(<span class='fl'>1</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: 1 must be class integer</span></div><div class='input'><span class='fu'>check_int</span>(<span class='fl'>1L</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+<span class='fu'>check_int</span>(<span class='fl'>1</span>:<span class='fl'>2</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: 1:2 must have 1 element</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
       
+      <li><a href="#value">Value</a></li>
+
       <li><a href="#see-also">See also</a></li>
-          </ul>
-
-    <h2>Author</h2>
-    
-<strong>Maintainer</strong>: Joe Thorley <a href='mailto:joe@poissonconsulting.ca'>joe@poissonconsulting.ca</a> (0000-0002-7683-4592)
-
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

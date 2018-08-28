@@ -3,7 +3,7 @@
 #' Checks if an object is a count (non-negative integer or if \code{coerce = TRUE} non-negative numeric whole number).
 #'
 #' @param x The object to check.
-#' @param coerce A flag indicating whether to coerce a non-negative numeric (dbl) whole number to a count.
+#' @param coerce A flag indicating whether to coerce a non-negative numeric (dbl) whole number to a count and drop attributes (including names).
 #' @param x_name A string of the name of the object.
 #' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
 #' @return An invisible copy of x (if it doesn't throw an error).

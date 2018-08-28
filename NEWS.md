@@ -6,6 +6,8 @@
 - added `check_attributes()` to check an objects attributes and `check_no_attributes()`
 - added `complete = TRUE` argument to `check_names()`
 - added `check_int()` and `check_dbl()` both of which do coercion
+- added `coerce` argument to flag
+- `coerce = TRUE` now also strips attributes for flag, int, dbl and string.
 
 # checkr 0.3.0
 

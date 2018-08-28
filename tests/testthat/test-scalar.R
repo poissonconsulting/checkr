@@ -7,4 +7,8 @@ test_that("scalar", {
   expect_identical(check_scalar(x, named = TRUE), x)
   
   expect_error(check_scalar(c(1,2)), "c[(]1, 2[)] must have 1 element")
+  
+  x <- 2L
+  expect_identical(check_scalar(x, 1L), x)
+  expect_error(check_scalar(x, 1L, only = TRUE), "x can only include values '1'")
 })

@@ -4,10 +4,12 @@
 \alias{check_flag_na}
 \title{Check Flag or NA}
 \usage{
-check_flag_na(x, x_name = substitute(x), error = TRUE)
+check_flag_na(x, coerce = TRUE, x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}
+
+\item{coerce}{A flag indicating whether to drop attributes including names.}
 
 \item{x_name}{A string of the name of the object.}
 

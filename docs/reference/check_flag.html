@@ -32,7 +32,7 @@
 
 <meta property="og:title" content="Check Flag — check_flag" />
 
-<meta property="og:description" content="Checks if x is a flag (non-missing logical scalar)." />
+<meta property="og:description" content="Checks if x is a flag (non-missing logical scalar with no attributes including names)." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -61,7 +61,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">checkr</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.0.9005</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.0.9007</span>
       </span>
     </div>
 
@@ -122,11 +122,11 @@
 
     <div class="ref-description">
     
-    <p>Checks if x is a flag (non-missing logical scalar).</p>
+    <p>Checks if x is a flag (non-missing logical scalar with no attributes including names).</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>check_flag</span>(<span class='no'>x</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>check_flag</span>(<span class='no'>x</span>, <span class='kw'>coerce</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -134,6 +134,10 @@
     <tr>
       <th>x</th>
       <td><p>The object to check.</p></td>
+    </tr>
+    <tr>
+      <th>coerce</th>
+      <td><p>A flag indicating whether to drop attributes including names.</p></td>
     </tr>
     <tr>
       <th>x_name</th>

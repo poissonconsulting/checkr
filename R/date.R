@@ -23,10 +23,8 @@ check_date <- function(x,
   check_flag_internal(coerce)
   check_flag_internal(error)
   
-  if(coerce && is.POSIXt(x)) {
-    x <- as.Date(x, tz = tz(x))
-  }
+  if(coerce && is.POSIXt(x)) x <- as.Date(x, tz = tz(x))
   
-  check_vector(x, values = as.Date("2001-01-01"), length = 1,
+  check_scalar(x, values = as.Date("2001-01-01"), attributes = TRUE,
                x_name = x_name, error = error)
 }

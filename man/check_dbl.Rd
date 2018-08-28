@@ -9,7 +9,7 @@ check_dbl(x, coerce = FALSE, x_name = substitute(x), error = TRUE)
 \arguments{
 \item{x}{The object to check.}
 
-\item{coerce}{A flag indicating whether to coerce a scalar integer to a dbl.}
+\item{coerce}{A flag indicating whether to coerce a scalar integer to a dbl and drop attributes including names.}
 
 \item{x_name}{A string of the name of the object.}
 
@@ -19,7 +19,7 @@ check_dbl(x, coerce = FALSE, x_name = substitute(x), error = TRUE)
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Checks if x is a dbl (non-missing numeric scalar).
+Checks if x is a dbl (non-missing numeric scalar with no attributes including names).
 }
 \examples{
 check_dbl(1, error = FALSE)

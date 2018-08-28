@@ -9,7 +9,7 @@ check_count(x, coerce = FALSE, x_name = substitute(x), error = TRUE)
 \arguments{
 \item{x}{The object to check.}
 
-\item{coerce}{A flag indicating whether to coerce a non-negative numeric (dbl) whole number to a count.}
+\item{coerce}{A flag indicating whether to coerce a non-negative numeric (dbl) whole number to a count and drop attributes (including names).}
 
 \item{x_name}{A string of the name of the object.}
 

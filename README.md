@@ -26,8 +26,8 @@ for a comparison with similar packages see the `assertive-programming`
 vignette.
 
 The `checkr` package is recommended over the alternatives if you are
-looking for a set of expressive, dependency-free, pipe-friendly
-assertive functions with customisable object names.
+looking for a set of expressive, light-weight, pipe-friendly assertive
+functions with customisable object names.
 
 ## Demonstration
 
@@ -47,8 +47,8 @@ check_data(dplyr::starwars, values = list(
 #> Warning: dplyr::starwars column names must include 'height', 'name',
 #> 'mass', 'hair_color' and 'gender' in that order
 #> Warning: column height of dplyr::starwars must not include missing values
-#> Warning: the values in column mass of dplyr::starwars must lie between 20
-#> and 1358
+#> Warning: the values in column mass of dplyr::starwars must lie between '20'
+#> and '1358'
 #> Warning: column hair_color of dplyr::starwars can only include values
 #> 'black', 'blond' or 'brown'
 #> Warning: dplyr::starwars must not have more than 84 rows
@@ -104,7 +104,7 @@ the missing value if required).
 ``` r
 check_vector(y, c(0, 2, NA))
 check_vector(y, c(-1, -10, NA))
-#> Error: the values in y must lie between -10 and -1
+#> Error: the values in y must lie between '-10' and '-1'
 ```
 
 #### Specific Values
@@ -115,7 +115,7 @@ non-missing values.
 ``` r
 check_vector(y, c(0, 1, 2, NA))
 check_vector(y, c(1, 1, 2, NA))
-#> Error: y can only include values 1 or 2
+#> Error: y can only include values '1' or '2'
 ```
 
 ### Naming Objects

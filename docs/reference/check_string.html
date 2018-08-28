@@ -32,7 +32,7 @@
 
 <meta property="og:title" content="Check String — check_string" />
 
-<meta property="og:description" content="Checks if object is a string (non-missing character scalar or if coerce = TRUE a non-missing factor scalar)." />
+<meta property="og:description" content="Checks if object is a string (non-missing character scalar with no attributes including names)." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -61,7 +61,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">checkr</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.0.9005</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.0.9007</span>
       </span>
     </div>
 
@@ -122,7 +122,7 @@
 
     <div class="ref-description">
     
-    <p>Checks if object is a string (non-missing character scalar or if <code>coerce = TRUE</code> a non-missing factor scalar).</p>
+    <p>Checks if object is a string (non-missing character scalar with no attributes including names).</p>
     
     </div>
 
@@ -137,7 +137,7 @@
     </tr>
     <tr>
       <th>coerce</th>
-      <td><p>A flag indicating whether to coerce a factor scalar to a string.</p></td>
+      <td><p>A flag indicating whether to coerce a factor scalar to a string and drop attributes including names.</p></td>
     </tr>
     <tr>
       <th>x_name</th>

@@ -5,7 +5,7 @@
 \title{Check Scalar}
 \usage{
 check_scalar(x, values, named = FALSE, attributes = named,
-  x_name = substitute(x), error = TRUE)
+  only = FALSE, x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}
@@ -15,6 +15,9 @@ check_scalar(x, values, named = FALSE, attributes = named,
 \item{named}{A flag indicating whether the scalar must be named or unnamed or NA if it doesn't matter if the scalar is named.}
 
 \item{attributes}{A flag indicating whether the scalar must or must not have attributes or NA if it doesn't matter if the scalar is named.}
+
+\item{only}{A flag indicating whether only the actual values are permitted.
+It only affects values with two or less non-missing elements.}
 
 \item{x_name}{A string of the name of the object.}
 

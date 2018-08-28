@@ -24,7 +24,7 @@ check_vector(x, values, length = NA, unique = FALSE, sorted = FALSE,
 \item{attributes}{A flag indicating whether the vector must or must not have attributes or NA if it doesn't matter.}
 
 \item{only}{A flag indicating whether only the actual values are permitted.
-It only affects values with less one or two non-missing elements.}
+It only affects values with two or less non-missing elements.}
 
 \item{x_name}{A string of the name of the object.}
 
