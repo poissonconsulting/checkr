@@ -10,13 +10,10 @@
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @seealso \code{\link{check_nchar}} and \code{\link{check_regex}}
 #' @export
-#'
-#' @examples
-#' check_pattern("b ", "b", error = FALSE)
-#' check_pattern("b ", "^b$", error = FALSE)
 check_pattern <- function(x, pattern, all = TRUE,
                           x_name = substitute(x),
                          error = TRUE) {
+  .Deprecated("check_grepl")
   x_name <- deparse_x_name(x_name)
 
   check_string_internal(pattern)

@@ -6,10 +6,9 @@
 - added `check_attributes()` to check an objects attributes and `check_no_attributes()`
 - added `complete = TRUE` argument to `check_names()`
 - added `check_int()` and `check_dbl()` both of which do coercion
-- added `coerce` argument to flag
 - `coerce = TRUE` now also strips attributes for flag, int, dbl and string.
 - added `check_prop()` and deprecated `check_probability()`
-- added `check_grepl()` and deprecated `check_regex()`
+- added `check_grepl()` and deprecated `check_regex()` and `check_pattern()`
 - added `check_lgl()`, `check_chr()`, `check_day()`, `check_dttm()`
 
 # checkr 0.3.0

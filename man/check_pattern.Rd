@@ -24,10 +24,6 @@ An invisible copy of x (if it doesn't throw an error).
 \description{
 Checks whether all or some of the elements of x match pattern using \code{\link{grepl}}.
 }
-\examples{
-check_pattern("b ", "b", error = FALSE)
-check_pattern("b ", "^b$", error = FALSE)
-}
 \seealso{
 \code{\link{check_nchar}} and \code{\link{check_regex}}
 }
