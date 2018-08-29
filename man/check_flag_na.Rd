@@ -24,10 +24,3 @@ Checks if x is a flag or NA (missing logical scalar).
 \details{
 Useful when using flag to pass one of three options.
 }
-\examples{
-check_flag_na(1, error = FALSE)
-check_flag_na(FALSE)
-check_flag_na(NA)
-check_flag_na(NA_character_, error = FALSE)
-check_flag_na(c(NA, NA), error = FALSE)
-}

@@ -47,16 +47,10 @@ check_flag <- function(x, coerce = FALSE,
 #' @inheritParams check_flag
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @export
-#'
-#' @examples
-#' check_flag_na(1, error = FALSE)
-#' check_flag_na(FALSE)
-#' check_flag_na(NA)
-#' check_flag_na(NA_character_, error = FALSE)
-#' check_flag_na(c(NA, NA), error = FALSE)
 check_flag_na <- function(x, coerce = TRUE,
                        x_name = substitute(x),
                        error = TRUE) {
+  .Deprecated("check_scalar")
   x_name <- deparse_x_name(x_name)
 
   check_flag_internal(coerce)
