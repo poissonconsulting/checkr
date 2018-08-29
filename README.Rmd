@@ -48,9 +48,9 @@ check_data(dplyr::starwars, values = list(
     order = TRUE, nrow = c(81, 84), key = "hair_color", error = FALSE)
 ```
 
-## Values
+## Syntax
 
-The most interesting and unique feature of `checkr` is the use of objects to check 
+`checkr` uses objects to check 
 the values of other objects using an elegant and expressive syntax.
 
 #### Class
@@ -89,13 +89,15 @@ check_vector(y, c(-1, -10, NA))
 
 #### Specific Values
 
-To check the vector only includes specific values pass three or more non-missing values.
+To check the vector only includes specific values pass three or more non-missing values or 
+set `only  = TRUE`.
 ```{r, error = TRUE}
 check_vector(y, c(0, 1, 2, NA))
 check_vector(y, c(1, 1, 2, NA))
+check_vector(y, c(1, 2, NA), only = TRUE)
 ```
 
-### Naming Objects
+## Naming Objects
 
 By default, the name of an object is determined from the function call.
 ```{r, error=TRUE}
@@ -112,6 +114,23 @@ The argument `x_name` can be used to override the name.
 ```{r, error = TRUE}
 y %>% check_list(x_name = "y")
 ```
+
+## Scalars
+
+The four wrapper functions 
+`check_lgl()`, `check_int()`, `check_dbl()` and `check_str()` check whether an object 
+is an attribute-less non-missing scalar logical (flag), integer, double (number) or character (string).
+They are really useful for checking the types of arguments in functions
+
+```{r, error = TRUE}
+fun <- function(x) { check_lgl(x)}
+fun(x = NA)
+fun(x = TRUE)
+fun(x = 1)
+```
+
+Additional scalar wrappers are `check_date()` and `check_dttm()` for scalar Date and POSIXct objects.
+Alternatively you can roll your own using the more general `check_scalar()` function.
 
 ## Installation
 

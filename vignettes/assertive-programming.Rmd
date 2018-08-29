@@ -155,4 +155,4 @@ Much of the `checkmate` package is written in `C` to minimize execution time.
 ### Dependencies
 
 Whereas the `checkmate` package depends on `backports` and `utils`,
-and `assertthat` depends on `tools` both `base` and `checkr` are dependency-free.
+and `assertthat` depends on `tools`, and `checkr` depends on `err` only `base` is dependency-free.

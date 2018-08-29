@@ -30,7 +30,7 @@ check_named <- function(x, nchar = c(0L, .Machine$integer.max),
     on_fail(x_name, " must be named", error = error)
   } else {
     check_nchar(names(x), nchar = nchar, x_name = paste("names of", x_name), error = error)
-    check_regex(names(x), regex = regex, x_name = paste("names of", x_name), error = error)
+    check_grepl(names(x), regex = regex, x_name = paste("names of", x_name), error = error)
   }
   if(unique)
     check_unique(names(x), x_name = paste("names of", x_name), error = error)

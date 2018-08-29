@@ -11,9 +11,9 @@
 #' @export
 #'
 #' @examples
-#' check_regex("foo", "fo")
-#' check_regex("foo", "fo$", error = FALSE)
-check_regex <- function(x, regex = ".*", x_name = substitute(x),
+#' check_grepl("foo", "fo")
+#' check_grepl("foo", "fo$", error = FALSE)
+check_grepl <- function(x, regex = ".*", x_name = substitute(x),
                          error = TRUE) {
   x_name <- deparse_x_name(x_name)
 
@@ -23,4 +23,13 @@ check_regex <- function(x, regex = ".*", x_name = substitute(x),
   if(!all(grepl(regex, x)))
     on_fail(x_name, " must match regular expression '", regex, "'", error = error)
   invisible(x)
+}
+
+#' @rdname check_grepl
+#' @export
+check_regex <- function(x, regex = ".*", x_name = substitute(x),
+                         error = TRUE) {
+  .Deprecated("check_grepl")
+  x_name <- deparse_x_name(x_name)
+  check_grepl(x, regex = regex, x_name = x_name, error = error)
 }

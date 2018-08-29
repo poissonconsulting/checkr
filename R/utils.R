@@ -3,6 +3,8 @@ is_flag <- function(x)  is.logical(x) && length(x) == 1 && !is.na(x)
 is_NA <- function(x)  length(x) == 1 && is.na(x)
 
 is.POSIXt <- function(x) inherits(x, "POSIXt")
+
+is_Date <- function(x) inherits(x, "Date")
   
 is_string <- function(x)  (is.character(x) || is.factor(x)) && length(x) == 1 && !is.na(x)
 

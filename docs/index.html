@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">checkr</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.0.9008</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.0.9009</span>
       </span>
     </div>
 
@@ -122,10 +122,10 @@
 <a class="sourceLine" id="cb1-18" data-line-number="18"><span class="co">#&gt; Warning: dplyr::starwars must not have more than 84 rows</span></a>
 <a class="sourceLine" id="cb1-19" data-line-number="19"><span class="co">#&gt; Warning: column 'hair_color' in dplyr::starwars must be a unique key</span></a></code></pre></div>
 </div>
-<div id="values" class="section level2">
+<div id="syntax" class="section level2">
 <h2 class="hasAnchor">
-<a href="#values" class="anchor"></a>Values</h2>
-<p>The most interesting and unique feature of <code>checkr</code> is the use of objects to check the values of other objects using an elegant and expressive syntax.</p>
+<a href="#syntax" class="anchor"></a>Syntax</h2>
+<p><code>checkr</code> uses objects to check the values of other objects using an elegant and expressive syntax.</p>
 <div id="class" class="section level4">
 <h4 class="hasAnchor">
 <a href="#class" class="anchor"></a>Class</h4>
@@ -158,14 +158,17 @@
 <div id="specific-values" class="section level4">
 <h4 class="hasAnchor">
 <a href="#specific-values" class="anchor"></a>Specific Values</h4>
-<p>To check the vector only includes specific values pass three or more non-missing values.</p>
+<p>To check the vector only includes specific values pass three or more non-missing values or set <code>only  = TRUE</code>.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="ot">NA</span>))</a>
 <a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="ot">NA</span>))</a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="co">#&gt; Error: y can only include values '1' or '2'</span></a></code></pre></div>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="co">#&gt; Error: y can only include values '1' or '2'</span></a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="ot">NA</span>), <span class="dt">only =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="co">#&gt; Error: y can only include values '1' or '2'</span></a></code></pre></div>
 </div>
-<div id="naming-objects" class="section level3">
-<h3 class="hasAnchor">
-<a href="#naming-objects" class="anchor"></a>Naming Objects</h3>
+</div>
+<div id="naming-objects" class="section level2">
+<h2 class="hasAnchor">
+<a href="#naming-objects" class="anchor"></a>Naming Objects</h2>
 <p>By default, the name of an object is determined from the function call.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(<span class="kw">list</span>(<span class="dt">x =</span> <span class="dv">1</span>))</a>
 <a class="sourceLine" id="cb8-2" data-line-number="2"><span class="co">#&gt; Error: list(x = 1) must be an atomic vector</span></a></code></pre></div>
@@ -177,6 +180,17 @@
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">y <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="reference/check_list.html">check_list</a></span>(<span class="dt">x_name =</span> <span class="st">"y"</span>)</a>
 <a class="sourceLine" id="cb10-2" data-line-number="2"><span class="co">#&gt; Error: y must be a list</span></a></code></pre></div>
 </div>
+<div id="scalars" class="section level2">
+<h2 class="hasAnchor">
+<a href="#scalars" class="anchor"></a>Scalars</h2>
+<p>The four wrapper functions <code><a href="reference/check_lgl.html">check_lgl()</a></code>, <code><a href="reference/check_int.html">check_int()</a></code>, <code><a href="reference/check_dbl.html">check_dbl()</a></code> and <code>check_str()</code> check whether an object is an attribute-less non-missing scalar logical (flag), integer, double (number) or character (string). They are really useful for checking the types of arguments in functions</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">fun &lt;-<span class="st"> </span><span class="cf">function</span>(x) { <span class="kw"><a href="reference/check_lgl.html">check_lgl</a></span>(x)}</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="kw">fun</span>(<span class="dt">x =</span> <span class="ot">NA</span>)</a>
+<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="co">#&gt; Error: x must not include missing values</span></a>
+<a class="sourceLine" id="cb11-4" data-line-number="4"><span class="kw">fun</span>(<span class="dt">x =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb11-5" data-line-number="5"><span class="kw">fun</span>(<span class="dt">x =</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb11-6" data-line-number="6"><span class="co">#&gt; Error: x must be class logical</span></a></code></pre></div>
+<p>Additional scalar wrappers are <code><a href="reference/check_date.html">check_date()</a></code> and <code><a href="reference/check_dttm.html">check_dttm()</a></code> for scalar Date and POSIXct objects. Alternatively you can roll your own using the more general <code><a href="reference/check_scalar.html">check_scalar()</a></code> function.</p>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">

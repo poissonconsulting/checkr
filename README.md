@@ -55,11 +55,10 @@ check_data(dplyr::starwars, values = list(
 #> Warning: column 'hair_color' in dplyr::starwars must be a unique key
 ```
 
-## Values
+## Syntax
 
-The most interesting and unique feature of `checkr` is the use of
-objects to check the values of other objects using an elegant and
-expressive syntax.
+`checkr` uses objects to check the values of other objects using an
+elegant and expressive syntax.
 
 #### Class
 
@@ -110,15 +109,17 @@ check_vector(y, c(-1, -10, NA))
 #### Specific Values
 
 To check the vector only includes specific values pass three or more
-non-missing values.
+non-missing values or set `only = TRUE`.
 
 ``` r
 check_vector(y, c(0, 1, 2, NA))
 check_vector(y, c(1, 1, 2, NA))
 #> Error: y can only include values '1' or '2'
+check_vector(y, c(1, 2, NA), only = TRUE)
+#> Error: y can only include values '1' or '2'
 ```
 
-### Naming Objects
+## Naming Objects
 
 By default, the name of an object is determined from the function call.
 
@@ -141,6 +142,23 @@ The argument `x_name` can be used to override the name.
 ``` r
 y %>% check_list(x_name = "y")
 #> Error: y must be a list
+```
+
+## Scalars
+
+The four wrapper functions `check_lgl()`, `check_int()`, `check_dbl()`
+and `check_str()` check whether an object is an attribute-less
+non-missing scalar logical (flag), integer, double (number) or character
+(string). They are really useful for checking the types of arguments in
+functions
+
+``` r
+fun <- function(x) { check_lgl(x)}
+fun(x = NA)
+#> Error: x must not include missing values
+fun(x = TRUE)
+fun(x = 1)
+#> Error: x must be class logical
 ```
 
 ## Installation

@@ -2,9 +2,12 @@
 % Please edit documentation in R/tzone.R
 \name{check_tzone}
 \alias{check_tzone}
+\alias{check_tz}
 \title{Check TimeZone}
 \usage{
 check_tzone(x, tzone = "UTC", x_name = substitute(x), error = TRUE)
+
+check_tz(x, tz = "UTC", x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}
@@ -14,6 +17,8 @@ check_tzone(x, tzone = "UTC", x_name = substitute(x), error = TRUE)
 \item{x_name}{A string of the name of the object.}
 
 \item{error}{A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.}
+
+\item{tz}{A string of the time zone.}
 }
 \value{
 An invisible copy of x (if it doesn't throw an error).

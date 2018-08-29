@@ -61,7 +61,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">checkr</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.0.9008</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.0.9009</span>
       </span>
     </div>
 
@@ -126,7 +126,9 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>check_tzone</span>(<span class='no'>x</span>, <span class='kw'>tzone</span> <span class='kw'>=</span> <span class='st'>"UTC"</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>check_tzone</span>(<span class='no'>x</span>, <span class='kw'>tzone</span> <span class='kw'>=</span> <span class='st'>"UTC"</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+
+<span class='fu'>check_tz</span>(<span class='no'>x</span>, <span class='kw'>tz</span> <span class='kw'>=</span> <span class='st'>"UTC"</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -146,6 +148,10 @@
     <tr>
       <th>error</th>
       <td><p>A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.</p></td>
+    </tr>
+    <tr>
+      <th>tz</th>
+      <td><p>A string of the time zone.</p></td>
     </tr>
     </table>
     
