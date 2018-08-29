@@ -89,16 +89,16 @@ check_values <- function(x, values,
   if(!only && identical(length(values), 2L)) {
     if(x_nona[1] < values[1] || x_nona[length(x_nona)] > values[2]) {
       on_fail("the values in ", x_name,
-              " must lie between ", cc_and(values[1:2]), error = error)
+              " must lie between ", cc(values[1:2], "and"), error = error)
     }
   } else if (!all(x_nona %in% values)) {
     unpermitted <- x_nona[!x_nona %in% values]
     unpermitted <- unique(unpermitted)
     values <- unique(values)
     if(length(values) < 10) {
-      on_fail(x_name, " can only include values ", cc_or(values), error = error)
+      on_fail(x_name, " can only include values ", cc(values, "or"), error = error)
     } else if(length(unpermitted) < 10) {
-      on_fail(x_name, " has unpermitted values ", cc_and(unpermitted), error = error)
+      on_fail(x_name, " has unpermitted values ", cc(unpermitted, "and"), error = error)
     } else
       on_fail(x_name, " has unpermitted values ", error = error)
   }

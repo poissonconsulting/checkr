@@ -47,13 +47,13 @@ check_names <- function(x, names = character(0), exclusive = FALSE, order = FALS
   }
   
   if (complete && length(setdiff(names, x_names)))
-    on_fail(x_name, " names must include ", cc_and(setdiff(names, x_names)) , error = error)
+    on_fail(x_name, " names must include ", cc(setdiff(names, x_names), "and") , error = error)
   
   if (exclusive && length(setdiff(x_names, names)))
-    on_fail(x_name, " names must not include ", cc_or(setdiff(x_names, names)) , error = error)
+    on_fail(x_name, " names must not include ", cc(setdiff(x_names, names), "or") , error = error)
   
   if(order && !identical(intersect(names, x_names), intersect(x_names, names)))
-    on_fail(x_name, " names must include ", cc_and(names), " in that order", error = error)
+    on_fail(x_name, " names must include ", cc(names, "and"), " in that order", error = error)
   
   invisible(x)
 }
