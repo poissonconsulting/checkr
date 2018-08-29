@@ -10,5 +10,5 @@ test_that("scalar", {
   
   x <- 2L
   expect_identical(check_scalar(x, 1L), x)
-  expect_error(check_scalar(x, 1L, only = TRUE), "x can only include values '1'")
+  expect_error(check_scalar(x, 1L, only = TRUE), "x can only include values 1")
 })

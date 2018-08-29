@@ -1,7 +1,7 @@
 Package: checkr
 Title: Check the Properties of Common R Objects
-Version: 0.3.0.9009
-Date: 2018-08-28
+Version: 0.3.0.9010
+Date: 2018-08-29
 Authors@R: 
   person("Joe", "Thorley", email = "joe@poissonconsulting.ca", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-7683-4592"))
 Description: Expressive assertive pipe-friendly, functions 
@@ -12,7 +12,7 @@ Description: Expressive assertive pipe-friendly, functions
 License: MIT + file LICENSE
 URL: https://github.com/poissonconsulting/checkr
 BugReports: https://github.com/poissonconsulting/checkr/issues
-Imports: err (>= 0.0.0.9009)
+Imports: err (>= 0.0.0.9010)
 Suggests:
     assertthat,
     checkmate,

@@ -10,6 +10,8 @@ test_that("vector", {
   
   expect_error(check_vector(x, attributes = FALSE), "x must not have attributes")
   vec <- 2
-  expect_error(check_vector(vec, c(1,3), only = TRUE), "vec can only include values '1' or '3'")
+  expect_error(check_vector(vec, c(1,3), only = TRUE), "vec can only include values 1 or 3")
   expect_identical(check_vector(vec, c(1,3)), vec)
+  vec <- "2"
+  expect_error(check_vector(vec, c("1","3"), only = TRUE), "vec can only include values '1' or '3'")
 })

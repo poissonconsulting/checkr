@@ -10,5 +10,5 @@ test_that("check_prop errors", {
   y <- NA_real_
   expect_error(check_prop(y), "y must not include missing values")
   y <- 2
-  expect_error(check_prop(y), "the values in y must lie between '0' and '1'")
+  expect_error(check_prop(y), "the values in y must lie between 0 and 1")
 })

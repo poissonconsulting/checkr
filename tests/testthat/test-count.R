@@ -9,7 +9,7 @@ test_that("check_count errors", {
   expect_error(check_count(y), "y must have 1 element")
   y <- NULL
   expect_error(check_count(y), "y must have 1 element")
-  expect_error(check_count(-1L), "the values in -1L must lie between '0' and '2147483647'")
+  expect_error(check_count(-1L), "the values in -1L must lie between 0 and 2147483647")
 })
 
 test_that("check_count coercion", {
