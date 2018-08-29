@@ -14,7 +14,7 @@ check_datetime(x, coerce = FALSE, tzone = "", x_name = substitute(x),
 \arguments{
 \item{x}{The object to check.}
 
-\item{coerce}{A flag indicating whether to coerce a date to a dttm (using the time zone tzone).}
+\item{coerce}{A flag indicating whether to coerce a date to a dttm (using the time zone tzone) and remove names.}
 
 \item{tzone}{A string of the time zone where "" is the current time zone.}
 
@@ -26,7 +26,7 @@ check_datetime(x, coerce = FALSE, tzone = "", x_name = substitute(x),
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Checks if x is a datetime (non-missing POSIXct scalar).
+Checks if x is a datetime (non-missing unnamed POSIXct scalar).
 }
 \examples{
 check_dttm(Sys.Date(), error = FALSE)

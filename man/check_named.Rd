@@ -4,13 +4,16 @@
 \alias{check_named}
 \title{Check Named}
 \usage{
-check_named(x, nchar = c(0L, .Machine$integer.max), regex = ".*",
-  unique = FALSE, x_name = substitute(x), error = TRUE)
+check_named(x, nchar = c(0L, .Machine$integer.max), pattern = ".*",
+  regex = pattern, unique = FALSE, x_name = substitute(x),
+  error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}
 
 \item{nchar}{A count or count range of the number of characters.}
+
+\item{pattern}{A string of the regular expression that must match all names.}
 
 \item{regex}{A string of the regular expression that must match all names.}
 

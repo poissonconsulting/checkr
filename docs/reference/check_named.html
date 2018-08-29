@@ -61,7 +61,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">checkr</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.0.9009</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.0.9010</span>
       </span>
     </div>
 
@@ -126,8 +126,9 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>check_named</span>(<span class='no'>x</span>, <span class='kw'>nchar</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>0L</span>, <span class='no'>.Machine</span>$<span class='no'>integer.max</span>), <span class='kw'>regex</span> <span class='kw'>=</span> <span class='st'>".*"</span>,
-  <span class='kw'>unique</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>check_named</span>(<span class='no'>x</span>, <span class='kw'>nchar</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>0L</span>, <span class='no'>.Machine</span>$<span class='no'>integer.max</span>), <span class='kw'>pattern</span> <span class='kw'>=</span> <span class='st'>".*"</span>,
+  <span class='kw'>regex</span> <span class='kw'>=</span> <span class='no'>pattern</span>, <span class='kw'>unique</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>),
+  <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -139,6 +140,10 @@
     <tr>
       <th>nchar</th>
       <td><p>A count or count range of the number of characters.</p></td>
+    </tr>
+    <tr>
+      <th>pattern</th>
+      <td><p>A string of the regular expression that must match all names.</p></td>
     </tr>
     <tr>
       <th>regex</th>

@@ -5,14 +5,17 @@
 \alias{check_regex}
 \title{Check Matches Regular Expression}
 \usage{
-check_grepl(x, regex = ".*", x_name = substitute(x), error = TRUE)
+check_grepl(x, pattern = ".*", regex = pattern,
+  x_name = substitute(x), error = TRUE)
 
 check_regex(x, regex = ".*", x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}
 
-\item{regex}{A string of the regular expression.}
+\item{pattern}{A string of the regular expression.}
+
+\item{regex}{A string of the regular expression (deprecated for pattern).}
 
 \item{x_name}{A string of the name of the object.}
 

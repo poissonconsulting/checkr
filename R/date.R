@@ -1,10 +1,10 @@
 #' Check Date
 #' 
-#' Checks if x is a date (non-missing Date scalar).
+#' Checks if x is a date (non-missing unnamed Date scalar).
 #'
 #' @param x The object to check.
 #' @param x_name A string of the name of the object.
-#' @param coerce A flag indicating whether to coerce a date time (POSIXt scalar) to a Date.
+#' @param coerce A flag indicating whether to coerce a date time (POSIXt scalar) to a Date and remove names.
 #' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @seealso \code{\link{check_datetime}}
@@ -23,8 +23,10 @@ check_date <- function(x,
   check_flag_internal(coerce)
   check_flag_internal(error)
   
-  if(coerce && is.POSIXt(x)) x <- as.Date(x, tz = tz(x))
-  
+  if(coerce && is.POSIXt(x)) {
+    x <- as.Date(x, tz = tz(x))
+    x <- unname(x)
+  }
   check_scalar(x, values = as.Date("2001-01-01"), attributes = TRUE,
                x_name = x_name, error = error)
 }

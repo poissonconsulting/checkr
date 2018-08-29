@@ -12,7 +12,7 @@ check_day(x, coerce = FALSE, x_name = substitute(x), error = TRUE)
 \arguments{
 \item{x}{The object to check.}
 
-\item{coerce}{A flag indicating whether to coerce a date time (POSIXt scalar) to a Date.}
+\item{coerce}{A flag indicating whether to coerce a date time (POSIXt scalar) to a Date and remove names.}
 
 \item{x_name}{A string of the name of the object.}
 
@@ -22,7 +22,7 @@ check_day(x, coerce = FALSE, x_name = substitute(x), error = TRUE)
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Checks if x is a date (non-missing Date scalar).
+Checks if x is a date (non-missing unnamed Date scalar).
 }
 \examples{
 check_date(Sys.Date(), error = FALSE)
