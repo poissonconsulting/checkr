@@ -4,6 +4,8 @@
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
 [![Travis-CI Build
 Status](https://travis-ci.org/poissonconsulting/checkr.svg?branch=master)](https://travis-ci.org/poissonconsulting/checkr)
+[![AppVeyor build
+status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/checkr?branch=master&svg=true)](https://ci.appveyor.com/project/poissonconsulting/checkr)
 [![Coverage
 Status](https://img.shields.io/codecov/c/github/poissonconsulting/checkr/master.svg)](https://codecov.io/github/poissonconsulting/checkr?branch=master)
 [![License:
@@ -47,8 +49,8 @@ check_data(dplyr::starwars, values = list(
 #> Warning: dplyr::starwars column names must include 'height', 'name',
 #> 'mass', 'hair_color' and 'gender' in that order
 #> Warning: column height of dplyr::starwars must not include missing values
-#> Warning: the values in column mass of dplyr::starwars must lie between '20'
-#> and '1358'
+#> Warning: the values in column mass of dplyr::starwars must lie between 20
+#> and 1358
 #> Warning: column hair_color of dplyr::starwars can only include values
 #> 'black', 'blond' or 'brown'
 #> Warning: dplyr::starwars must not have more than 84 rows
@@ -103,7 +105,7 @@ the missing value if required).
 ``` r
 check_vector(y, c(0, 2, NA))
 check_vector(y, c(-1, -10, NA))
-#> Error: the values in y must lie between '-10' and '-1'
+#> Error: the values in y must lie between -10 and -1
 ```
 
 #### Specific Values
@@ -114,9 +116,9 @@ non-missing values or set `only = TRUE`.
 ``` r
 check_vector(y, c(0, 1, 2, NA))
 check_vector(y, c(1, 1, 2, NA))
-#> Error: y can only include values '1' or '2'
+#> Error: y can only include values 1 or 2
 check_vector(y, c(1, 2, NA), only = TRUE)
-#> Error: y can only include values '1' or '2'
+#> Error: y can only include values 1 or 2
 ```
 
 ## Naming Objects
@@ -160,6 +162,10 @@ fun(x = TRUE)
 fun(x = 1)
 #> Error: x must be class logical
 ```
+
+Additional scalar wrappers are `check_date()` and `check_dttm()` for
+scalar Date and POSIXct objects. Alternatively you can roll your own
+using the more general `check_scalar()` function.
 
 ## Installation
 
