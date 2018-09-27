@@ -35,7 +35,7 @@ check_prop <- function(x, coerce = FALSE,
 check_probability <- function(x, coerce = FALSE,
                        x_name = substitute(x),
                        error = TRUE) {
-  .Deprecated("check_prop")
+#  .Deprecated("check_prop")
   x_name <- deparse_x_name(x_name)
 
   check_prop(x, coerce = coerce, x_name = x_name, error = error)
