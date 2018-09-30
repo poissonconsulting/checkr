@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Check TimeZone — check_tz • checkr</title>
+<title>Check Proportions — check_props • checkr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,10 +30,9 @@
 
 
 
-<meta property="og:title" content="Check TimeZone — check_tz" />
+<meta property="og:title" content="Check Proportions — check_props" />
 
-<meta property="og:description" content="Checks an objects tzone attribute.
-This function has been deprecated for check_tzone." />
+<meta property="og:description" content="Checks if x is proportions vector - non-missing dbls between 0 and 1 that sum to 1." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -62,7 +61,7 @@ This function has been deprecated for check_tzone." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">checkr</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.0.9008</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.0.9014</span>
       </span>
     </div>
 
@@ -116,19 +115,18 @@ This function has been deprecated for check_tzone." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Check TimeZone</h1>
-    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/checkr/blob/master/R/tz.R'><code>R/tz.R</code></a></small>
-    <div class="hidden name"><code>check_tz.Rd</code></div>
+    <h1>Check Proportions</h1>
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/checkr/blob/master/R/props.R'><code>R/props.R</code></a></small>
+    <div class="hidden name"><code>check_props.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Checks an objects tzone attribute.
-This function has been deprecated for <code><a href='check_tzone.html'>check_tzone</a></code>.</p>
+    <p>Checks if x is proportions vector - non-missing dbls between 0 and 1 that sum to 1.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>check_tz</span>(<span class='no'>x</span>, <span class='kw'>tz</span> <span class='kw'>=</span> <span class='st'>"UTC"</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>check_props</span>(<span class='no'>x</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -136,10 +134,6 @@ This function has been deprecated for <code><a href='check_tzone.html'>check_tzo
     <tr>
       <th>x</th>
       <td><p>The object to check.</p></td>
-    </tr>
-    <tr>
-      <th>tz</th>
-      <td><p>A string of the time zone.</p></td>
     </tr>
     <tr>
       <th>x_name</th>
@@ -157,12 +151,12 @@ This function has been deprecated for <code><a href='check_tzone.html'>check_tzo
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='check_tzone.html'>check_tzone</a></code></p></div>
+    <div class='dont-index'><p><code><a href='check_prop.html'>check_prop</a></code> and <code><a href='check_vector.html'>check_vector</a></code></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='check_tzone.html'>check_tzone</a></span>(<span class='fu'>Sys.Date</span>(), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: Sys.Date() time zone must be 'UTC' (not '')</span></div><div class='input'><span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>as.POSIXct</span>(<span class='st'>"2000-01-02 03:04:55"</span>, <span class='kw'>tz</span> <span class='kw'>=</span> <span class='st'>"Etc/GMT+8"</span>)
-<span class='fu'><a href='check_tzone.html'>check_tzone</a></span>(<span class='no'>x</span>, <span class='kw'>tzone</span> <span class='kw'>=</span> <span class='st'>"PST8PDT"</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: x time zone must be 'PST8PDT' (not 'Etc/GMT+8')</span></div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>check_props</span>(<span class='fl'>1</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+<span class='fu'>check_props</span>(<span class='fl'>1.1</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: the values in 1.1 must lie between 0 and 1</span></div><div class='output co'>#&gt; <span class='warning'>Warning: values of 1.1 must sum to 1 (not 1.1)</span></div><div class='input'><span class='fu'>check_props</span>(<span class='fu'>c</span>(<span class='fl'>0</span>, <span class='fl'>1</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

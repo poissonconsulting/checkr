@@ -1,3 +1,4 @@
+^_pkgdown\.yml$
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^README\.Rmd$
@@ -7,11 +8,10 @@
 ^appveyor\.yml$
 ^codecov\.yml$
 ^docs$
-^LICENSE.md$
-^document.R$
+^LICENSE\.md$
+^document\.R$
 ^cran-comments\.md$
-^codemeta.json$
 ^codemeta\.json$
 ^revdep$
-^.github$
-
+^\.github$
+^build\.R$
