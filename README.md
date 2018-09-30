@@ -17,8 +17,8 @@ Downloads](http://cranlogs.r-pkg.org/badges/grand-total/checkr)](https://CRAN.R-
 
 # checkr
 
-`checkr` is an R package of assertive functions to check the properties
-of common R objects.
+`checkr` is a light-weight R package of expressive, assertive,
+pipe-friendly functions to check the properties of common R objects.
 
 In the case of failure the functions, which are designed to be used in
 scripts and packages, issue informative error messages.

@@ -7,7 +7,7 @@
 - added `complete = TRUE` argument to `check_names()`
 - added `check_int()` and `check_dbl()` both of which do coercion
 - `coerce = TRUE` now also strips attributes for flag, int, dbl and string.
-- added `check_prop()` and deprecated `check_probability()`
+- added `check_prop()` and `check_probs()`
 - added `check_grepl()` and deprecated `check_regex()` and `check_pattern()`
 and deprecated `regex` argument for `pattern` argument
 - added `check_lgl()`, `check_chr()`, `check_day()`, `check_dttm()`
