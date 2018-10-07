@@ -7,38 +7,44 @@ check_n <- function(x, n, range, x_name, n_name, error) {
     range <- c(1L, .Machine$integer.max)
   } else if(is_flag(range) && !range)
     range <- 0L
-
+  
   if (identical(length(range), 1L)) {
     if (any(n != range)) {
       on_fail(x_name, " must have ", range, " ", n_name, cn(range, "%s"), error = error)
     }
     return(x)
   }
-
-  if (any(n < min(range))) {
-    on_fail(x_name, " must have at least ", min(range), " ", n_name, cn(min(range), "%s"), error = error)
+  if(identical(length(range), 2L)) {
+    if (any(n < min(range))) {
+      on_fail(x_name, " must have at least ", min(range), " ", n_name, cn(min(range), "%s"), error = error)
+    }
+    if (any(n > max(range))) {
+      on_fail(x_name, " must not have more than ", max(range), " ", n_name, cn(max(range), "%s"), error = error)
+    }
+    return(x)
   }
-  if (any(n > max(range))) {
-    on_fail(x_name, " must not have more than ", max(range), " ", n_name, cn(max(range), "%s"), error = error)
+  range <- sort(unique(range))
+  if(!n %in% range) {
+    on_fail(x_name, " must have ", cc(range, "or"), " ", n_name, "s", error = error)
   }
-  x
+  return(x)
 }
 
 check_nas <- function(x,
-                         values,
-                         x_name = substitute(x),
-                         error = TRUE) {
+                      values,
+                      x_name = substitute(x),
+                      error = TRUE) {
   
   x_name <- deparse_x_name(x_name)
-
+  
   check_flag_internal(error)
-
+  
   if(!length(values)) return(invisible(x))
-
+  
   nas <- is.na(values)
-
+  
   if(!length(nas)) return(invisible(x))
-
+  
   if(!any(nas) && any(is.na(x))) {
     on_fail(x_name, " must not include missing values", error = error)
   } else if (all(nas) && !all(is.na(x))) {
@@ -48,15 +54,15 @@ check_nas <- function(x,
 }
 
 check_class_internal <- function(x,
-                         values,
-                         x_name = substitute(x),
-                         error = TRUE) {
+                                 values,
+                                 x_name = substitute(x),
+                                 error = TRUE) {
   x_name <- deparse_x_name(x_name)
-
+  
   check_flag_internal(error)
-
+  
   class <- class(values)[1]
-
+  
   if (!inherits(x, class)) {
     on_fail(x_name, " must be class ", class, error = error)
   }
@@ -73,7 +79,7 @@ check_values <- function(x, values,
   
   if (!is.atomic(x)) err(x_name, " must be an atomic vector")
   if (!is.atomic(values)) err("values must be an atomic vector")
-
+  
   check_class_internal(x, values, x_name = x_name, error = error)
   check_nas(x, values, x_name = x_name, error = error)
   

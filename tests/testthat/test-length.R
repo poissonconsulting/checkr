@@ -16,4 +16,7 @@ test_that("length", {
   expect_error(check_length(list()), "list[(][)] must have at least 1 element")
   expect_error(check_length(1:2, length = 1), "1:2 must have 1 element")
   expect_error(check_length(1:3, length = c(1,2)), "1:3 must not have more than 2 elements")
+  
+  expect_identical(check_length(1:4, length = c(4,5,6)), 1:4)
+  expect_error(check_length(1:4, length = c(5,5,6)), "1:4 must have 5 or 6 elements")
 })

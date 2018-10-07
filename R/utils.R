@@ -14,7 +14,10 @@ is_count <- function(x)  is.numeric(x) && length(x) == 1 &&
 is_count_range <- function(x) is.numeric(x) && length(x) %in% 1:2 && 
   all(!is.na(x) & x >= 0 & identical(as.numeric(x), floor(x)))
 
-is_length <- function(x) is_flag(x) || is_NA(x) || is_count_range(x)
+is_count_vector <- function(x) is.numeric(x) && length(x) >= 3 && 
+  all(!is.na(x) & x >= 0 & identical(as.numeric(x), floor(x)))
+
+is_length <- function(x) is_flag(x) || is_NA(x) || is_count_range(x) || is_count_vector(x)
 
 check_string_internal <- function(x)
   if (!is_string(x)) err(substitute(x), " must be a string")
@@ -27,7 +30,7 @@ check_count_internal <- function(x)
 
 check_length_internal <- function(x)
   if(!is_length(x))
-    err(substitute(x), " must be a flag, a missing value, a count or a count range")
+    err(substitute(x), " must be a flag, a missing value, a count, a count range or a count vector")
 
 deparse_x_name <- function(x_name) {
   if (!is.character(x_name)) x_name <- deparse(x_name) 

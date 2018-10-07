@@ -1,3 +1,4 @@
+- lengths including nrows and ncols can be checked by a vector of possible values
 - added `err` as dependency for message generation
 - added `attributes` argument to `check_vector()` and `check_scalar()` which now only accept a flag for named
 - added `check_intersection()` to check the intersection between two atomic vectors

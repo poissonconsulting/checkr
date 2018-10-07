@@ -13,7 +13,7 @@ check_vector(x, values, length = NA, unique = FALSE, sorted = FALSE,
 
 \item{values}{An optional vector specifying the values.}
 
-\item{length}{A flag indicating whether x should have elements (versus no elements) or a missing value indicating no requirements or a count or count range of the number of elements.}
+\item{length}{A flag indicating whether x should have elements (versus no elements) or a missing value indicating no requirements or a count or count range of the number of elements or a count vector of the permitted number of elements.}
 
 \item{unique}{A flag indicating whether the values must be unique.}
 

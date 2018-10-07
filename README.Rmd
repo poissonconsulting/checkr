@@ -169,4 +169,4 @@ Please note that this project is released with a [Contributor Code of Conduct](C
 
 ## Inspiration
 
-[datacheckr](https://github.com/poissonconsulting/datacheckr)
+[datacheckr](https://github.com/poissonconsulting/datacheckr).

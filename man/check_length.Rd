@@ -9,7 +9,7 @@ check_length(x, length = TRUE, x_name = substitute(x), error = TRUE)
 \arguments{
 \item{x}{The object to check.}
 
-\item{length}{A flag indicating whether x should have elements (versus no elements) or a missing value indicating no requirements or a count or count range of the number of elements.}
+\item{length}{A flag indicating whether x should have elements (versus no elements) or a missing value indicating no requirements or a count or count range of the number of elements or a count vector of the permitted number of elements.}
 
 \item{x_name}{A string of the name of the object.}
 
