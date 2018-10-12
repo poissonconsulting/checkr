@@ -225,4 +225,4 @@ abide by its terms.
 
 ## Inspiration
 
-[datacheckr](https://github.com/poissonconsulting/datacheckr).
+[datacheckr](https://github.com/poissonconsulting/datacheckr)

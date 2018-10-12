@@ -13,6 +13,7 @@
 and deprecated `regex` argument for `pattern` argument
 - added `check_lgl()`, `check_chr()`, `check_day()`, `check_dttm()`
 - deprecated `check_flag_na()`
+- `check_data` argument `values` now NULL
 
 # checkr 0.3.0
 

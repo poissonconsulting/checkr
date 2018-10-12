@@ -63,7 +63,7 @@ well as whether particular columns form a unique key." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">checkr</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.0.9015</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.0.9016</span>
       </span>
     </div>
 
@@ -130,8 +130,9 @@ well as whether particular columns form a unique key.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>check_data</span>(<span class='no'>x</span>, <span class='no'>values</span>, <span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>exclusive</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>order</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>key</span> <span class='kw'>=</span> <span class='fu'>character</span>(<span class='fl'>0</span>), <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>check_data</span>(<span class='no'>x</span>, <span class='kw'>values</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>exclusive</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>order</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>key</span> <span class='kw'>=</span> <span class='fu'>character</span>(<span class='fl'>0</span>), <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>),
+  <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -142,7 +143,7 @@ well as whether particular columns form a unique key.</p>
     </tr>
     <tr>
       <th>values</th>
-      <td><p>An optional character vector specifying the column names or a named list specifying the column names and values.</p></td>
+      <td><p>NULL (default) or a character vector specifying the column names or a named list specifying the column names and values.</p></td>
     </tr>
     <tr>
       <th>nrow</th>

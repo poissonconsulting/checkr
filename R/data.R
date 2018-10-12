@@ -6,7 +6,7 @@
 #'
 #' @inheritParams check_nrow
 #' @param x The object to check.
-#' @param values An optional character vector specifying the column names or a named list specifying the column names and values.
+#' @param values NULL (default) or a character vector specifying the column names or a named list specifying the column names and values.
 #' @param exclusive A flag indicating whether other columns are not permitted.
 #' @param order A flag indicating whether the columns have to occur in the same order as values.
 #' @param key A character vector of the columns that represent a unique key.
@@ -33,7 +33,7 @@
 #'   Latitude = c(45, 90)
 #'   ), exclusive = TRUE, order = TRUE, nrow = 10L, key = "Longitude", error = FALSE)
 check_data <- function(x,
-                       values,
+                       values = NULL,
                        nrow = NA,
                        exclusive = FALSE,
                        order = FALSE,
@@ -46,7 +46,7 @@ check_data <- function(x,
 
   check_flag(error)
   
-  if(!missing(values)) {
+  if(!is.null(values)) {
     if(is.list(values)) {
       check_colnames(x, colnames = names(values), x_name = x_name)
       check_colnames(x, colnames = names(values), x_name = x_name, 
@@ -57,7 +57,7 @@ check_data <- function(x,
                      x_name = paste("column", name, "of", x_name), error = error)
       }
     } else {
-      if(!is.character(values)) err("values must be an character vector or a named list")
+      if(!is.character(values)) err("values must be a character vector, named list or NULL")
       
       check_colnames(x, colnames = values, x_name = x_name, exclusive = exclusive, order = order)
     }
