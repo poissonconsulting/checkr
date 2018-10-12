@@ -12,7 +12,7 @@
 #' attributes(x) <- list(y = 2L)
 #' check_attributes(x, values = list(y = 3:4), error = FALSE)
 check_attributes <- function(x,
-                             values,
+                             values = NULL,
                              exclusive = FALSE,
                              order = FALSE,
                              x_name = substitute(x),
@@ -24,7 +24,7 @@ check_attributes <- function(x,
   attr <- attributes(x)
   if(is.null(attr)) chk_fail(x_name, " must have attributes", error = error)
   
-  if(!is.null(attr) && !missing(values)) {
+  if(!is.null(attr) && !is.null(values)) {
     check_list(attr, values = values, order = order, exclusive = exclusive, 
                x_name = paste("attributes of", x_name), error = error)
   }

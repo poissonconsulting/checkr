@@ -4,7 +4,7 @@
 \alias{check_list}
 \title{Check List}
 \usage{
-check_list(x, values, exclusive = FALSE, order = FALSE,
+check_list(x, values = NULL, exclusive = FALSE, order = FALSE,
   x_name = substitute(x), error = TRUE)
 }
 \arguments{

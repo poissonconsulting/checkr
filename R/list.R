@@ -19,7 +19,7 @@
 #' check_list(list())
 #' check_list(list(x1 = 2, x2 = 1:2), values = list(x1 = 1, x2 = 1L))
 check_list <- function(x,
-                       values,
+                       values = NULL,
                        exclusive = FALSE,
                        order = FALSE,
                        x_name = substitute(x),
@@ -30,7 +30,7 @@ check_list <- function(x,
   
   check_flag_internal(error)
   
-  if(!missing(values)) {
+  if(!is.null(values)) {
     if(is.list(values)) {
       check_named(values, unique = TRUE)
       check_names(x, names = names(values), exclusive = exclusive, order = order)

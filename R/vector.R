@@ -2,7 +2,7 @@
 #'
 #' @inheritParams check_length
 #' @param x The object to check.
-#' @param values An optional vector specifying the values.
+#' @param values NULL or a vector specifying the values.
 #' @param unique A flag indicating whether the values must be unique.
 #' @param sorted A flag indicating whether the vector must be sorted.
 #' @param named A flag indicating whether the vector must be named or unnamed or NA if it doesn't matter.
@@ -18,7 +18,7 @@
 #' check_vector(2:1, length = 3, sorted = TRUE, named = TRUE, error = FALSE)
 #' check_vector(c("one", "two", "four"), values = c("one", "two", "two"), error = FALSE)
 check_vector <- function(x,
-                         values,
+                         values = NULL,
                          length = NA,
                          unique = FALSE,
                          sorted = FALSE,
@@ -47,7 +47,7 @@ check_vector <- function(x,
   
   check_length(x, length = length, x_name = x_name, error = error)
   
-  if(!missing(values)) {
+  if(!is.null(values)) {
     check_values(x, values = values, only = only, 
                  x_name = x_name, error = error)
   } else if(only)

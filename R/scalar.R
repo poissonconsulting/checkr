@@ -3,7 +3,7 @@
 #' Checks whether an object is an atomic vector with one element.
 #'
 #' @param x The object to check.
-#' @param values An optional vector specifying the values.
+#' @param values NULL or a vector specifying the values.
 #' @param named A flag indicating whether the scalar must be named or unnamed or NA if it doesn't matter if the scalar is named.
 #' @param attributes A flag indicating whether the scalar must or must not have attributes or NA if it doesn't matter if the scalar is named.
 #' @param only A flag indicating whether only the actual values are permitted.
@@ -18,7 +18,7 @@
 #' check_scalar(c(1,2), error = FALSE)
 #' check_scalar(1, c(2,3), error = FALSE)
 check_scalar <- function(x,
-                         values,
+                         values = NULL,
                          named = FALSE,
                          attributes = named,
                          only = FALSE,

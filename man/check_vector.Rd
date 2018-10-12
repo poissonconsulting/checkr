@@ -4,14 +4,14 @@
 \alias{check_vector}
 \title{Check Atomic Vector}
 \usage{
-check_vector(x, values, length = NA, unique = FALSE, sorted = FALSE,
-  named = NA, attributes = named, only = FALSE,
+check_vector(x, values = NULL, length = NA, unique = FALSE,
+  sorted = FALSE, named = NA, attributes = named, only = FALSE,
   x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}
 
-\item{values}{An optional vector specifying the values.}
+\item{values}{NULL or a vector specifying the values.}
 
 \item{length}{A flag indicating whether x should have elements (versus no elements) or a missing value indicating no requirements or a count or count range of the number of elements or a count vector of the permitted number of elements.}
 
