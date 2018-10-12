@@ -21,7 +21,7 @@ check_props <- function(x, x_name = substitute(x),
   
   check_vector(x, values = c(0,1), x_name = x_name, error = error)
   if(sum(x) != 1) {
-    on_fail("values of ", x_name, " must sum to 1 (not ", sum(x),")", error = error)
+    chk_fail("values of ", x_name, " must sum to 1 (not ", sum(x),")", error = error)
   }
   invisible(x)
 }

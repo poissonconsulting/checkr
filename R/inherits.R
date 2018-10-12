@@ -22,7 +22,7 @@ check_inherits <- function(x, class,
   check_flag_internal(error)
   
   if(!inherits(x, class)) {
-    on_fail(x_name, " must inherit from class ", class, error = error)
+    chk_fail(x_name, " must inherit from class ", class, error = error)
   }
   invisible(x)
 }

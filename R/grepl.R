@@ -29,7 +29,7 @@ check_grepl <- function(x, pattern = ".*", regex = pattern, x_name = substitute(
   }
   
   if(!all(grepl(pattern, x)))
-    on_fail(x_name, " must match regular expression '", pattern, "'", error = error)
+    chk_fail(x_name, " must match regular expression '", pattern, "'", error = error)
   invisible(x)
 }
 

@@ -18,6 +18,6 @@ check_null <- function(x,
 
   check_flag_internal(error)
 
-  if (!is.null(x)) on_fail(x_name, " must be NULL", error = error)
+  if (!is.null(x)) chk_fail(x_name, " must be NULL", error = error)
   invisible(x)
 }

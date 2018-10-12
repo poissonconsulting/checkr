@@ -17,7 +17,7 @@ check_environment <- function(x,
   x_name <- deparse_x_name(x_name)
   check_flag_internal(error)
   
-  if (!is.environment(x)) on_fail(x_name, " must be an environment", error = error)
+  if (!is.environment(x)) chk_fail(x_name, " must be an environment", error = error)
 
   invisible(x)
 }

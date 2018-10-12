@@ -36,7 +36,7 @@ check_named <- function(x, nchar = c(0L, .Machine$integer.max),
   }
   
   if(is.null(names(x))) {
-    on_fail(x_name, " must be named", error = error)
+    chk_fail(x_name, " must be named", error = error)
   } else {
     check_nchar(names(x), nchar = nchar, x_name = paste("names of", x_name), error = error)
     check_grepl(names(x), pattern = pattern, x_name = paste("names of", x_name), error = error)

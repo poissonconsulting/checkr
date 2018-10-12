@@ -27,10 +27,6 @@ For an overview of the functions see the `checkr-naming` vignette and
 for a comparison with similar packages see the `assertive-programming`
 vignette.
 
-The `checkr` package is recommended over the alternatives if you are
-looking for a set of expressive, light-weight, pipe-friendly assertive
-functions with customisable object names.
-
 ## Demonstration
 
 The following code demonstrates the `check_data()` function
@@ -225,4 +221,4 @@ abide by its terms.
 
 ## Inspiration
 
-[datacheckr](https://github.com/poissonconsulting/datacheckr)
+[datacheckr](https://github.com/poissonconsulting/datacheckr).

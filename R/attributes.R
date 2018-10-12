@@ -22,7 +22,7 @@ check_attributes <- function(x,
   check_flag_internal(error)
   
   attr <- attributes(x)
-  if(is.null(attr)) on_fail(x_name, " must have attributes", error = error)
+  if(is.null(attr)) chk_fail(x_name, " must have attributes", error = error)
   
   if(!is.null(attr) && !missing(values)) {
     check_list(attr, values = values, order = order, exclusive = exclusive, 
@@ -54,7 +54,7 @@ check_no_attributes <- function(x,
   
   
   attr <- attributes(x)
-  if(!is.null(attr)) on_fail(x_name, " must not have attributes", error = error)
+  if(!is.null(attr)) chk_fail(x_name, " must not have attributes", error = error)
 
   invisible(x)
 }

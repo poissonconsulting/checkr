@@ -22,7 +22,7 @@ check_unnamed <- function(x,
   check_flag_internal(error)
 
   if(!is.null(names(x))) {
-    on_fail(x_name, " must be unnamed", error = error)
+    chk_fail(x_name, " must be unnamed", error = error)
   }
   invisible(x)
 }

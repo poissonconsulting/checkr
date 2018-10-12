@@ -23,11 +23,11 @@ check_pattern <- function(x, pattern, all = TRUE,
   match <- grepl(pattern, x)
   
   if(all) {
-    if(!all(match)) on_fail("all elements of ", x_name, " must match regular expression '", pattern, "'", error = error)
+    if(!all(match)) chk_fail("all elements of ", x_name, " must match regular expression '", pattern, "'", error = error)
     return(invisible(x))
   }
   if(!any(match)) {
-    on_fail("at least one element of ", x_name, " must match regular expression '", pattern, "'", error = error)
+    chk_fail("at least one element of ", x_name, " must match regular expression '", pattern, "'", error = error)
   }
   invisible(x)
 }

@@ -24,7 +24,7 @@ check_unique <- function(x,
   check_flag_internal(error)
 
   if(anyDuplicated(x)) {
-    on_fail(x_name, " must be unique", error = error)
+    chk_fail(x_name, " must be unique", error = error)
   }
   invisible(x)
 }

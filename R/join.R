@@ -39,7 +39,7 @@ check_join <- function(x, y,
   if(is.null(by)) {
     by <- intersect(colnames(x), colnames(y))
     if (!length(by)) {
-      on_fail(x_name, " and ", y_name, 
+      chk_fail(x_name, " and ", y_name, 
               " must have at least 1 matching column", error = TRUE)
     }
     names(by) <- by
@@ -64,10 +64,10 @@ check_join <- function(x, y,
   suppressWarnings(z <- merge(x, y, by.x = names(by), by.y = by))
   
   if(!identical(sort(unique(z$..ID.x)), sort(..ID.x))) {
-        on_fail("join between ", x_name, " and ", y_name, " must include all the rows in ", x_name, error = error)
+        chk_fail("join between ", x_name, " and ", y_name, " must include all the rows in ", x_name, error = error)
   }
   if(all_y && !identical(sort(unique(z$..ID.y)), sort(..ID.y))) {
-        on_fail("join between ", x_name, " and ", y_name, " must include all the rows in ", y_name, error = error)
+        chk_fail("join between ", x_name, " and ", y_name, " must include all the rows in ", y_name, error = error)
   }
   
   x$..ID.x <- NULL

@@ -38,10 +38,10 @@ check_homogenous <- function(x,
   intersect <- Reduce(intersect, classes)
   
   if(strict && (!identical(union, intersect) || !all(vapply(classes, identical, TRUE, union)))) {
-    on_fail("elements in ", x_name, " must have identical classes", error = error)
+    chk_fail("elements in ", x_name, " must have identical classes", error = error)
     return(invisible(x))
   } else if(!strict && !length(intersect)) {
-    on_fail("all elements in ", x_name, " must inherit from the same class", error = error)
+    chk_fail("all elements in ", x_name, " must inherit from the same class", error = error)
     return(invisible(x))
   }
   

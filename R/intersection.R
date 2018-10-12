@@ -32,9 +32,9 @@ check_intersection <- function(x, y,
   check_flag(all_y)
   
   if(length(setdiff(x, y))) 
-    on_fail(y_name, " must include all the elements in ", x_name, error = error)
+    chk_fail(y_name, " must include all the elements in ", x_name, error = error)
   if(all_y && length(setdiff(y, x))) 
-    on_fail(x_name, " must include all the elements in ", y_name, error = error)
+    chk_fail(x_name, " must include all the elements in ", y_name, error = error)
   
   invisible(x)
 }

@@ -14,6 +14,6 @@
 check_unused <- function(..., x_name = "...", error = TRUE) {
   check_string_internal(x_name)
   if(length(list(...)))
-    on_fail(x_name, " must be unused", error = error)
+    chk_fail(x_name, " must be unused", error = error)
   invisible(...)
 }

@@ -10,22 +10,22 @@ check_n <- function(x, n, range, x_name, n_name, error) {
   
   if (identical(length(range), 1L)) {
     if (any(n != range)) {
-      on_fail(x_name, " must have ", range, " ", n_name, cn(range, "%s"), error = error)
+      chk_fail(x_name, " must have ", range, " ", n_name, cn(range, "%s"), error = error)
     }
     return(x)
   }
   if(identical(length(range), 2L)) {
     if (any(n < min(range))) {
-      on_fail(x_name, " must have at least ", min(range), " ", n_name, cn(min(range), "%s"), error = error)
+      chk_fail(x_name, " must have at least ", min(range), " ", n_name, cn(min(range), "%s"), error = error)
     }
     if (any(n > max(range))) {
-      on_fail(x_name, " must not have more than ", max(range), " ", n_name, cn(max(range), "%s"), error = error)
+      chk_fail(x_name, " must not have more than ", max(range), " ", n_name, cn(max(range), "%s"), error = error)
     }
     return(x)
   }
   range <- sort(unique(range))
   if(!n %in% range) {
-    on_fail(x_name, " must have ", cc(range, "or"), " ", n_name, "s", error = error)
+    chk_fail(x_name, " must have ", cc(range, "or"), " ", n_name, "s", error = error)
   }
   return(x)
 }
@@ -46,9 +46,9 @@ check_nas <- function(x,
   if(!length(nas)) return(invisible(x))
   
   if(!any(nas) && any(is.na(x))) {
-    on_fail(x_name, " must not include missing values", error = error)
+    chk_fail(x_name, " must not include missing values", error = error)
   } else if (all(nas) && !all(is.na(x))) {
-    on_fail(x_name, " must only include missing values", error = error)
+    chk_fail(x_name, " must only include missing values", error = error)
   }
   invisible(x)
 }
@@ -64,7 +64,7 @@ check_class_internal <- function(x,
   class <- class(values)[1]
   
   if (!inherits(x, class)) {
-    on_fail(x_name, " must be class ", class, error = error)
+    chk_fail(x_name, " must be class ", class, error = error)
   }
   invisible(x)
 }
@@ -94,7 +94,7 @@ check_values <- function(x, values,
   
   if(!only && identical(length(values), 2L)) {
     if(x_nona[1] < values[1] || x_nona[length(x_nona)] > values[2]) {
-      on_fail("the values in ", x_name,
+      chk_fail("the values in ", x_name,
               " must lie between ", cc(values[1:2], "and"), error = error)
     }
   } else if (!all(x_nona %in% values)) {
@@ -102,11 +102,11 @@ check_values <- function(x, values,
     unpermitted <- unique(unpermitted)
     values <- unique(values)
     if(length(values) < 10) {
-      on_fail(x_name, " can only include values ", cc(values, "or"), error = error)
+      chk_fail(x_name, " can only include values ", cc(values, "or"), error = error)
     } else if(length(unpermitted) < 10) {
-      on_fail(x_name, " has unpermitted values ", cc(unpermitted, "and"), error = error)
+      chk_fail(x_name, " has unpermitted values ", cc(unpermitted, "and"), error = error)
     } else
-      on_fail(x_name, " has unpermitted values ", error = error)
+      chk_fail(x_name, " has unpermitted values ", error = error)
   }
   invisible(x)
 }

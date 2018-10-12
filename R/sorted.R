@@ -21,7 +21,7 @@ check_sorted <- function(x,
 
   is_unsorted <- is.unsorted(x, na.rm = TRUE)
   if (is.na(is_unsorted) || is_unsorted) {
-    on_fail(x_name, " must be sorted", error = error)
+    chk_fail(x_name, " must be sorted", error = error)
   }
   invisible(x)
 }

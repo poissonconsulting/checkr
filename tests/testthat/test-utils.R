@@ -30,5 +30,11 @@ test_that("check_class_internal", {
   expect_identical(check_class_internal(time, time), time)
 })
 
-
-
+test_that("chk_deparse", {
+  expect_identical(chk_deparse(1), "1")
+  expect_identical(chk_deparse(NA), "NA")
+  expect_identical(chk_deparse("1"), "1")
+  expect_identical(chk_deparse(substitute(1)), "1")
+  expect_identical(chk_deparse(substitute(NA)), "NA")
+  expect_identical(chk_deparse(substitute("1")), "1")
+})

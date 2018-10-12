@@ -33,30 +33,30 @@ check_colnames <- function(x, colnames = character(0), exclusive = FALSE, order 
   names(colnames) <- NULL
   x_colnames <- colnames(x)
   
-  if(is.null(x_colnames)) on_fail(x_name, " must have column names", error = error)
+  if(is.null(x_colnames)) chk_fail(x_name, " must have column names", error = error)
   
   if(!length(colnames)) {
     if(exclusive && length(x_colnames))
-        on_fail(x_name, " must not have any columns", error = error)
+        chk_fail(x_name, " must not have any columns", error = error)
     return(x)
   }
 
   if (exclusive) {
     if (order) {
       if (!identical(x_colnames, colnames))
-        on_fail(x_name, " column names must be identical to ", cc(colnames, "and"), error = error)
+        chk_fail(x_name, " column names must be identical to ", cc(colnames, "and"), error = error)
     } else {
       if (!identical(sort(x_colnames), sort(colnames)))
-        on_fail(x_name, " column names must include and only include ", cc(colnames, "and"), error = error)
+        chk_fail(x_name, " column names must include and only include ", cc(colnames, "and"), error = error)
     }
   } else {
     x_colnames <- x_colnames[x_colnames %in% colnames]
     if (order) {
       if (!identical(x_colnames, colnames))
-        on_fail(x_name, " column names must include ", cc(colnames, "and"), " in that order", error = error)
+        chk_fail(x_name, " column names must include ", cc(colnames, "and"), " in that order", error = error)
     } else {
       if (!identical(sort(x_colnames), sort(colnames)))
-        on_fail(x_name, " column names must include ", cc(colnames, "and"), error = error)
+        chk_fail(x_name, " column names must include ", cc(colnames, "and"), error = error)
     }
   }
   invisible(x)

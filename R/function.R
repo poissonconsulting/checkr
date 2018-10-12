@@ -22,7 +22,7 @@ check_function <- function(x,
 
   check_flag_internal(error)
   
-  if (!is.function(x)) on_fail(x_name, " must be a function", error = TRUE)
+  if (!is.function(x)) chk_fail(x_name, " must be a function", error = TRUE)
   
   check_n(x, n = length(formals(x)), range = nargs, x_name = x_name, n_name = "argument", error = error)
   

@@ -23,6 +23,6 @@ checkor <- function(..., error = TRUE) {
   args <- unlist(args)
   args <- args[!duplicated(args)]
   args <- paste(args, collapse = " OR ")
-  on_fail(args, error = error)
+  chk_fail(args, error = error)
   invisible(FALSE)
 }
