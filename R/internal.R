@@ -4,7 +4,7 @@ check_n <- function(x, n, range, x_name, n_name, error) {
   if(is.null(n)) n <- 0L
   
   if(is_flag(range) && range) {
-    range <- c(1L, .Machine$integer.max)
+    range <- c(1L, chk_max_integer())
   } else if(is_flag(range) && !range)
     range <- 0L
   

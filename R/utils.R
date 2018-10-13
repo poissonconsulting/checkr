@@ -64,6 +64,24 @@ deparse_y_name <- function(y_name) {
   y_name
 }
 
+#' Max Integer
+#'
+#' @return An integer of the maximum integer value for the system.
+#' @export
+#'
+#' @examples
+#' chk_max_integer()
+chk_max_integer <- function() .Machine$integer.max
+
+#' Min Integer
+#'
+#' @return An integer of the minimum integer value for the system.
+#' @export
+#'
+#' @examples
+#' chk_min_integer()
+chk_min_integer <- function() chk_max_integer() * -1L
+
 #' Fail
 #'
 #' @param ... The message.

@@ -61,7 +61,7 @@ check_count <- function(x, coerce = FALSE,
     x <- as.integer(x)     
   }
   
-  check_scalar(x, values = c(0L, .Machine$integer.max), 
+  check_scalar(x, values = c(0L, chk_max_integer()), 
                x_name = x_name, error = error)
 }
 
