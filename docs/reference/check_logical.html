@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Check Proportion — check_prop • checkr</title>
+<title>Check Logical — check_logical • checkr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Check Proportion — check_prop" />
+<meta property="og:title" content="Check Logical — check_logical" />
 
-<meta property="og:description" content="Checks if x is a proportion (non-missing dbl between 0 and 1 inclusive with no attributes including names)." />
+<meta property="og:description" content="Checks if x is a logical vector with no attributes including names." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -61,7 +61,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">checkr</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.0.9017</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.0.9018</span>
       </span>
     </div>
 
@@ -115,20 +115,18 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Check Proportion</h1>
-    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/checkr/blob/master/R/prop.R'><code>R/prop.R</code></a></small>
-    <div class="hidden name"><code>check_prop.Rd</code></div>
+    <h1>Check Logical</h1>
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/checkr/blob/master/R/logical.R'><code>R/logical.R</code></a></small>
+    <div class="hidden name"><code>check_logical.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Checks if x is a proportion (non-missing dbl between 0 and 1 inclusive with no attributes including names).</p>
+    <p>Checks if x is a logical vector with no attributes including names.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>check_prop</span>(<span class='no'>x</span>, <span class='kw'>coerce</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
-
-<span class='fu'>check_probability</span>(<span class='no'>x</span>, <span class='kw'>coerce</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>),
+    <pre class="usage"><span class='fu'>check_logical</span>(<span class='no'>x</span>, <span class='kw'>coerce</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>),
   <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -140,7 +138,7 @@
     </tr>
     <tr>
       <th>coerce</th>
-      <td><p>A flag indicating whether to coerce an integer to a dbl and drop attributes including names.</p></td>
+      <td><p>A flag indicating whether to drop attributes including names.</p></td>
     </tr>
     <tr>
       <th>x_name</th>
@@ -158,12 +156,12 @@
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='check_dbl.html'>check_number</a></code> and <code><a href='check_scalar.html'>check_scalar</a></code></p></div>
+    <div class='dont-index'><p><code><a href='check_scalar.html'>check_scalar</a></code></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>check_prop</span>(<span class='fl'>1</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
-<span class='fu'>check_prop</span>(<span class='fl'>1.1</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: the values in 1.1 must lie between 0 and 1</span></div><div class='input'><span class='fu'>check_prop</span>(<span class='fu'>c</span>(<span class='fl'>0</span>, <span class='fl'>1</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: c(0, 1) must have 1 element</span></div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>check_logical</span>(<span class='fl'>1</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: 1 must be class logical</span></div><div class='input'><span class='fu'>check_logical</span>(<span class='fl'>FALSE</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+<span class='fu'>check_logical</span>(<span class='fu'>c</span>(<span class='fl'>FALSE</span>, <span class='fl'>TRUE</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

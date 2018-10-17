@@ -19,11 +19,3 @@ An invisible copy of x (if it doesn't throw an error).
 \description{
 Checks if x is proportions vector - non-missing dbls between 0 and 1 that sum to 1.
 }
-\examples{
-check_props(1, error = FALSE)
-check_props(1.1, error = FALSE)
-check_props(c(0, 1), error = FALSE)
-}
-\seealso{
-\code{\link{check_prop}} and \code{\link{check_vector}}
-}

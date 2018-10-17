@@ -7,8 +7,9 @@
 - added `check_attributes()` to check an objects attributes and `check_no_attributes()`
 - added `complete = TRUE` argument to `check_names()`
 - added `check_int()` and `check_dbl()` both of which do coercion
-- `coerce = TRUE` now also strips attributes for flag, int, dbl and string.
-- added `check_prop()` and `check_probs()`
+- added `check_integer()`, `check_numeric()`, `check_double()`, `check_logical()` and `check_character()`
+- `coerce = TRUE` now also strips attributes for flag, int, dbl, string and logical, integer, double, character.
+- added `check_prob()`
 - added `check_grepl()` and deprecated `check_regex()` and `check_pattern()`
 and deprecated `regex` argument for `pattern` argument
 - added `check_lgl()`, `check_chr()`, `check_day()`, `check_dttm()`
