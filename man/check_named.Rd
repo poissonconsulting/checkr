@@ -4,7 +4,7 @@
 \alias{check_named}
 \title{Check Named}
 \usage{
-check_named(x, nchar = c(0L, chk_max_integer()), pattern = ".*",
+check_named(x, nchar = c(0L, chk_max_int()), pattern = ".*",
   regex = pattern, unique = FALSE, x_name = substitute(x),
   error = TRUE)
 }

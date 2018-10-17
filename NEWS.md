@@ -17,7 +17,8 @@ and deprecated `regex` argument for `pattern` argument
 - `check_data` argument `values` now NULL
 - exported `chk_deparse()` to deparse dealing with NAs for packages which extend
 - exported `chk_fail()` to have conditional error or warning messages for packages which extend.
-- exported `chk_max_integer()` and `chk_min_integer()`
+- exported `chk_max_int()`, `chk_min_int()`, `chk_min_dbl()` and `chk_max_dbl()` to
+get integer and numeric ranges for system.
 
 # checkr 0.3.0
 

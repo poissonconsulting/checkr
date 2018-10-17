@@ -18,7 +18,7 @@
 #' x <- 1
 #' names(x) <- "y"
 #' check_named(x, error = FALSE)
-check_named <- function(x, nchar = c(0L, chk_max_integer()), 
+check_named <- function(x, nchar = c(0L, chk_max_int()), 
                         pattern = ".*",
                         regex = pattern, unique = FALSE, 
                         x_name = substitute(x),

@@ -64,23 +64,41 @@ deparse_y_name <- function(y_name) {
   y_name
 }
 
-#' Max Integer
+#' Max Int
 #'
-#' @return An integer of the maximum integer value for the system.
+#' @return An int of the maximum integer value for the system.
 #' @export
 #'
 #' @examples
-#' chk_max_integer()
-chk_max_integer <- function() .Machine$integer.max
+#' chk_max_int()
+chk_max_int <- function() .Machine$integer.max
 
 #' Min Integer
 #'
-#' @return An integer of the minimum integer value for the system.
+#' @return An int of the minimum integer value for the system.
 #' @export
 #'
 #' @examples
 #' chk_min_integer()
-chk_min_integer <- function() chk_max_integer() * -1L
+chk_min_int <- function() chk_max_int() * -1L
+
+#' Max Double
+#'
+#' @return An dbl of the maximum numeric value for the system.
+#' @export
+#'
+#' @examples
+#' chk_max_dbl()
+chk_max_dbl <- function() .Machine$double.xmax
+
+#' Min Double
+#'
+#' @return An dbl of the minimum numeric value for the system.
+#' @export
+#'
+#' @examples
+#' chk_min_dbl()
+chk_min_dbl <- function() .Machine$double.xmin
 
 #' Fail
 #'
