@@ -13,5 +13,5 @@ An int of the minimum integer value for the system.
 Min Integer
 }
 \examples{
-chk_min_integer()
+chk_min_int()
 }

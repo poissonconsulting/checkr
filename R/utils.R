@@ -79,7 +79,7 @@ chk_max_int <- function() .Machine$integer.max
 #' @export
 #'
 #' @examples
-#' chk_min_integer()
+#' chk_min_int()
 chk_min_int <- function() chk_max_int() * -1L
 
 #' Max Double
