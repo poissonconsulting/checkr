@@ -98,7 +98,16 @@ chk_max_dbl <- function() .Machine$double.xmax
 #'
 #' @examples
 #' chk_min_dbl()
-chk_min_dbl <- function() .Machine$double.xmin
+chk_min_dbl <- function() chk_max_dbl() * -1
+
+#' Tiny Positive Double
+#'
+#' @return An dbl of the tiniest positive numeric value for the system.
+#' @export
+#'
+#' @examples
+#' chk_tiny_dbl()
+chk_tiny_dbl <- function() .Machine$double.xmin
 
 #' Fail
 #'

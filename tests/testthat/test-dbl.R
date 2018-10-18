@@ -16,3 +16,9 @@ test_that("check_dbl errors", {
   expect_true(is.null(names(check_dbl(y, coerce = TRUE))))
   expect_identical(check_dbl(1L, coerce = TRUE), 1.0)
 })
+
+test_that("check_pos_dbl errors", {
+  expect_identical(check_pos_dbl(1), 1)
+  expect_error(check_pos_dbl(-1), "-1 must be positive")
+})
+

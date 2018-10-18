@@ -7,6 +7,7 @@
 - added `check_attributes()` to check an objects attributes and `check_no_attributes()`
 - added `complete = TRUE` argument to `check_names()`
 - added `check_int()` and `check_dbl()` both of which do coercion
+- added `check_pos_dbl()`
 - added `check_integer()`, `check_numeric()`, `check_double()`, `check_logical()` and `check_character()`
 - `coerce = TRUE` now also strips attributes for flag, int, dbl, string and logical, integer, double, character.
 - added `check_prob()`
@@ -17,7 +18,7 @@ and deprecated `regex` argument for `pattern` argument
 - `check_data` argument `values` now NULL
 - exported `chk_deparse()` to deparse dealing with NAs for packages which extend
 - exported `chk_fail()` to have conditional error or warning messages for packages which extend.
-- exported `chk_max_int()`, `chk_min_int()`, `chk_min_dbl()` and `chk_max_dbl()` to
+- exported `chk_max_int()`, `chk_min_int()`, `chk_min_dbl()`, `chk_max_dbl()` and `chk_tiny_dbl()` to
 get integer and numeric ranges for system.
 
 # checkr 0.3.0
