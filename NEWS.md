@@ -7,7 +7,8 @@
 - added `check_attributes()` to check an objects attributes and `check_no_attributes()`
 - added `complete = TRUE` argument to `check_names()`
 - added `check_int()` and `check_dbl()` both of which do coercion
-- added `check_pos_dbl()`
+- added `check_pos_dbl()`, `check_neg_dbl()` and `check_noneg_dbl()`
+- added `check_pos_int()`, `check_neg_int()` and `check_noneg_int()`
 - added `check_integer()`, `check_numeric()`, `check_double()`, `check_logical()` and `check_character()`
 - `coerce = TRUE` now also strips attributes for flag, int, dbl, string and logical, integer, double, character.
 - added `check_prob()`
