@@ -173,9 +173,8 @@ To install the latest official release from
 To install the latest development version from
 [GitHub](https://github.com/poissonconsulting/checkr)
 
-    install.packages("drat")
-    drat::addRepo("poissonconsulting")
     install.packages("devtools")
+    devtools::install_github("poissonconsulting/err")
     devtools::install_github("poissonconsulting/checkr")
 
 To install the latest development version from the Poisson drat

@@ -58,7 +58,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">checkr</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.0.9020</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.4.0</span>
       </span>
     </div>
 
@@ -119,6 +119,73 @@
     <div id="checkr-0-3-0" class="section level1">
 <h1 class="page-header">
 <a href="#checkr-0-3-0" class="anchor"></a>checkr 0.3.0<small> 2018-06-27 </small>
+</h1>
+<div id="major-changes" class="section level2">
+<h2 class="hasAnchor">
+<a href="#major-changes" class="anchor"></a>Major Changes</h2>
+<ul>
+<li>added <code>err</code> as dependency for message generation</li>
+<li>
+<code>check_data</code> argument <code>values</code> now NULL by default (as opposed to missing)</li>
+<li>added <code>exclusive = FALSE</code> and <code>order = FALSE</code> to <code>check_list</code> and removed <code>unique = FALSE</code>, <code>length = NA</code> and <code>named = NA</code>
+</li>
+<li>lengths including nrows and ncols can now be checked by a vector of possible values</li>
+<li>
+<code>coerce = TRUE</code> now also strips attributes for flag, int, dbl, string and logical, integer, double, character.</li>
+</ul>
+</div>
+<div id="new-functions" class="section level2">
+<h2 class="hasAnchor">
+<a href="#new-functions" class="anchor"></a>New Functions</h2>
+<ul>
+<li>added <code><a href="../reference/check_intersection.html">check_intersection()</a></code> to check the intersection between two atomic vectors</li>
+<li>added <code><a href="../reference/check_integer.html">check_integer()</a></code>, <code><a href="../reference/check_numeric.html">check_numeric()</a></code>, <code><a href="../reference/check_numeric.html">check_double()</a></code>, <code><a href="../reference/check_logical.html">check_logical()</a></code> and <code><a href="../reference/check_character.html">check_character()</a></code>
+</li>
+<li>added <code><a href="../reference/check_int.html">check_int()</a></code> and <code><a href="../reference/check_dbl.html">check_dbl()</a></code> both of which do coercion</li>
+<li>added <code><a href="../reference/check_prob.html">check_prob()</a></code> to check a probability</li>
+<li>added <code><a href="../reference/check_pos_dbl.html">check_pos_dbl()</a></code>, <code><a href="../reference/check_neg_dbl.html">check_neg_dbl()</a></code> and <code><a href="../reference/check_noneg_dbl.html">check_noneg_dbl()</a></code>
+</li>
+<li>added <code><a href="../reference/check_pos_int.html">check_pos_int()</a></code>, <code><a href="../reference/check_neg_int.html">check_neg_int()</a></code> and <code><a href="../reference/check_noneg_int.html">check_noneg_int()</a></code>
+</li>
+<li>added <code><a href="../reference/check_attributes.html">check_attributes()</a></code> to check an objects attributes and <code><a href="../reference/check_no_attributes.html">check_no_attributes()</a></code>
+</li>
+<li>added <code><a href="../reference/check_lgl.html">check_lgl()</a></code>, <code><a href="../reference/check_chr.html">check_chr()</a></code>, <code><a href="../reference/check_date.html">check_day()</a></code>, <code><a href="../reference/check_dttm.html">check_dttm()</a></code>
+</li>
+<li>added <code><a href="../reference/check_grepl.html">check_grepl()</a></code>
+</li>
+</ul>
+</div>
+<div id="new-arguments" class="section level2">
+<h2 class="hasAnchor">
+<a href="#new-arguments" class="anchor"></a>New Arguments</h2>
+<ul>
+<li>added <code>attributes</code> argument to <code><a href="../reference/check_vector.html">check_vector()</a></code> and <code><a href="../reference/check_scalar.html">check_scalar()</a></code> which now only accept a flag for named</li>
+<li>added <code>complete = TRUE</code> argument to <code><a href="../reference/check_names.html">check_names()</a></code>
+</li>
+</ul>
+</div>
+<div id="exported" class="section level2">
+<h2 class="hasAnchor">
+<a href="#exported" class="anchor"></a>Exported</h2>
+<ul>
+<li>exported <code><a href="../reference/chk_deparse.html">chk_deparse()</a></code> to deparse dealing with NAs for packages which extend</li>
+<li>exported <code><a href="../reference/chk_fail.html">chk_fail()</a></code> to have conditional error or warning messages for packages which extend.</li>
+<li>exported <code><a href="../reference/chk_max_int.html">chk_max_int()</a></code>, <code><a href="../reference/chk_min_int.html">chk_min_int()</a></code>, <code><a href="../reference/chk_min_dbl.html">chk_min_dbl()</a></code>, <code><a href="../reference/chk_max_dbl.html">chk_max_dbl()</a></code> and <code><a href="../reference/chk_tiny_dbl.html">chk_tiny_dbl()</a></code> to get integer and numeric ranges for system.</li>
+</ul>
+</div>
+<div id="deprecated" class="section level2">
+<h2 class="hasAnchor">
+<a href="#deprecated" class="anchor"></a>Deprecated</h2>
+<ul>
+<li>deprecated <code><a href="../reference/check_grepl.html">check_regex()</a></code> and <code><a href="../reference/check_pattern.html">check_pattern()</a></code> (and added <code><a href="../reference/check_grepl.html">check_grepl()</a></code>) and deprecated <code>regex</code> argument for <code>pattern</code> argument</li>
+<li>deprecated <code><a href="../reference/check_flag_na.html">check_flag_na()</a></code>
+</li>
+</ul>
+</div>
+</div>
+    <div id="checkr-0-3-0-1" class="section level1">
+<h1 class="page-header">
+<a href="#checkr-0-3-0-1" class="anchor"></a>checkr 0.3.0<small> 2018-06-27 </small>
 </h1>
 <ul>
 <li>redefined <code>check_scalar</code> (following previous deprecation)</li>
@@ -186,6 +253,7 @@
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
         <li><a href="#checkr-0-3-0">0.3.0</a></li>
+        <li><a href="#checkr-0-3-0-1">0.3.0</a></li>
         <li><a href="#checkr-0-2-0">0.2.0</a></li>
         <li><a href="#checkr-0-1-0">0.1.0</a></li>
         <li><a href="#checkr-0-0-2">0.0.2</a></li>

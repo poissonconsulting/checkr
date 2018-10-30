@@ -1,26 +1,43 @@
-- lengths including nrows and ncols can be checked by a vector of possible values
+# checkr 0.3.0
+
+## Major Changes
+
 - added `err` as dependency for message generation
-- added `attributes` argument to `check_vector()` and `check_scalar()` which now only accept a flag for named
-- added `check_intersection()` to check the intersection between two atomic vectors
+- `check_data` argument `values` now NULL by default (as opposed to missing)
 - added `exclusive = FALSE` and `order = FALSE` to `check_list` and removed
 `unique = FALSE`, `length = NA` and `named = NA`
-- added `check_attributes()` to check an objects attributes and `check_no_attributes()`
-- added `complete = TRUE` argument to `check_names()`
+- lengths including nrows and ncols can now be checked by a vector of possible values
+- `coerce = TRUE` now also strips attributes for flag, int, dbl, string and logical, integer, double, character.
+
+## New Functions
+
+- added `check_intersection()` to check the intersection between two atomic vectors
+- added `check_integer()`, `check_numeric()`, `check_double()`, `check_logical()` and `check_character()`
 - added `check_int()` and `check_dbl()` both of which do coercion
+- added `check_prob()` to check a probability
 - added `check_pos_dbl()`, `check_neg_dbl()` and `check_noneg_dbl()`
 - added `check_pos_int()`, `check_neg_int()` and `check_noneg_int()`
-- added `check_integer()`, `check_numeric()`, `check_double()`, `check_logical()` and `check_character()`
-- `coerce = TRUE` now also strips attributes for flag, int, dbl, string and logical, integer, double, character.
-- added `check_prob()`
-- added `check_grepl()` and deprecated `check_regex()` and `check_pattern()`
-and deprecated `regex` argument for `pattern` argument
+- added `check_attributes()` to check an objects attributes and `check_no_attributes()`
 - added `check_lgl()`, `check_chr()`, `check_day()`, `check_dttm()`
-- deprecated `check_flag_na()`
-- `check_data` argument `values` now NULL
+- added `check_grepl()`
+
+## New Arguments
+
+- added `attributes` argument to `check_vector()` and `check_scalar()` which now only accept a flag for named
+- added `complete = TRUE` argument to `check_names()`
+
+## Exported
+
 - exported `chk_deparse()` to deparse dealing with NAs for packages which extend
 - exported `chk_fail()` to have conditional error or warning messages for packages which extend.
 - exported `chk_max_int()`, `chk_min_int()`, `chk_min_dbl()`, `chk_max_dbl()` and `chk_tiny_dbl()` to
 get integer and numeric ranges for system.
+
+## Deprecated
+
+- deprecated `check_regex()` and `check_pattern()` (and added `check_grepl()`)
+and deprecated `regex` argument for `pattern` argument
+- deprecated `check_flag_na()`
 
 # checkr 0.3.0
 
