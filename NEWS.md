@@ -4,10 +4,14 @@
 
 - added `err` as dependency for message generation
 - `check_data` argument `values` now NULL by default (as opposed to missing)
-- added `exclusive = FALSE` and `order = FALSE` to `check_list` and removed
-`unique = FALSE`, `length = NA` and `named = NA`
 - lengths including nrows and ncols can now be checked by a vector of possible values
 - `coerce = TRUE` now also strips attributes for flag, int, dbl, string and logical, integer, double, character.
+
+## Exported
+
+- exported `chk_deparse()` to deparse dealing with NAs for packages which extend
+- exported `chk_fail()` to have conditional error or warning messages for packages which extend.
+- exported `chk_max_int()`, `chk_min_int()`, `chk_min_dbl()`, `chk_max_dbl()` and `chk_tiny_dbl()` to get integer and numeric ranges for system.
 
 ## New Functions
 
@@ -25,16 +29,11 @@
 
 - added `attributes` argument to `check_vector()` and `check_scalar()` which now only accept a flag for named
 - added `complete = TRUE` argument to `check_names()`
-
-## Exported
-
-- exported `chk_deparse()` to deparse dealing with NAs for packages which extend
-- exported `chk_fail()` to have conditional error or warning messages for packages which extend.
-- exported `chk_max_int()`, `chk_min_int()`, `chk_min_dbl()`, `chk_max_dbl()` and `chk_tiny_dbl()` to
-get integer and numeric ranges for system.
+- added `exclusive = FALSE` and `order = FALSE` to `check_list()`
 
 ## Deprecated
 
+- deprecated `unique = FALSE`, `length = NA` and `named = NA` from `check_list()` as checked through `values` argument or with specific functions
 - deprecated `check_regex()` and `check_pattern()` (and added `check_grepl()`)
 and deprecated `regex` argument for `pattern` argument
 - deprecated `check_flag_na()`

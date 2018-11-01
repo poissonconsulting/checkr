@@ -127,11 +127,18 @@
 <li>added <code>err</code> as dependency for message generation</li>
 <li>
 <code>check_data</code> argument <code>values</code> now NULL by default (as opposed to missing)</li>
-<li>added <code>exclusive = FALSE</code> and <code>order = FALSE</code> to <code>check_list</code> and removed <code>unique = FALSE</code>, <code>length = NA</code> and <code>named = NA</code>
-</li>
 <li>lengths including nrows and ncols can now be checked by a vector of possible values</li>
 <li>
 <code>coerce = TRUE</code> now also strips attributes for flag, int, dbl, string and logical, integer, double, character.</li>
+</ul>
+</div>
+<div id="exported" class="section level2">
+<h2 class="hasAnchor">
+<a href="#exported" class="anchor"></a>Exported</h2>
+<ul>
+<li>exported <code><a href="../reference/chk_deparse.html">chk_deparse()</a></code> to deparse dealing with NAs for packages which extend</li>
+<li>exported <code><a href="../reference/chk_fail.html">chk_fail()</a></code> to have conditional error or warning messages for packages which extend.</li>
+<li>exported <code><a href="../reference/chk_max_int.html">chk_max_int()</a></code>, <code><a href="../reference/chk_min_int.html">chk_min_int()</a></code>, <code><a href="../reference/chk_min_dbl.html">chk_min_dbl()</a></code>, <code><a href="../reference/chk_max_dbl.html">chk_max_dbl()</a></code> and <code><a href="../reference/chk_tiny_dbl.html">chk_tiny_dbl()</a></code> to get integer and numeric ranges for system.</li>
 </ul>
 </div>
 <div id="new-functions" class="section level2">
@@ -162,21 +169,15 @@
 <li>added <code>attributes</code> argument to <code><a href="../reference/check_vector.html">check_vector()</a></code> and <code><a href="../reference/check_scalar.html">check_scalar()</a></code> which now only accept a flag for named</li>
 <li>added <code>complete = TRUE</code> argument to <code><a href="../reference/check_names.html">check_names()</a></code>
 </li>
-</ul>
-</div>
-<div id="exported" class="section level2">
-<h2 class="hasAnchor">
-<a href="#exported" class="anchor"></a>Exported</h2>
-<ul>
-<li>exported <code><a href="../reference/chk_deparse.html">chk_deparse()</a></code> to deparse dealing with NAs for packages which extend</li>
-<li>exported <code><a href="../reference/chk_fail.html">chk_fail()</a></code> to have conditional error or warning messages for packages which extend.</li>
-<li>exported <code><a href="../reference/chk_max_int.html">chk_max_int()</a></code>, <code><a href="../reference/chk_min_int.html">chk_min_int()</a></code>, <code><a href="../reference/chk_min_dbl.html">chk_min_dbl()</a></code>, <code><a href="../reference/chk_max_dbl.html">chk_max_dbl()</a></code> and <code><a href="../reference/chk_tiny_dbl.html">chk_tiny_dbl()</a></code> to get integer and numeric ranges for system.</li>
+<li>added <code>exclusive = FALSE</code> and <code>order = FALSE</code> to <code><a href="../reference/check_list.html">check_list()</a></code>
+</li>
 </ul>
 </div>
 <div id="deprecated" class="section level2">
 <h2 class="hasAnchor">
 <a href="#deprecated" class="anchor"></a>Deprecated</h2>
 <ul>
+<li>deprecated <code>unique = FALSE</code>, <code>length = NA</code> and <code>named = NA</code> from <code><a href="../reference/check_list.html">check_list()</a></code> as checked through <code>values</code> argument or with specific functions</li>
 <li>deprecated <code><a href="../reference/check_grepl.html">check_regex()</a></code> and <code><a href="../reference/check_pattern.html">check_pattern()</a></code> (and added <code><a href="../reference/check_grepl.html">check_grepl()</a></code>) and deprecated <code>regex</code> argument for <code>pattern</code> argument</li>
 <li>deprecated <code><a href="../reference/check_flag_na.html">check_flag_na()</a></code>
 </li>
