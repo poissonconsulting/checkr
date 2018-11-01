@@ -10,4 +10,11 @@
 
 ## Reverse dependencies
 
-0 errors | 0 warnings | 0 note
+|package                          |version |error |warning |note |
+|:--------------------------------|:-------|:-----|:-------|:----|
+|mcmcr                            |0.0.2   |      |        |     |
+|rpdo                             |0.2.4   |      |        |     |
+|rtide                            |0.0.5   |      |        |     |
+|[ssdtools]                       |0.0.2   |      |        |1    |
+
+The note in ssdtools is not related to checkr
