@@ -1,4 +1,4 @@
-# checkr 0.3.0
+# checkr 0.4.0
 
 ## Major Changes
 
