@@ -63,7 +63,7 @@ Functions which fall in this category include `check_class()`, `check_colnames()
 ## Data Functions
 
 The `check_join()` function tests whether the columns in one data frame form a many-to-one join with corresponding columns in a second data frame.
-The `check_key()` function tests wether specific columns are unique.
+The `check_key()` function tests whether specific columns are unique.
 They are useful for testing whether a set of data frames can be archived in an  relational database.
 
 ## Miscellaneous Functions
