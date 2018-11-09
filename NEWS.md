@@ -1,3 +1,5 @@
+- removed `check_tz()`
+
 # checkr 0.4.0
 
 ## Major Changes
