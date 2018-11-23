@@ -20,8 +20,10 @@ check_tzone <- function(x, tzone = "UTC", x_name = substitute(x),
   tzone <- check_string(tzone, coerce = TRUE)
   check_flag_internal(error)
 
-  if(is.null(attr(x, "tzone")) || tzone != attr(x, "tzone"))
+  attr_tzone <- attr(x, "tzone")
+  if(is.null(attr_tzone)) attr_tzone <- "NULL"
+  if(tzone != attr_tzone)
     chk_fail(x_name, " time zone must be '", tzone, 
-            "' (not '", attr(x, "tzone"), "')", error = error)  
+            "' (not '", attr_tzone, "')", error = error)  
   invisible(x)
 }
