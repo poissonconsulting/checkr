@@ -11,8 +11,7 @@ Status](https://img.shields.io/codecov/c/github/poissonconsulting/checkr/master.
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/checkr)](https://cran.r-project.org/package=checkr)
-[![CRAN
-Downloads](http://cranlogs.r-pkg.org/badges/grand-total/checkr)](https://CRAN.R-project.org/package=checkr)
+![CRAN Downloads](http://cranlogs.r-pkg.org/badges/grand-total/checkr)
 [![JOSS](http://joss.theoj.org/papers/10.21105/joss.00624/status.svg)](https://doi.org/10.21105/joss.00624)
 
 # checkr
@@ -222,4 +221,4 @@ abide by its terms.
 
 ## Inspiration
 
-[datacheckr](https://github.com/poissonconsulting/datacheckr)
+[datacheckr](https://github.com/poissonconsulting/datacheckr).
