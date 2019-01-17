@@ -14,4 +14,6 @@ test_that("named", {
   expect_error(check_named(vec, nchar = 1), "names of vec must have 1 character")
   expect_error(check_named(vec, nchar = c(2,4)), "names of vec must have at least 2 characters")
   expect_identical(check_named(vec, nchar = c(1,2)), vec)
+  
+  expect_warning(check_named(NULL, error = FALSE), "NULL must be named")
 })
