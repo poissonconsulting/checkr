@@ -1,3 +1,4 @@
+- `check_named()` now only gives 1 warning if error = FALSE and not named
 - removed `check_tz()`
 
 # checkr 0.4.0

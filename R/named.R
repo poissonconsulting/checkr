@@ -40,8 +40,8 @@ check_named <- function(x, nchar = c(0L, chk_max_int()),
   } else {
     check_nchar(names(x), nchar = nchar, x_name = paste("names of", x_name), error = error)
     check_grepl(names(x), pattern = pattern, x_name = paste("names of", x_name), error = error)
+    if(unique)
+      check_unique(names(x), x_name = paste("names of", x_name), error = error)
   }
-  if(unique)
-    check_unique(names(x), x_name = paste("names of", x_name), error = error)
   invisible(x)
 }
