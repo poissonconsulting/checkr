@@ -30,7 +30,7 @@ check_list <- function(x,
                        order = FALSE,
                        x_name = substitute(x),
                        error = TRUE) {
-  x_name <- deparse_x_name(x_name)
+  x_name <- chk_deparse(x_name)
   
   if (!is.list(x)) err(x_name, " must be a list")
   

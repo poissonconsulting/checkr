@@ -17,7 +17,7 @@
 check_int <- function(x, coerce = FALSE,
                       x_name = substitute(x),
                       error = TRUE) {
-  x_name <- deparse_x_name(x_name)
+  x_name <- chk_deparse(x_name)
   
   check_flag_internal(coerce)
   check_flag_internal(error)
@@ -50,7 +50,7 @@ check_int <- function(x, coerce = FALSE,
 check_pos_int <- function(x, coerce = FALSE,
                       x_name = substitute(x),
                       error = TRUE) {
-  x_name <- deparse_x_name(x_name)
+  x_name <- chk_deparse(x_name)
   
   check_flag_internal(coerce)
   check_flag_internal(error)
@@ -81,7 +81,7 @@ check_pos_int <- function(x, coerce = FALSE,
 check_neg_int <- function(x, coerce = FALSE,
                       x_name = substitute(x),
                       error = TRUE) {
-  x_name <- deparse_x_name(x_name)
+  x_name <- chk_deparse(x_name)
   
   check_flag_internal(coerce)
   check_flag_internal(error)
@@ -113,7 +113,7 @@ check_neg_int <- function(x, coerce = FALSE,
 check_noneg_int <- function(x, coerce = FALSE,
                        x_name = substitute(x),
                        error = TRUE) {
-  x_name <- deparse_x_name(x_name)
+  x_name <- chk_deparse(x_name)
 
   check_flag_internal(coerce)
   check_flag_internal(error)
@@ -147,7 +147,7 @@ check_noneg_int <- function(x, coerce = FALSE,
 check_count <- function(x, coerce = FALSE,
                        x_name = substitute(x),
                        error = TRUE) {
-  x_name <- deparse_x_name(x_name)
+  x_name <- chk_deparse(x_name)
   
   check_noneg_int(x = x, coerce = coerce, x_name = x_name, error = error)
 }

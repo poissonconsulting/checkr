@@ -14,7 +14,7 @@
 check_null <- function(x,
                          x_name = substitute(x),
                          error = TRUE) {
-  x_name <- deparse_x_name(x_name)
+  x_name <- chk_deparse(x_name)
 
   check_flag_internal(error)
 

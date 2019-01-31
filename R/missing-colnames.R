@@ -18,7 +18,7 @@ check_missing_colnames <- function(x, colnames,
                                    x_name = substitute(x),
                                    error = TRUE) {
   
-  x_name <- deparse_x_name(x_name)
+  x_name <- chk_deparse(x_name)
   
   check_vector(colnames, "", unique = TRUE, named = FALSE)
   check_flag_internal(error)

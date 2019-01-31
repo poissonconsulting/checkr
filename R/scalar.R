@@ -24,7 +24,7 @@ check_scalar <- function(x,
                          only = FALSE,
                          x_name = substitute(x),
                          error = TRUE) {
-  x_name <- deparse_x_name(x_name)
+  x_name <- chk_deparse(x_name)
 
   check_vector(x, values = values, length = 1L, named = named, 
                attributes = attributes, only = only,

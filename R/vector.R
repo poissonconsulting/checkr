@@ -27,7 +27,7 @@ check_vector <- function(x,
                          only = FALSE,
                          x_name = substitute(x),
                          error = TRUE) {
-  x_name <- deparse_x_name(x_name)
+  x_name <- chk_deparse(x_name)
   
   check_flag_internal(unique)
   check_flag_internal(sorted)

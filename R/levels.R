@@ -20,7 +20,7 @@
 check_levels <- function(x, levels, exclusive = TRUE, order = TRUE,
                          x_name = substitute(x),
                          error = TRUE) {
-  x_name <- deparse_x_name(x_name)
+  x_name <- chk_deparse(x_name)
 
   check_vector(levels, "", length = c(1L, chk_max_int()), unique = FALSE, named = FALSE)
   check_flag_internal(exclusive)

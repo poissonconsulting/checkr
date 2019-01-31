@@ -26,8 +26,8 @@ check_join <- function(x, y,
                        x_name = substitute(x),
                        y_name = substitute(y),
                        error = TRUE) {
-  x_name <- deparse_x_name(x_name)
-  y_name <- deparse_y_name(y_name)
+  x_name <- chk_deparse(x_name)
+  y_name <- chk_deparse(y_name)
   
   check_data(x, x_name = x_name)
   check_data(y, x_name = y_name)

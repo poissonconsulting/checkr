@@ -23,7 +23,7 @@ check_classes <- function(x, classes = character(0),
                      order = FALSE,
                      x_name = substitute(x),
                      error = TRUE) {
-  x_name <- deparse_x_name(x_name)
+  x_name <- chk_deparse(x_name)
   
   check_vector(classes, "", unique = TRUE)
   check_flag_internal(exclusive)

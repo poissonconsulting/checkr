@@ -16,7 +16,7 @@
 check_inherits <- function(x, class,
                      x_name = substitute(x),
                      error = TRUE) {
-  x_name <- deparse_x_name(x_name)
+  x_name <- chk_deparse(x_name)
   
   check_string_internal(class)
   check_flag_internal(error)

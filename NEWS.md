@@ -1,3 +1,4 @@
+- replace internal `deparse_x_name()` with exported `chk_deparse()`
 - added `check_name()` to check if elements of character vector are each a syntactically valid name
 - `check_named()` now only gives 1 warning if error = FALSE and not named
 - removed `check_tz()`

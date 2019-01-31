@@ -14,7 +14,7 @@ check_pattern <- function(x, pattern, all = TRUE,
                           x_name = substitute(x),
                          error = TRUE) {
   .Deprecated("check_grepl")
-  x_name <- deparse_x_name(x_name)
+  x_name <- chk_deparse(x_name)
 
   check_string_internal(pattern)
   check_flag_internal(all)

@@ -23,7 +23,7 @@ check_colnames <- function(x, colnames = character(0), exclusive = FALSE, order 
                          x_name = substitute(x),
                          error = TRUE) {
 
-  x_name <- deparse_x_name(x_name)
+  x_name <- chk_deparse(x_name)
 
   check_vector(colnames, "", unique = TRUE)
   check_flag_internal(exclusive)

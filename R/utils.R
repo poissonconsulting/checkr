@@ -46,22 +46,10 @@ check_length_internal <- function(x)
 #' @examples
 #' chk_deparse(1^2)
 chk_deparse <- function(x) {
-  if (!is.character(x)) x <- deparse(x) 
+  if (!is.character(x)) x <- deparse(x)
   if (isTRUE(is.na(x))) x <- "NA"
+  if (!is_string(x)) err(substitute(x), " must be a string")
   x
-}
-
-deparse_x_name <- function(x_name) {
-  x_name <- chk_deparse(x_name)
-  check_string_internal(x_name)
-  x_name
-}
-
-deparse_y_name <- function(y_name) {
-  y_name <- chk_deparse(y_name)
-  check_string_internal(y_name)
-  
-  y_name
 }
 
 #' Max Int

@@ -16,7 +16,7 @@
 #' check_grepl("foo", "fo$", error = FALSE)
 check_grepl <- function(x, pattern = ".*", regex = pattern, x_name = substitute(x),
                         error = TRUE) {
-  x_name <- deparse_x_name(x_name)
+  x_name <- chk_deparse(x_name)
   
   check_string(pattern)
   check_flag_internal(error)
@@ -38,6 +38,6 @@ check_grepl <- function(x, pattern = ".*", regex = pattern, x_name = substitute(
 check_regex <- function(x, regex = ".*", x_name = substitute(x),
                         error = TRUE) {
   .Deprecated("check_grepl")
-  x_name <- deparse_x_name(x_name)
+  x_name <- chk_deparse(x_name)
   check_grepl(x, regex = regex, x_name = x_name, error = error)
 }

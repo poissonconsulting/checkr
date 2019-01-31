@@ -22,8 +22,8 @@ check_rbind <- function(x,
                         x_name = substitute(x),
                         y_name = substitute(y),
                         error = TRUE) {
-  x_name <- deparse_x_name(x_name)
-  y_name <- deparse_y_name(y_name)
+  x_name <- chk_deparse(x_name)
+  y_name <- chk_deparse(y_name)
   
   check_inherits(x, "data.frame", x_name = x_name)
   check_inherits(y, "data.frame", x_name = y_name)

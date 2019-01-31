@@ -26,7 +26,7 @@ check_names <- function(x, names = character(0), exclusive = FALSE, order = FALS
                         unique = FALSE, complete = TRUE,
                         x_name = substitute(x),
                         error = TRUE) {
-  x_name <- deparse_x_name(x_name)
+  x_name <- chk_deparse(x_name)
   
   check_flag_internal(unique)
   check_vector(names, "", unique = unique)

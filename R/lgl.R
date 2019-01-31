@@ -17,7 +17,7 @@
 check_lgl <- function(x, coerce = FALSE,
                        x_name = substitute(x),
                        error = TRUE) {
-  x_name <- deparse_x_name(x_name)
+  x_name <- chk_deparse(x_name)
 
   check_flag_internal(coerce)
   check_flag_internal(error)
@@ -33,7 +33,7 @@ check_lgl <- function(x, coerce = FALSE,
 check_flag <- function(x, coerce = FALSE,
                        x_name = substitute(x),
                        error = TRUE) {
-  x_name <- deparse_x_name(x_name)
+  x_name <- chk_deparse(x_name)
   
   check_lgl(x, coerce = coerce, x_name = x_name, error = error)
 }
@@ -51,7 +51,7 @@ check_flag_na <- function(x, coerce = TRUE,
                        x_name = substitute(x),
                        error = TRUE) {
   .Deprecated("check_scalar")
-  x_name <- deparse_x_name(x_name)
+  x_name <- chk_deparse(x_name)
 
   check_flag_internal(coerce)
   check_flag_internal(error)

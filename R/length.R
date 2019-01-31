@@ -20,7 +20,7 @@ check_length <- function(x,
                          length = TRUE,
                          x_name = substitute(x),
                          error = TRUE) {
-  x_name <- deparse_x_name(x_name)
+  x_name <- chk_deparse(x_name)
 
   check_length_internal(length)
 
@@ -48,7 +48,7 @@ check_length <- function(x,
 check_length1 <- function(x,
                          x_name = substitute(x),
                          error = TRUE) {
-  x_name <- deparse_x_name(x_name)
+  x_name <- chk_deparse(x_name)
 
   check_length(x, length = 1L, x_name = x_name, error = error)
   invisible(x)
