@@ -1,6 +1,6 @@
 Package: checkr
 Title: Check the Properties of Common R Objects
-Version: 0.4.0.9004
+Version: 0.4.0.9005
 Authors@R: 
   person("Joe", "Thorley", email = "joe@poissonconsulting.ca", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-7683-4592"))
 Description: Expressive, assertive, pipe-friendly functions 
