@@ -4,12 +4,15 @@
 \alias{check_key}
 \title{Check Key}
 \usage{
-check_key(x, key = names(x), x_name = substitute(x), error = TRUE)
+check_key(x, key = names(x), na_distinct = FALSE,
+  x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The data to check.}
 
 \item{key}{A character vector of the column names representing the key.}
+
+\item{na_distinct}{A flag specifying whether missing values should be considerd distinct.}
 
 \item{x_name}{A string of the name of the object.}
 
