@@ -4,10 +4,15 @@
 \alias{check_no_attributes}
 \title{Check No Attributes}
 \usage{
-check_no_attributes(x, x_name = substitute(x), error = TRUE)
+check_no_attributes(x, names = TRUE, class = TRUE,
+  x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}
+
+\item{names}{A flag specifying whether names should be considered an attribute.}
+
+\item{class}{A flag specifying whether class should be considered an attribute.}
 
 \item{x_name}{A string of the name of the object.}
 

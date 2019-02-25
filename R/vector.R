@@ -7,6 +7,7 @@
 #' @param sorted A flag indicating whether the vector must be sorted.
 #' @param named A flag indicating whether the vector must be named or unnamed or NA if it doesn't matter.
 #' @param attributes A flag indicating whether the vector must or must not have attributes or NA if it doesn't matter.
+#' @inheritParams check_attributes
 #' @param only A flag indicating whether only the actual values are permitted.
 #' It only affects values with two or less non-missing elements.
 #' @param x_name A string of the name of the object.
@@ -24,6 +25,8 @@ check_vector <- function(x,
                          sorted = FALSE,
                          named = NA,
                          attributes = named,
+                         names = TRUE,
+                         class = TRUE,
                          only = FALSE,
                          x_name = substitute(x),
                          error = TRUE) {
@@ -31,15 +34,17 @@ check_vector <- function(x,
   
   check_flag_internal(unique)
   check_flag_internal(sorted)
+  check_flag_internal(names)
+
   if(!(is_flag(named) || is_NA(named))) 
     err("named must be a flag or NA")
-
+  
   if(!(is_flag(attributes) || is_NA(attributes))) 
     err("attributes must be a flag or NA")
   
-  if(!is_NA(named) && named && !is_NA(attributes) && !attributes)
+  if(!is_NA(named) && named && !is_NA(attributes) && !attributes && names)
     err("names are attributes")
-
+  
   check_flag_internal(only)
   check_flag_internal(error)
   
@@ -62,10 +67,10 @@ check_vector <- function(x,
     check_unnamed(x, x_name = x_name, error = error)
   
   if(is_flag(attributes) && attributes) {
-    check_attributes(x, x_name = x_name, error = error)
+    check_attributes(x, names = names, class = class, x_name = x_name, error = error)
   } else if(is_flag(attributes) && !attributes) {
-    check_no_attributes(x, x_name = x_name, error = error)
+    check_no_attributes(x, names = names, class = class, x_name = x_name, error = error)
   }
-    
+  
   invisible(x)
 }

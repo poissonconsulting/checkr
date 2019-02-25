@@ -5,7 +5,7 @@
 \title{Check Attributes}
 \usage{
 check_attributes(x, values = NULL, exclusive = FALSE, order = FALSE,
-  x_name = substitute(x), error = TRUE)
+  names = TRUE, class = TRUE, x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}
@@ -15,6 +15,10 @@ check_attributes(x, values = NULL, exclusive = FALSE, order = FALSE,
 \item{exclusive}{A flag indicating whether other elements are not permitted.}
 
 \item{order}{A flag indicating whether the elements have to occur in the same order as values.}
+
+\item{names}{A flag specifying whether names should be considered an attribute.}
+
+\item{class}{A flag specifying whether class should be considered an attribute.}
 
 \item{x_name}{A string of the name of the object.}
 

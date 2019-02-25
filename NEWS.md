@@ -1,3 +1,4 @@
+- added `names = TRUE` and `class = TRUE` arguments to `check_attributes()`, `check_no_attributes()` and `check_vector()`
 - added `na_distinct = FALSE` argument to `check_key`
 - replace internal `deparse_x_name()` with exported `chk_deparse()`
 - added `check_name()` to check if elements of character vector are each a syntactically valid name
