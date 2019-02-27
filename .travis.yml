@@ -10,7 +10,7 @@ r_packages:
   - covr
 
 before_install:
-  - sudo apt-get install --yes libudunits2-dev
+  - sudo apt-get install libudunits2-dev
   
 after_success:
   - Rscript -e 'covr::codecov()'
