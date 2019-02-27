@@ -44,19 +44,19 @@ check_colnames <- function(x, colnames = character(0), exclusive = FALSE, order 
   if (exclusive) {
     if (order) {
       if (!identical(x_colnames, colnames))
-        chk_fail(x_name, " column names must be identical to ", cc(colnames, "and"), error = error)
+        chk_fail(x_name, " column names must be identical to ", cc_and(colnames), error = error)
     } else {
       if (!identical(sort(x_colnames), sort(colnames)))
-        chk_fail(x_name, " column names must include and only include ", cc(colnames, "and"), error = error)
+        chk_fail(x_name, " column names must include and only include ", cc_and(colnames), error = error)
     }
   } else {
     x_colnames <- x_colnames[x_colnames %in% colnames]
     if (order) {
       if (!identical(x_colnames, colnames))
-        chk_fail(x_name, " column names must include ", cc(colnames, "and"), " in that order", error = error)
+        chk_fail(x_name, " column names must include ", cc_and(colnames), " in that order", error = error)
     } else {
       if (!identical(sort(x_colnames), sort(colnames)))
-        chk_fail(x_name, " column names must include ", cc(colnames, "and"), error = error)
+        chk_fail(x_name, " column names must include ", cc_and(colnames), error = error)
     }
   }
   invisible(x)

@@ -25,7 +25,7 @@ check_name <- function(x, x_name = substitute(x), coerce = FALSE, error = TRUE) 
   invalid <- x != make.names(x)
   if(any(invalid)) {
     msg <- p0("the following %n value%s of ", x_name, " %r invalid: %c")
-    msg <- co(x[invalid], msg, conjunction = "and")
+    msg <- co_and(x[invalid], msg)
     chk_fail(msg, error = error)
   }
   invisible(x)

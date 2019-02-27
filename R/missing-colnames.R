@@ -32,7 +32,7 @@ check_missing_colnames <- function(x, colnames,
   colnames <- intersect(colnames, x_colnames)
   
   if(length(colnames)) {
-    chk_fail(x_name, co(sort(colnames), " must not have column%s %c", conjunction = "and"), error = error)
+    chk_fail(x_name, co_and(sort(colnames), " must not have column%s %c"), error = error)
   }
     
   invisible(x)

@@ -31,7 +31,7 @@ check_key <- function(x, key = names(x), na_distinct = FALSE,
   
   incomparables <- if(na_distinct) NA else FALSE
   if (any(new_duplicated(x[key], incomparables = incomparables))) { 
-    chk_fail(co(key, "column%s %c in ", conjunction = "and"), x_name, " must be a unique key",
+    chk_fail(co_and(key, "column%s %c in "), x_name, " must be a unique key",
             error = error)
   }
   invisible(x)
