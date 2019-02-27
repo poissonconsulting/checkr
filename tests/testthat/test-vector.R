@@ -32,3 +32,21 @@ test_that("vector two classes", {
   expect_error(check_vector(x, values = value), 
                    "x must inherit from classes 'class2' and 'class1' in that order")
 })
+
+test_that("vector with units", {
+  value <- units::as_units(1, "m")
+
+  x <- 1
+
+  expect_error(check_vector(x, values = value), "x must be class units")
+  
+  x <- units::as_units(3, "m")
+ 
+  expect_identical(check_vector(x, values = value), x)
+  
+  x <- units::as_units(3, "s")
+ 
+  expect_error(check_vector(x, values = value), "x must have units 'm' not 's'")
+  x <- units::as_units(3, "m")
+  expect_identical(check_vector(x, values = value), x)
+})

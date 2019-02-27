@@ -70,6 +70,13 @@ check_class_internal <- function(x,
       chk_fail(x_name, " must inherit from classes ", cc_and(class(values)), 
                " in that order", error = error)
   }
+  if("units" %in% class(values)) {
+    if(!requireNamespace("units", quietly = TRUE))
+      err("package 'units' is required to check units")
+    if(!identical(units::deparse_unit(x), units::deparse_unit(values)))
+      err(x_name, " must have units '", units::deparse_unit(values), "' not '", units::deparse_unit(x), "'")
+  }
+  
   invisible(x)
 }
 

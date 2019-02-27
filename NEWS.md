@@ -1,3 +1,4 @@
+- added units testing
 - added `names = TRUE` and `class = TRUE` arguments to `check_attributes()`, `check_no_attributes()` and `check_vector()`
 - added `na_distinct = FALSE` argument to `check_key`
 - replace internal `deparse_x_name()` with exported `chk_deparse()`
