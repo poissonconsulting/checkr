@@ -7,8 +7,6 @@ Description: Expressive, assertive, pipe-friendly functions
   to check the properties of common R objects.
   In the case of failure the functions issue informative error messages.
 License: MIT + file LICENSE
-URL: https://github.com/poissonconsulting/checkr
-BugReports: https://github.com/poissonconsulting/checkr/issues
 Imports: err (>= 0.0.1.9002)
 Suggests:
     assertthat,
@@ -21,6 +19,10 @@ Suggests:
     testthat,
     knitr,
     rmarkdown
+Remotes:
+    poissonconsulting/err
+URL: https://github.com/poissonconsulting/checkr
+BugReports: https://github.com/poissonconsulting/checkr/issues
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
