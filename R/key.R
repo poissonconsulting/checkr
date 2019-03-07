@@ -24,6 +24,8 @@ check_key <- function(x, key = names(x), na_distinct = FALSE,
 
   check_vector(key, "")
   
+  if(!nrow(x)) return(x)
+  
   if(!length(key)) return(invisible(x))
 
   check_colnames(x, colnames = key, x_name = x_name)
