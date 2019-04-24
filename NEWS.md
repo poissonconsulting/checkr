@@ -1,3 +1,5 @@
+# checkr 0.5.0
+
 - fixed check_key with no columns
 - added units testing
 - added `names = TRUE` and `class = TRUE` arguments to `check_attributes()`, `check_no_attributes()` and `check_vector()`
