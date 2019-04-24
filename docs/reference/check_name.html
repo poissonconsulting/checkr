@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Check OR — checkor • checkr</title>
+<title>Check Name — check_name • checkr</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Check OR — checkor" />
+<meta property="og:title" content="Check Name — check_name" />
 
-<meta property="og:description" content="Checks that at least one check passes." />
+<meta property="og:description" content="Checks whether each element of a character vector is a syntactically valid name." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -117,40 +117,53 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Check OR</h1>
-    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/checkr/blob/master/R/checkor.R'><code>R/checkor.R</code></a></small>
-    <div class="hidden name"><code>checkor.Rd</code></div>
+    <h1>Check Name</h1>
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/checkr/blob/master/R/name.R'><code>R/name.R</code></a></small>
+    <div class="hidden name"><code>check_name.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Checks that at least one check passes.</p>
+    <p>Checks whether each element of a character vector is a syntactically valid name.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>checkor</span>(<span class='no'>...</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>check_name</span>(<span class='no'>x</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/substitute'>substitute</a></span>(<span class='no'>x</span>), <span class='kw'>coerce</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>...</th>
-      <td><p>The checks to check.</p></td>
+      <th>x</th>
+      <td><p>The object to check.</p></td>
+    </tr>
+    <tr>
+      <th>x_name</th>
+      <td><p>A string of the name of the object.</p></td>
+    </tr>
+    <tr>
+      <th>coerce</th>
+      <td><p>A flag specifying whether to coerce a factor to a character vector and drop attributes including names.</p></td>
     </tr>
     <tr>
       <th>error</th>
-      <td><p>A flag indicating whether to throw an informative error or immediately generate an informative message if all checks fails.</p></td>
+      <td><p>A flag indicating whether to throw an informative error or 
+immediately generate an informative message if the check fails.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>An invisible flag indicating whether at least one check passes (if it doesn't throw an error).</p>
+    <p>An invisible copy of x (if it doesn't throw an error).</p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='check_character.html'>check_character</a></code></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>checkor</span>(<span class='fu'><a href='check_null.html'>check_null</a></span>(<span class='kw'>NULL</span>), <span class='fu'><a href='check_null.html'>check_null</a></span>(<span class='fl'>1</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
-<span class='fu'>checkor</span>(<span class='fu'><a href='check_null.html'>check_null</a></span>(<span class='fl'>1</span>), <span class='fu'><a href='check_null.html'>check_null</a></span>(<span class='fl'>1</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: 1 must be NULL</span></div><div class='input'><span class='fu'>checkor</span>(<span class='fu'><a href='check_null.html'>check_null</a></span>(<span class='fl'>1</span>), <span class='fu'><a href='check_null.html'>check_null</a></span>(<span class='fl'>2</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: 1 must be NULL OR 2 must be NULL</span></div></pre>
+    <pre class="examples"><div class='input'><span class='no'>vec</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"x"</span>, <span class='st'>"x.y"</span>, <span class='st'>"x y"</span>)
+<span class='fu'>check_name</span>(<span class='no'>vec</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: the following 1 value of vec is invalid: 'x y'</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -158,6 +171,8 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

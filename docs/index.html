@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">checkr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0.9003</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.0</span>
       </span>
     </div>
 
@@ -110,15 +110,7 @@
 <a class="sourceLine" id="cb1-8" title="8">  <span class="dt">hair_color =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"blond"</span>, <span class="st">"brown"</span>, <span class="st">"black"</span>, <span class="ot">NA</span>),</a>
 <a class="sourceLine" id="cb1-9" title="9">  <span class="dt">gender =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"hermaphrodite"</span>, <span class="st">"none"</span>, <span class="ot">NA</span>)), </a>
 <a class="sourceLine" id="cb1-10" title="10">    <span class="dt">order =</span> <span class="ot">TRUE</span>, <span class="dt">nrow =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">81</span>, <span class="dv">84</span>), <span class="dt">key =</span> <span class="st">"hair_color"</span>, <span class="dt">error =</span> <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb1-11" title="11"><span class="co">#&gt; Warning: dplyr::starwars column names must include 'height', 'name',</span></a>
-<a class="sourceLine" id="cb1-12" title="12"><span class="co">#&gt; 'mass', 'hair_color' and 'gender' in that order</span></a>
-<a class="sourceLine" id="cb1-13" title="13"><span class="co">#&gt; Warning: column height of dplyr::starwars must not include missing values</span></a>
-<a class="sourceLine" id="cb1-14" title="14"><span class="co">#&gt; Warning: the values in column mass of dplyr::starwars must lie between 20</span></a>
-<a class="sourceLine" id="cb1-15" title="15"><span class="co">#&gt; and 1358</span></a>
-<a class="sourceLine" id="cb1-16" title="16"><span class="co">#&gt; Warning: column hair_color of dplyr::starwars can only include values</span></a>
-<a class="sourceLine" id="cb1-17" title="17"><span class="co">#&gt; 'black', 'blond' or 'brown'</span></a>
-<a class="sourceLine" id="cb1-18" title="18"><span class="co">#&gt; Warning: dplyr::starwars must not have more than 84 rows</span></a>
-<a class="sourceLine" id="cb1-19" title="19"><span class="co">#&gt; Warning: column 'hair_color' in dplyr::starwars must be a unique key</span></a></code></pre></div>
+<a class="sourceLine" id="cb1-11" title="11"><span class="co">#&gt; Error in cc_and(colnames): could not find function "cc_and"</span></a></code></pre></div>
 </div>
 <div id="syntax" class="section level2">
 <h2 class="hasAnchor">
@@ -151,7 +143,7 @@
 <p>To check the range of a vector pass two non-missing values (as well as the missing value if required).</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="ot">NA</span>))</a>
 <a class="sourceLine" id="cb6-2" title="2"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">-10</span>, <span class="ot">NA</span>))</a>
-<a class="sourceLine" id="cb6-3" title="3"><span class="co">#&gt; Error: the values in y must lie between -10 and -1</span></a></code></pre></div>
+<a class="sourceLine" id="cb6-3" title="3"><span class="co">#&gt; Error in cc_and(values[1:2]): could not find function "cc_and"</span></a></code></pre></div>
 </div>
 <div id="specific-values" class="section level4">
 <h4 class="hasAnchor">
@@ -159,9 +151,9 @@
 <p>To check the vector only includes specific values pass three or more non-missing values or set <code>only  = TRUE</code>.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="ot">NA</span>))</a>
 <a class="sourceLine" id="cb7-2" title="2"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="ot">NA</span>))</a>
-<a class="sourceLine" id="cb7-3" title="3"><span class="co">#&gt; Error: y can only include values 1 or 2</span></a>
+<a class="sourceLine" id="cb7-3" title="3"><span class="co">#&gt; Error in cc_or(values): could not find function "cc_or"</span></a>
 <a class="sourceLine" id="cb7-4" title="4"><span class="kw"><a href="reference/check_vector.html">check_vector</a></span>(y, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="ot">NA</span>), <span class="dt">only =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb7-5" title="5"><span class="co">#&gt; Error: y can only include values 1 or 2</span></a></code></pre></div>
+<a class="sourceLine" id="cb7-5" title="5"><span class="co">#&gt; Error in cc_or(values): could not find function "cc_or"</span></a></code></pre></div>
 </div>
 </div>
 <div id="naming-objects" class="section level2">
@@ -237,7 +229,7 @@ A BibTeX entry for LaTeX users is
 <div id="inspiration" class="section level2">
 <h2 class="hasAnchor">
 <a href="#inspiration" class="anchor"></a>Inspiration</h2>
-<p><a href="https://github.com/poissonconsulting/datacheckr">datacheckr</a>.</p>
+<p><a href="https://github.com/poissonconsulting/datacheckr">datacheckr</a></p>
 </div>
 </div>
   </div>

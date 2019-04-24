@@ -64,7 +64,7 @@ By default all the columns are checked." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">checkr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0.9003</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.0</span>
       </span>
     </div>
 
@@ -130,7 +130,8 @@ By default all the columns are checked.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>check_key</span>(<span class='no'>x</span>, <span class='kw'>key</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/names'>names</a></span>(<span class='no'>x</span>), <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/substitute'>substitute</a></span>(<span class='no'>x</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>check_key</span>(<span class='no'>x</span>, <span class='kw'>key</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/names'>names</a></span>(<span class='no'>x</span>), <span class='kw'>na_distinct</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/substitute'>substitute</a></span>(<span class='no'>x</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -142,6 +143,10 @@ By default all the columns are checked.</p>
     <tr>
       <th>key</th>
       <td><p>A character vector of the column names representing the key.</p></td>
+    </tr>
+    <tr>
+      <th>na_distinct</th>
+      <td><p>A flag specifying whether missing values should be considerd distinct.</p></td>
     </tr>
     <tr>
       <th>x_name</th>

@@ -30,7 +30,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">checkr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0.9003</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.0</span>
       </span>
     </div>
 
@@ -86,7 +86,7 @@
       <h1>Packages for Assertive Programming</h1>
                         <h4 class="author">Joe Thorley</h4>
             
-            <h4 class="date">2018-12-10</h4>
+            <h4 class="date">2019-04-23</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/poissonconsulting/checkr/blob/master/vignettes/assertive-programming.Rmd"><code>vignettes/assertive-programming.Rmd</code></a></small>
       <div class="hidden name"><code>assertive-programming.Rmd</code></div>
@@ -154,14 +154,14 @@
 <p>The <a href="https://github.com/mllg/checkmate"><code>checkmate</code></a> package provides a plethora of functions to check the type and related properties of common objects.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(checkmate)</a>
 <a class="sourceLine" id="cb6-2" title="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/checkmate/topics/checkCharacter">assert_character</a></span>(height)</a>
-<a class="sourceLine" id="cb6-3" title="3"><span class="co">#&gt; Error in tryCatch(withCallingHandlers({: Assertion on 'height' failed: Must be of type 'character', not 'integer'.</span></a></code></pre></div>
+<a class="sourceLine" id="cb6-3" title="3"><span class="co">#&gt; Error in eval(expr, envir, enclos): Assertion on 'height' failed: Must be of type 'character', not 'integer'.</span></a></code></pre></div>
 <p>In a function it behaves as follows</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1">my_fun &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw"><a href="https://www.rdocumentation.org/packages/checkmate/topics/checkCharacter">assert_character</a></span>(x)</a>
 <a class="sourceLine" id="cb7-2" title="2"><span class="kw">my_fun</span>(height)</a>
-<a class="sourceLine" id="cb7-3" title="3"><span class="co">#&gt; Error in tryCatch(withCallingHandlers({: Assertion on 'x' failed: Must be of type 'character', not 'integer'.</span></a></code></pre></div>
+<a class="sourceLine" id="cb7-3" title="3"><span class="co">#&gt; Error in my_fun(height): Assertion on 'x' failed: Must be of type 'character', not 'integer'.</span></a></code></pre></div>
 <p>In addition, the <code><a href="https://www.rdocumentation.org/packages/checkmate/topics/assert">assert()</a></code> function allows multiple alternative <code>check**</code> functions (those which return a string of the error message on failure and a <code>TRUE</code> on success) to be combined into one assertion.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/checkmate/topics/assert">assert</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/checkmate/topics/checkCharacter">checkCharacter</a></span>(height), <span class="kw"><a href="https://www.rdocumentation.org/packages/checkmate/topics/checkFactor">checkFactor</a></span>(height))</a>
-<a class="sourceLine" id="cb8-2" title="2"><span class="co">#&gt; Error in tryCatch(withCallingHandlers({: Assertion failed. One of the following must apply:</span></a>
+<a class="sourceLine" id="cb8-2" title="2"><span class="co">#&gt; Error: Assertion failed. One of the following must apply:</span></a>
 <a class="sourceLine" id="cb8-3" title="3"><span class="co">#&gt;  * checkCharacter(height): Must be of type 'character', not</span></a>
 <a class="sourceLine" id="cb8-4" title="4"><span class="co">#&gt;  * 'integer'</span></a>
 <a class="sourceLine" id="cb8-5" title="5"><span class="co">#&gt;  * checkFactor(height): Must be of type 'factor', not 'integer'</span></a></code></pre></div>

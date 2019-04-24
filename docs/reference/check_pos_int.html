@@ -63,7 +63,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">checkr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0.9003</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.0</span>
       </span>
     </div>
 
@@ -162,7 +162,7 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>check_pos_int</span>(<span class='fl'>0</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: 0 must be class integer</span></div><div class='output co'>#&gt; <span class='warning'>Warning: the values in 0 must lie between 1 and 2147483647</span></div><div class='input'><span class='fu'>check_pos_int</span>(<span class='fl'>1L</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+    <pre class="examples"><div class='input'><span class='fu'>check_pos_int</span>(<span class='fl'>0</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: 0 must be class integer</span></div><div class='output co'>#&gt; <span class='warning'>Warning: 0 must inherit from classes 'integer' in that order</span></div><div class='output co'>#&gt; <span class='warning'>Warning: the values in 0 must lie between 1 and 2147483647</span></div><div class='input'><span class='fu'>check_pos_int</span>(<span class='fl'>1L</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
 <span class='fu'>check_pos_int</span>(<span class='fl'>1</span>:<span class='fl'>2</span>, <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: 1:2 must have 1 element</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

@@ -63,7 +63,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">checkr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0.9003</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.0</span>
       </span>
     </div>
 
@@ -129,7 +129,7 @@
     </div>
 
     <pre class="usage"><span class='fu'>check_attributes</span>(<span class='no'>x</span>, <span class='kw'>values</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>exclusive</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>order</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/substitute'>substitute</a></span>(<span class='no'>x</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+  <span class='kw'>names</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>class</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/substitute'>substitute</a></span>(<span class='no'>x</span>), <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -149,6 +149,14 @@
     <tr>
       <th>order</th>
       <td><p>A flag indicating whether the elements have to occur in the same order as values.</p></td>
+    </tr>
+    <tr>
+      <th>names</th>
+      <td><p>A flag specifying whether names should be considered an attribute.</p></td>
+    </tr>
+    <tr>
+      <th>class</th>
+      <td><p>A flag specifying whether class should be considered an attribute.</p></td>
     </tr>
     <tr>
       <th>x_name</th>

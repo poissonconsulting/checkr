@@ -20,8 +20,6 @@ Suggests:
     testthat,
     knitr,
     rmarkdown
-Remotes:
-    poissonconsulting/err
 URL: https://github.com/poissonconsulting/checkr
 BugReports: https://github.com/poissonconsulting/checkr/issues
 Encoding: UTF-8
