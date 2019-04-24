@@ -1,8 +1,11 @@
 ## Test environments
 
-* local OS X install, R 3.5.1
-* Ubuntu 14.04.5 LTS (on travis-ci), R 3.5.1 (oldrelease, release and devel)
-* win-builder (release and devel)
+* OS X (local) - release
+* Ubuntu (travis) - oldrelease, release and devel
+* Windows (win-builder) - release and devel
+* Ubuntu (rhub) - release
+* Fedora (rhub) - devel
+* Windows (rhub) - devel 
 
 ## R CMD check results
 
@@ -10,11 +13,12 @@
 
 ## Reverse dependencies
 
-|package                          |version |error |warning |note |
-|:--------------------------------|:-------|:-----|:-------|:----|
-|mcmcr                            |0.0.2   |      |        |     |
-|rpdo                             |0.2.4   |      |        |     |
-|rtide                            |0.0.5   |      |        |     |
-|[ssdtools]                       |0.0.2   |      |        |1    |
+0 errors | 0 warnings | 1 note
 
-The note in ssdtools is not related to checkr
+✔ flobr 0.1.0                            ── E: 0     | W: 0     | N: 0    
+✔ mcmcr 0.0.3                            ── E: 0     | W: 0     | N: 0    
+✔ rpdo 0.2.5                             ── E: 0     | W: 0     | N: 0    
+✔ rtide 0.0.5                            ── E: 0     | W: 0     | N: 0    
+✔ ssdtools 0.0.3                         ── E: 0     | W: 0     | N: 0    
+✔ tinter 0.0.1                           ── E: 0     | W: 0     | N: 0    
+✔ ypr 0.3.0                              ── E: 0     | W: 0     | N: 1  

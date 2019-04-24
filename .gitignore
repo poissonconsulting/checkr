@@ -5,3 +5,5 @@
 inst/doc
 inst/JOSS/paper.html
 .RProfile
+
+*.noindex
