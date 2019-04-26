@@ -11,7 +11,7 @@ Status](https://img.shields.io/codecov/c/github/poissonconsulting/checkr/master.
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/checkr)](https://cran.r-project.org/package=checkr)
-![CRAN Downloads](http://cranlogs.r-pkg.org/badges/grand-total/checkr)
+![CRAN Downloads](http://cranlogs.r-pkg.org/badges/checkr)
 [![JOSS](http://joss.theoj.org/papers/10.21105/joss.00624/status.svg)](https://doi.org/10.21105/joss.00624)
 
 # checkr
@@ -41,7 +41,15 @@ check_data(dplyr::starwars, values = list(
   hair_color = c("blond", "brown", "black", NA),
   gender = c("male", "female", "hermaphrodite", "none", NA)), 
     order = TRUE, nrow = c(81, 84), key = "hair_color", error = FALSE)
-#> Error in cc_and(colnames): could not find function "cc_and"
+#> Warning: dplyr::starwars column names must include 'height', 'name',
+#> 'mass', 'hair_color' and 'gender' in that order
+#> Warning: column height of dplyr::starwars must not include missing values
+#> Warning: the values in column mass of dplyr::starwars must lie between 20
+#> and 1358
+#> Warning: column hair_color of dplyr::starwars can only include values
+#> 'black', 'blond' or 'brown'
+#> Warning: dplyr::starwars must not have more than 84 rows
+#> Warning: column 'hair_color' in dplyr::starwars must be a unique key
 ```
 
 ## Syntax
@@ -92,7 +100,7 @@ the missing value if required).
 ``` r
 check_vector(y, c(0, 2, NA))
 check_vector(y, c(-1, -10, NA))
-#> Error in cc_and(values[1:2]): could not find function "cc_and"
+#> Error: the values in y must lie between -10 and -1
 ```
 
 #### Specific Values
@@ -103,9 +111,9 @@ non-missing values or set `only = TRUE`.
 ``` r
 check_vector(y, c(0, 1, 2, NA))
 check_vector(y, c(1, 1, 2, NA))
-#> Error in cc_or(values): could not find function "cc_or"
+#> Error: y can only include values 1 or 2
 check_vector(y, c(1, 2, NA), only = TRUE)
-#> Error in cc_or(values): could not find function "cc_or"
+#> Error: y can only include values 1 or 2
 ```
 
 ## Naming Objects
@@ -156,24 +164,26 @@ using the more general `check_scalar()` function.
 
 ## Installation
 
-To install the latest official release from
-[CRAN](https://CRAN.R-project.org/package=checkr)
+To install the latest release version from
+[CRAN](https://cran.r-project.org)
 
+    install.packages("checkr")
+
+To install the latest development version from the Poisson drat
+[repository](https://github.com/poissonconsulting/drat)
+
+    if(!"drat" %in% installed.packages()[,1]) 
+      install.packages("drat")
+    drat::addRepo("poissonconsulting")
     install.packages("checkr")
 
 To install the latest development version from
 [GitHub](https://github.com/poissonconsulting/checkr)
 
-    install.packages("devtools")
+    if(!"devtools" %in% installed.packages()[,1]) 
+      install.packages("devtools")
     devtools::install_github("poissonconsulting/err")
     devtools::install_github("poissonconsulting/checkr")
-
-To install the latest development version from the Poisson drat
-[repository](https://github.com/poissonconsulting/drat)
-
-    install.packages("drat")
-    drat::addRepo("poissonconsulting")
-    install.packages("checkr")
 
 ## Citation
 

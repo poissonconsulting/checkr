@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 [![Coverage Status](https://img.shields.io/codecov/c/github/poissonconsulting/checkr/master.svg)](https://codecov.io/github/poissonconsulting/checkr?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/checkr)](https://cran.r-project.org/package=checkr)
-![CRAN Downloads](http://cranlogs.r-pkg.org/badges/grand-total/checkr)
+![CRAN Downloads](http://cranlogs.r-pkg.org/badges/checkr)
 [![JOSS](http://joss.theoj.org/papers/10.21105/joss.00624/status.svg)](https://doi.org/10.21105/joss.00624)
 
 # checkr
@@ -133,23 +133,25 @@ Alternatively you can roll your own using the more general `check_scalar()` func
 
 ## Installation
 
-To install the latest official release from [CRAN](https://CRAN.R-project.org/package=checkr)
+To install the latest release version from [CRAN](https://cran.r-project.org)
 ```
+install.packages("checkr")
+```
+
+To install the latest development version from the Poisson drat [repository](https://github.com/poissonconsulting/drat)
+```
+if(!"drat" %in% installed.packages()[,1]) 
+  install.packages("drat")
+drat::addRepo("poissonconsulting")
 install.packages("checkr")
 ```
 
 To install the latest development version from [GitHub](https://github.com/poissonconsulting/checkr)
 ```
-install.packages("devtools")
+if(!"devtools" %in% installed.packages()[,1]) 
+  install.packages("devtools")
 devtools::install_github("poissonconsulting/err")
 devtools::install_github("poissonconsulting/checkr")
-```
-
-To install the latest development version from the Poisson drat [repository](https://github.com/poissonconsulting/drat)
-```
-install.packages("drat")
-drat::addRepo("poissonconsulting")
-install.packages("checkr")
 ```
 
 ## Citation
