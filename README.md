@@ -1,6 +1,8 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+<!-- badges: start -->
+
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
 [![Travis-CI Build
 Status](https://travis-ci.org/poissonconsulting/checkr.svg?branch=master)](https://travis-ci.org/poissonconsulting/checkr)
@@ -8,11 +10,13 @@ Status](https://travis-ci.org/poissonconsulting/checkr.svg?branch=master)](https
 status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/checkr?branch=master&svg=true)](https://ci.appveyor.com/project/poissonconsulting/checkr)
 [![Coverage
 Status](https://img.shields.io/codecov/c/github/poissonconsulting/checkr/master.svg)](https://codecov.io/github/poissonconsulting/checkr?branch=master)
+[![status](https://tinyverse.netlify.com/badge/checkr)](https://CRAN.R-project.org/package=checkr)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/checkr)](https://cran.r-project.org/package=checkr)
 ![CRAN Downloads](http://cranlogs.r-pkg.org/badges/checkr)
 [![JOSS](http://joss.theoj.org/papers/10.21105/joss.00624/status.svg)](https://doi.org/10.21105/joss.00624)
+<!-- badges: end -->
 
 # checkr
 
