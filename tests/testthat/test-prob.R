@@ -12,3 +12,23 @@ test_that("check_prob errors", {
   y <- 2
   expect_error(check_prob(y), "the values in y must lie between 0 and 1")
 })
+
+test_that("check_props errors", {
+  vec <- c(0.5, 0.5)
+  expect_identical(check_props(vec), vec)
+  vec <- c(1.0, 1.0)
+  expect_error(check_props(vec))
+  
+})
+
+test_that("check_probability errors", {
+  vec <- c(0.5)
+  expect_identical(check_probability(vec), vec)
+  vec <- c(1.1)
+  expect_error(check_probability(vec), "the values in vec must lie between 0 and 1")
+  vec <- c(0.5, 0.5)
+  expect_error(check_probability(vec), "vec must have 1 element")
+})
+
+
+
