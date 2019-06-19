@@ -18,7 +18,15 @@ test_that("check_props errors", {
   expect_identical(check_props(vec), vec)
   vec <- c(1.0, 1.0)
   expect_error(check_props(vec))
-  
+})
+
+test_that("check_prop errors", {
+  vec <- c(0.5)
+  expect_identical(check_prop(vec), vec)
+  vec <- c(1.1)
+  expect_error(check_prop(vec))
+  vec <- c(0.4, 0.5)
+  expect_error(check_prop(vec))
 })
 
 test_that("check_probability errors", {
