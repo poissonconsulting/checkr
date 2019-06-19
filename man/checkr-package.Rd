@@ -16,5 +16,10 @@ Expressive, assertive, pipe-friendly functions
 \author{
 \strong{Maintainer}: Joe Thorley \email{joe@poissonconsulting.ca} (0000-0002-7683-4592)
 
+Other contributors:
+\itemize{
+  \item Evan Amies-Galonski \email{evan@poissonconsulting.ca} (-3188) [contributor]
+}
+
 }
 \keyword{internal}

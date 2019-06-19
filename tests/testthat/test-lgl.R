@@ -23,3 +23,9 @@ test_that("check_flag errors", {
   expect_error(check_flag(y), "y must not include missing values")
   expect_identical(check_flag(FALSE), FALSE)
 })
+
+test_that("check_logical errors", {
+  expect_error(check_logical(1, error = TRUE), "1 must be class logical")
+  expect_identical(check_logical(FALSE, error = FALSE), FALSE)
+  expect_identical(check_logical(c(FALSE, TRUE), error = FALSE), c(FALSE, TRUE))
+})

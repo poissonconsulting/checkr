@@ -22,3 +22,12 @@ test_that("check_pos_dbl errors", {
   expect_error(check_pos_dbl(-1), "-1 must be positive")
 })
 
+test_that("check_neg_dbl errors", {
+  expect_identical(check_neg_dbl(-1), -1)
+  expect_error(check_neg_dbl(1), "1 must be negative")
+})
+
+test_that("check_noneg_dbl errors", {
+  expect_identical(check_noneg_dbl(1), 1)
+  expect_error(check_noneg_dbl(-1), "-1 must be non-negative")
+})
