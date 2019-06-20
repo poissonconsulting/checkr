@@ -11,6 +11,9 @@ test_that("check_prob errors", {
   expect_error(check_prob(y), "y must not include missing values")
   y <- 2
   expect_error(check_prob(y), "the values in y must lie between 0 and 1")
+  y <- 1
+  attr(y, "attr") <- "attr"
+  expect_identical(check_prob(y, coerce = TRUE), 1)
 })
 
 test_that("check_props errors", {
