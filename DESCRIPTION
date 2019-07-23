@@ -2,7 +2,10 @@ Package: checkr
 Title: Check the Properties of Common R Objects
 Version: 0.5.0.9001
 Authors@R: 
-  person("Joe", "Thorley", email = "joe@poissonconsulting.ca", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-7683-4592"))
+    c(
+    person("Joe", "Thorley", email = "joe@poissonconsulting.ca", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-7683-4592")),
+    person("Evan", "Amies-Galonski", role = "ctb", email = "evan@poissonconsulting.ca", comment = c(ORCID = 0000-0003-1096-2089))
+  )
 Description: Expressive, assertive, pipe-friendly functions 
   to check the properties of common R objects.
   In the case of failure the functions issue informative error messages.
