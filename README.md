@@ -175,21 +175,11 @@ To install the latest release version from
 
     install.packages("checkr")
 
-To install the latest development version from the Poisson drat
-[repository](https://github.com/poissonconsulting/drat)
-
-    if(!"drat" %in% installed.packages()[,1]) 
-      install.packages("drat")
-    drat::addRepo("poissonconsulting")
-    install.packages("checkr")
-
 To install the latest development version from
-[GitHub](https://github.com/poissonconsulting/checkr)
+[GitHub](https://github.com/poissonconsulting/hmstimer)
 
-    if(!"devtools" %in% installed.packages()[,1]) 
-      install.packages("devtools")
-    devtools::install_github("poissonconsulting/err")
-    devtools::install_github("poissonconsulting/checkr")
+    # install.packages("remotes")
+    remotes::install_github("poissonconsulting/checkr")
 
 ## Citation
 
