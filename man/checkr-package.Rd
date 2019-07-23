@@ -19,6 +19,7 @@ Expressive, assertive, pipe-friendly functions
 Other contributors:
 \itemize{
   \item Evan Amies-Galonski \email{evan@poissonconsulting.ca} (-3188) [contributor]
+  \item Poisson Consulting [copyright holder, funder]
 }
 
 }

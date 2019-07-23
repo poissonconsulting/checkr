@@ -3,8 +3,9 @@ Title: Check the Properties of Common R Objects
 Version: 0.5.0.9001
 Authors@R: 
     c(
-    person("Joe", "Thorley", email = "joe@poissonconsulting.ca", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-7683-4592")),
-    person("Evan", "Amies-Galonski", role = "ctb", email = "evan@poissonconsulting.ca", comment = c(ORCID = 0000-0003-1096-2089))
+    person("Joe", "Thorley", , "joe@poissonconsulting.ca", c("aut", "cre"), comment = c(ORCID = "0000-0002-7683-4592")),
+    person("Evan", "Amies-Galonski", , "evan@poissonconsulting.ca", "ctb", comment = c(ORCID = 0000-0003-1096-2089)),
+    person("Poisson Consulting", role = c("cph", "fnd"))
   )
 Description: Expressive, assertive, pipe-friendly functions 
   to check the properties of common R objects.
