@@ -1,3 +1,5 @@
+- replace hms::as.hms with hms::as_hms
+
 # checkr 0.5.0
 
 - fixed check_key with no columns

@@ -15,11 +15,11 @@ test_that("key with missing values", {
 })
 
 test_that("key with no values", {
-  data <- data.frame(SITEID = character(0), DATE = as.Date(integer(0), "2000-01-01"), TIME = hms::as.hms(integer(0)))
+  data <- data.frame(SITEID = character(0), DATE = as.Date(integer(0), "2000-01-01"), TIME = hms::as_hms(integer(0)))
   expect_identical(check_key(data, key = c("SITEID", "DATE", "TIME")), data)
 })
 
 test_that("key with no values", {
-  data <- data.frame(SITEID = "s1", DATE = as.Date(3, "2000-01-01"), TIME = hms::as.hms(10))
+  data <- data.frame(SITEID = "s1", DATE = as.Date(3, "2000-01-01"), TIME = hms::as_hms(10))
   expect_identical(check_key(data, key = c("SITEID", "DATE", "TIME")), data)
 })
