@@ -3,7 +3,8 @@
 
 <!-- badges: start -->
 
-[![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
+[![Lifecycle:
+superseded](https://img.shields.io/badge/lifecycle-superseded-blue.svg)](https://www.tidyverse.org/lifecycle/#superseded)
 [![Travis-CI Build
 Status](https://travis-ci.org/poissonconsulting/checkr.svg?branch=master)](https://travis-ci.org/poissonconsulting/checkr)
 [![AppVeyor build
@@ -21,6 +22,9 @@ status](https://www.r-pkg.org/badges/version/checkr)](https://cran.r-project.org
 <!-- badges: end -->
 
 # checkr
+
+`checkr` has been superseded by the
+[`chk`](https://github.com/poissonconsulting/chk) package.
 
 `checkr` is a light-weight R package of expressive, assertive,
 pipe-friendly functions to check the properties of common R objects.
@@ -47,13 +51,13 @@ check_data(dplyr::starwars, values = list(
   hair_color = c("blond", "brown", "black", NA),
   gender = c("male", "female", "hermaphrodite", "none", NA)), 
     order = TRUE, nrow = c(81, 84), key = "hair_color", error = FALSE)
-#> Warning: dplyr::starwars column names must include 'height', 'name',
-#> 'mass', 'hair_color' and 'gender' in that order
+#> Warning: dplyr::starwars column names must include 'height', 'name', 'mass',
+#> 'hair_color' and 'gender' in that order
 #> Warning: column height of dplyr::starwars must not include missing values
-#> Warning: the values in column mass of dplyr::starwars must lie between 20
-#> and 1358
-#> Warning: column hair_color of dplyr::starwars can only include values
-#> 'black', 'blond' or 'brown'
+#> Warning: the values in column mass of dplyr::starwars must lie between 20 and
+#> 1358
+#> Warning: column hair_color of dplyr::starwars can only include values 'black',
+#> 'blond' or 'brown'
 #> Warning: dplyr::starwars must not have more than 84 rows
 #> Warning: column 'hair_color' in dplyr::starwars must be a unique key
 ```
@@ -187,8 +191,8 @@ To install the latest development version from
 
 To cite checkr in publications use:
 
-  Joe Thorley (2018). checkr: An R package for Assertive
-  Programming. Journal of Open Source Software, 3(23), 624. URL
+  Joe Thorley (2018). checkr: An R package for Assertive Programming.
+  Journal of Open Source Software, 3(23), 624. URL
   https://doi.org/10.21105/joss.00624
 
 A BibTeX entry for LaTeX users is
@@ -216,7 +220,3 @@ always welcome.
 Please note that this project is released with a [Contributor Code of
 Conduct](CONDUCT.md). By participating in this project you agree to
 abide by its terms.
-
-## Inspiration
-
-[datacheckr](https://github.com/poissonconsulting/datacheckr)
