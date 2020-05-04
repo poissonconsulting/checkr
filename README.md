@@ -15,7 +15,6 @@ output: github_document
 [![CRAN status](https://www.r-pkg.org/badges/version/checkr)](https://cran.r-project.org/package=checkr)
 ![CRAN downloads](http://cranlogs.r-pkg.org/badges/checkr)
 [![JOSS](http://joss.theoj.org/papers/10.21105/joss.00624/status.svg)](https://doi.org/10.21105/joss.00624)
-
 [![Codecov test coverage](https://codecov.io/gh/poissonconsulting/checkr/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/checkr?branch=master)
 <!-- badges: end -->
 
@@ -45,17 +44,16 @@ check_data(dplyr::starwars, values = list(
   hair_color = c("blond", "brown", "black", NA),
   gender = c("male", "female", "hermaphrodite", "none", NA)), 
     order = TRUE, nrow = c(81, 84), key = "hair_color", error = FALSE)
-#> Warning: dplyr::starwars column names must include 'height',
-#> 'name', 'mass', 'hair_color' and 'gender' in that order
+#> Warning: dplyr::starwars column names must include 'height', 'name',
+#> 'mass', 'hair_color' and 'gender' in that order
 #> Warning: column height of dplyr::starwars must not include missing
 #> values
-#> Warning: the values in column mass of dplyr::starwars must lie
-#> between 20 and 1358
-#> Warning: column hair_color of dplyr::starwars can only include
-#> values 'black', 'blond' or 'brown'
+#> Warning: the values in column mass of dplyr::starwars must lie between
+#> 20 and 1358
+#> Warning: column hair_color of dplyr::starwars can only include values
+#> 'black', 'blond' or 'brown'
 #> Warning: dplyr::starwars must not have more than 84 rows
-#> Warning: column 'hair_color' in dplyr::starwars must be a unique
-#> key
+#> Warning: column 'hair_color' in dplyr::starwars must be a unique key
 ```
 
 ## Syntax
@@ -184,8 +182,8 @@ remotes::install_github("poissonconsulting/checkr")
 To cite checkr in publications use:
 
   Joe Thorley (2018). checkr: An R package for Assertive
-  Programming. Journal of Open Source Software, 3(23),
-  624. URL https://doi.org/10.21105/joss.00624
+  Programming. Journal of Open Source Software, 3(23), 624.
+  URL https://doi.org/10.21105/joss.00624
 
 A BibTeX entry for LaTeX users is
 
