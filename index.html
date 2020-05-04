@@ -94,6 +94,7 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 <!-- badges: start -->
 
+<p><a href="https://codecov.io/gh/poissonconsulting/checkr?branch=master"><img src="https://codecov.io/gh/poissonconsulting/checkr/branch/master/graph/badge.svg" alt="Codecov test coverage"></a> <!-- badges: end --></p>
 </div>
 <div id="checkr" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
@@ -180,11 +181,6 @@
 <span class="co">#&gt; Error: list(x = 1) must be an atomic vector</span></pre></div>
 <p>This simplifies things but results in less informative error messages when used in a pipe.</p>
 <div class="sourceCode" id="cb9"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">magrittr</span>)
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Attaching package: 'magrittr'</span>
-<span class="co">#&gt; The following objects are masked from 'package:testthat':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     equals, is_less_than, not</span>
 <span class="no">y</span> <span class="kw">%&gt;%</span> <span class="fu"><a href="reference/check_list.html">check_list</a></span>()
 <span class="co">#&gt; Error: . must be a list</span></pre></div>
 <p>The argument <code>x_name</code> can be used to override the name.</p>
@@ -290,15 +286,12 @@ A BibTeX entry for LaTeX users is
 <h2>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://www.tidyverse.org/lifecycle/#superseded"><img src="https://img.shields.io/badge/lifecycle-superseded-blue.svg" alt="Lifecycle: superseded"></a></li>
-<li><a href="https://travis-ci.org/poissonconsulting/checkr"><img src="https://travis-ci.org/poissonconsulting/checkr.svg?branch=master" alt="Travis-CI Build Status"></a></li>
-<li><a href="https://ci.appveyor.com/project/poissonconsulting/checkr"><img src="https://ci.appveyor.com/api/projects/status/github/poissonconsulting/checkr?branch=master&amp;svg=true" alt="AppVeyor build status"></a></li>
+<li><a href="https://github.com/poissonconsulting/checkr/actions"><img src="https://github.com/poissonconsulting/checkr/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
 <li><a href="https://codecov.io/github/poissonconsulting/checkr?branch=master"><img src="https://img.shields.io/codecov/c/github/poissonconsulting/checkr/master.svg" alt="Coverage Status"></a></li>
 <li><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a></li>
 <li><a href="https://CRAN.R-project.org/package=checkr"><img src="https://tinyverse.netlify.com/badge/checkr" alt="Tinyverse status"></a></li>
 <li><a href="https://cran.r-project.org/package=checkr"><img src="https://www.r-pkg.org/badges/version/checkr" alt="CRAN status"></a></li>
 <li><a href="https://doi.org/10.21105/joss.00624"><img src="http://joss.theoj.org/papers/10.21105/joss.00624/status.svg" alt="JOSS"></a></li>
-<li><a href="https://github.com/poissonconsulting/checkr/actions"><img src="https://github.com/poissonconsulting/checkr/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
-<li><a href="https://codecov.io/gh/poissonconsulting/checkr?branch=master"><img src="https://codecov.io/gh/poissonconsulting/checkr/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
 </ul>
 </div>
 </div>
