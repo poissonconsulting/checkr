@@ -8,15 +8,14 @@ output: github_document
 
 <!-- badges: start -->
 [![Lifecycle: superseded](https://img.shields.io/badge/lifecycle-superseded-blue.svg)](https://www.tidyverse.org/lifecycle/#superseded)
-[![Travis-CI Build Status](https://travis-ci.org/poissonconsulting/checkr.svg?branch=master)](https://travis-ci.org/poissonconsulting/checkr)
-[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/checkr?branch=master&svg=true)](https://ci.appveyor.com/project/poissonconsulting/checkr)
+[![R build status](https://github.com/poissonconsulting/checkr/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/checkr/actions)
 [![Coverage Status](https://img.shields.io/codecov/c/github/poissonconsulting/checkr/master.svg)](https://codecov.io/github/poissonconsulting/checkr?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Tinyverse status](https://tinyverse.netlify.com/badge/checkr)](https://CRAN.R-project.org/package=checkr)
 [![CRAN status](https://www.r-pkg.org/badges/version/checkr)](https://cran.r-project.org/package=checkr)
 ![CRAN downloads](http://cranlogs.r-pkg.org/badges/checkr)
 [![JOSS](http://joss.theoj.org/papers/10.21105/joss.00624/status.svg)](https://doi.org/10.21105/joss.00624)
-[![R build status](https://github.com/poissonconsulting/checkr/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/checkr/actions)
+
 [![Codecov test coverage](https://codecov.io/gh/poissonconsulting/checkr/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/checkr?branch=master)
 <!-- badges: end -->
 
@@ -133,11 +132,6 @@ This simplifies things but results in less informative error messages when used 
 
 ```r
 library(magrittr)
-#> 
-#> Attaching package: 'magrittr'
-#> The following objects are masked from 'package:testthat':
-#> 
-#>     equals, is_less_than, not
 y %>% check_list()
 #> Error: . must be a list
 ```
