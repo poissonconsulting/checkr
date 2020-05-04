@@ -94,7 +94,6 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 <!-- badges: start -->
 
-<p><a href="https://codecov.io/gh/poissonconsulting/checkr?branch=master"><img src="https://codecov.io/gh/poissonconsulting/checkr/branch/master/graph/badge.svg" alt="Codecov test coverage"></a> <!-- badges: end --></p>
 </div>
 <div id="checkr" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
@@ -117,17 +116,16 @@
   <span class="kw">hair_color</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"blond"</span>, <span class="st">"brown"</span>, <span class="st">"black"</span>, <span class="fl">NA</span>),
   <span class="kw">gender</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"hermaphrodite"</span>, <span class="st">"none"</span>, <span class="fl">NA</span>)),
     <span class="kw">order</span> <span class="kw">=</span> <span class="fl">TRUE</span>, <span class="kw">nrow</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">81</span>, <span class="fl">84</span>), <span class="kw">key</span> <span class="kw">=</span> <span class="st">"hair_color"</span>, <span class="kw">error</span> <span class="kw">=</span> <span class="fl">FALSE</span>)
-<span class="co">#&gt; Warning: dplyr::starwars column names must include 'height',</span>
-<span class="co">#&gt; 'name', 'mass', 'hair_color' and 'gender' in that order</span>
+<span class="co">#&gt; Warning: dplyr::starwars column names must include 'height', 'name',</span>
+<span class="co">#&gt; 'mass', 'hair_color' and 'gender' in that order</span>
 <span class="co">#&gt; Warning: column height of dplyr::starwars must not include missing</span>
 <span class="co">#&gt; values</span>
-<span class="co">#&gt; Warning: the values in column mass of dplyr::starwars must lie</span>
-<span class="co">#&gt; between 20 and 1358</span>
-<span class="co">#&gt; Warning: column hair_color of dplyr::starwars can only include</span>
-<span class="co">#&gt; values 'black', 'blond' or 'brown'</span>
+<span class="co">#&gt; Warning: the values in column mass of dplyr::starwars must lie between</span>
+<span class="co">#&gt; 20 and 1358</span>
+<span class="co">#&gt; Warning: column hair_color of dplyr::starwars can only include values</span>
+<span class="co">#&gt; 'black', 'blond' or 'brown'</span>
 <span class="co">#&gt; Warning: dplyr::starwars must not have more than 84 rows</span>
-<span class="co">#&gt; Warning: column 'hair_color' in dplyr::starwars must be a unique</span>
-<span class="co">#&gt; key</span></pre></div>
+<span class="co">#&gt; Warning: column 'hair_color' in dplyr::starwars must be a unique key</span></pre></div>
 </div>
 <div id="syntax" class="section level2">
 <h2 class="hasAnchor">
@@ -215,8 +213,8 @@ remotes::install_github("poissonconsulting/checkr")</a></code></pre>
 To cite checkr in publications use:
 
   Joe Thorley (2018). checkr: An R package for Assertive
-  Programming. Journal of Open Source Software, 3(23),
-  624. URL https://doi.org/10.21105/joss.00624
+  Programming. Journal of Open Source Software, 3(23), 624.
+  URL https://doi.org/10.21105/joss.00624
 
 A BibTeX entry for LaTeX users is
 
@@ -292,6 +290,7 @@ A BibTeX entry for LaTeX users is
 <li><a href="https://CRAN.R-project.org/package=checkr"><img src="https://tinyverse.netlify.com/badge/checkr" alt="Tinyverse status"></a></li>
 <li><a href="https://cran.r-project.org/package=checkr"><img src="https://www.r-pkg.org/badges/version/checkr" alt="CRAN status"></a></li>
 <li><a href="https://doi.org/10.21105/joss.00624"><img src="http://joss.theoj.org/papers/10.21105/joss.00624/status.svg" alt="JOSS"></a></li>
+<li><a href="https://codecov.io/gh/poissonconsulting/checkr?branch=master"><img src="https://codecov.io/gh/poissonconsulting/checkr/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
 </ul>
 </div>
 </div>
