@@ -4,8 +4,7 @@
 \alias{check_character}
 \title{Check Character}
 \usage{
-check_character(x, coerce = FALSE, x_name = substitute(x),
-  error = TRUE)
+check_character(x, coerce = FALSE, x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}

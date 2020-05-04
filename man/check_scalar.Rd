@@ -4,8 +4,15 @@
 \alias{check_scalar}
 \title{Check Scalar}
 \usage{
-check_scalar(x, values = NULL, named = FALSE, attributes = named,
-  only = FALSE, x_name = substitute(x), error = TRUE)
+check_scalar(
+  x,
+  values = NULL,
+  named = FALSE,
+  attributes = named,
+  only = FALSE,
+  x_name = substitute(x),
+  error = TRUE
+)
 }
 \arguments{
 \item{x}{The object to check.}

@@ -4,8 +4,7 @@
 \alias{check_nlevels}
 \title{Check nlevels}
 \usage{
-check_nlevels(x, nlevels = TRUE, x_name = substitute(x),
-  error = TRUE)
+check_nlevels(x, nlevels = TRUE, x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The data to check.}

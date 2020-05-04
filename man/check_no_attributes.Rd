@@ -4,8 +4,13 @@
 \alias{check_no_attributes}
 \title{Check No Attributes}
 \usage{
-check_no_attributes(x, names = TRUE, class = TRUE,
-  x_name = substitute(x), error = TRUE)
+check_no_attributes(
+  x,
+  names = TRUE,
+  class = TRUE,
+  x_name = substitute(x),
+  error = TRUE
+)
 }
 \arguments{
 \item{x}{The object to check.}

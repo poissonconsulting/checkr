@@ -4,8 +4,14 @@
 \alias{check_levels}
 \title{Check Levels}
 \usage{
-check_levels(x, levels, exclusive = TRUE, order = TRUE,
-  x_name = substitute(x), error = TRUE)
+check_levels(
+  x,
+  levels,
+  exclusive = TRUE,
+  order = TRUE,
+  x_name = substitute(x),
+  error = TRUE
+)
 }
 \arguments{
 \item{x}{The object to check.}

@@ -4,9 +4,16 @@
 \alias{check_data}
 \title{Check Data}
 \usage{
-check_data(x, values = NULL, nrow = NA, exclusive = FALSE,
-  order = FALSE, key = character(0), x_name = substitute(x),
-  error = TRUE)
+check_data(
+  x,
+  values = NULL,
+  nrow = NA,
+  exclusive = FALSE,
+  order = FALSE,
+  key = character(0),
+  x_name = substitute(x),
+  error = TRUE
+)
 }
 \arguments{
 \item{x}{The object to check.}

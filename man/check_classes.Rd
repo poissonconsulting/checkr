@@ -4,8 +4,14 @@
 \alias{check_classes}
 \title{Check Classes}
 \usage{
-check_classes(x, classes = character(0), exclusive = FALSE,
-  order = FALSE, x_name = substitute(x), error = TRUE)
+check_classes(
+  x,
+  classes = character(0),
+  exclusive = FALSE,
+  order = FALSE,
+  x_name = substitute(x),
+  error = TRUE
+)
 }
 \arguments{
 \item{x}{The object to check.}

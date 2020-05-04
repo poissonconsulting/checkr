@@ -4,8 +4,16 @@
 \alias{check_attributes}
 \title{Check Attributes}
 \usage{
-check_attributes(x, values = NULL, exclusive = FALSE, order = FALSE,
-  names = TRUE, class = TRUE, x_name = substitute(x), error = TRUE)
+check_attributes(
+  x,
+  values = NULL,
+  exclusive = FALSE,
+  order = FALSE,
+  names = TRUE,
+  class = TRUE,
+  x_name = substitute(x),
+  error = TRUE
+)
 }
 \arguments{
 \item{x}{The object to check.}

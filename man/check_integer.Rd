@@ -4,8 +4,7 @@
 \alias{check_integer}
 \title{Check Integer}
 \usage{
-check_integer(x, coerce = FALSE, x_name = substitute(x),
-  error = TRUE)
+check_integer(x, coerce = FALSE, x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}

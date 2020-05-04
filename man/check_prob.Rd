@@ -8,8 +8,7 @@
 \usage{
 check_prob(x, coerce = FALSE, x_name = substitute(x), error = TRUE)
 
-check_probability(x, coerce = FALSE, x_name = substitute(x),
-  error = TRUE)
+check_probability(x, coerce = FALSE, x_name = substitute(x), error = TRUE)
 
 check_prop(x, coerce = FALSE, x_name = substitute(x), error = TRUE)
 }

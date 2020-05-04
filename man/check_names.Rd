@@ -4,9 +4,16 @@
 \alias{check_names}
 \title{Check Names}
 \usage{
-check_names(x, names = character(0), exclusive = FALSE,
-  order = FALSE, unique = FALSE, complete = TRUE,
-  x_name = substitute(x), error = TRUE)
+check_names(
+  x,
+  names = character(0),
+  exclusive = FALSE,
+  order = FALSE,
+  unique = FALSE,
+  complete = TRUE,
+  x_name = substitute(x),
+  error = TRUE
+)
 }
 \arguments{
 \item{x}{The object to check.}

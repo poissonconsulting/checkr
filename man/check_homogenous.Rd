@@ -4,8 +4,13 @@
 \alias{check_homogenous}
 \title{Check Homogenous}
 \usage{
-check_homogenous(x, strict = FALSE, recursive = FALSE,
-  x_name = substitute(x), error = TRUE)
+check_homogenous(
+  x,
+  strict = FALSE,
+  recursive = FALSE,
+  x_name = substitute(x),
+  error = TRUE
+)
 }
 \arguments{
 \item{x}{The object to check.}

@@ -5,8 +5,7 @@
 \alias{check_double}
 \title{Check Numeric}
 \usage{
-check_numeric(x, coerce = FALSE, x_name = substitute(x),
-  error = TRUE)
+check_numeric(x, coerce = FALSE, x_name = substitute(x), error = TRUE)
 
 check_double(x, coerce = FALSE, x_name = substitute(x), error = TRUE)
 }

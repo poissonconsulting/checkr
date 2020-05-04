@@ -5,11 +5,21 @@
 \alias{check_datetime}
 \title{Check Date Time}
 \usage{
-check_dttm(x, coerce = FALSE, tzone = "UTC", x_name = substitute(x),
-  error = TRUE)
+check_dttm(
+  x,
+  coerce = FALSE,
+  tzone = "UTC",
+  x_name = substitute(x),
+  error = TRUE
+)
 
-check_datetime(x, coerce = FALSE, tzone = "", x_name = substitute(x),
-  error = TRUE)
+check_datetime(
+  x,
+  coerce = FALSE,
+  tzone = "",
+  x_name = substitute(x),
+  error = TRUE
+)
 }
 \arguments{
 \item{x}{The object to check.}

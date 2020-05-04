@@ -14,11 +14,11 @@ Expressive, assertive, pipe-friendly functions
 \code{\link{check_vector}}, \code{\link{check_list}} and \code{\link{check_data}}
 }
 \author{
-\strong{Maintainer}: Joe Thorley \email{joe@poissonconsulting.ca} (0000-0002-7683-4592)
+\strong{Maintainer}: Joe Thorley \email{joe@poissonconsulting.ca} (\href{https://orcid.org/0000-0002-7683-4592}{ORCID})
 
 Other contributors:
 \itemize{
-  \item Evan Amies-Galonski \email{evan@poissonconsulting.ca} (-3188) [contributor]
+  \item Evan Amies-Galonski \email{evan@poissonconsulting.ca} (\href{https://orcid.org/-3188}{ORCID}) [contributor]
   \item Poisson Consulting [copyright holder, funder]
 }
 

@@ -5,8 +5,13 @@
 \alias{check_regex}
 \title{Check Matches Regular Expression}
 \usage{
-check_grepl(x, pattern = ".*", regex = pattern,
-  x_name = substitute(x), error = TRUE)
+check_grepl(
+  x,
+  pattern = ".*",
+  regex = pattern,
+  x_name = substitute(x),
+  error = TRUE
+)
 
 check_regex(x, regex = ".*", x_name = substitute(x), error = TRUE)
 }

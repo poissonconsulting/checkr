@@ -4,8 +4,7 @@
 \alias{check_pos_int}
 \title{Check Positive Int}
 \usage{
-check_pos_int(x, coerce = FALSE, x_name = substitute(x),
-  error = TRUE)
+check_pos_int(x, coerce = FALSE, x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}

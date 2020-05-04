@@ -4,8 +4,15 @@
 \alias{check_rbind}
 \title{Check Row Bind}
 \usage{
-check_rbind(x, y, exclusive = TRUE, order = FALSE,
-  x_name = substitute(x), y_name = substitute(y), error = TRUE)
+check_rbind(
+  x,
+  y,
+  exclusive = TRUE,
+  order = FALSE,
+  x_name = substitute(x),
+  y_name = substitute(y),
+  error = TRUE
+)
 }
 \arguments{
 \item{x}{The first data frame.}

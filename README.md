@@ -1,46 +1,41 @@
+---
+output: github_document
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<!-- badges: start -->
 
-[![Lifecycle:
-superseded](https://img.shields.io/badge/lifecycle-superseded-blue.svg)](https://www.tidyverse.org/lifecycle/#superseded)
-[![Travis-CI Build
-Status](https://travis-ci.org/poissonconsulting/checkr.svg?branch=master)](https://travis-ci.org/poissonconsulting/checkr)
-[![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/checkr?branch=master&svg=true)](https://ci.appveyor.com/project/poissonconsulting/checkr)
-[![Coverage
-Status](https://img.shields.io/codecov/c/github/poissonconsulting/checkr/master.svg)](https://codecov.io/github/poissonconsulting/checkr?branch=master)
-[![License:
-MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Tinyverse
-status](https://tinyverse.netlify.com/badge/checkr)](https://CRAN.R-project.org/package=checkr)
-[![CRAN
-status](https://www.r-pkg.org/badges/version/checkr)](https://cran.r-project.org/package=checkr)
+
+<!-- badges: start -->
+[![Lifecycle: superseded](https://img.shields.io/badge/lifecycle-superseded-blue.svg)](https://www.tidyverse.org/lifecycle/#superseded)
+[![Travis-CI Build Status](https://travis-ci.org/poissonconsulting/checkr.svg?branch=master)](https://travis-ci.org/poissonconsulting/checkr)
+[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/checkr?branch=master&svg=true)](https://ci.appveyor.com/project/poissonconsulting/checkr)
+[![Coverage Status](https://img.shields.io/codecov/c/github/poissonconsulting/checkr/master.svg)](https://codecov.io/github/poissonconsulting/checkr?branch=master)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Tinyverse status](https://tinyverse.netlify.com/badge/checkr)](https://CRAN.R-project.org/package=checkr)
+[![CRAN status](https://www.r-pkg.org/badges/version/checkr)](https://cran.r-project.org/package=checkr)
 ![CRAN downloads](http://cranlogs.r-pkg.org/badges/checkr)
 [![JOSS](http://joss.theoj.org/papers/10.21105/joss.00624/status.svg)](https://doi.org/10.21105/joss.00624)
+[![R build status](https://github.com/poissonconsulting/checkr/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/checkr/actions)
+[![Codecov test coverage](https://codecov.io/gh/poissonconsulting/checkr/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/checkr?branch=master)
 <!-- badges: end -->
 
 # checkr
 
-`checkr` has been superseded by the
-[`chk`](https://github.com/poissonconsulting/chk) package.
+`checkr` has been superseded by the [`chk`](https://github.com/poissonconsulting/chk) package.
 
-`checkr` is a light-weight R package of expressive, assertive,
-pipe-friendly functions to check the properties of common R objects.
+`checkr` is a light-weight R package of expressive, assertive, pipe-friendly functions to check the properties of common R objects.
 
-In the case of failure the functions, which are designed to be used in
-scripts and packages, issue informative error messages.
+In the case of failure the functions, which are designed to be used in scripts and packages,
+issue informative error messages.
 
-For an overview of the functions see the `checkr-naming` vignette and
-for a comparison with similar packages see the `assertive-programming`
-vignette.
+For an overview of the functions see the `checkr-naming` vignette and for a comparison with similar packages see the `assertive-programming` vignette.
 
 ## Demonstration
 
 The following code demonstrates the `check_data()` function
 
-``` r
+```r
 library(checkr)
 
 # the starwars data frame in the dplyr package fails many of these checks
@@ -51,27 +46,29 @@ check_data(dplyr::starwars, values = list(
   hair_color = c("blond", "brown", "black", NA),
   gender = c("male", "female", "hermaphrodite", "none", NA)), 
     order = TRUE, nrow = c(81, 84), key = "hair_color", error = FALSE)
-#> Warning: dplyr::starwars column names must include 'height', 'name', 'mass',
-#> 'hair_color' and 'gender' in that order
-#> Warning: column height of dplyr::starwars must not include missing values
-#> Warning: the values in column mass of dplyr::starwars must lie between 20 and
-#> 1358
-#> Warning: column hair_color of dplyr::starwars can only include values 'black',
-#> 'blond' or 'brown'
+#> Warning: dplyr::starwars column names must include 'height',
+#> 'name', 'mass', 'hair_color' and 'gender' in that order
+#> Warning: column height of dplyr::starwars must not include missing
+#> values
+#> Warning: the values in column mass of dplyr::starwars must lie
+#> between 20 and 1358
+#> Warning: column hair_color of dplyr::starwars can only include
+#> values 'black', 'blond' or 'brown'
 #> Warning: dplyr::starwars must not have more than 84 rows
-#> Warning: column 'hair_color' in dplyr::starwars must be a unique key
+#> Warning: column 'hair_color' in dplyr::starwars must be a unique
+#> key
 ```
 
 ## Syntax
 
-`checkr` uses objects to check the values of other objects using an
-elegant and expressive syntax.
+`checkr` uses objects to check 
+the values of other objects using an elegant and expressive syntax.
 
 #### Class
 
 To check the class simply pass an object of the desired class.
 
-``` r
+```r
 y <- c(2,1,0,1,NA)
 check_vector(y, values = numeric(0))
 check_vector(y, values = integer(0))
@@ -80,34 +77,31 @@ check_vector(y, values = integer(0))
 
 #### Missing Values
 
-To check that a vector does not include missing values pass a single
-non-missing value (of the correct class).
+To check that a vector does not include missing values pass a single non-missing value (of the correct class).
 
-``` r
+```r
 check_vector(y, 1)
 #> Error: y must not include missing values
 ```
 
 To allow it to include missing values include a missing value.
 
-``` r
+```r
 check_vector(y, c(1, NA))
 ```
 
-And to check that it only includes missing values only pass a missing
-value (of the correct class)
+And to check that it only includes missing values only pass a missing value (of the correct class)
 
-``` r
+```r
 check_vector(y, NA_real_)
 #> Error: y must only include missing values
 ```
 
 #### Range
 
-To check the range of a vector pass two non-missing values (as well as
-the missing value if required).
+To check the range of a vector pass two non-missing values (as well as the missing value if required).
 
-``` r
+```r
 check_vector(y, c(0, 2, NA))
 check_vector(y, c(-1, -10, NA))
 #> Error: the values in y must lie between -10 and -1
@@ -115,10 +109,10 @@ check_vector(y, c(-1, -10, NA))
 
 #### Specific Values
 
-To check the vector only includes specific values pass three or more
-non-missing values or set `only = TRUE`.
+To check the vector only includes specific values pass three or more non-missing values or 
+set `only  = TRUE`.
 
-``` r
+```r
 check_vector(y, c(0, 1, 2, NA))
 check_vector(y, c(1, 1, 2, NA))
 #> Error: y can only include values 1 or 2
@@ -130,36 +124,40 @@ check_vector(y, c(1, 2, NA), only = TRUE)
 
 By default, the name of an object is determined from the function call.
 
-``` r
+```r
 check_vector(list(x = 1))
 #> Error: list(x = 1) must be an atomic vector
 ```
 
-This simplifies things but results in less informative error messages
-when used in a pipe.
+This simplifies things but results in less informative error messages when used in a pipe.
 
-``` r
+```r
 library(magrittr)
+#> 
+#> Attaching package: 'magrittr'
+#> The following objects are masked from 'package:testthat':
+#> 
+#>     equals, is_less_than, not
 y %>% check_list()
 #> Error: . must be a list
 ```
 
 The argument `x_name` can be used to override the name.
 
-``` r
+```r
 y %>% check_list(x_name = "y")
 #> Error: y must be a list
 ```
 
 ## Scalars
 
-The four wrapper functions `check_lgl()`, `check_int()`, `check_dbl()`
-and `check_str()` check whether an object is an attribute-less
-non-missing scalar logical (flag), integer, double (number) or character
-(string). They are really useful for checking the types of arguments in
-functions
+The four wrapper functions 
+`check_lgl()`, `check_int()`, `check_dbl()` and `check_str()` check whether an object 
+is an attribute-less non-missing scalar logical (flag), integer, double (number) or character (string).
+They are really useful for checking the types of arguments in functions
 
-``` r
+
+```r
 fun <- function(x) { check_lgl(x)}
 fun(x = NA)
 #> Error: x must not include missing values
@@ -168,32 +166,32 @@ fun(x = 1)
 #> Error: x must be class logical
 ```
 
-Additional scalar wrappers are `check_date()` and `check_dttm()` for
-scalar Date and POSIXct objects. Alternatively you can roll your own
-using the more general `check_scalar()` function.
+Additional scalar wrappers are `check_date()` and `check_dttm()` for scalar Date and POSIXct objects.
+Alternatively you can roll your own using the more general `check_scalar()` function.
 
 ## Installation
 
-To install the latest release version from
-[CRAN](https://cran.r-project.org)
+To install the latest release version from [CRAN](https://cran.r-project.org)
+```
+install.packages("checkr")
+```
 
-    install.packages("checkr")
-
-To install the latest development version from
-[GitHub](https://github.com/poissonconsulting/hmstimer)
-
-    # install.packages("remotes")
-    remotes::install_github("poissonconsulting/checkr")
+To install the latest development version from [GitHub](https://github.com/poissonconsulting/hmstimer)
+```
+# install.packages("remotes")
+remotes::install_github("poissonconsulting/checkr")
+```
 
 ## Citation
 
-``` 
+
+```
 
 To cite checkr in publications use:
 
-  Joe Thorley (2018). checkr: An R package for Assertive Programming.
-  Journal of Open Source Software, 3(23), 624. URL
-  https://doi.org/10.21105/joss.00624
+  Joe Thorley (2018). checkr: An R package for Assertive
+  Programming. Journal of Open Source Software, 3(23),
+  624. URL https://doi.org/10.21105/joss.00624
 
 A BibTeX entry for LaTeX users is
 
@@ -211,12 +209,8 @@ A BibTeX entry for LaTeX users is
 
 ## Contribution
 
-Please report any
-[issues](https://github.com/poissonconsulting/checkr/issues).
+Please report any [issues](https://github.com/poissonconsulting/checkr/issues).
 
-[Pull requests](https://github.com/poissonconsulting/checkr/pulls) are
-always welcome.
+[Pull requests](https://github.com/poissonconsulting/checkr/pulls) are always welcome.
 
-Please note that this project is released with a [Contributor Code of
-Conduct](CONDUCT.md). By participating in this project you agree to
-abide by its terms.
+Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.

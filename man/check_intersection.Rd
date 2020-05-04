@@ -4,8 +4,14 @@
 \alias{check_intersection}
 \title{Check Atomic Vector Intersection}
 \usage{
-check_intersection(x, y, all_y = FALSE, x_name = substitute(x),
-  y_name = substitute(y), error = TRUE)
+check_intersection(
+  x,
+  y,
+  all_y = FALSE,
+  x_name = substitute(x),
+  y_name = substitute(y),
+  error = TRUE
+)
 }
 \arguments{
 \item{x}{The object to check.}

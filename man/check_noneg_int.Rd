@@ -4,8 +4,7 @@
 \alias{check_noneg_int}
 \title{Check Non-Negative Int}
 \usage{
-check_noneg_int(x, coerce = FALSE, x_name = substitute(x),
-  error = TRUE)
+check_noneg_int(x, coerce = FALSE, x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}

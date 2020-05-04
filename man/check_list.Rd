@@ -4,9 +4,17 @@
 \alias{check_list}
 \title{Check List}
 \usage{
-check_list(x, values = NULL, length = NA, unique = FALSE,
-  named = NA, exclusive = FALSE, order = FALSE,
-  x_name = substitute(x), error = TRUE)
+check_list(
+  x,
+  values = NULL,
+  length = NA,
+  unique = FALSE,
+  named = NA,
+  exclusive = FALSE,
+  order = FALSE,
+  x_name = substitute(x),
+  error = TRUE
+)
 }
 \arguments{
 \item{x}{The object to check.}

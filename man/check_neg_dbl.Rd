@@ -4,8 +4,7 @@
 \alias{check_neg_dbl}
 \title{Check Negative Dbl}
 \usage{
-check_neg_dbl(x, coerce = FALSE, x_name = substitute(x),
-  error = TRUE)
+check_neg_dbl(x, coerce = FALSE, x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}

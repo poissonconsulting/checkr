@@ -4,8 +4,7 @@
 \alias{check_logical}
 \title{Check Logical}
 \usage{
-check_logical(x, coerce = FALSE, x_name = substitute(x),
-  error = TRUE)
+check_logical(x, coerce = FALSE, x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}

@@ -4,8 +4,15 @@
 \alias{check_join}
 \title{Check Join}
 \usage{
-check_join(x, y, by = NULL, all_y = FALSE, x_name = substitute(x),
-  y_name = substitute(y), error = TRUE)
+check_join(
+  x,
+  y,
+  by = NULL,
+  all_y = FALSE,
+  x_name = substitute(x),
+  y_name = substitute(y),
+  error = TRUE
+)
 }
 \arguments{
 \item{x}{The object to check.}

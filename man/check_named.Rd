@@ -4,9 +4,15 @@
 \alias{check_named}
 \title{Check Named}
 \usage{
-check_named(x, nchar = c(0L, chk_max_int()), pattern = ".*",
-  regex = pattern, unique = FALSE, x_name = substitute(x),
-  error = TRUE)
+check_named(
+  x,
+  nchar = c(0L, chk_max_int()),
+  pattern = ".*",
+  regex = pattern,
+  unique = FALSE,
+  x_name = substitute(x),
+  error = TRUE
+)
 }
 \arguments{
 \item{x}{The object to check.}

@@ -4,9 +4,20 @@
 \alias{check_vector}
 \title{Check Atomic Vector}
 \usage{
-check_vector(x, values = NULL, length = NA, unique = FALSE,
-  sorted = FALSE, named = NA, attributes = named, names = TRUE,
-  class = TRUE, only = FALSE, x_name = substitute(x), error = TRUE)
+check_vector(
+  x,
+  values = NULL,
+  length = NA,
+  unique = FALSE,
+  sorted = FALSE,
+  named = NA,
+  attributes = named,
+  names = TRUE,
+  class = TRUE,
+  only = FALSE,
+  x_name = substitute(x),
+  error = TRUE
+)
 }
 \arguments{
 \item{x}{The object to check.}

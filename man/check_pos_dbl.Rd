@@ -4,8 +4,7 @@
 \alias{check_pos_dbl}
 \title{Check Positive Dbl}
 \usage{
-check_pos_dbl(x, coerce = FALSE, x_name = substitute(x),
-  error = TRUE)
+check_pos_dbl(x, coerce = FALSE, x_name = substitute(x), error = TRUE)
 }
 \arguments{
 \item{x}{The object to check.}
