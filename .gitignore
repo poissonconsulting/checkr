@@ -2,9 +2,14 @@
 .Rhistory
 .RData
 .Ruserdata
-inst/doc
-inst/JOSS/paper.html
-.RProfile
 
-*.noindex
-docs/
+.DS_Store
+.Renviron
+.RProfile
+.httr-oauth
+
+*.html
+
+docs
+inst/docs
+scripts
