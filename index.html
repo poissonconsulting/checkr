@@ -87,14 +87,7 @@
       </header><div class="row">
   <div class="contents col-md-9">
 
-<hr>
-<div id="output-github_document" class="section level2">
-<h2 class="hasAnchor">
-<a href="#output-github_document" class="anchor"></a>output: github_document</h2>
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-<!-- badges: start -->
 
-</div>
 <div id="checkr" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#checkr" class="anchor"></a>checkr</h1></div>
@@ -116,14 +109,13 @@
   <span class="kw">hair_color</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"blond"</span>, <span class="st">"brown"</span>, <span class="st">"black"</span>, <span class="fl">NA</span>),
   <span class="kw">gender</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"hermaphrodite"</span>, <span class="st">"none"</span>, <span class="fl">NA</span>)),
     <span class="kw">order</span> <span class="kw">=</span> <span class="fl">TRUE</span>, <span class="kw">nrow</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">81</span>, <span class="fl">84</span>), <span class="kw">key</span> <span class="kw">=</span> <span class="st">"hair_color"</span>, <span class="kw">error</span> <span class="kw">=</span> <span class="fl">FALSE</span>)
-<span class="co">#&gt; Warning: dplyr::starwars column names must include 'height', 'name',</span>
-<span class="co">#&gt; 'mass', 'hair_color' and 'gender' in that order</span>
-<span class="co">#&gt; Warning: column height of dplyr::starwars must not include missing</span>
-<span class="co">#&gt; values</span>
-<span class="co">#&gt; Warning: the values in column mass of dplyr::starwars must lie between</span>
-<span class="co">#&gt; 20 and 1358</span>
-<span class="co">#&gt; Warning: column hair_color of dplyr::starwars can only include values</span>
-<span class="co">#&gt; 'black', 'blond' or 'brown'</span>
+<span class="co">#&gt; Warning: dplyr::starwars column names must include 'height', 'name', 'mass',</span>
+<span class="co">#&gt; 'hair_color' and 'gender' in that order</span>
+<span class="co">#&gt; Warning: column height of dplyr::starwars must not include missing values</span>
+<span class="co">#&gt; Warning: the values in column mass of dplyr::starwars must lie between 20 and</span>
+<span class="co">#&gt; 1358</span>
+<span class="co">#&gt; Warning: column hair_color of dplyr::starwars can only include values 'black',</span>
+<span class="co">#&gt; 'blond' or 'brown'</span>
 <span class="co">#&gt; Warning: dplyr::starwars must not have more than 84 rows</span>
 <span class="co">#&gt; Warning: column 'hair_color' in dplyr::starwars must be a unique key</span></pre></div>
 </div>
@@ -163,7 +155,7 @@
 <div id="specific-values" class="section level4">
 <h4 class="hasAnchor">
 <a href="#specific-values" class="anchor"></a>Specific Values</h4>
-<p>To check the vector only includes specific values pass three or more non-missing values or set <code>only  = TRUE</code>.</p>
+<p>To check the vector only includes specific values pass three or more non-missing values or set <code>only = TRUE</code>.</p>
 <div class="sourceCode" id="cb7"><pre class="r"><span class="fu"><a href="reference/check_vector.html">check_vector</a></span>(<span class="no">y</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">NA</span>))
 <span class="fu"><a href="reference/check_vector.html">check_vector</a></span>(<span class="no">y</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">NA</span>))
 <span class="co">#&gt; Error: y can only include values 1 or 2</span>
@@ -201,10 +193,10 @@
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>To install the latest release version from <a href="https://cran.r-project.org">CRAN</a></p>
-<pre><code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages("checkr")</a></code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">install.packages</span>(<span class="st">"checkr"</span>)</span></code></pre></div>
 <p>To install the latest development version from <a href="https://github.com/poissonconsulting/hmstimer">GitHub</a></p>
-<pre><code><a href="https://remotes.r-lib.org/reference/install_github.html"># install.packages("remotes")
-remotes::install_github("poissonconsulting/checkr")</a></code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># install.packages("remotes")</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a>remotes<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"poissonconsulting/checkr"</span>)</span></code></pre></div>
 </div>
 <div id="citation" class="section level2">
 <h2 class="hasAnchor">
@@ -212,9 +204,9 @@ remotes::install_github("poissonconsulting/checkr")</a></code></pre>
 <pre><code>
 To cite checkr in publications use:
 
-  Joe Thorley (2018). checkr: An R package for Assertive
-  Programming. Journal of Open Source Software, 3(23), 624.
-  URL https://doi.org/10.21105/joss.00624
+  Joe Thorley (2018). checkr: An R package for Assertive Programming.
+  Journal of Open Source Software, 3(23), 624. URL
+  https://doi.org/10.21105/joss.00624
 
 A BibTeX entry for LaTeX users is
 
@@ -234,7 +226,11 @@ A BibTeX entry for LaTeX users is
 <a href="#contribution" class="anchor"></a>Contribution</h2>
 <p>Please report any <a href="https://github.com/poissonconsulting/checkr/issues">issues</a>.</p>
 <p><a href="https://github.com/poissonconsulting/checkr/pulls">Pull requests</a> are always welcome.</p>
-<p>Please note that this project is released with a <a href="CONDUCT.html">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</p>
+</div>
+<div id="code-of-conduct" class="section level2">
+<h2 class="hasAnchor">
+<a href="#code-of-conduct" class="anchor"></a>Code of Conduct</h2>
+<p>Please note that the checkr project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 </div>
 
@@ -263,6 +259,7 @@ A BibTeX entry for LaTeX users is
 <h2>Community</h2>
 <ul class="list-unstyled">
 <li><a href="CONTRIBUTING.html">Contributing guide</a></li>
+<li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
 </ul>
 </div>
 <div class="citation">
