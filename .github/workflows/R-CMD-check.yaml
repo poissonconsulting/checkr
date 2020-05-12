@@ -52,10 +52,6 @@ jobs:
           key: ${{ runner.os }}-r-${{ matrix.config.r }}-${{ hashFiles('depends.Rds') }}
           restore-keys: ${{ runner.os }}-r-${{ matrix.config.r }}-
 
-      - name: Install system dependencies on macOS
-        if: runner.os == 'macOS'
-        run: |
-            brew install udunits
       - name: Install system dependencies
         if: runner.os == 'Linux'
         env:
@@ -64,6 +60,11 @@ jobs:
           Rscript -e "remotes::install_github('r-hub/sysreqs')"
           sysreqs=$(Rscript -e "cat(sysreqs::sysreq_commands('DESCRIPTION'))")
           sudo -s eval "$sysreqs"
+
+      - name: Install system dependencies on macOS
+        if: runner.os == 'macOS'
+        run: |
+          brew install udunits
 
       - name: Install dependencies
         run: |
