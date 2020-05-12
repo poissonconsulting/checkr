@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Contributing to checkr • checkr</title>
+<title>Getting help with checkr • checkr</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="Contributing to checkr" />
+<meta property="og:title" content="Getting help with checkr" />
 
 
 
@@ -125,49 +125,21 @@
 <div class="row">
   <div class="contents col-md-9">
     <div class="page-header">
-      <h1>Contributing to checkr</h1>
+      <h1>Getting help with checkr</h1>
     </div>
 
-<div id="contributing-to-checkr" class="section level1">
+<div id="getting-help-with-checkr" class="section level1">
 
-<p>This outlines how to propose a change to checkr.</p>
-<div id="fixing-typos" class="section level2">
+<p>Thanks for using checkr! Before filing an issue, there are a few places to explore and pieces to put together to make the process as smooth as possible.</p>
+<div id="make-sure-its-new" class="section level2">
 <h2 class="hasAnchor">
-<a href="#fixing-typos" class="anchor"></a>Fixing typos</h2>
-<p>You can fix typos, spelling mistakes, or grammatical errors in the documentation directly using the GitHub web interface, as long as the changes are made in the <em>source</em> file. This generally means you’ll need to edit <a href="https://roxygen2.r-lib.org/articles/roxygen2.html">roxygen2 comments</a> in an <code>.R</code>, not a <code>.Rd</code> file. You can find the <code>.R</code> file that generates the <code>.Rd</code> by reading the comment in the first line.</p>
+<a href="#make-sure-its-new" class="anchor"></a>Make sure its new</h2>
+<p>Before opening a new issue, be sure to <a href="https://github.com//issues">search issues and pull requests</a> to make sure the bug hasn’t been reported and/or already fixed in the development version. By default, the search will be pre-populated with <code>is:issue is:open</code>. You can <a href="https://help.github.com/articles/searching-issues-and-pull-requests/">edit the qualifiers</a> (e.g. <code>is:pr</code>, <code>is:closed</code>) as needed. For example, you’d simply remove <code>is:open</code> to search <em>all</em> issues in the repo, open or closed.</p>
 </div>
-<div id="bigger-changes" class="section level2">
+<div id="make-a-reprex" class="section level2">
 <h2 class="hasAnchor">
-<a href="#bigger-changes" class="anchor"></a>Bigger changes</h2>
-<p>If you want to make a bigger change, it’s a good idea to first file an issue and make sure someone from the team agrees that it’s needed. If you’ve found a bug, please file an issue that illustrates the bug with a minimal <a href="https://www.tidyverse.org/help/#reprex">reprex</a> (this will also help you write a unit test, if needed).</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>       <span class="co">### Pull request process</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a>       </span>
-<span id="cb1-3"><a href="#cb1-3"></a>       <span class="op">*</span><span class="st">   </span>Fork the package and clone onto your computer. If you haven<span class="st">'t done this before, we recommend using `usethis::create_from_github("", fork = TRUE)`.</span></span></code></pre></div>
-<ul>
-<li><p>Install all development dependences with <code>devtools::install_dev_deps()</code>, and then make sure the package passes R CMD check by running <code>devtools::check()</code>. If R CMD check doesn’t pass cleanly, it’s a good idea to ask for help before continuing.</p></li>
-<li><p>Create a Git branch for your pull request (PR). We recommend using <code>usethis::pr_init("brief-description-of-change")</code>.</p></li>
-<li><p>Make your changes, commit to git, and then create a PR by running <code>usethis::pr_push()</code>, and following the prompts in your browser. The title of your PR should briefly describe the change. The body of your PR should contain <code>Fixes #issue-number</code>.</p></li>
-<li><p>For user-facing changes, add a bullet to the top of <code>NEWS.md</code> (i.e. just below the first header). Follow the style described in <a href="https://style.tidyverse.org/news.html" class="uri">https://style.tidyverse.org/news.html</a>.</p></li>
-</ul>
-<div id="code-style" class="section level3">
-<h3 class="hasAnchor">
-<a href="#code-style" class="anchor"></a>Code style</h3>
-<ul>
-<li>
-<p>New code should follow the tidyverse <a href="https://style.tidyverse.org">style guide</a>. You can use the <a href="https://CRAN.R-project.org/package=styler">styler</a> package to apply these styles, but please don’t restyle code that has nothing to do with your PR.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a> <span class="op">*</span><span class="st">  </span>We use [roxygen2](https<span class="op">:</span><span class="er">//</span>cran.r<span class="op">-</span>project.org<span class="op">/</span><span class="dt">package=</span>roxygen2), with [Markdown syntax](https<span class="op">:</span><span class="er">//</span>cran.r<span class="op">-</span>project.org<span class="op">/</span>web<span class="op">/</span>packages<span class="op">/</span>roxygen2<span class="op">/</span>vignettes<span class="op">/</span>rd<span class="op">-</span>formatting.html), <span class="cf">for</span> documentation.  </span>
-<span id="cb2-2"><a href="#cb2-2"></a></span>
-<span id="cb2-3"><a href="#cb2-3"></a> <span class="op">*</span><span class="st">  </span>We use [testthat](https<span class="op">:</span><span class="er">//</span>cran.r<span class="op">-</span>project.org<span class="op">/</span><span class="dt">package=</span>testthat) <span class="cf">for</span> unit tests. </span>
-<span id="cb2-4"><a href="#cb2-4"></a> Contributions with test cases included are easier to accept.  </span>
-<span id="cb2-5"><a href="#cb2-5"></a></span>
-<span id="cb2-6"><a href="#cb2-6"></a> <span class="co">## Code of Conduct</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a></span>
-<span id="cb2-8"><a href="#cb2-8"></a> Please note that the checkr project is released with a</span>
-<span id="cb2-9"><a href="#cb2-9"></a> [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this</span>
-<span id="cb2-10"><a href="#cb2-10"></a> project you agree to abide by its terms.</span></code></pre></div>
-</li>
-</ul>
-</div>
+<a href="#make-a-reprex" class="anchor"></a>Make a reprex</h2>
+<p>Start by making a minimal <strong>repr</strong>oducible <strong>ex</strong>ample using the <a href="https://reprex.tidyverse.org/">reprex</a> package. If you haven’t heard of or used reprex before, you’re in for a treat! Seriously, reprex will make all of your R-question-asking endeavors easier (which is a pretty insane ROI for the five to ten minutes it’ll take you to learn what it’s all about). For additional reprex pointers, check out the <a href="https://www.tidyverse.org/help/">Get help!</a> section of the tidyverse site.</p>
 </div>
 </div>
 
