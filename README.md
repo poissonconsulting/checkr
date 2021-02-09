@@ -1,10 +1,9 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
 <!-- badges: start -->
 
 [![Lifecycle:
-superseded](https://img.shields.io/badge/lifecycle-superseded-blue.svg)](https://www.tidyverse.org/lifecycle/#superseded)
+superseded](https://img.shields.io/badge/lifecycle-superseded-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html#superseded)
 [![R build
 status](https://github.com/poissonconsulting/checkr/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/checkr/actions)
 [![Codecov test
@@ -53,6 +52,8 @@ check_data(dplyr::starwars, values = list(
 #> 1358
 #> Warning: column hair_color of dplyr::starwars can only include values 'black',
 #> 'blond' or 'brown'
+#> Warning: column gender of dplyr::starwars can only include values 'female',
+#> 'hermaphrodite', 'male' or 'none'
 #> Warning: dplyr::starwars must not have more than 84 rows
 #> Warning: column 'hair_color' in dplyr::starwars must be a unique key
 ```
@@ -111,7 +112,7 @@ check_vector(y, c(-1, -10, NA))
 #### Specific Values
 
 To check the vector only includes specific values pass three or more
-non-missing values or set `only = TRUE`.
+non-missing values or set `only  = TRUE`.
 
 ``` r
 check_vector(y, c(0, 1, 2, NA))
@@ -182,27 +183,25 @@ To install the latest development version from
 
 ## Citation
 
-``` 
 
-To cite checkr in publications use:
+    To cite checkr in publications use:
 
-  Joe Thorley (2018). checkr: An R package for Assertive Programming.
-  Journal of Open Source Software, 3(23), 624. URL
-  https://doi.org/10.21105/joss.00624
+      Joe Thorley (2018). checkr: An R package for Assertive Programming.
+      Journal of Open Source Software, 3(23), 624. URL
+      https://doi.org/10.21105/joss.00624
 
-A BibTeX entry for LaTeX users is
+    A BibTeX entry for LaTeX users is
 
-  @Article{,
-    title = {checkr: {An} {R} package for {Assertive} {Programming}},
-    author = {Joe Thorley},
-    journal = {Journal of Open Source Software},
-    year = {2018},
-    volume = {3},
-    number = {23},
-    pages = {624},
-    url = {http://joss.theoj.org/papers/10.21105/joss.00624},
-  }
-```
+      @Article{,
+        title = {checkr: {An} {R} package for {Assertive} {Programming}},
+        author = {Joe Thorley},
+        journal = {Journal of Open Source Software},
+        year = {2018},
+        volume = {3},
+        number = {23},
+        pages = {624},
+        url = {http://joss.theoj.org/papers/10.21105/joss.00624},
+      }
 
 ## Contribution
 
