@@ -41,12 +41,6 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
@@ -71,7 +65,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/poissonconsulting/checkr/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -100,16 +94,17 @@
 <h2 class="hasAnchor">
 <a href="#demonstration" class="anchor"></a>Demonstration</h2>
 <p>The following code demonstrates the <code><a href="reference/check_data.html">check_data()</a></code> function</p>
-<div class="sourceCode" id="cb1"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">checkr</span>)
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/poissonconsulting/checkr">checkr</a></span><span class="op">)</span>
 
 <span class="co"># the starwars data frame in the dplyr package fails many of these checks</span>
-<span class="fu"><a href="reference/check_data.html">check_data</a></span>(<span class="kw pkg">dplyr</span><span class="kw ns">::</span><span class="no"><a href="https://dplyr.tidyverse.org/reference/starwars.html">starwars</a></span>, <span class="kw">values</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(
-  <span class="kw">height</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">66L</span>, <span class="fl">264L</span>),
-  <span class="kw">name</span> <span class="kw">=</span> <span class="st">""</span>,
-  <span class="kw">mass</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">20</span>,<span class="fl">1358</span>, <span class="fl">NA</span>),
-  <span class="kw">hair_color</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"blond"</span>, <span class="st">"brown"</span>, <span class="st">"black"</span>, <span class="fl">NA</span>),
-  <span class="kw">gender</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"hermaphrodite"</span>, <span class="st">"none"</span>, <span class="fl">NA</span>)),
-    <span class="kw">order</span> <span class="kw">=</span> <span class="fl">TRUE</span>, <span class="kw">nrow</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">81</span>, <span class="fl">84</span>), <span class="kw">key</span> <span class="kw">=</span> <span class="st">"hair_color"</span>, <span class="kw">error</span> <span class="kw">=</span> <span class="fl">FALSE</span>)
+<span class="fu"><a href="reference/check_data.html">check_data</a></span><span class="op">(</span><span class="fu">dplyr</span><span class="fu">::</span><span class="va"><a href="https://dplyr.tidyverse.org/reference/starwars.html">starwars</a></span>, values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>
+  height <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">66L</span>, <span class="fl">264L</span><span class="op">)</span>,
+  name <span class="op">=</span> <span class="st">""</span>,
+  mass <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">20</span>,<span class="fl">1358</span>, <span class="cn">NA</span><span class="op">)</span>,
+  hair_color <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"blond"</span>, <span class="st">"brown"</span>, <span class="st">"black"</span>, <span class="cn">NA</span><span class="op">)</span>,
+  gender <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"hermaphrodite"</span>, <span class="st">"none"</span>, <span class="cn">NA</span><span class="op">)</span><span class="op">)</span>, 
+    order <span class="op">=</span> <span class="cn">TRUE</span>, nrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">81</span>, <span class="fl">84</span><span class="op">)</span>, key <span class="op">=</span> <span class="st">"hair_color"</span>, error <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 <span class="co">#&gt; Warning: dplyr::starwars column names must include 'height', 'name', 'mass',</span>
 <span class="co">#&gt; 'hair_color' and 'gender' in that order</span>
 <span class="co">#&gt; Warning: column height of dplyr::starwars must not include missing values</span>
@@ -117,8 +112,10 @@
 <span class="co">#&gt; 1358</span>
 <span class="co">#&gt; Warning: column hair_color of dplyr::starwars can only include values 'black',</span>
 <span class="co">#&gt; 'blond' or 'brown'</span>
+<span class="co">#&gt; Warning: column gender of dplyr::starwars can only include values 'female',</span>
+<span class="co">#&gt; 'hermaphrodite', 'male' or 'none'</span>
 <span class="co">#&gt; Warning: dplyr::starwars must not have more than 84 rows</span>
-<span class="co">#&gt; Warning: column 'hair_color' in dplyr::starwars must be a unique key</span></pre></div>
+<span class="co">#&gt; Warning: column 'hair_color' in dplyr::starwars must be a unique key</span></code></pre></div>
 </div>
 <div id="syntax" class="section level2">
 <h2 class="hasAnchor">
@@ -128,66 +125,76 @@
 <h4 class="hasAnchor">
 <a href="#class" class="anchor"></a>Class</h4>
 <p>To check the class simply pass an object of the desired class.</p>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="no">y</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">2</span>,<span class="fl">1</span>,<span class="fl">0</span>,<span class="fl">1</span>,<span class="fl">NA</span>)
-<span class="fu"><a href="reference/check_vector.html">check_vector</a></span>(<span class="no">y</span>, <span class="kw">values</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">numeric</a></span>(<span class="fl">0</span>))
-<span class="fu"><a href="reference/check_vector.html">check_vector</a></span>(<span class="no">y</span>, <span class="kw">values</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/integer.html">integer</a></span>(<span class="fl">0</span>))
-<span class="co">#&gt; Error: y must be class integer</span></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">1</span>,<span class="fl">0</span>,<span class="fl">1</span>,<span class="cn">NA</span><span class="op">)</span>
+<span class="fu"><a href="reference/check_vector.html">check_vector</a></span><span class="op">(</span><span class="va">y</span>, values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">numeric</a></span><span class="op">(</span><span class="fl">0</span><span class="op">)</span><span class="op">)</span>
+<span class="fu"><a href="reference/check_vector.html">check_vector</a></span><span class="op">(</span><span class="va">y</span>, values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/integer.html">integer</a></span><span class="op">(</span><span class="fl">0</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt; Error: y must be class integer</span></code></pre></div>
 </div>
 <div id="missing-values" class="section level4">
 <h4 class="hasAnchor">
 <a href="#missing-values" class="anchor"></a>Missing Values</h4>
 <p>To check that a vector does not include missing values pass a single non-missing value (of the correct class).</p>
-<div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="reference/check_vector.html">check_vector</a></span>(<span class="no">y</span>, <span class="fl">1</span>)
-<span class="co">#&gt; Error: y must not include missing values</span></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/check_vector.html">check_vector</a></span><span class="op">(</span><span class="va">y</span>, <span class="fl">1</span><span class="op">)</span>
+<span class="co">#&gt; Error: y must not include missing values</span></code></pre></div>
 <p>To allow it to include missing values include a missing value.</p>
-<div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="reference/check_vector.html">check_vector</a></span>(<span class="no">y</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1</span>, <span class="fl">NA</span>))</pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/check_vector.html">check_vector</a></span><span class="op">(</span><span class="va">y</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="cn">NA</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p>And to check that it only includes missing values only pass a missing value (of the correct class)</p>
-<div class="sourceCode" id="cb5"><pre class="r"><span class="fu"><a href="reference/check_vector.html">check_vector</a></span>(<span class="no">y</span>, <span class="fl">NA_real_</span>)
-<span class="co">#&gt; Error: y must only include missing values</span></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/check_vector.html">check_vector</a></span><span class="op">(</span><span class="va">y</span>, <span class="cn">NA_real_</span><span class="op">)</span>
+<span class="co">#&gt; Error: y must only include missing values</span></code></pre></div>
 </div>
 <div id="range" class="section level4">
 <h4 class="hasAnchor">
 <a href="#range" class="anchor"></a>Range</h4>
 <p>To check the range of a vector pass two non-missing values (as well as the missing value if required).</p>
-<div class="sourceCode" id="cb6"><pre class="r"><span class="fu"><a href="reference/check_vector.html">check_vector</a></span>(<span class="no">y</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">0</span>, <span class="fl">2</span>, <span class="fl">NA</span>))
-<span class="fu"><a href="reference/check_vector.html">check_vector</a></span>(<span class="no">y</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(-<span class="fl">1</span>, -<span class="fl">10</span>, <span class="fl">NA</span>))
-<span class="co">#&gt; Error: the values in y must lie between -10 and -1</span></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/check_vector.html">check_vector</a></span><span class="op">(</span><span class="va">y</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">2</span>, <span class="cn">NA</span><span class="op">)</span><span class="op">)</span>
+<span class="fu"><a href="reference/check_vector.html">check_vector</a></span><span class="op">(</span><span class="va">y</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1</span>, <span class="op">-</span><span class="fl">10</span>, <span class="cn">NA</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt; Error: the values in y must lie between -10 and -1</span></code></pre></div>
 </div>
 <div id="specific-values" class="section level4">
 <h4 class="hasAnchor">
 <a href="#specific-values" class="anchor"></a>Specific Values</h4>
-<p>To check the vector only includes specific values pass three or more non-missing values or set <code>only = TRUE</code>.</p>
-<div class="sourceCode" id="cb7"><pre class="r"><span class="fu"><a href="reference/check_vector.html">check_vector</a></span>(<span class="no">y</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">NA</span>))
-<span class="fu"><a href="reference/check_vector.html">check_vector</a></span>(<span class="no">y</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">NA</span>))
+<p>To check the vector only includes specific values pass three or more non-missing values or set <code>only  = TRUE</code>.</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/check_vector.html">check_vector</a></span><span class="op">(</span><span class="va">y</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">2</span>, <span class="cn">NA</span><span class="op">)</span><span class="op">)</span>
+<span class="fu"><a href="reference/check_vector.html">check_vector</a></span><span class="op">(</span><span class="va">y</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">2</span>, <span class="cn">NA</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; Error: y can only include values 1 or 2</span>
-<span class="fu"><a href="reference/check_vector.html">check_vector</a></span>(<span class="no">y</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">NA</span>), <span class="kw">only</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
-<span class="co">#&gt; Error: y can only include values 1 or 2</span></pre></div>
+<span class="fu"><a href="reference/check_vector.html">check_vector</a></span><span class="op">(</span><span class="va">y</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="cn">NA</span><span class="op">)</span>, only <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="co">#&gt; Error: y can only include values 1 or 2</span></code></pre></div>
 </div>
 </div>
 <div id="naming-objects" class="section level2">
 <h2 class="hasAnchor">
 <a href="#naming-objects" class="anchor"></a>Naming Objects</h2>
 <p>By default, the name of an object is determined from the function call.</p>
-<div class="sourceCode" id="cb8"><pre class="r"><span class="fu"><a href="reference/check_vector.html">check_vector</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="fl">1</span>))
-<span class="co">#&gt; Error: list(x = 1) must be an atomic vector</span></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/check_vector.html">check_vector</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt; Error: list(x = 1) must be an atomic vector</span></code></pre></div>
 <p>This simplifies things but results in less informative error messages when used in a pipe.</p>
-<div class="sourceCode" id="cb9"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">magrittr</span>)
-<span class="no">y</span> <span class="kw">%&gt;%</span> <span class="fu"><a href="reference/check_list.html">check_list</a></span>()
-<span class="co">#&gt; Error: . must be a list</span></pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://magrittr.tidyverse.org">magrittr</a></span><span class="op">)</span>
+<span class="va">y</span> <span class="op">%&gt;%</span> <span class="fu"><a href="reference/check_list.html">check_list</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; Error: . must be a list</span></code></pre></div>
 <p>The argument <code>x_name</code> can be used to override the name.</p>
-<div class="sourceCode" id="cb10"><pre class="r"><span class="no">y</span> <span class="kw">%&gt;%</span> <span class="fu"><a href="reference/check_list.html">check_list</a></span>(<span class="kw">x_name</span> <span class="kw">=</span> <span class="st">"y"</span>)
-<span class="co">#&gt; Error: y must be a list</span></pre></div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">y</span> <span class="op">%&gt;%</span> <span class="fu"><a href="reference/check_list.html">check_list</a></span><span class="op">(</span>x_name <span class="op">=</span> <span class="st">"y"</span><span class="op">)</span>
+<span class="co">#&gt; Error: y must be a list</span></code></pre></div>
 </div>
 <div id="scalars" class="section level2">
 <h2 class="hasAnchor">
 <a href="#scalars" class="anchor"></a>Scalars</h2>
 <p>The four wrapper functions <code><a href="reference/check_lgl.html">check_lgl()</a></code>, <code><a href="reference/check_int.html">check_int()</a></code>, <code><a href="reference/check_dbl.html">check_dbl()</a></code> and <code>check_str()</code> check whether an object is an attribute-less non-missing scalar logical (flag), integer, double (number) or character (string). They are really useful for checking the types of arguments in functions</p>
-<div class="sourceCode" id="cb11"><pre class="r"><span class="no">fun</span> <span class="kw">&lt;-</span> <span class="kw">function</span>(<span class="no">x</span>) { <span class="fu"><a href="reference/check_lgl.html">check_lgl</a></span>(<span class="no">x</span>)}
-<span class="fu">fun</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="fl">NA</span>)
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">fun</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span> <span class="fu"><a href="reference/check_lgl.html">check_lgl</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">}</span>
+<span class="fu">fun</span><span class="op">(</span>x <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span>
 <span class="co">#&gt; Error: x must not include missing values</span>
-<span class="fu">fun</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
-<span class="fu">fun</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="fl">1</span>)
-<span class="co">#&gt; Error: x must be class logical</span></pre></div>
+<span class="fu">fun</span><span class="op">(</span>x <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="fu">fun</span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
+<span class="co">#&gt; Error: x must be class logical</span></code></pre></div>
 <p>Additional scalar wrappers are <code><a href="reference/check_date.html">check_date()</a></code> and <code><a href="reference/check_dttm.html">check_dttm()</a></code> for scalar Date and POSIXct objects. Alternatively you can roll your own using the more general <code><a href="reference/check_scalar.html">check_scalar()</a></code> function.</p>
 </div>
 <div id="installation" class="section level2">
@@ -202,25 +209,24 @@
 <div id="citation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#citation" class="anchor"></a>Citation</h2>
-<pre><code>
-To cite checkr in publications use:
-
-  Joe Thorley (2018). checkr: An R package for Assertive Programming.
-  Journal of Open Source Software, 3(23), 624. URL
-  https://doi.org/10.21105/joss.00624
-
-A BibTeX entry for LaTeX users is
-
-  @Article{,
-    title = {checkr: {An} {R} package for {Assertive} {Programming}},
-    author = {Joe Thorley},
-    journal = {Journal of Open Source Software},
-    year = {2018},
-    volume = {3},
-    number = {23},
-    pages = {624},
-    url = {http://joss.theoj.org/papers/10.21105/joss.00624},
-  }</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>To cite checkr <span class="cf">in</span> publications use<span class="op">:</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a></span>
+<span id="cb14-3"><a href="#cb14-3"></a><span class="st">  </span>Joe <span class="kw">Thorley</span> (<span class="dv">2018</span>). checkr<span class="op">:</span><span class="st"> </span>An R package <span class="cf">for</span> Assertive Programming.</span>
+<span id="cb14-4"><a href="#cb14-4"></a>  Journal of Open Source Software, <span class="dv">3</span>(<span class="dv">23</span>), <span class="fl">624.</span> URL</span>
+<span id="cb14-5"><a href="#cb14-5"></a>  https<span class="op">:</span><span class="er">//</span>doi.org<span class="op">/</span><span class="fl">10.21105</span><span class="op">/</span>joss<span class="fl">.00624</span></span>
+<span id="cb14-6"><a href="#cb14-6"></a></span>
+<span id="cb14-7"><a href="#cb14-7"></a>A BibTeX entry <span class="cf">for</span> LaTeX users is</span>
+<span id="cb14-8"><a href="#cb14-8"></a></span>
+<span id="cb14-9"><a href="#cb14-9"></a>  <span class="op">@</span>Article{,</span>
+<span id="cb14-10"><a href="#cb14-10"></a>    title =<span class="st"> </span>{checkr<span class="op">:</span><span class="st"> </span>{An} {R} package <span class="cf">for</span> {Assertive} {Programming}},</span>
+<span id="cb14-11"><a href="#cb14-11"></a>    author =<span class="st"> </span>{Joe Thorley},</span>
+<span id="cb14-12"><a href="#cb14-12"></a>    journal =<span class="st"> </span>{Journal of Open Source Software},</span>
+<span id="cb14-13"><a href="#cb14-13"></a>    year =<span class="st"> </span>{<span class="dv">2018</span>},</span>
+<span id="cb14-14"><a href="#cb14-14"></a>    volume =<span class="st"> </span>{<span class="dv">3</span>},</span>
+<span id="cb14-15"><a href="#cb14-15"></a>    number =<span class="st"> </span>{<span class="dv">23</span>},</span>
+<span id="cb14-16"><a href="#cb14-16"></a>    pages =<span class="st"> </span>{<span class="dv">624</span>},</span>
+<span id="cb14-17"><a href="#cb14-17"></a>    url =<span class="st"> </span>{http<span class="op">:</span><span class="er">//</span>joss.theoj.org<span class="op">/</span>papers<span class="op">/</span><span class="fl">10.21105</span><span class="op">/</span>joss<span class="fl">.00624</span>},</span>
+<span id="cb14-18"><a href="#cb14-18"></a>  }</span></code></pre></div>
 </div>
 <div id="contribution" class="section level2">
 <h2 class="hasAnchor">
@@ -281,7 +287,7 @@ A BibTeX entry for LaTeX users is
   <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://www.tidyverse.org/lifecycle/#superseded"><img src="https://img.shields.io/badge/lifecycle-superseded-blue.svg" alt="Lifecycle: superseded"></a></li>
+<li><a href="https://lifecycle.r-lib.org/articles/stages.html#superseded"><img src="https://img.shields.io/badge/lifecycle-superseded-blue.svg" alt="Lifecycle: superseded"></a></li>
 <li><a href="https://github.com/poissonconsulting/checkr/actions"><img src="https://github.com/poissonconsulting/checkr/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
 <li><a href="https://codecov.io/gh/poissonconsulting/checkr?branch=master"><img src="https://codecov.io/gh/poissonconsulting/checkr/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
 <li><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a></li>
@@ -298,7 +304,7 @@ A BibTeX entry for LaTeX users is
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>

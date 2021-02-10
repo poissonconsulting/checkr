@@ -38,12 +38,6 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
@@ -68,7 +62,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/poissonconsulting/checkr/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -82,13 +76,13 @@
 
       
 
-      </header><div class="row">
+      </header><script src="assertive-programming_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Packages for Assertive Programming</h1>
                         <h4 class="author">Joe Thorley</h4>
             
-            <h4 class="date">2020-05-12</h4>
+            <h4 class="date">2021-02-10</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/poissonconsulting/checkr/blob/master/vignettes/assertive-programming.Rmd"><code>vignettes/assertive-programming.Rmd</code></a></small>
       <div class="hidden name"><code>assertive-programming.Rmd</code></div>
@@ -121,66 +115,77 @@
 <h3 class="hasAnchor">
 <a href="#base" class="anchor"></a>base</h3>
 <p>The <code>base</code> package offers the <code><a href="https://rdrr.io/r/base/stopifnot.html">stopifnot()</a></code> function.</p>
-<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="no">height</span> <span class="kw">&lt;-</span> <span class="kw pkg">dplyr</span><span class="kw ns">::</span><span class="no"><a href="https://dplyr.tidyverse.org/reference/starwars.html">starwars</a></span>$<span class="no">height</span>
-<span class="fu"><a href="https://rdrr.io/r/base/stopifnot.html">stopifnot</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/character.html">is.character</a></span>(<span class="no">height</span>))
-<span class="co">#&gt; Error: is.character(height) is not TRUE</span></pre></body></html></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">height</span> <span class="op">&lt;-</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="va"><a href="https://dplyr.tidyverse.org/reference/starwars.html">starwars</a></span><span class="op">$</span><span class="va">height</span>
+<span class="fu"><a href="https://rdrr.io/r/base/stopifnot.html">stopifnot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/character.html">is.character</a></span><span class="op">(</span><span class="va">height</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt; Error: is.character(height) is not TRUE</span></code></pre></div>
 <p>The error message is not that helpful if the user doesn’t know what <code><a href="https://rdrr.io/r/base/character.html">is.character()</a></code> tests for.</p>
 <p>In a function it behaves as follows:</p>
-<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="no">my_fun</span> <span class="kw">&lt;-</span> <span class="kw">function</span>(<span class="no">x</span>) <span class="fu"><a href="https://rdrr.io/r/base/stopifnot.html">stopifnot</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/character.html">is.character</a></span>(<span class="no">x</span>))
-<span class="fu">my_fun</span>(<span class="no">height</span>)
-<span class="co">#&gt; Error in my_fun(height): is.character(x) is not TRUE</span></pre></body></html></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">my_fun</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/stopifnot.html">stopifnot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/character.html">is.character</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span>
+<span class="fu">my_fun</span><span class="op">(</span><span class="va">height</span><span class="op">)</span>
+<span class="co">#&gt; Error in my_fun(height): is.character(x) is not TRUE</span></code></pre></div>
 </div>
 <div id="assertthat" class="section level3">
 <h3 class="hasAnchor">
 <a href="#assertthat" class="anchor"></a>assertthat</h3>
 <p>The <a href="https://github.com/hadley/assertthat"><code>assertthat</code></a> package offers <code><a href="https://rdrr.io/pkg/assertthat/man/assert_that.html">assert_that()</a></code>.</p>
-<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">assertthat</span>)
-<span class="fu"><a href="https://rdrr.io/pkg/assertthat/man/assert_that.html">assert_that</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/character.html">is.character</a></span>(<span class="no">height</span>))
-<span class="co">#&gt; Error: height is not a character vector</span></pre></body></html></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">assertthat</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/pkg/assertthat/man/assert_that.html">assert_that</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/character.html">is.character</a></span><span class="op">(</span><span class="va">height</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt; Error: height is not a character vector</span></code></pre></div>
 <p>The error message is a big improvement on <code><a href="https://rdrr.io/r/base/stopifnot.html">stopifnot()</a></code>’s.</p>
 <p>In a function it behaves as follows:</p>
-<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="no">my_fun</span> <span class="kw">&lt;-</span> <span class="kw">function</span>(<span class="no">x</span>) <span class="fu"><a href="https://rdrr.io/pkg/assertthat/man/assert_that.html">assert_that</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/character.html">is.character</a></span>(<span class="no">x</span>))
-<span class="fu">my_fun</span>(<span class="kw pkg">dplyr</span><span class="kw ns">::</span><span class="no"><a href="https://dplyr.tidyverse.org/reference/starwars.html">starwars</a></span>$<span class="no">height</span>)
-<span class="co">#&gt; Error: x is not a character vector</span></pre></body></html></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">my_fun</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/pkg/assertthat/man/assert_that.html">assert_that</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/character.html">is.character</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span>
+<span class="fu">my_fun</span><span class="op">(</span><span class="fu">dplyr</span><span class="fu">::</span><span class="va"><a href="https://dplyr.tidyverse.org/reference/starwars.html">starwars</a></span><span class="op">$</span><span class="va">height</span><span class="op">)</span>
+<span class="co">#&gt; Error: x is not a character vector</span></code></pre></div>
 <p>Perhaps the neatest feature is the ability to set your own error message for an assertion function using <code><a href="https://rdrr.io/pkg/assertthat/man/on_failure.html">on_failure()</a></code>.</p>
-<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="no">is.character2</span> <span class="kw">&lt;-</span> <span class="kw">function</span>(<span class="no">x</span>) <span class="fu"><a href="https://rdrr.io/r/base/character.html">is.character</a></span>(<span class="no">x</span>)
-<span class="fu"><a href="https://rdrr.io/pkg/assertthat/man/on_failure.html">on_failure</a></span>(<span class="no">is.character2</span>) <span class="kw">&lt;-</span> <span class="kw">function</span>(<span class="no">call</span>, <span class="no">env</span>) {
-  <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/deparse.html">deparse</a></span>(<span class="no">call</span>$<span class="no">x</span>), <span class="st">" must be a character - sort it out!"</span>)
-}
-<span class="fu"><a href="https://rdrr.io/pkg/assertthat/man/assert_that.html">assert_that</a></span>(<span class="fu">is.character2</span>(<span class="no">height</span>))
-<span class="co">#&gt; Error: height must be a character - sort it out!</span></pre></body></html></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">is.character2</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html">is.character</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/pkg/assertthat/man/on_failure.html">on_failure</a></span><span class="op">(</span><span class="va">is.character2</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">call</span>, <span class="va">env</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/deparse.html">deparse</a></span><span class="op">(</span><span class="va">call</span><span class="op">$</span><span class="va">x</span><span class="op">)</span>, <span class="st">" must be a character - sort it out!"</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="fu"><a href="https://rdrr.io/pkg/assertthat/man/assert_that.html">assert_that</a></span><span class="op">(</span><span class="fu">is.character2</span><span class="op">(</span><span class="va">height</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt; Error: height must be a character - sort it out!</span></code></pre></div>
 </div>
 <div id="checkmate" class="section level3">
 <h3 class="hasAnchor">
 <a href="#checkmate" class="anchor"></a>checkmate</h3>
 <p>The <a href="https://github.com/mllg/checkmate"><code>checkmate</code></a> package provides a plethora of functions to check the type and related properties of common objects.</p>
-<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">checkmate</span>)
-<span class="fu"><a href="https://rdrr.io/pkg/checkmate/man/checkCharacter.html">assert_character</a></span>(<span class="no">height</span>)
-<span class="co">#&gt; Error in eval(expr, envir, enclos): Assertion on 'height' failed: Must be of type 'character', not 'integer'.</span></pre></body></html></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/mllg/checkmate">checkmate</a></span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/pkg/checkmate/man/checkCharacter.html">assert_character</a></span><span class="op">(</span><span class="va">height</span><span class="op">)</span>
+<span class="co">#&gt; Error in eval(expr, envir, enclos): Assertion on 'height' failed: Must be of type 'character', not 'integer'.</span></code></pre></div>
 <p>In a function it behaves as follows</p>
-<div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="no">my_fun</span> <span class="kw">&lt;-</span> <span class="kw">function</span>(<span class="no">x</span>) <span class="fu"><a href="https://rdrr.io/pkg/checkmate/man/checkCharacter.html">assert_character</a></span>(<span class="no">x</span>)
-<span class="fu">my_fun</span>(<span class="no">height</span>)
-<span class="co">#&gt; Error in my_fun(height): Assertion on 'x' failed: Must be of type 'character', not 'integer'.</span></pre></body></html></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">my_fun</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/pkg/checkmate/man/checkCharacter.html">assert_character</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>
+<span class="fu">my_fun</span><span class="op">(</span><span class="va">height</span><span class="op">)</span>
+<span class="co">#&gt; Error in my_fun(height): Assertion on 'x' failed: Must be of type 'character', not 'integer'.</span></code></pre></div>
 <p>In addition, the <code><a href="https://rdrr.io/pkg/checkmate/man/assert.html">assert()</a></code> function allows multiple alternative <code>check**</code> functions (those which return a string of the error message on failure and a <code>TRUE</code> on success) to be combined into one assertion.</p>
-<div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/pkg/checkmate/man/assert.html">assert</a></span>(<span class="fu"><a href="https://rdrr.io/pkg/checkmate/man/checkCharacter.html">checkCharacter</a></span>(<span class="no">height</span>), <span class="fu"><a href="https://rdrr.io/pkg/checkmate/man/checkFactor.html">checkFactor</a></span>(<span class="no">height</span>))
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/checkmate/man/assert.html">assert</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/checkmate/man/checkCharacter.html">checkCharacter</a></span><span class="op">(</span><span class="va">height</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/pkg/checkmate/man/checkFactor.html">checkFactor</a></span><span class="op">(</span><span class="va">height</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; Error: Assertion failed. One of the following must apply:</span>
 <span class="co">#&gt;  * checkCharacter(height): Must be of type 'character', not 'integer'</span>
-<span class="co">#&gt;  * checkFactor(height): Must be of type 'factor', not 'integer'</span></pre></body></html></div>
+<span class="co">#&gt;  * checkFactor(height): Must be of type 'factor', not 'integer'</span></code></pre></div>
 </div>
 <div id="checkr" class="section level3">
 <h3 class="hasAnchor">
 <a href="#checkr" class="anchor"></a>checkr</h3>
 <p>The <a href="https://github.com/poissonconsulting/checkr"><code>checkr</code></a> package provides a set of expressive functions to test the values of objects.</p>
-<div class="sourceCode" id="cb9"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">checkr</span>)
-<span class="fu"><a href="../reference/check_vector.html">check_vector</a></span>(<span class="no">height</span>, <span class="st">""</span>)
-<span class="co">#&gt; Error: height must be class character</span></pre></body></html></div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/poissonconsulting/checkr">checkr</a></span><span class="op">)</span>
+<span class="fu"><a href="../reference/check_vector.html">check_vector</a></span><span class="op">(</span><span class="va">height</span>, <span class="st">""</span><span class="op">)</span>
+<span class="co">#&gt; Error: height must be class character</span></code></pre></div>
 <p>In a function it behaves as follows:</p>
-<div class="sourceCode" id="cb10"><html><body><pre class="r"><span class="no">my_fun</span> <span class="kw">&lt;-</span> <span class="kw">function</span>(<span class="no">x</span>) <span class="fu"><a href="../reference/check_vector.html">check_vector</a></span>(<span class="no">x</span>, <span class="st">""</span>)
-<span class="fu">my_fun</span>(<span class="no">height</span>)
-<span class="co">#&gt; Error: x must be class character</span></pre></body></html></div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">my_fun</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="../reference/check_vector.html">check_vector</a></span><span class="op">(</span><span class="va">x</span>, <span class="st">""</span><span class="op">)</span>
+<span class="fu">my_fun</span><span class="op">(</span><span class="va">height</span><span class="op">)</span>
+<span class="co">#&gt; Error: x must be class character</span></code></pre></div>
 <p>And multiple alternative checks can be combined using the <code><a href="../reference/checkor.html">checkor()</a></code> function.</p>
-<div class="sourceCode" id="cb11"><html><body><pre class="r"><span class="fu"><a href="../reference/checkor.html">checkor</a></span>(<span class="fu"><a href="../reference/check_vector.html">check_vector</a></span>(<span class="no">height</span>, <span class="st">""</span>), <span class="fu"><a href="../reference/check_vector.html">check_vector</a></span>(<span class="no">height</span>, <span class="fl">1</span>))
-<span class="co">#&gt; Error: height must be class character OR height must be class numeric</span></pre></body></html></div>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/checkor.html">checkor</a></span><span class="op">(</span><span class="fu"><a href="../reference/check_vector.html">check_vector</a></span><span class="op">(</span><span class="va">height</span>, <span class="st">""</span><span class="op">)</span>, <span class="fu"><a href="../reference/check_vector.html">check_vector</a></span><span class="op">(</span><span class="va">height</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt; Error: height must be class character OR height must be class numeric</span></code></pre></div>
 </div>
 </div>
 <div id="package-comparison" class="section level2">
@@ -195,9 +200,10 @@
 <h3 class="hasAnchor">
 <a href="#custom-error-messages" class="anchor"></a>Custom Error Messages</h3>
 <p>Although there is no way to customize the error message produced by <code><a href="https://rdrr.io/r/base/stopifnot.html">stopifnot()</a></code>, <code><a href="https://rdrr.io/pkg/assertthat/man/assert_that.html">assert_that()</a></code> allows the programmer to specify the message for a individual test using the <code>msg</code> argument. In the case of <code>checkmate</code> and <code>checkr</code> the programmer can specify the variable name using the <code>.var.name</code> and <code>x_name</code> argument, respectively. This can be very helpful in functions.</p>
-<div class="sourceCode" id="cb12"><html><body><pre class="r"><span class="no">my_fun</span> <span class="kw">&lt;-</span> <span class="kw">function</span>(<span class="no">x</span>) <span class="fu"><a href="../reference/check_vector.html">check_vector</a></span>(<span class="no">x</span>, <span class="st">""</span>, <span class="kw">x_name</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/substitute.html">substitute</a></span>(<span class="no">x</span>))
-<span class="fu">my_fun</span>(<span class="no">height</span>)
-<span class="co">#&gt; Error: height must be class character</span></pre></body></html></div>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">my_fun</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="../reference/check_vector.html">check_vector</a></span><span class="op">(</span><span class="va">x</span>, <span class="st">""</span>, x_name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/substitute.html">substitute</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span>
+<span class="fu">my_fun</span><span class="op">(</span><span class="va">height</span><span class="op">)</span>
+<span class="co">#&gt; Error: height must be class character</span></code></pre></div>
 </div>
 <div id="speed" class="section level3">
 <h3 class="hasAnchor">
@@ -227,7 +233,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>
