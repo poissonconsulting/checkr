@@ -1,5 +1,3 @@
-context("intersection")
-
 test_that("check_intersection", {
   x1 <- 1:3
   x2 <- 1:4

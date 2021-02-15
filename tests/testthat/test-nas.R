@@ -1,5 +1,3 @@
-context("check-nas")
-
 test_that("nas", {
   expect_identical(check_nas(NA, NA), NA)
   expect_identical(check_nas(c(TRUE, NA), c(FALSE, NA)), c(TRUE, NA))

@@ -1,5 +1,3 @@
-context("character")
-
 test_that("check_character", {
   expect_error(check_character(1), "1 must be class character")
   expect_identical(check_character("a"), "a")

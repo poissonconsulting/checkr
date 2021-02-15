@@ -1,5 +1,3 @@
-context("check-ncol")
-
 test_that("check_ncol requires a data frame", {
   x <- data.frame(y = 2)
   expect_identical(check_ncol(x), x)

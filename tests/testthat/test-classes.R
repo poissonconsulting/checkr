@@ -1,5 +1,3 @@
-context("classes")
-
 test_that("check_classes", {
   x <- list()
   class(x) <- c("a", "b")

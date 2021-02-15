@@ -1,5 +1,3 @@
-context("length")
-
 test_that("length1", {
   expect_identical(check_length1(2), 2)
   expect_error(check_length1(character(0)), "character[(]0[)] must have 1 element")

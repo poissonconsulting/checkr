@@ -1,5 +1,3 @@
-context("check-lgl")
-
 test_that("check_lgl errors", {
   y <- TRUE
   expect_identical(check_lgl(y), y)

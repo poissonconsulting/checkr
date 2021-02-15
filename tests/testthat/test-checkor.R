@@ -1,5 +1,3 @@
-context("checkor")
-
 test_that("checkor", {
   expect_true(checkor(check_null(NULL), check_null(1), error = TRUE))
   expect_error(checkor(check_null(1), check_null(1), error = TRUE), "1 must be NULL")

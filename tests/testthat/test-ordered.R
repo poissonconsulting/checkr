@@ -1,5 +1,3 @@
-context("ordered")
-
 test_that("class", {
   
   ordered <- ordered(c("1", "3", "0"))

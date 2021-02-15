@@ -1,5 +1,3 @@
-context("inherits")
-
 test_that("check_inherits", {
   x <- list()
   class(x) <- c("a", "b")

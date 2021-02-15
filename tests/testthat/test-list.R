@@ -1,5 +1,3 @@
-context("list")
-
 test_that("list", {
   x <- list(x = 1, 2)
   expect_identical(check_list(x), x)

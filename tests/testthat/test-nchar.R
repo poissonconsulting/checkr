@@ -1,5 +1,3 @@
-context("nchar")
-
 test_that("nchar", {
   expect_identical(check_nchar(1), 1)
   expect_identical(check_nchar(1, 1), 1)

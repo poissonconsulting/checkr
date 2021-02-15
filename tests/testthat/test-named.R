@@ -1,5 +1,3 @@
-context("named")
-
 test_that("named", {
   expect_error(check_named(2), "2 must be named")
   x <- 1

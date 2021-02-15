@@ -1,5 +1,3 @@
-context("levels")
-
 test_that("levels", {
 
   expect_error(check_levels(1, c("y", "x")), "1 must have a levels attribute")

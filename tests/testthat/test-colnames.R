@@ -1,5 +1,3 @@
-context("colnames")
-
 test_that("colnames", {
   
   data <- data.frame(x = 1, y = 2, z = 0)

@@ -1,5 +1,3 @@
-context("data")
-
 test_that("check_data factor", {
   expect_identical(check_data(datasets::mtcars), mtcars)
   x <- data.frame(factor = factor(1:3))

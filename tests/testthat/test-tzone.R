@@ -1,5 +1,3 @@
-context("tzone")
-
 test_that("tzone", {
   expect_error(check_tzone(Sys.Date()), 
                "Sys.Date[(][)] time zone must be 'UTC' [(]not 'NULL'[)]")

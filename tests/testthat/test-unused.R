@@ -1,5 +1,3 @@
-context("unused")
-
 test_that("check_unused errors", {
   fun <- function(...) check_unused(...)
   expect_null(fun())

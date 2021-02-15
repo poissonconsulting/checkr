@@ -1,5 +1,3 @@
-context("grepl")
-
 test_that("grepl", {
   expect_identical(check_grepl(1), 1)
   expect_identical(check_grepl(1, "^1$"), 1)

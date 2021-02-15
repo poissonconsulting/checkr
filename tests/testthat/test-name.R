@@ -1,5 +1,3 @@
-context("name")
-
 test_that("name", {
   
   vec <- c("x", "x.y")

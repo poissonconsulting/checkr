@@ -1,5 +1,3 @@
-context("check-dbl")
-
 test_that("check_dbl errors", {
   y <- 1.0
   expect_identical(check_dbl(y), y)

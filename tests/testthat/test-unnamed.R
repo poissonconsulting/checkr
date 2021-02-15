@@ -1,5 +1,3 @@
-context("unnamed")
-
 test_that("unnamed", {
   expect_identical(check_unnamed(2), 2)
   x <- 1

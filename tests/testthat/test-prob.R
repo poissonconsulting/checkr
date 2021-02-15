@@ -1,5 +1,3 @@
-context("check-prob")
-
 test_that("check_prob errors", {
   y <- 1.0
   expect_identical(check_prob(y), y)

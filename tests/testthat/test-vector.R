@@ -1,5 +1,3 @@
-context("vector")
-
 test_that("vector", {
   expect_error(check_vector(2, named  = TRUE), "2 must be named")
   x <- 1

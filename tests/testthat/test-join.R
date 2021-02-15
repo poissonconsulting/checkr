@@ -1,5 +1,3 @@
-context("join")
-
 test_that("join", {
 
 data1 <- data.frame(x = 1:2)

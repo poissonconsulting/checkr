@@ -1,5 +1,3 @@
-context("scalar")
-
 test_that("scalar", {
   expect_error(check_scalar(2, named  = TRUE), "2 must be named")
   x <- 1

@@ -1,5 +1,3 @@
-context("function")
-
 test_that("function", {
   expect_identical(check_function(character), character)
   expect_error(check_function(character()), "character[(][)] must be a function")

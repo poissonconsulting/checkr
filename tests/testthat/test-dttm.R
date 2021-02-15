@@ -1,5 +1,3 @@
-context("check-datetime")
-
 test_that("check_datetime errors", {
   y <- as.POSIXct("2001-02-03 23:59:59", tz = "UTC")
   expect_identical(check_dttm(y), y)

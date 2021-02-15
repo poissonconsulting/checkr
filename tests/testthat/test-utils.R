@@ -1,5 +1,3 @@
-context("utils")
-
 test_that("is_range", {
   expect_true(is_count_range(c(1,2)))
   expect_true(is_count_range(c(2,1)))

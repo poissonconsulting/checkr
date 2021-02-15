@@ -1,5 +1,3 @@
-context("attributes")
-
 test_that("check_attributes", {
   x <- 1
   attributes(x) <- list(y = 2L)

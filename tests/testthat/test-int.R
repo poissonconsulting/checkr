@@ -1,5 +1,3 @@
-context("check-int")
-
 test_that("check_int errors", {
   y <- 2L
   expect_identical(check_int(y), y)

@@ -1,5 +1,3 @@
-context("rbind")
-
 test_that("rbind column names", {
   expect_identical(check_rbind(datasets::mtcars, datasets::mtcars), datasets::mtcars)
   expect_identical(check_rbind(datasets::mtcars[c("cyl", "mpg")], 

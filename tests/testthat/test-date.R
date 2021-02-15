@@ -1,5 +1,3 @@
-context("check-day")
-
 test_that("check_day errors", {
   y <- as.Date("2002-01-02")
   expect_identical(check_day(y), y)
