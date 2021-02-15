@@ -1,8 +1,8 @@
 pandoc: 2.7.3
 pkgdown: 1.6.1.9000
-pkgdown_sha: c931fe24c135c6ca704ae9f300470e9c66d8bfe7
+pkgdown_sha: 1c28ef9d9476e35974e1933de76a9aaa24d4cd27
 articles:
   assertive-programming: assertive-programming.html
   checkr-naming: checkr-naming.html
-last_built: 2021-02-10T01:00Z
+last_built: 2021-02-15T21:54Z
 
