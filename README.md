@@ -4,8 +4,7 @@
 
 [![Lifecycle:
 superseded](https://img.shields.io/badge/lifecycle-superseded-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html#superseded)
-[![R build
-status](https://github.com/poissonconsulting/checkr/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/checkr/actions)
+[![R-CMD-check](https://github.com/poissonconsulting/checkr/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/checkr/actions)
 [![Codecov test
 coverage](https://codecov.io/gh/poissonconsulting/checkr/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/checkr?branch=master)
 [![License:
