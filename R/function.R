@@ -1,11 +1,9 @@
 #' Check Function
 #' 
 #' Checks if x is a function.
-#'
-#' @param x The object to check.
-#' @param x_name A string of the name of the object.
-#' @param nargs A count of the number of arguments or count range of the minimum and maximum number of arguments.
-#' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
+#' 
+#' @inheritParams params
+#' 
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @export
 #'

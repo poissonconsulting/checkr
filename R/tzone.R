@@ -2,10 +2,8 @@
 #' 
 #' Checks an objects tzone attribute.
 #'
-#' @param x The object to check.
-#' @param tzone A string of the time zone.
-#' @param x_name A string of the name of the object.
-#' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
+#' @inheritParams params
+#' 
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @export
 #'

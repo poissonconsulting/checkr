@@ -3,13 +3,11 @@
 #' Checks the levels in a factor including the order and 
 #' whether other levels are permitted.
 #'
-#' @param x The object to check.
-#' @param levels A character vector of the levels.
+#' @inheritParams params
 #' @param exclusive A flag indicating whether other levels are not permitted.
 #' @param order A flag indicating whether the object levels have to occur in the same order as names. To check whether x is an ordered factor use
 #' \code{check_vector(x, ordered(1))}.
-#' @param x_name A string of the name of the object.
-#' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
+#' 
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @seealso \code{\link{check_nlevels}} and \code{\link{check_vector}}
 #' @export

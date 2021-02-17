@@ -2,13 +2,11 @@
 #' 
 #' Checks the column names of a data frame as returned by the `colnames()` function. 
 #' The function can check the order of the columns and whether other columns are permitted.
-#'
+#' 
+#' @inheritParams params
 #' @param x The data to check.
-#' @param colnames A character vector of the column names.
-#' @param exclusive A flag indicating whether other columns are not permitted.
 #' @param order A flag indicating whether the columns have to occur in the same order as colnames.
-#' @param x_name A string of the name of the object.
-#' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
+#' 
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @seealso \code{\link{check_missing_colnames}} and \code{\link{check_data}}
 #' @export

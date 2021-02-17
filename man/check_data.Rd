@@ -20,7 +20,9 @@ check_data(
 
 \item{values}{NULL (default) or a character vector specifying the column names or a named list specifying the column names and values.}
 
-\item{nrow}{A flag indicating whether x should have rows (versus no rows) or a missing value indicating no requirements or a count or count range of the number of rows.}
+\item{nrow}{A flag indicating whether x should have rows (versus no rows) or a missing value indicating no requirements or a count or count range of the number of rows.
+
+ @return An invisible copy of x (if it doesn't throw an error).}
 
 \item{exclusive}{A flag indicating whether other columns are not permitted.}
 
@@ -28,9 +30,10 @@ check_data(
 
 \item{key}{A character vector of the columns that represent a unique key.}
 
-\item{x_name}{A string of the name of the object.}
+\item{x_name}{A string of the name of the object x.}
 
-\item{error}{A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.}
+\item{error}{A flag indicating whether to throw an informative error or 
+immediately generate an informative message if the check fails.}
 }
 \value{
 An invisible copy of x (if it doesn't throw an error).

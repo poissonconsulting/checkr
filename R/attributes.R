@@ -5,6 +5,7 @@
 #' @inheritParams check_list
 #' @param names A flag specifying whether names should be considered an attribute.
 #' @param class A flag specifying whether class should be considered an attribute.
+#' 
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @seealso \code{\link{check_list}}
 #' @export

@@ -2,13 +2,11 @@
 #' 
 #' Checks whether a data frame has the same columns of the same classes as a second data frame which means they can be \code{\link{rbind}}ed without a problem.
 #'
+#' @inheritParams params
 #' @param x The first data frame.
 #' @param y The second data frame.
-#' @param exclusive A flag indicating whether other columns are not permitted.
 #' @param order A flag indicating whether the columns have to occur in the same order.
-#' @param x_name A string of the name of the object x.
-#' @param y_name A string of the name of the object y.
-#' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
+#' 
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @seealso \code{\link{check_join}}
 #' @export

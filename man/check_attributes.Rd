@@ -18,7 +18,7 @@ check_attributes(
 \arguments{
 \item{x}{The object to check.}
 
-\item{values}{An optional vector or named list specifying the values.}
+\item{values}{NULL (default) or a character vector specifying the column names or a named list specifying the column names and values.}
 
 \item{exclusive}{A flag indicating whether other elements are not permitted.}
 
@@ -28,9 +28,10 @@ check_attributes(
 
 \item{class}{A flag specifying whether class should be considered an attribute.}
 
-\item{x_name}{A string of the name of the object.}
+\item{x_name}{A string of the name of the object x.}
 
-\item{error}{A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.}
+\item{error}{A flag indicating whether to throw an informative error or 
+immediately generate an informative message if the check fails.}
 }
 \value{
 An invisible copy of x (if it doesn't throw an error).

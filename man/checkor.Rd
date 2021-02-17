@@ -9,7 +9,8 @@ checkor(..., error = TRUE)
 \arguments{
 \item{...}{The checks to check.}
 
-\item{error}{A flag indicating whether to throw an informative error or immediately generate an informative message if all checks fails.}
+\item{error}{A flag indicating whether to throw an informative error or 
+immediately generate an informative message if the check fails.}
 }
 \value{
 An invisible flag indicating whether at least one check passes (if it doesn't throw an error).

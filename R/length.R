@@ -3,10 +3,8 @@
 #' Checks whether the number of elements in an object is an exact number, 
 #' within a range or 0 vs positive.
 #'
-#' @param x The object to check.
-#' @param length A flag indicating whether x should have elements (versus no elements) or a missing value indicating no requirements or a count or count range of the number of elements or a count vector of the permitted number of elements.
-#' @param x_name A string of the name of the object.
-#' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
+#' @inheritParams params
+#' 
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @seealso \code{\link{check_vector}}, \code{\link{check_list}} and \code{\link{check_data}}
 #' @export
@@ -34,9 +32,7 @@ check_length <- function(x,
 #' 
 #' Checks whether x is an object of length 1.
 #'
-#' @param x The object to check.
-#' @param x_name A string of the name of the object.
-#' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
+#' @inheritParams params
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @export
 #'

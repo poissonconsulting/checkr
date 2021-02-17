@@ -36,7 +36,8 @@ check_length_internal <- function(x)
 #' 
 #' \code{chk_deparse} is a wrapper on \code{\link{deparse}} that
 #' sets a missing value to be "NA"
-#'
+#' 
+#' 
 #' @param x A substituted object to deparse
 #'
 #' @return A string

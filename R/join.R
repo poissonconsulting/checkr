@@ -4,13 +4,10 @@
 #' join with the corresponding columns in y, ie, 
 #' the join is a unique key in y and all the rows in x have a match in y.
 #'
-#' @param x The object to check.
+#' @inheritParams params
 #' @param y The parent data frame.
-#' @param by A character vector or named character vector of the columns to join by. 
 #' @param all_y A flag indicating whether all the rows in y should have a match in x.
-#' @param x_name A string of the name of the object x.
-#' @param y_name A string of the name of the object y.
-#' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
+#' 
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @seealso \code{\link{check_data}}
 #' @export

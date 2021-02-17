@@ -2,10 +2,10 @@
 #' 
 #' Checks whether specific colnames are missing from a data frame.
 #'
+#' @inheritParams params
 #' @param x The data to check.
 #' @param colnames A character vector of the column names that must be missing from x.
-#' @param x_name A string of the name of the object.
-#' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
+#' 
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @seealso \code{\link{check_colnames}} and \code{\link{check_data}}
 #' @export

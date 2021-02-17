@@ -1,10 +1,9 @@
 #' Check Unique
 #' 
 #' Checks whether all elements of an object are unique.
-#'
-#' @param x The object to check.
-#' @param x_name A string of the name of the object.
-#' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
+#' 
+#' @inheritParams params
+#' 
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @seealso \code{\link{check_vector}}
 #' @export
