@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Check Negative Dbl — check_neg_dbl • checkr</title>
+<title>Parameters for checkr functions — params • checkr</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Check Negative Dbl — check_neg_dbl" />
-<meta property="og:description" content="Checks if x is a negative dbl (non-missing numeric scalar with no attributes including names)." />
+<meta property="og:title" content="Parameters for checkr functions — params" />
+<meta property="og:description" content="Descriptions of the parameters for the checkr functions." />
 
 
 
@@ -128,16 +128,15 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Check Negative Dbl</h1>
-    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/checkr/blob/master/R/dbl.R'><code>R/dbl.R</code></a></small>
-    <div class="hidden name"><code>check_neg_dbl.Rd</code></div>
+    <h1>Parameters for checkr functions</h1>
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/checkr/blob/master/R/template.R'><code>R/template.R</code></a></small>
+    <div class="hidden name"><code>params.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Checks if x is a negative dbl (non-missing numeric scalar with no attributes including names).</p>
+    <p>Descriptions of the parameters for the checkr functions.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>check_neg_dbl</span><span class='op'>(</span><span class='va'>x</span>, coerce <span class='op'>=</span> <span class='cn'>FALSE</span>, x_name <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>, error <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -145,10 +144,6 @@
     <tr>
       <th>x</th>
       <td><p>The object to check.</p></td>
-    </tr>
-    <tr>
-      <th>coerce</th>
-      <td><p>A flag indicating whether to coerce a scalar integer to a dbl and drop attributes including names.</p></td>
     </tr>
     <tr>
       <th>x_name</th>
@@ -159,20 +154,96 @@
       <td><p>A flag indicating whether to throw an informative error or 
 immediately generate an informative message if the check fails.</p></td>
     </tr>
+    <tr>
+      <th>pattern</th>
+      <td><p>A string of the regular expression.</p></td>
+    </tr>
+    <tr>
+      <th>y_name</th>
+      <td><p>A string of the name of the object y.</p></td>
+    </tr>
+    <tr>
+      <th>values</th>
+      <td><p>NULL or a vector specifying the values.</p></td>
+    </tr>
+    <tr>
+      <th>exclusive</th>
+      <td><p>A flag indicating whether other columns are not permitted.</p></td>
+    </tr>
+    <tr>
+      <th>by</th>
+      <td><p>A character vector or named character vector of the columns to join by.</p></td>
+    </tr>
+    <tr>
+      <th>colnames</th>
+      <td><p>A character vector of the column names.</p></td>
+    </tr>
+    <tr>
+      <th>na_distinct</th>
+      <td><p>A flag specifying whether missing values should be considered distinct.</p></td>
+    </tr>
+    <tr>
+      <th>sorted</th>
+      <td><p>A flag indicating whether the vector must be sorted.</p></td>
+    </tr>
+    <tr>
+      <th>only</th>
+      <td><p>A flag indicating whether only the actual values are permitted.
+It only affects values with two or less non-missing elements.</p></td>
+    </tr>
+    <tr>
+      <th>unique</th>
+      <td><p>A flag indicating whether the values must be unique.</p></td>
+    </tr>
+    <tr>
+      <th>length</th>
+      <td><p>A flag indicating whether x should have elements (versus no elements) 
+or a missing value indicating no requirements or a count or count range of the 
+number of elements or a count vector of the permitted number of elements.</p></td>
+    </tr>
+    <tr>
+      <th>complete</th>
+      <td><p>A flag indicating whether all the possible names have to be represented.</p></td>
+    </tr>
+    <tr>
+      <th>coerce</th>
+      <td><p>A flag indicating whether to coerce a scalar integer to a dbl and drop attributes including names.</p></td>
+    </tr>
+    <tr>
+      <th>tzone</th>
+      <td><p>A string of the time zone.</p></td>
+    </tr>
+    <tr>
+      <th>strict</th>
+      <td><p>A flag indicating whether all the objects must have identical classes or just share one or more classes.</p></td>
+    </tr>
+    <tr>
+      <th>recursive</th>
+      <td><p>A flag indicating whether the check should be applied recursively.</p></td>
+    </tr>
+    <tr>
+      <th>ncol</th>
+      <td><p>A flag indicating whether x should have columns (versus no columns) or a missing value indicating no requirements or a count or count range of the number of columns.</p></td>
+    </tr>
+    <tr>
+      <th>nlevels</th>
+      <td><p>A flag indicating whether x should have elements (versus no elements) or a missing value indicating no requirements or a count or count range of the number of elements.</p></td>
+    </tr>
+    <tr>
+      <th>nrow</th>
+      <td><p>A flag indicating whether x should have rows (versus no rows) or a missing value indicating no requirements or a count or count range of the number of rows.</p></td>
+    </tr>
+    <tr>
+      <th>nargs</th>
+      <td><p>A count of the number of arguments or count range of the minimum and maximum number of arguments.</p></td>
+    </tr>
+    <tr>
+      <th>levels</th>
+      <td><p>A character vector of the levels.</p></td>
+    </tr>
     </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>An invisible copy of x (if it doesn't throw an error).</p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'><p><code><a href='check_dbl.html'>check_dbl</a></code></p></div>
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>check_neg_dbl</span><span class='op'>(</span><span class='fl'>1</span>, error <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='warning'>Warning: 1 must be negative</span></div><div class='input'><span class='fu'>check_neg_dbl</span><span class='op'>(</span><span class='fl'>0L</span>, error <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='warning'>Warning: 0L must be class numeric</span></div><div class='output co'>#&gt; <span class='warning'>Warning: 0L must inherit from classes 'numeric' in that order</span></div><div class='output co'>#&gt; <span class='warning'>Warning: 0L must be negative</span></div><div class='input'><span class='fu'>check_neg_dbl</span><span class='op'>(</span><span class='fl'>0</span>, error <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='warning'>Warning: 0 must be negative</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
