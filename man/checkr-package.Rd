@@ -9,6 +9,7 @@
 Expressive, assertive, pipe-friendly functions 
   to check the properties of common R objects.
   In the case of failure the functions issue informative error messages.
+  Superseded by the 'chk' package.
 }
 \seealso{
 \code{\link{check_vector}}, \code{\link{check_list}} and \code{\link{check_data}}

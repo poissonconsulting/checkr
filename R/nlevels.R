@@ -2,10 +2,9 @@
 #' 
 #' Checks the number of levels of an object.
 #'
+#' @inheritParams params
 #' @param x The data to check.
-#' @param nlevels A flag indicating whether x should have elements (versus no elements) or a missing value indicating no requirements or a count or count range of the number of elements.
-#' @param x_name A string of the name of the object.
-#' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
+#' 
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @seealso \code{\link{check_levels}} and \code{\link{check_vector}} 
 #' @export

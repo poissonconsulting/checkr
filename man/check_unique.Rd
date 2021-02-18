@@ -9,9 +9,10 @@ check_unique(x, x_name = substitute(x), error = TRUE)
 \arguments{
 \item{x}{The object to check.}
 
-\item{x_name}{A string of the name of the object.}
+\item{x_name}{A string of the name of the object x.}
 
-\item{error}{A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.}
+\item{error}{A flag indicating whether to throw an informative error or 
+immediately generate an informative message if the check fails.}
 }
 \value{
 An invisible copy of x (if it doesn't throw an error).

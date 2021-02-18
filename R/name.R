@@ -2,11 +2,8 @@
 #'
 #' Checks whether each element of a character vector is a syntactically valid name.
 #' 
-#' @param x The object to check.
-#' @param x_name A string of the name of the object.
+#' @inheritParams params
 #' @param coerce A flag specifying whether to coerce a factor to a character vector and drop attributes including names.
-#' @param error A flag indicating whether to throw an informative error or 
-#' immediately generate an informative message if the check fails.
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @seealso \code{\link{check_character}}
 #' @export

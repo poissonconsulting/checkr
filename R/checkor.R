@@ -2,8 +2,9 @@
 #'
 #' Checks that at least one check passes.
 #'
+#' @inheritParams params
 #' @param ... The checks to check.
-#' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if all checks fails.
+#' 
 #' @return An invisible flag indicating whether at least one check passes (if it doesn't throw an error).
 #' @export
 #'

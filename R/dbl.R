@@ -2,10 +2,8 @@
 #' 
 #' Checks if x is a dbl (non-missing numeric scalar with no attributes including names).
 #'
-#' @param x The object to check.
-#' @param coerce A flag indicating whether to coerce a scalar integer to a dbl and drop attributes including names.
-#' @param x_name A string of the name of the object.
-#' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
+#' @inheritParams params
+#' 
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @seealso \code{\link{check_scalar}}
 #' @export
@@ -44,10 +42,8 @@ check_number <- function(x, coerce = FALSE,
 #' 
 #' Checks if x is a positive dbl (non-missing numeric scalar with no attributes including names).
 #'
-#' @param x The object to check.
-#' @param coerce A flag indicating whether to coerce a scalar integer to a dbl and drop attributes including names.
-#' @param x_name A string of the name of the object.
-#' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
+#' @inheritParams params
+#' 
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @seealso \code{\link{check_dbl}}
 #' @export
@@ -78,10 +74,8 @@ check_pos_dbl <- function(x, coerce = FALSE,
 #' 
 #' Checks if x is a non-negative dbl (non-missing numeric scalar with no attributes including names).
 #'
-#' @param x The object to check.
-#' @param coerce A flag indicating whether to coerce a scalar integer to a dbl and drop attributes including names.
-#' @param x_name A string of the name of the object.
-#' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
+#' @inheritParams params
+#' 
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @seealso \code{\link{check_dbl}}
 #' @export
@@ -112,10 +106,8 @@ check_noneg_dbl <- function(x, coerce = FALSE,
 #' 
 #' Checks if x is a negative dbl (non-missing numeric scalar with no attributes including names).
 #'
-#' @param x The object to check.
-#' @param coerce A flag indicating whether to coerce a scalar integer to a dbl and drop attributes including names.
-#' @param x_name A string of the name of the object.
-#' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
+#' @inheritParams params
+#' 
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @seealso \code{\link{check_dbl}}
 #' @export

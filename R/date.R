@@ -2,10 +2,9 @@
 #' 
 #' Checks if x is a date (non-missing unnamed Date scalar).
 #'
-#' @param x The object to check.
-#' @param x_name A string of the name of the object.
+#' @inheritParams params
 #' @param coerce A flag indicating whether to coerce a date time (POSIXt scalar) to a Date and remove names.
-#' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
+#' 
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @seealso \code{\link{check_datetime}}
 #' @export

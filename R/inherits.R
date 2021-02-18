@@ -2,10 +2,9 @@
 #' 
 #' Checks if an object inherits from a class.
 #'
-#' @param x The object to check.
+#' @inheritParams params
 #' @param class A string of the class x should inherit from.
-#' @param x_name A string of the name of the object.
-#' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
+#' 
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @seealso \code{\link{check_classes}}
 #' @export

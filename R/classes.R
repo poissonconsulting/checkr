@@ -4,12 +4,11 @@
 #' 
 #' The classes of an object can be returned using the `class()` function.
 #'
-#' @param x The object to check.
+#' @inheritParams params
 #' @param classes A character vector of the classes x should inherit from.
 #' @param exclusive A flag indicating whether other classes are not permitted.
 #' @param order A flag indicating whether the object classes have to occur in the same order as classes.
-#' @param x_name A string of the name of the object.
-#' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
+#' 
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @seealso \code{\link{check_inherits}}
 #' @export

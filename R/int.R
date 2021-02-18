@@ -2,10 +2,9 @@
 #' 
 #' Checks if x is a int (non-missing integer scalar with no attributes including names).
 #'
-#' @param x The object to check.
+#' @inheritParams params
 #' @param coerce A flag indicating whether to coerce a numeric (dbl) whole number to an int and drop attributes including names.
-#' @param x_name A string of the name of the object.
-#' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
+#' 
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @seealso \code{\link{check_scalar}}
 #' @export
@@ -35,10 +34,8 @@ check_int <- function(x, coerce = FALSE,
 #' 
 #' Checks if x is a positive int (non-missing integer scalar with no attributes including names).
 #'
-#' @param x The object to check.
+#' @inheritParams params
 #' @param coerce A flag indicating whether to coerce a numeric (dbl) whole number to an int and drop attributes including names.
-#' @param x_name A string of the name of the object.
-#' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @seealso \code{\link{check_int}}
 #' @export
@@ -67,10 +64,8 @@ check_pos_int <- function(x, coerce = FALSE,
 #' 
 #' Checks if x is a negative int (non-missing integer scalar with no attributes including names).
 #'
-#' @param x The object to check.
+#' @inheritParams params
 #' @param coerce A flag indicating whether to coerce a numeric (dbl) whole number to an int and drop attributes including names.
-#' @param x_name A string of the name of the object.
-#' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @seealso \code{\link{check_int}}
 #' @export
@@ -98,10 +93,8 @@ check_neg_int <- function(x, coerce = FALSE,
 #' 
 #' Checks if x is a count (non-missing non-negative integer scalar with no attributes including names).
 #'
-#' @param x The object to check.
+#' @inheritParams params
 #' @param coerce A flag indicating whether to coerce a non-negative numeric (dbl) whole number to a count and drop attributes (including names).
-#' @param x_name A string of the name of the object.
-#' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @seealso \code{\link{check_int}}
 #' @export
@@ -130,10 +123,8 @@ check_noneg_int <- function(x, coerce = FALSE,
 #'
 #' Checks if an object is a count (non-negative integer or if \code{coerce = TRUE} non-negative numeric whole number).
 #'
-#' @param x The object to check.
+#' @inheritParams params
 #' @param coerce A flag indicating whether to coerce a non-negative numeric (dbl) whole number to a count and drop attributes (including names).
-#' @param x_name A string of the name of the object.
-#' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @seealso \code{\link{check_scalar}}
 #' @export

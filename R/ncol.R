@@ -3,7 +3,8 @@
 #' Checks the number of columns of a data frame.
 #'
 #' @inheritParams check_length
-#' @param ncol A flag indicating whether x should have columns (versus no columns) or a missing value indicating no requirements or a count or count range of the number of columns.
+#' @inheritParams params
+#' 
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @seealso \code{\link{check_nrow}} and \code{\link{check_data}} 
 #' @export

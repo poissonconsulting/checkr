@@ -5,15 +5,11 @@
 #'
 #' @inheritParams check_length
 #' @inheritParams check_data
-#' @param x The object to check.
-#' @param values An optional vector or named list specifying the values.
-#' @param length A flag indicating whether x should have elements (versus no elements) or a missing value indicating no requirements or a count or count range of the number of elements or a count vector of the permitted number of elements.
-#' @param unique A flag indicating whether the values must be unique.
+#' @inheritParams params
 #' @param named A flag indicating whether the list must be named or unnamed or a regular expression that must match all the names or count or count range of the number of characters in the names or NA if it doesn't matter if the list is named.
 #' @param exclusive A flag indicating whether other elements are not permitted.
 #' @param order A flag indicating whether the elements have to occur in the same order as values.
-#' @param x_name A string of the name of the object.
-#' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
+#' 
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @seealso \code{\link{check_length}} and \code{\link{check_unique}}
 #' @export

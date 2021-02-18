@@ -23,9 +23,10 @@ check_levels(
 \item{order}{A flag indicating whether the object levels have to occur in the same order as names. To check whether x is an ordered factor use
 \code{check_vector(x, ordered(1))}.}
 
-\item{x_name}{A string of the name of the object.}
+\item{x_name}{A string of the name of the object x.}
 
-\item{error}{A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.}
+\item{error}{A flag indicating whether to throw an informative error or 
+immediately generate an informative message if the check fails.}
 }
 \value{
 An invisible copy of x (if it doesn't throw an error).

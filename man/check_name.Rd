@@ -9,7 +9,7 @@ check_name(x, x_name = substitute(x), coerce = FALSE, error = TRUE)
 \arguments{
 \item{x}{The object to check.}
 
-\item{x_name}{A string of the name of the object.}
+\item{x_name}{A string of the name of the object x.}
 
 \item{coerce}{A flag specifying whether to coerce a factor to a character vector and drop attributes including names.}
 

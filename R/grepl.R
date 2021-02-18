@@ -2,11 +2,9 @@
 #' 
 #' Checks whether all the elements of an object match a regular expression.
 #'
-#' @param x The object to check.
-#' @param pattern A string of the regular expression.
+#' @inheritParams params
 #' @param regex A string of the regular expression (deprecated for pattern).
-#' @param x_name A string of the name of the object.
-#' @param error A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.
+#' 
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @seealso \code{\link{check_nchar}} and \code{\link{check_pattern}}
 #' @export
