@@ -1,4 +1,5 @@
 test_that("check_data factor", {
+  rlang::scoped_options(lifecycle_verbosity = "quiet")
   expect_identical(check_data(datasets::mtcars), mtcars)
   x <- data.frame(factor = factor(1:3))
   expect_identical(check_data(x, values = list(factor = factor(1:3))), x)
@@ -10,6 +11,7 @@ test_that("check_data factor", {
 })
 
 test_that("check_data ordered", {
+  rlang::scoped_options(lifecycle_verbosity = "quiet")
   x <- data.frame(factor = ordered(1:3))
   expect_identical(check_data(x, values = list(factor = ordered(1:3))), x)
   expect_identical(check_data(x, values = list(factor = factor(1:3))), x)
@@ -21,6 +23,7 @@ test_that("check_data ordered", {
 })
 
 test_that("check_data ordered", {
+  rlang::scoped_options(lifecycle_verbosity = "quiet")
   x <- data.frame(factor = ordered(1:3))
   expect_error(check_data(x, values = list(factor = ordered(c(1,3)))), 
                "level sets of factors are different")

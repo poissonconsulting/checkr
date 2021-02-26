@@ -15,6 +15,8 @@
 check_dbl <- function(x, coerce = FALSE,
                        x_name = substitute(x),
                        error = TRUE) {
+  lifecycle::deprecate_soft("0.5.1", "check_dbl()", "chk::check_dbl()",
+                            "Use chk::chk_dbl() for a faster version which returns NULL.")
   x_name <- chk_deparse(x_name)
 
   check_flag_internal(coerce)
@@ -33,6 +35,8 @@ check_dbl <- function(x, coerce = FALSE,
 check_number <- function(x, coerce = FALSE,
                        x_name = substitute(x),
                        error = TRUE) {
+  lifecycle::deprecate_soft("0.5.1", "check_number()", "chk::check_number()",
+                            "Use chk::chk_number() for a faster version which returns NULL.")
   x_name <- chk_deparse(x_name)
   
   check_dbl(x, coerce = coerce, x_name = x_name, error = error)
@@ -55,6 +59,9 @@ check_number <- function(x, coerce = FALSE,
 check_pos_dbl <- function(x, coerce = FALSE,
                        x_name = substitute(x),
                        error = TRUE) {
+  lifecycle::deprecate_soft("0.5.1", "check_pos_dbl()", NULL,
+                            "Please use chk::check_dbl() and chk::check_range() instead. 
+Use chk::chk_dbl() and chk::chk_range() for faster versions which return NULL.")
   x_name <- chk_deparse(x_name)
 
   check_flag_internal(coerce)
@@ -87,6 +94,9 @@ check_pos_dbl <- function(x, coerce = FALSE,
 check_noneg_dbl <- function(x, coerce = FALSE,
                        x_name = substitute(x),
                        error = TRUE) {
+  lifecycle::deprecate_soft("0.5.1", "check_noneg_dbl()", NULL,
+                            "Please use chk::check_dbl() and chk::check_range() instead. 
+Use chk::chk_dbl() and chk::chk_range() for faster versions which return NULL.")
   x_name <- chk_deparse(x_name)
 
   check_flag_internal(coerce)
@@ -119,6 +129,9 @@ check_noneg_dbl <- function(x, coerce = FALSE,
 check_neg_dbl <- function(x, coerce = FALSE,
                        x_name = substitute(x),
                        error = TRUE) {
+  lifecycle::deprecate_soft("0.5.1", "check_neg_dbl()", NULL,
+                            "Please use chk::check_dbl() and chk::check_range() instead. 
+Use chk::chk_dbl() and chk::chk_range() for faster versions which return NULL.")
   x_name <- chk_deparse(x_name)
 
   check_flag_internal(coerce)

@@ -1,4 +1,5 @@
 test_that("vector", {
+  rlang::scoped_options(lifecycle_verbosity = "quiet")
   expect_error(check_vector(2, named  = TRUE), "2 must be named")
   x <- 1
   names(x) <- "y"
@@ -15,6 +16,7 @@ test_that("vector", {
 })
 
 test_that("vector two classes", {
+  rlang::scoped_options(lifecycle_verbosity = "quiet")
   value <- 1
   class(value) <- c("class2", "class1")
   
@@ -32,6 +34,7 @@ test_that("vector two classes", {
 })
 
 test_that("vector with units", {
+  rlang::scoped_options(lifecycle_verbosity = "quiet")
   value <- units::as_units(1, "m")
 
   x <- 1

@@ -1,4 +1,5 @@
 test_that("check_string errors", {
+  rlang::scoped_options(lifecycle_verbosity = "quiet")
   y <- "oeu"
   expect_identical(check_string(y), y)
   y <- 2
@@ -16,6 +17,7 @@ test_that("check_string errors", {
 
 
 test_that("check_string coerce", {
+  rlang::scoped_options(lifecycle_verbosity = "quiet")
   expect_error(check_string(factor('1')), 'factor[(]"1"[)] must be class character')
   expect_identical(check_string(factor('1'), coerce = TRUE), "1")
   expect_error(check_string(factor(c('1', '1')), coerce = TRUE), 'factor[(]c[(]"1", "1"[)][)] must have 1 element')

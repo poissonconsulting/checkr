@@ -13,6 +13,7 @@
 #' checkor(check_null(1), check_null(1), error = FALSE)
 #' checkor(check_null(1), check_null(2), error = FALSE)
 checkor <- function(..., error = TRUE) {
+  lifecycle::deprecate_soft("0.5.1", "checkor()", "chk::chkor()")
   args <- substitute(list(...))
   args <- args[-1]
   n <- length(args)

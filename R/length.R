@@ -18,6 +18,7 @@ check_length <- function(x,
                          length = TRUE,
                          x_name = substitute(x),
                          error = TRUE) {
+  lifecycle::deprecate_soft("0.5.1", "check_length()", "chk::check_dim()")
   x_name <- chk_deparse(x_name)
 
   check_length_internal(length)

@@ -23,6 +23,7 @@ check_names <- function(x, names = character(0), exclusive = FALSE, order = FALS
                         unique = FALSE, complete = TRUE,
                         x_name = substitute(x),
                         error = TRUE) {
+  lifecycle::deprecate_soft("0.5.1", "check_names()", "chk::check_names()")
   x_name <- chk_deparse(x_name)
   
   check_flag_internal(unique)

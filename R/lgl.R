@@ -16,6 +16,8 @@
 check_lgl <- function(x, coerce = FALSE,
                        x_name = substitute(x),
                        error = TRUE) {
+  lifecycle::deprecate_soft("0.5.1", "check_lgl()", "chk::check_lgl()",
+                            "Use chk::chk_lgl() for a faster version which returns NULL.")
   x_name <- chk_deparse(x_name)
 
   check_flag_internal(coerce)

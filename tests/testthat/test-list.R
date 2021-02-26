@@ -1,4 +1,5 @@
 test_that("list", {
+  rlang::scoped_options(lifecycle_verbosity = "quiet")
   x <- list(x = 1, 2)
   expect_identical(check_list(x), x)
   expect_identical(check_list(x, values = "x"), x)
@@ -9,6 +10,7 @@ test_that("list", {
 })
 
 test_that("check_list produces warnings", {
+  rlang::scoped_options(lifecycle_verbosity = "quiet")
   x <- list(x = 1, 2)
   lifecycle::expect_deprecated(check_list(x, named = TRUE))
   lifecycle::expect_deprecated(check_list(x, unique = TRUE))

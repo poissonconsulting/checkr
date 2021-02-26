@@ -34,15 +34,15 @@ check_list <- function(x,
   check_flag_internal(error)
   
   if (!missing(length)) {
-    lifecycle::deprecate_soft("0.5.1", "check_list(length)", "check_length()")
+    lifecycle::deprecate_soft("0.5.1", "check_list(length = )", "check_length()")
   }
 
   if (!missing(unique)) {
-    lifecycle::deprecate_soft("0.5.1", "check_list(unique)", "check_unique()")
+    lifecycle::deprecate_soft("0.5.1", "check_list(unique = )", "check_unique()")
   }
 
   if (!missing(named)) {
-    lifecycle::deprecate_soft("0.5.1", "check_list(named)", "check_named()")
+    lifecycle::deprecate_soft("0.5.1", "check_list(named = )", "check_named()")
   }
   
   if(!(is_flag(named) || is_string(named) || is_NA(named) || is_count(named) || is_count_range(named))) 

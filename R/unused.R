@@ -11,6 +11,7 @@
 #' fun()
 #' fun(1)
 check_unused <- function(..., x_name = "...", error = TRUE) {
+  lifecycle::deprecate_soft("0.5.1", "check_unused()", "chk::chk_unused()")
   check_string_internal(x_name)
   if(length(list(...)))
     chk_fail(x_name, " must be unused", error = error)

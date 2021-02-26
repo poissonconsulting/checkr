@@ -1,4 +1,5 @@
 test_that("checkor", {
+  rlang::scoped_options(lifecycle_verbosity = "quiet")
   expect_true(checkor(check_null(NULL), check_null(1), error = TRUE))
   expect_error(checkor(check_null(1), check_null(1), error = TRUE), "1 must be NULL")
   expect_error(checkor(check_null(1), check_null(2), error = TRUE), "1 must be NULL OR 2 must be NULL")
@@ -6,6 +7,7 @@ test_that("checkor", {
 
 
 test_that("checkor works", {
+  rlang::scoped_options(lifecycle_verbosity = "quiet")
   expect_identical(checkor(), TRUE)
   expect_identical(checkor(x <- 1), TRUE)
   expect_error(checkor(stop()), "^$")

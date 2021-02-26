@@ -1,4 +1,5 @@
 test_that("check_day errors", {
+  rlang::scoped_options(lifecycle_verbosity = "quiet")
   y <- as.Date("2002-01-02")
   expect_identical(check_day(y), y)
   y <- c(y,y)
@@ -10,6 +11,7 @@ test_that("check_day errors", {
 })
 
 test_that("check_day coercion", {
+  rlang::scoped_options(lifecycle_verbosity = "quiet")
   time <- as.POSIXct("2001-02-03 23:59:59", tz = "PST8PDT")
   expect_error(check_day(time), "time must be class Date")
   expect_identical(check_day(time, coerce = TRUE), as.Date("2001-02-03"))
