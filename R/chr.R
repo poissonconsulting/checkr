@@ -17,6 +17,8 @@ check_chr <- function(x,
                          coerce = FALSE,
                          x_name = substitute(x),
                          error = TRUE) {
+  lifecycle::deprecate_soft("0.5.1", "check_chr()", "chk::check_chr()",
+                            "Use chk::chk_chr() for a faster version which returns NULL.")
   x_name <- chk_deparse(x_name)
   
   check_flag_internal(coerce)
@@ -35,6 +37,8 @@ check_string <- function(x,
                          coerce = FALSE,
                          x_name = substitute(x),
                          error = TRUE) {
+  lifecycle::deprecate_soft("0.5.1", "check_string()", "chk::check_string()",
+                            "Use chk::chk_string() for a faster version which returns NULL.")
   x_name <- chk_deparse(x_name)
   
   check_chr(x, coerce = coerce, x_name = x_name, error = error)

@@ -26,10 +26,9 @@ check_named <- function(x, nchar = c(0L, chk_max_int()),
   
   check_flag(unique)
   check_flag_internal(error)
-  
+
   if (!missing(regex)) {
-    warning("argument regex is deprecated; please use pattern instead.", 
-            call. = FALSE)
+    lifecycle::deprecate_soft("0.5.1", "check_named(regex = )", "check_named(pattern = )")
     check_string(regex)
     pattern <- regex
   }

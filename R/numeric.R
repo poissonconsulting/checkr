@@ -15,6 +15,8 @@
 check_numeric <- function(x, coerce = FALSE,
                       x_name = substitute(x),
                       error = TRUE) {
+  lifecycle::deprecate_soft("0.5.1", "check_numeric()", "chk::check_numeric()",
+                            "Use chk::chk_numeric() for a faster version which returns NULL.")
   x_name <- chk_deparse(x_name)
   
   check_flag_internal(coerce)
@@ -34,6 +36,8 @@ check_numeric <- function(x, coerce = FALSE,
 check_double <- function(x, coerce = FALSE,
                        x_name = substitute(x),
                        error = TRUE) {
+  lifecycle::deprecate_soft("0.5.1", "check_double()", "chk::check_double()",
+                            "Use chk::chk_double() for a faster version which returns NULL.")
   x_name <- chk_deparse(x_name)
   
   check_numeric(x, coerce = coerce, x_name = x_name, error = error)

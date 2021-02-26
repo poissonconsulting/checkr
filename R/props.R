@@ -8,8 +8,6 @@
 #' @export
 check_props <- function(x, x_name = substitute(x),
                        error = TRUE) {
-  .Deprecated()
-  
   x_name <- chk_deparse(x_name)
 
   check_flag_internal(error)

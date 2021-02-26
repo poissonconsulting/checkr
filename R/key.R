@@ -18,6 +18,7 @@
 check_key <- function(x, key = names(x), na_distinct = FALSE,
                       x_name = substitute(x),
                       error = TRUE) {
+  lifecycle::deprecate_soft("0.5.1", "check_key()", "chk::check_key()")
 
   x_name <- chk_deparse(x_name)
 

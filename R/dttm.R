@@ -16,6 +16,8 @@
 check_dttm <- function(x, coerce = FALSE, tzone = "UTC",
                        x_name = substitute(x),
                        error = TRUE) {
+  lifecycle::deprecate_soft("0.5.1", "check_dttm()", "chk::check_datetime()",
+                            "Use chk::chk_datetime() for a faster version which returns NULL.")
   x_name <- chk_deparse(x_name)
   
   check_flag_internal(coerce)

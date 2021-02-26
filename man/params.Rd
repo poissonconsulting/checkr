@@ -8,7 +8,7 @@
 
 \item{x_name}{A string of the name of the object x.}
 
-\item{error}{A flag indicating whether to throw an informative error or 
+\item{error}{A flag indicating whether to throw an informative error or
 immediately generate an informative message if the check fails.}
 
 \item{pattern}{A string of the regular expression.}
@@ -32,8 +32,8 @@ It only affects values with two or less non-missing elements.}
 
 \item{unique}{A flag indicating whether the values must be unique.}
 
-\item{length}{A flag indicating whether x should have elements (versus no elements) 
-or a missing value indicating no requirements or a count or count range of the 
+\item{length}{A flag indicating whether x should have elements (versus no elements)
+or a missing value indicating no requirements or a count or count range of the
 number of elements or a count vector of the permitted number of elements.}
 
 \item{complete}{A flag indicating whether all the possible names have to be represented.}

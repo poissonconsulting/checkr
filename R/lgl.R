@@ -16,6 +16,8 @@
 check_lgl <- function(x, coerce = FALSE,
                        x_name = substitute(x),
                        error = TRUE) {
+  lifecycle::deprecate_soft("0.5.1", "check_lgl()", "chk::check_lgl()",
+                            "Use chk::chk_lgl() for a faster version which returns NULL.")
   x_name <- chk_deparse(x_name)
 
   check_flag_internal(coerce)
@@ -32,6 +34,8 @@ check_lgl <- function(x, coerce = FALSE,
 check_flag <- function(x, coerce = FALSE,
                        x_name = substitute(x),
                        error = TRUE) {
+  lifecycle::deprecate_soft("0.5.1", "check_flag()", "chk::check_flag()",
+                            "Use chk::chk_flag() for a faster version which returns NULL.")
   x_name <- chk_deparse(x_name)
   
   check_lgl(x, coerce = coerce, x_name = x_name, error = error)
@@ -49,7 +53,7 @@ check_flag <- function(x, coerce = FALSE,
 check_flag_na <- function(x, coerce = TRUE,
                        x_name = substitute(x),
                        error = TRUE) {
-  .Deprecated("check_scalar")
+  lifecycle::deprecate_soft("0.5.1", "check_flag_na()", "check_scalar()")
   x_name <- chk_deparse(x_name)
 
   check_flag_internal(coerce)

@@ -34,7 +34,6 @@ check_prob <- function(x, coerce = FALSE,
 check_probability <- function(x, coerce = FALSE,
                        x_name = substitute(x),
                        error = TRUE) {
-#  .Deprecated("check_prob")
   x_name <- chk_deparse(x_name)
 
   check_prob(x, coerce = coerce, x_name = x_name, error = error)
@@ -45,7 +44,6 @@ check_probability <- function(x, coerce = FALSE,
 check_prop <- function(x, coerce = FALSE,
                        x_name = substitute(x),
                        error = TRUE) {
-#  .Deprecated("check_prob")
   x_name <- chk_deparse(x_name)
 
   check_prob(x, coerce = coerce, x_name = x_name, error = error)

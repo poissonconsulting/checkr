@@ -11,7 +11,7 @@
 check_pattern <- function(x, pattern, all = TRUE,
                           x_name = substitute(x),
                          error = TRUE) {
-  .Deprecated("check_grepl")
+  lifecycle::deprecate_soft("0.5.1", "check_pattern()", "check_grepl()")
   x_name <- chk_deparse(x_name)
 
   check_string_internal(pattern)

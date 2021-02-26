@@ -1,4 +1,5 @@
 test_that("sorted", {
+  rlang::scoped_options(lifecycle_verbosity = "quiet")
   expect_identical(check_sorted(1:2), 1:2)
   expect_error(check_sorted(2:1), "2:1 must be sorted")
   expect_identical(check_sorted(factor(1)), factor(1))

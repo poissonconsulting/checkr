@@ -1,4 +1,5 @@
 test_that("named", {
+  rlang::scoped_options(lifecycle_verbosity = "quiet")
   expect_error(check_named(2), "2 must be named")
   x <- 1
   names(x) <- "y"
@@ -14,6 +15,5 @@ test_that("named", {
   expect_identical(check_named(vec, nchar = c(1,2)), vec)
   
   expect_warning(check_named(NULL, error = FALSE), "NULL must be named")
-  expect_warning(check_named(vec, error = FALSE, regex = ".*"),
-                 "argument regex is deprecated; please use pattern instead.")
+  lifecycle::expect_deprecated(check_named(vec, error = FALSE, regex = ".*"))
 })

@@ -22,6 +22,10 @@ check_classes <- function(x, classes = character(0),
                      order = FALSE,
                      x_name = substitute(x),
                      error = TRUE) {
+  lifecycle::deprecate_soft("0.5.1", "check_classes()", NULL,
+                            "Please use chk::check_s3_class() or chk::check_s4_class() instead. 
+Use chk::chk_s3_class() or chk::chk_s4_class() for faster versions which return NULL.")
+  
   x_name <- chk_deparse(x_name)
   
   check_vector(classes, "", unique = TRUE)

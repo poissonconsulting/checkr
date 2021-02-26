@@ -30,14 +30,14 @@ check_names(
 
 \item{x_name}{A string of the name of the object x.}
 
-\item{error}{A flag indicating whether to throw an informative error or 
+\item{error}{A flag indicating whether to throw an informative error or
 immediately generate an informative message if the check fails.}
 }
 \value{
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Checks the names of an object as returned by the `names()` function. 
+Checks the names of an object as returned by the \code{names()} function.
 The function can check the order of the names and whether other names are permitted.
 }
 \examples{

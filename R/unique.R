@@ -18,6 +18,8 @@
 check_unique <- function(x,
                          x_name = substitute(x),
                          error = TRUE) {
+  lifecycle::deprecate_soft("0.5.1", "check_unique()", "chk::check_unique()",
+                            "Use chk::chk_unique() for a faster version which returns NULL.")
   x_name <- chk_deparse(x_name)
 
   check_flag_internal(error)

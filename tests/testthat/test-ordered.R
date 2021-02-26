@@ -1,5 +1,4 @@
 test_that("class", {
-  
   ordered <- ordered(c("1", "3", "0"))
   factor <- factor(c("1", "3", "0"))
   
@@ -10,7 +9,6 @@ test_that("class", {
 })
 
 test_that("levels", {
-  
   ordered <- ordered(c("1", "3", "0"))
   factor <- factor(c("1", "3", "0"))
   

@@ -17,6 +17,8 @@ check_date <- function(x,
                        coerce = FALSE,
                        x_name = substitute(x),
                        error = TRUE) {
+  lifecycle::deprecate_soft("0.5.1", "check_date()", "chk::check_date()",
+                            "Use chk::chk_date() for a faster version which returns NULL.")
   x_name <- chk_deparse(x_name)
   
   check_flag_internal(coerce)
@@ -36,6 +38,8 @@ check_day <- function(x,
                        coerce = FALSE,
                        x_name = substitute(x),
                        error = TRUE) {
+  lifecycle::deprecate_soft("0.5.1", "check_day()", "chk::check_date()",
+                            "Use chk::chk_date() for a faster version which returns NULL.")
   x_name <- chk_deparse(x_name)
   
   check_date(x, coerce = coerce, x_name = x_name, error = error)

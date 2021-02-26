@@ -1,4 +1,5 @@
 test_that("check_dbl errors", {
+  rlang::scoped_options(lifecycle_verbosity = "quiet")
   y <- 1.0
   expect_identical(check_dbl(y), y)
   y <- 1L
@@ -16,6 +17,7 @@ test_that("check_dbl errors", {
 })
 
 test_that("check_double errors", {
+  rlang::scoped_options(lifecycle_verbosity = "quiet")
   x <- 1.0
   expect_identical(check_double(x), 1.0)
   
@@ -32,6 +34,7 @@ test_that("check_double errors", {
 
 
 test_that("check_pos_dbl errors", {
+  rlang::scoped_options(lifecycle_verbosity = "quiet")
   expect_identical(check_pos_dbl(1), 1)
   expect_error(check_pos_dbl(-1), "-1 must be positive")
   
@@ -41,6 +44,7 @@ test_that("check_pos_dbl errors", {
 })
 
 test_that("check_neg_dbl errors", {
+  rlang::scoped_options(lifecycle_verbosity = "quiet")
   expect_identical(check_neg_dbl(-1), -1)
   expect_error(check_neg_dbl(1), "1 must be negative")
   
@@ -50,6 +54,7 @@ test_that("check_neg_dbl errors", {
 })
 
 test_that("check_noneg_dbl errors", {
+  rlang::scoped_options(lifecycle_verbosity = "quiet")
   expect_identical(check_noneg_dbl(1), 1)
   expect_error(check_noneg_dbl(-1), "-1 must be non-negative")
   
