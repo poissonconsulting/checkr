@@ -15,9 +15,12 @@ License: MIT + file LICENSE
 URL: https://github.com/poissonconsulting/checkr
 BugReports: https://github.com/poissonconsulting/checkr/issues
 Depends: R (>= 3.5)
-Imports: err
+Imports: 
+    err,
+    lifecycle
 Suggests:
     assertthat,
+    chk,
     checkmate,
     covr,
     datasets,
@@ -25,6 +28,7 @@ Suggests:
     hms,
     dplyr,
     units,
+    rlang,
     testthat,
     knitr,
     rmarkdown
@@ -33,3 +37,4 @@ LazyData: true
 RoxygenNote: 7.1.1
 VignetteBuilder: knitr
 Language: en-CA
+Roxygen: list(markdown = TRUE)

@@ -1,4 +1,6 @@
 test_that("grepl", {
+  rlang::scoped_options(lifecycle_verbosity = "quiet")
+
   expect_identical(check_grepl(1), 1)
   expect_identical(check_grepl(1, "^1$"), 1)
   expect_identical(check_grepl(list()), list())
@@ -11,12 +13,13 @@ test_that("grepl", {
 })
 
 test_that("missing regex issues warning", {
-  expect_warning(check_grepl(1, regex = "^1$"),
-                 "argument regex is deprecated; please use pattern instead.")
-  
+  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  expect_identical(check_grepl(1, regex = "^1$"), 1)
 })
 
 test_that("check_pattern errors", {
+  rlang::scoped_options(lifecycle_verbosity = "quiet")
+
   string <- "this is a string"
   expect_identical(check_pattern(string, "string"), string)
   expect_error(check_pattern(string, "x"),
@@ -26,6 +29,8 @@ test_that("check_pattern errors", {
   })
 
 test_that("check_regex errors", {
+  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  
   string <- "this is a string"
   expect_identical(check_regex(string, "string"), string)
   expect_error(check_regex(string, "x"),

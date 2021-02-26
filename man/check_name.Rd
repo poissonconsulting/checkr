@@ -13,7 +13,7 @@ check_name(x, x_name = substitute(x), coerce = FALSE, error = TRUE)
 
 \item{coerce}{A flag specifying whether to coerce a factor to a character vector and drop attributes including names.}
 
-\item{error}{A flag indicating whether to throw an informative error or 
+\item{error}{A flag indicating whether to throw an informative error or
 immediately generate an informative message if the check fails.}
 }
 \value{

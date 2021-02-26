@@ -33,15 +33,18 @@ check_list <- function(x,
   check_flag_internal(unique)
   check_flag_internal(error)
   
-  if (!missing(length))
-    wrn("argument length is deprecated; please specify values or use check_length() instead.")
+  if (!missing(length)) {
+    lifecycle::deprecate_soft("0.5.1", "check_list(length)", "check_length()")
+  }
 
-  if (!missing(unique))
-    wrn("argument unique is deprecated; please use check_unique() instead.")
+  if (!missing(unique)) {
+    lifecycle::deprecate_soft("0.5.1", "check_list(unique)", "check_unique()")
+  }
 
-  if (!missing(named))
-    wrn("argument named is deprecated; please name values or use check_named() instead.")
-
+  if (!missing(named)) {
+    lifecycle::deprecate_soft("0.5.1", "check_list(named)", "check_named()")
+  }
+  
   if(!(is_flag(named) || is_string(named) || is_NA(named) || is_count(named) || is_count_range(named))) 
     err("named must be a flag, string, count, count range or NA")
   

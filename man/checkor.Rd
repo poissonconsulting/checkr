@@ -9,7 +9,7 @@ checkor(..., error = TRUE)
 \arguments{
 \item{...}{The checks to check.}
 
-\item{error}{A flag indicating whether to throw an informative error or 
+\item{error}{A flag indicating whether to throw an informative error or
 immediately generate an informative message if the check fails.}
 }
 \value{

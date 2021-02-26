@@ -24,14 +24,14 @@ check_colnames(
 
 \item{x_name}{A string of the name of the object x.}
 
-\item{error}{A flag indicating whether to throw an informative error or 
+\item{error}{A flag indicating whether to throw an informative error or
 immediately generate an informative message if the check fails.}
 }
 \value{
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Checks the column names of a data frame as returned by the `colnames()` function. 
+Checks the column names of a data frame as returned by the \code{colnames()} function.
 The function can check the order of the columns and whether other columns are permitted.
 }
 \examples{

@@ -10,7 +10,7 @@ test_that("list", {
 
 test_that("check_list produces warnings", {
   x <- list(x = 1, 2)
-  expect_warning(check_list(x, named = TRUE))
-  expect_warning(check_list(x, unique = TRUE))
-  expect_warning(check_list(x, length = 2))
+  lifecycle::expect_deprecated(check_list(x, named = TRUE))
+  lifecycle::expect_deprecated(check_list(x, unique = TRUE))
+  lifecycle::expect_deprecated(check_list(x, length = 2))
 })

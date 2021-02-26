@@ -24,7 +24,7 @@ check_classes(
 
 \item{x_name}{A string of the name of the object x.}
 
-\item{error}{A flag indicating whether to throw an informative error or 
+\item{error}{A flag indicating whether to throw an informative error or
 immediately generate an informative message if the check fails.}
 }
 \value{
@@ -34,7 +34,7 @@ An invisible copy of x (if it doesn't throw an error).
 Checks that an object inherits from one or more classes.
 }
 \details{
-The classes of an object can be returned using the `class()` function.
+The classes of an object can be returned using the \code{class()} function.
 }
 \examples{
 check_classes(list())
