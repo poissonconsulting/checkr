@@ -12,6 +12,7 @@
 #' vec <- c("x", "x.y", "x y")
 #' check_name(vec, error = FALSE)
 check_name <- function(x, x_name = substitute(x), coerce = FALSE, error = TRUE) {
+  lifecycle::deprecate_soft("0.5.1", "check_name()", "chk::check_names()")
   x_name <- chk_deparse(x_name)
   
   check_flag_internal(coerce)

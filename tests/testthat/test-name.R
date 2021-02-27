@@ -1,5 +1,5 @@
 test_that("name", {
-  
+  rlang::scoped_options(lifecycle_verbosity = "quiet")
   vec <- c("x", "x.y")
   expect_identical(check_name(vec), vec)
   
