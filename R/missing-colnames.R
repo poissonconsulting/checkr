@@ -17,6 +17,7 @@
 check_missing_colnames <- function(x, colnames, 
                                    x_name = substitute(x),
                                    error = TRUE) {
+  lifecycle::deprecate_soft("0.5.1", "check_missing_colnames()", "chk::check_names()")
   
   x_name <- chk_deparse(x_name)
   

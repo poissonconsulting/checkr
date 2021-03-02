@@ -20,6 +20,7 @@ check_rbind <- function(x,
                         x_name = substitute(x),
                         y_name = substitute(y),
                         error = TRUE) {
+  lifecycle::deprecate_soft("0.5.1", "check_rbind()", NULL)
   x_name <- chk_deparse(x_name)
   y_name <- chk_deparse(y_name)
   

@@ -22,6 +22,7 @@ check_attributes <- function(x,
                              class = TRUE,
                              x_name = substitute(x),
                              error = TRUE) {
+  lifecycle::deprecate_soft("0.5.1", "check_attributes()", NULL)
   x_name <- chk_deparse(x_name)
   
   check_flag_internal(names)
@@ -62,6 +63,7 @@ check_no_attributes <- function(x,
                                 class = TRUE,
                                 x_name = substitute(x),
                                 error = TRUE) {
+  lifecycle::deprecate_soft("0.5.1", "check_no_attributes()", NULL)
   x_name <- chk_deparse(x_name)
   
   check_flag_internal(error)

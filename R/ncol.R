@@ -15,6 +15,7 @@
 check_ncol <- function(x, ncol = TRUE,
                          x_name = substitute(x),
                          error = TRUE) {
+  lifecycle::deprecate_soft("0.5.1", "check_ncol()", "chk::check_dim()")
   x_name <- chk_deparse(x_name)
 
   check_length_internal(ncol)

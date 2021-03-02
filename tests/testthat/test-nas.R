@@ -1,4 +1,5 @@
 test_that("nas", {
+  rlang::scoped_options(lifecycle_verbosity = "quiet")
   expect_identical(check_nas(NA, NA), NA)
   expect_identical(check_nas(c(TRUE, NA), c(FALSE, NA)), c(TRUE, NA))
   expect_error(check_nas(c(TRUE, NA), NA), "c[(]TRUE, NA[)] must only include missing values")
