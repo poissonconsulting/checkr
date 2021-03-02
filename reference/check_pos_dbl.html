@@ -156,7 +156,7 @@
     </tr>
     <tr>
       <th>error</th>
-      <td><p>A flag indicating whether to throw an informative error or 
+      <td><p>A flag indicating whether to throw an informative error or
 immediately generate an informative message if the check fails.</p></td>
     </tr>
     </table>
@@ -170,9 +170,15 @@ immediately generate an informative message if the check fails.</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>check_pos_dbl</span><span class='op'>(</span><span class='fl'>1</span>, error <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
-<span class='fu'>check_pos_dbl</span><span class='op'>(</span><span class='fl'>0L</span>, error <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='warning'>Warning: 0L must be class numeric</span></div><div class='output co'>#&gt; <span class='warning'>Warning: 0L must inherit from classes 'numeric' in that order</span></div><div class='output co'>#&gt; <span class='warning'>Warning: 0L must be positive</span></div><div class='input'><span class='fu'>check_pos_dbl</span><span class='op'>(</span><span class='fl'>0</span>, error <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='warning'>Warning: 0 must be positive</span></div></pre>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: `check_pos_dbl()` was deprecated in checkr 0.5.1.</span>
+#&gt; <span class='warning'>Please use chk::check_dbl() and chk::check_range() instead. </span>
+#&gt; <span class='warning'>Use chk::chk_dbl() and chk::chk_range() for faster versions which return NULL.</span></div><div class='input'><span class='fu'>check_pos_dbl</span><span class='op'>(</span><span class='fl'>0L</span>, error <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: `check_pos_dbl()` was deprecated in checkr 0.5.1.</span>
+#&gt; <span class='warning'>Please use chk::check_dbl() and chk::check_range() instead. </span>
+#&gt; <span class='warning'>Use chk::chk_dbl() and chk::chk_range() for faster versions which return NULL.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: 0L must be class numeric</span></div><div class='output co'>#&gt; <span class='warning'>Warning: 0L must inherit from classes 'numeric' in that order</span></div><div class='output co'>#&gt; <span class='warning'>Warning: 0L must be positive</span></div><div class='input'><span class='fu'>check_pos_dbl</span><span class='op'>(</span><span class='fl'>0</span>, error <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: `check_pos_dbl()` was deprecated in checkr 0.5.1.</span>
+#&gt; <span class='warning'>Please use chk::check_dbl() and chk::check_range() instead. </span>
+#&gt; <span class='warning'>Use chk::chk_dbl() and chk::chk_range() for faster versions which return NULL.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: 0 must be positive</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -184,11 +190,11 @@ immediately generate an informative message if the check fails.</p></td>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Joe Thorley, Poisson Consulting.</p>
+  <p><p>Developed by Joe Thorley, Poisson Consulting.</p></p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9000.</p></p>
 </div>
 
       </footer>
