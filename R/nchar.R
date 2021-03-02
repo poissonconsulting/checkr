@@ -13,6 +13,7 @@
 #' check_nchar(c("foo", "bar"), nchar = 3)
 check_nchar <- function(x, nchar = TRUE, x_name = substitute(x),
                          error = TRUE) {
+  lifecycle::deprecate_soft("0.5.1", "check_nchar()", NULL)
   x_name <- chk_deparse(x_name)
 
   check_flag_internal(error)

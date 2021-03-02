@@ -1,4 +1,5 @@
 test_that("check_count errors", {
+  rlang::scoped_options(lifecycle_verbosity = "quiet")
   y <- 2L
   expect_identical(check_count(y), y)
   y <- 2
@@ -11,6 +12,7 @@ test_that("check_count errors", {
 })
 
 test_that("check_count coercion", {
+  rlang::scoped_options(lifecycle_verbosity = "quiet")
   expect_error(check_count(1), "1 must be class integer")
   expect_identical(check_count(1, coerce = TRUE), 1L)
   expect_error(check_count(c(1,1), coerce = TRUE), "c[(]1, 1[)] must have 1 element")

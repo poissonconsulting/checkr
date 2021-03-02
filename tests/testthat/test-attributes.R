@@ -1,4 +1,5 @@
 test_that("check_attributes", {
+  rlang::scoped_options(lifecycle_verbosity = "quiet")
   x <- 1
   attributes(x) <- list(y = 2L)
   expect_error(check_attributes(x, values = list(y = 3:4)),
@@ -16,6 +17,7 @@ test_that("check_attributes", {
 })
 
 test_that("check_no_attributes", {
+  rlang::scoped_options(lifecycle_verbosity = "quiet")
   x <- 1
   expect_identical(check_no_attributes(x), x)
   attributes(x) <- list(y = 2L)

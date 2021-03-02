@@ -19,8 +19,7 @@ check_homogenous <- function(x,
                              recursive = FALSE,
                              x_name = substitute(x),
                              error = TRUE) {
-  lifecycle::deprecate_soft("0.5.1", "check_homogenous()", "chk::check_is()",
-                            "Use chk::chk_is() for a faster version which returns NULL.")
+  lifecycle::deprecate_soft("0.5.1", "check_homogenous()", NULL)
   x_name <- chk_deparse(x_name)
   
   check_flag_internal(strict)

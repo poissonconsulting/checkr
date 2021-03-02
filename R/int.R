@@ -150,8 +150,8 @@ check_count <- function(x, coerce = FALSE,
                        x_name = substitute(x),
                        error = TRUE) {
   lifecycle::deprecate_soft("0.5.1", "check_count()", NULL,
-                            "Please use chk::check_whole_number() and chk::check_integer() instead. 
-Use chk::chk_whole_number() and chk::chk_integer() for faster versions which return NULL.")
+                            "Please use chk::check_whole_number() and chk::check_range() instead. 
+Use chk::chk_whole_number() and chk::chk_range() for faster versions which return NULL.")
   x_name <- chk_deparse(x_name)
   
   check_noneg_int(x = x, coerce = coerce, x_name = x_name, error = error)
