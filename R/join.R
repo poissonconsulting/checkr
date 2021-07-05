@@ -23,8 +23,7 @@ check_join <- function(x, y,
                        x_name = substitute(x),
                        y_name = substitute(y),
                        error = TRUE) {
-  lifecycle::deprecate_soft("0.5.1", "check_join()", "chk::check_join()",
-                            "Use chk::chk_join() for a faster version which returns NULL.")
+  lifecycle::deprecate_soft("0.5.1", "check_join()", "chk::chk_join()")
   x_name <- chk_deparse(x_name)
   y_name <- chk_deparse(y_name)
   

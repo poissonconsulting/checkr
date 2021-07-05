@@ -20,7 +20,7 @@ check_grepl <- function(x, pattern = ".*", regex = pattern, x_name = substitute(
   check_flag_internal(error)
   
   if (!missing(regex)) {
-    lifecycle::deprecate_soft("0.5.1", "check_grepl(regex)", "check_grepl(pattern)")
+    lifecycle::deprecate_soft("0.5.1", "check_grepl()", "chk::chk_match()")
     check_string(regex)
     pattern <- regex
   }
@@ -34,7 +34,7 @@ check_grepl <- function(x, pattern = ".*", regex = pattern, x_name = substitute(
 #' @export
 check_regex <- function(x, regex = ".*", x_name = substitute(x),
                         error = TRUE) {
-  lifecycle::deprecate_soft("0.5.1", "check_regex()", "check_grepl()")
+  lifecycle::deprecate_soft("0.5.1", "check_regex()", "chk::chk_match()")
   x_name <- chk_deparse(x_name)
   check_grepl(x, regex = regex, x_name = x_name, error = error)
 }

@@ -16,9 +16,7 @@
 check_unnamed <- function(x,
                          x_name = substitute(x),
                          error = TRUE) {
-  lifecycle::deprecate_soft("0.5.1", "check_unnamed()", NULL,
-                            "Please use chk::check_named() or chk::check_not_empty() instead. 
-Use chk::chk_named() and chk::chk_not_empty() for faster versions which return NULL.")
+  lifecycle::deprecate_soft("0.5.1", "check_unnamed()", "chk::chk_null_or()")
   x_name <- chk_deparse(x_name)
 
   check_flag_internal(error)

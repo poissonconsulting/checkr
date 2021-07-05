@@ -13,8 +13,7 @@
 check_environment <- function(x, 
                            x_name = substitute(x),
                            error = TRUE) {
-  lifecycle::deprecate_soft("0.5.1", "check_environment()", "chk::check_environment()",
-                            "Use chk::chk_environment() for a faster version which returns NULL.")
+  lifecycle::deprecate_soft("0.5.1", "check_environment()", "chk::chk_environment()")
   x_name <- chk_deparse(x_name)
   check_flag_internal(error)
   
