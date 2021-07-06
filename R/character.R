@@ -15,8 +15,7 @@
 check_character <- function(x, coerce = FALSE,
                       x_name = substitute(x),
                       error = TRUE) {
-  lifecycle::deprecate_soft("0.5.1", "check_character()", "chk::check_character()",
-                            "Use chk::chk_character() for a faster version which returns NULL.")
+  lifecycle::deprecate_soft("0.5.1", "check_character()", "chk::chk_character()")
   x_name <- chk_deparse(x_name)
   
   check_flag_internal(coerce)

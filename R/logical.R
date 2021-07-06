@@ -16,8 +16,7 @@
 check_logical <- function(x, coerce = FALSE,
                        x_name = substitute(x),
                        error = TRUE) {
-  lifecycle::deprecate_soft("0.5.1", "check_logical()", "chk::check_logical()",
-                            "Use chk::chk_logical() for a faster version which returns NULL.")
+  lifecycle::deprecate_soft("0.5.1", "check_logical()", "chk::chk_logical()")
   x_name <- chk_deparse(x_name)
 
   check_flag_internal(coerce)

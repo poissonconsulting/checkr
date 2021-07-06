@@ -16,8 +16,7 @@
 check_int <- function(x, coerce = FALSE,
                       x_name = substitute(x),
                       error = TRUE) {
-  lifecycle::deprecate_soft("0.5.1", "check_int()", "chk::check_integer()",
-                            "Use chk::chk_integer() for a faster version which returns NULL.")
+  lifecycle::deprecate_soft("0.5.1", "check_int()", "chk::chk_integer()")
   x_name <- chk_deparse(x_name)
   
   check_flag_internal(coerce)
@@ -50,8 +49,7 @@ check_pos_int <- function(x, coerce = FALSE,
                       x_name = substitute(x),
                       error = TRUE) {
   lifecycle::deprecate_soft("0.5.1", "check_pos_int()", NULL,
-                            "Please use chk::check_integer() and chk::check_range() instead. 
-Use chk::chk_integer() and chk::chk_range() for faster versions which return NULL.")
+                            "Please use chk::chk_integer() and chk::chk_gt() instead.")
   x_name <- chk_deparse(x_name)
   
   check_flag_internal(coerce)
@@ -82,8 +80,7 @@ check_neg_int <- function(x, coerce = FALSE,
                       x_name = substitute(x),
                       error = TRUE) {
   lifecycle::deprecate_soft("0.5.1", "check_neg_int()", NULL,
-                            "Please use chk::check_integer() and chk::check_range() instead. 
-Use chk::chk_integer() and chk::chk_range() for faster versions which return NULL.")
+                            "Please use chk::chk_integer() and chk::chk_lt() instead.")
   x_name <- chk_deparse(x_name)
   
   check_flag_internal(coerce)
@@ -115,8 +112,7 @@ check_noneg_int <- function(x, coerce = FALSE,
                        x_name = substitute(x),
                        error = TRUE) {
   lifecycle::deprecate_soft("0.5.1", "check_noneg_int()", NULL,
-                            "Please use chk::check_integer() and chk::check_range() instead. 
-Use chk::chk_integer() and chk::chk_range() for faster versions which return NULL.")
+                            "Please use chk::chk_integer() and chk::chk_gte() instead.")
   x_name <- chk_deparse(x_name)
 
   check_flag_internal(coerce)
@@ -150,8 +146,7 @@ check_count <- function(x, coerce = FALSE,
                        x_name = substitute(x),
                        error = TRUE) {
   lifecycle::deprecate_soft("0.5.1", "check_count()", NULL,
-                            "Please use chk::check_whole_number() and chk::check_range() instead. 
-Use chk::chk_whole_number() and chk::chk_range() for faster versions which return NULL.")
+                            "Please use chk::chk_whole_number() and chk::chk_gte() instead.")
   x_name <- chk_deparse(x_name)
   
   check_noneg_int(x = x, coerce = coerce, x_name = x_name, error = error)

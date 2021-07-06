@@ -13,8 +13,7 @@
 #' check_tzone(x, tzone = "PST8PDT", error = FALSE)
 check_tzone <- function(x, tzone = "UTC", x_name = substitute(x),
                          error = TRUE) {
-  lifecycle::deprecate_soft("0.5.1", "check_tzone()", "chk::check_tz()",
-                            "Use chk::chk_tz() for a faster version which returns NULL.")
+  lifecycle::deprecate_soft("0.5.1", "check_tzone()", "chk::chk_tz()")
   x_name <- chk_deparse(x_name)
   
   tzone <- check_string(tzone, coerce = TRUE)

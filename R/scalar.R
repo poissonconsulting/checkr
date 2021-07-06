@@ -20,8 +20,7 @@ check_scalar <- function(x,
                          only = FALSE,
                          x_name = substitute(x),
                          error = TRUE) {
-  lifecycle::deprecate_soft("0.5.1", "check_scalar()", "chk::check_scalar()",
-                            "Use chk::chk_scalar() for a faster version which returns NULL.")
+  lifecycle::deprecate_soft("0.5.1", "check_scalar()", "chk::chk_scalar()")
   x_name <- chk_deparse(x_name)
 
   check_vector(x, values = values, length = 1L, named = named, 

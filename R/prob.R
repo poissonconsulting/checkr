@@ -17,8 +17,7 @@ check_prob <- function(x, coerce = FALSE,
                        x_name = substitute(x),
                        error = TRUE) {
   lifecycle::deprecate_soft("0.5.1", "check_prob()", NULL,
-                            "Please use chk::check_double() and chk::check_range() instead. 
-Use chk::chk_dbl() and chk::chk_range() for faster versions which return NULL.")
+                            "Please use chk::chk_dbl() and chk::chk_range() instead.")
   x_name <- chk_deparse(x_name)
 
   check_flag_internal(coerce)
@@ -38,8 +37,7 @@ check_probability <- function(x, coerce = FALSE,
                        x_name = substitute(x),
                        error = TRUE) {
   lifecycle::deprecate_soft("0.5.1", "check_probability()", NULL,
-                            "Please use chk::check_double() and chk::check_range() instead. 
-Use chk::chk_double() and chk::chk_range() for faster versions which return NULL.")
+                            "Please use chk::chk_dbl() and chk::chk_range() instead.")
   x_name <- chk_deparse(x_name)
 
   check_prob(x, coerce = coerce, x_name = x_name, error = error)
@@ -51,8 +49,7 @@ check_prop <- function(x, coerce = FALSE,
                        x_name = substitute(x),
                        error = TRUE) {
   lifecycle::deprecate_soft("0.5.1", "check_prop()", NULL,
-                            "Please use chk::check_double() and chk::check_range() instead. 
-Use chk::chk_double() and chk::chk_range() for faster versions which return NULL.")
+                            "Please use chk::chk_dbl() and chk::chk_range() instead.")
   x_name <- chk_deparse(x_name)
 
   check_prob(x, coerce = coerce, x_name = x_name, error = error)

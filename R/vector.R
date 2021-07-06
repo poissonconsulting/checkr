@@ -24,8 +24,8 @@ check_vector <- function(x,
                          only = FALSE,
                          x_name = substitute(x),
                          error = TRUE) {
-  lifecycle::deprecate_soft("0.5.1", "check_vector()", "chk::check_vector()",
-                            "Use chk::chk_vector() for a faster version which returns NULL.")
+  lifecycle::deprecate_soft("0.5.1", "check_vector()", NULL,
+                            "Please use chk::chk_vector(), chk::check_dim(), chk::chk_unique(), chk::chk_sorted(), chk::chk_named(), and/or chk::check_values() instead.")
   x_name <- chk_deparse(x_name)
   
   check_flag_internal(unique)

@@ -18,7 +18,7 @@
 check_levels <- function(x, levels, exclusive = TRUE, order = TRUE,
                          x_name = substitute(x),
                          error = TRUE) {
-  lifecycle::deprecate_soft("0.5.1", "check_levels()", "chk::check_dim()")
+  lifecycle::deprecate_soft("0.5.1", "check_levels()", "chk::check_data()")
   x_name <- chk_deparse(x_name)
 
   check_vector(levels, "", length = c(1L, chk_max_int()), unique = FALSE, named = FALSE)

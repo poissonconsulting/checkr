@@ -20,7 +20,7 @@
 check_colnames <- function(x, colnames = character(0), exclusive = FALSE, order = FALSE,
                          x_name = substitute(x),
                          error = TRUE) {
-  lifecycle::deprecate_soft("0.5.1", "check_colnames()", "chk::check_names()")
+  lifecycle::deprecate_soft("0.5.1", "check_colnames()", "chk::check_data()")
 
   x_name <- chk_deparse(x_name)
 

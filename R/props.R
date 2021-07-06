@@ -8,9 +8,7 @@
 #' @export
 check_props <- function(x, x_name = substitute(x),
                        error = TRUE) {
-  lifecycle::deprecate_soft("0.5.1", "check_props()", NULL,
-                            "Please use chk::check_double() and chk::check_range() instead. 
-Use chk::chk_double() and chk::chk_range() for faster versions which return NULL.")
+  lifecycle::deprecate_soft("0.5.1", "check_props()", "chk::check_values()")
   x_name <- chk_deparse(x_name)
 
   check_flag_internal(error)
