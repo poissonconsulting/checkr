@@ -137,9 +137,9 @@
     <p>Checks if x is an numeric (double) vector with no attributes including names.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>check_numeric</span><span class='op'>(</span><span class='va'>x</span>, coerce <span class='op'>=</span> <span class='cn'>FALSE</span>, x_name <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>, error <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>check_numeric</span><span class='op'>(</span><span class='va'>x</span>, coerce <span class='op'>=</span> <span class='cn'>FALSE</span>, x_name <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>, error <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 
-<span class='fu'>check_double</span><span class='op'>(</span><span class='va'>x</span>, coerce <span class='op'>=</span> <span class='cn'>FALSE</span>, x_name <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>, error <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
+<span class='fu'>check_double</span><span class='op'>(</span><span class='va'>x</span>, coerce <span class='op'>=</span> <span class='cn'>FALSE</span>, x_name <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>, error <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></code></pre></div>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -171,16 +171,20 @@ immediately generate an informative message if the check fails.</p></td>
     <div class='dont-index'><p><code><a href='check_dbl.html'>check_number</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>check_numeric</span><span class='op'>(</span><span class='fl'>1</span>, error <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='warning'>Warning: `check_numeric()` was deprecated in checkr 0.5.1.</span>
-#&gt; <span class='warning'>Please use `chk::check_numeric()` instead.</span>
-#&gt; <span class='warning'>Use chk::chk_numeric() for a faster version which returns NULL.</span></div><div class='input'><span class='fu'>check_numeric</span><span class='op'>(</span><span class='fl'>1L</span>, error <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='warning'>Warning: `check_numeric()` was deprecated in checkr 0.5.1.</span>
-#&gt; <span class='warning'>Please use `chk::check_numeric()` instead.</span>
-#&gt; <span class='warning'>Use chk::chk_numeric() for a faster version which returns NULL.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: 1L must be class numeric</span></div><div class='output co'>#&gt; <span class='warning'>Warning: 1L must inherit from classes 'numeric' in that order</span></div><div class='input'><span class='fu'>check_numeric</span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>2</span>, error <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='warning'>Warning: `check_numeric()` was deprecated in checkr 0.5.1.</span>
-#&gt; <span class='warning'>Please use `chk::check_numeric()` instead.</span>
-#&gt; <span class='warning'>Use chk::chk_numeric() for a faster version which returns NULL.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: 1:2 must be class numeric</span></div><div class='output co'>#&gt; <span class='warning'>Warning: 1:2 must inherit from classes 'numeric' in that order</span></div></pre>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='fu'>check_numeric</span><span class='op'>(</span><span class='fl'>1</span>, error <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></span>
+<span class='r-wrn co'><span class='r-pr'>#&gt;</span> <span class='warning'>Warning: </span>`check_numeric()` was deprecated in checkr 0.5.1.</span>
+<span class='r-wrn co'><span class='r-pr'>#&gt;</span> Please use `chk::chk_numeric()` instead.</span>
+<span class='r-in'><span class='fu'>check_numeric</span><span class='op'>(</span><span class='fl'>1L</span>, error <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></span>
+<span class='r-wrn co'><span class='r-pr'>#&gt;</span> <span class='warning'>Warning: </span>`check_numeric()` was deprecated in checkr 0.5.1.</span>
+<span class='r-wrn co'><span class='r-pr'>#&gt;</span> Please use `chk::chk_numeric()` instead.</span>
+<span class='r-wrn co'><span class='r-pr'>#&gt;</span> <span class='warning'>Warning: </span>1L must be class numeric</span>
+<span class='r-wrn co'><span class='r-pr'>#&gt;</span> <span class='warning'>Warning: </span>1L must inherit from classes 'numeric' in that order</span>
+<span class='r-in'><span class='fu'>check_numeric</span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>2</span>, error <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></span>
+<span class='r-wrn co'><span class='r-pr'>#&gt;</span> <span class='warning'>Warning: </span>`check_numeric()` was deprecated in checkr 0.5.1.</span>
+<span class='r-wrn co'><span class='r-pr'>#&gt;</span> Please use `chk::chk_numeric()` instead.</span>
+<span class='r-wrn co'><span class='r-pr'>#&gt;</span> <span class='warning'>Warning: </span>1:2 must be class numeric</span>
+<span class='r-wrn co'><span class='r-pr'>#&gt;</span> <span class='warning'>Warning: </span>1:2 must inherit from classes 'numeric' in that order</span>
+</code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -196,7 +200,7 @@ immediately generate an informative message if the check fails.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9000.</p></p>
+  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p></p>
 </div>
 
       </footer>

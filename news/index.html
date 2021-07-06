@@ -133,10 +133,8 @@
 
     <div id="checkr-050" class="section level1">
 <h1 class="page-header" data-toc-text="0.5.0">
-<a href="#checkr-050" class="anchor"></a>checkr 0.5.0<small> 2019-04-25 </small>
-</h1>
-<ul>
-<li>fixed check_key with no columns</li>
+<a href="#checkr-050" class="anchor" aria-hidden="true"></a>checkr 0.5.0<small> 2019-04-25 </small></h1>
+<ul><li>fixed check_key with no columns</li>
 <li>added units testing</li>
 <li>added <code>names = TRUE</code> and <code>class = TRUE</code> arguments to <code><a href="../reference/check_attributes.html">check_attributes()</a></code>, <code><a href="../reference/check_no_attributes.html">check_no_attributes()</a></code> and <code><a href="../reference/check_vector.html">check_vector()</a></code>
 </li>
@@ -149,38 +147,31 @@
 <code><a href="../reference/check_named.html">check_named()</a></code> now only gives 1 warning if error = FALSE and not named</li>
 <li>removed <code>check_tz()</code>
 </li>
-</ul>
-</div>
+</ul></div>
     <div id="checkr-040" class="section level1">
 <h1 class="page-header" data-toc-text="0.4.0">
-<a href="#checkr-040" class="anchor"></a>checkr 0.4.0<small> 2018-11-01 </small>
-</h1>
+<a href="#checkr-040" class="anchor" aria-hidden="true"></a>checkr 0.4.0<small> 2018-11-01 </small></h1>
 <div id="major-changes" class="section level2">
 <h2 class="hasAnchor">
-<a href="#major-changes" class="anchor"></a>Major Changes</h2>
-<ul>
-<li>added <code>err</code> as dependency for message generation</li>
+<a href="#major-changes" class="anchor" aria-hidden="true"></a>Major Changes</h2>
+<ul><li>added <code>err</code> as dependency for message generation</li>
 <li>
 <code>check_data</code> argument <code>values</code> now NULL by default (as opposed to missing)</li>
 <li>lengths including nrows and ncols can now be checked by a vector of possible values</li>
 <li>
 <code>coerce = TRUE</code> now also strips attributes for flag, int, dbl, string and logical, integer, double, character.</li>
-</ul>
-</div>
+</ul></div>
 <div id="exported" class="section level2">
 <h2 class="hasAnchor">
-<a href="#exported" class="anchor"></a>Exported</h2>
-<ul>
-<li>exported <code><a href="../reference/chk_deparse.html">chk_deparse()</a></code> to deparse dealing with NAs for packages which extend</li>
+<a href="#exported" class="anchor" aria-hidden="true"></a>Exported</h2>
+<ul><li>exported <code><a href="../reference/chk_deparse.html">chk_deparse()</a></code> to deparse dealing with NAs for packages which extend</li>
 <li>exported <code><a href="../reference/chk_fail.html">chk_fail()</a></code> to have conditional error or warning messages for packages which extend.</li>
 <li>exported <code><a href="../reference/chk_max_int.html">chk_max_int()</a></code>, <code><a href="../reference/chk_min_int.html">chk_min_int()</a></code>, <code><a href="../reference/chk_min_dbl.html">chk_min_dbl()</a></code>, <code><a href="../reference/chk_max_dbl.html">chk_max_dbl()</a></code> and <code><a href="../reference/chk_tiny_dbl.html">chk_tiny_dbl()</a></code> to get integer and numeric ranges for system.</li>
-</ul>
-</div>
+</ul></div>
 <div id="new-functions" class="section level2">
 <h2 class="hasAnchor">
-<a href="#new-functions" class="anchor"></a>New Functions</h2>
-<ul>
-<li>added <code><a href="../reference/check_intersection.html">check_intersection()</a></code> to check the intersection between two atomic vectors</li>
+<a href="#new-functions" class="anchor" aria-hidden="true"></a>New Functions</h2>
+<ul><li>added <code><a href="../reference/check_intersection.html">check_intersection()</a></code> to check the intersection between two atomic vectors</li>
 <li>added <code><a href="../reference/check_integer.html">check_integer()</a></code>, <code><a href="../reference/check_numeric.html">check_numeric()</a></code>, <code><a href="../reference/check_numeric.html">check_double()</a></code>, <code><a href="../reference/check_logical.html">check_logical()</a></code> and <code><a href="../reference/check_character.html">check_character()</a></code>
 </li>
 <li>added <code><a href="../reference/check_int.html">check_int()</a></code> and <code><a href="../reference/check_dbl.html">check_dbl()</a></code> both of which do coercion</li>
@@ -195,58 +186,45 @@
 </li>
 <li>added <code><a href="../reference/check_grepl.html">check_grepl()</a></code>
 </li>
-</ul>
-</div>
+</ul></div>
 <div id="new-arguments" class="section level2">
 <h2 class="hasAnchor">
-<a href="#new-arguments" class="anchor"></a>New Arguments</h2>
-<ul>
-<li>added <code>attributes</code> argument to <code><a href="../reference/check_vector.html">check_vector()</a></code> and <code><a href="../reference/check_scalar.html">check_scalar()</a></code> which now only accept a flag for named</li>
+<a href="#new-arguments" class="anchor" aria-hidden="true"></a>New Arguments</h2>
+<ul><li>added <code>attributes</code> argument to <code><a href="../reference/check_vector.html">check_vector()</a></code> and <code><a href="../reference/check_scalar.html">check_scalar()</a></code> which now only accept a flag for named</li>
 <li>added <code>complete = TRUE</code> argument to <code><a href="../reference/check_names.html">check_names()</a></code>
 </li>
 <li>added <code>exclusive = FALSE</code> and <code>order = FALSE</code> to <code><a href="../reference/check_list.html">check_list()</a></code>
 </li>
-</ul>
-</div>
+</ul></div>
 <div id="deprecated" class="section level2">
 <h2 class="hasAnchor">
-<a href="#deprecated" class="anchor"></a>Deprecated</h2>
-<ul>
-<li>deprecated <code>unique = FALSE</code>, <code>length = NA</code> and <code>named = NA</code> from <code><a href="../reference/check_list.html">check_list()</a></code> as checked through <code>values</code> argument or with specific functions</li>
+<a href="#deprecated" class="anchor" aria-hidden="true"></a>Deprecated</h2>
+<ul><li>deprecated <code>unique = FALSE</code>, <code>length = NA</code> and <code>named = NA</code> from <code><a href="../reference/check_list.html">check_list()</a></code> as checked through <code>values</code> argument or with specific functions</li>
 <li>deprecated <code><a href="../reference/check_grepl.html">check_regex()</a></code> and <code><a href="../reference/check_pattern.html">check_pattern()</a></code> (and added <code><a href="../reference/check_grepl.html">check_grepl()</a></code>) and deprecated <code>regex</code> argument for <code>pattern</code> argument</li>
 <li>deprecated <code><a href="../reference/check_flag_na.html">check_flag_na()</a></code>
 </li>
-</ul>
-</div>
+</ul></div>
 </div>
     <div id="checkr-030" class="section level1">
 <h1 class="page-header" data-toc-text="0.3.0">
-<a href="#checkr-030" class="anchor"></a>checkr 0.3.0<small> 2018-06-27 </small>
-</h1>
-<ul>
-<li>redefined <code>check_scalar</code> (following previous deprecation)</li>
+<a href="#checkr-030" class="anchor" aria-hidden="true"></a>checkr 0.3.0<small> 2018-06-27 </small></h1>
+<ul><li>redefined <code>check_scalar</code> (following previous deprecation)</li>
 <li>added <code>only = FALSE</code> argument to <code><a href="../reference/check_vector.html">check_vector()</a></code> to check whether only the actual values are permitted.</li>
 <li>added <code><a href="../reference/check_rbind.html">check_rbind()</a></code> to check two data frames can be smoothly <code>rbind</code>ed</li>
-</ul>
-</div>
+</ul></div>
     <div id="checkr-020" class="section level1">
 <h1 class="page-header" data-toc-text="0.2.0">
-<a href="#checkr-020" class="anchor"></a>checkr 0.2.0<small> 2018-03-26 </small>
-</h1>
-<ul>
-<li>deprecated <code>check_tz()</code> for <code><a href="../reference/check_tzone.html">check_tzone()</a></code>
+<a href="#checkr-020" class="anchor" aria-hidden="true"></a>checkr 0.2.0<small> 2018-03-26 </small></h1>
+<ul><li>deprecated <code>check_tz()</code> for <code><a href="../reference/check_tzone.html">check_tzone()</a></code>
 </li>
 <li>added <code><a href="../reference/check_unused.html">check_unused()</a></code> to check <code>...</code> is unused within a function</li>
 <li>added <code><a href="../reference/check_homogenous.html">check_homogenous()</a></code> to check object’s elements are the same class</li>
 <li>added <code><a href="../reference/check_flag_na.html">check_flag_na()</a></code> to check is scalar logical</li>
-</ul>
-</div>
+</ul></div>
     <div id="checkr-010" class="section level1">
 <h1 class="page-header" data-toc-text="0.1.0">
-<a href="#checkr-010" class="anchor"></a>checkr 0.1.0<small> 2018-03-02 </small>
-</h1>
-<ul>
-<li>added <code><a href="../reference/check_nchar.html">check_nchar()</a></code> function</li>
+<a href="#checkr-010" class="anchor" aria-hidden="true"></a>checkr 0.1.0<small> 2018-03-02 </small></h1>
+<ul><li>added <code><a href="../reference/check_nchar.html">check_nchar()</a></code> function</li>
 <li>
 <code><a href="../reference/check_vector.html">check_vector()</a></code> and <code><a href="../reference/check_list.html">check_list()</a></code> now allow <code>named</code> argument to be a regular expression or count range</li>
 <li>added <code>nchar = c(0L, .Machine$max.integer)</code> and <code>regex = ".*"</code> arguments to <code><a href="../reference/check_named.html">check_named()</a></code>
@@ -259,29 +237,22 @@
 <li>added <code>assertive-programming</code> vignette</li>
 <li>vector length are now checked before values</li>
 <li>lengths can now be specified using <code>TRUE</code>, <code>FALSE</code> or <code>NA</code> (# 2)</li>
-</ul>
-</div>
+</ul></div>
     <div id="checkr-002" class="section level1">
 <h1 class="page-header" data-toc-text="0.0.2">
-<a href="#checkr-002" class="anchor"></a>checkr 0.0.2<small> 2018-01-29 </small>
-</h1>
-<ul>
-<li>added <code><a href="../reference/check_inherits.html">check_inherits()</a></code> and <code><a href="../reference/check_classes.html">check_classes()</a></code> functions</li>
+<a href="#checkr-002" class="anchor" aria-hidden="true"></a>checkr 0.0.2<small> 2018-01-29 </small></h1>
+<ul><li>added <code><a href="../reference/check_inherits.html">check_inherits()</a></code> and <code><a href="../reference/check_classes.html">check_classes()</a></code> functions</li>
 <li>
 <code><a href="../reference/check_named.html">check_named()</a></code> now only checks unique when <code>unique = TRUE</code>
 </li>
 <li>
 <code><a href="../reference/check_names.html">check_names()</a></code> (and <code><a href="../reference/check_colnames.html">check_colnames()</a></code>) can now check names are unique and also accept <code>names = character(0)</code> (and <code>colnames = character(0)</code>)</li>
-</ul>
-</div>
+</ul></div>
     <div id="checkr-001" class="section level1">
 <h1 class="page-header" data-toc-text="0.0.1">
-<a href="#checkr-001" class="anchor"></a>checkr 0.0.1<small> Unreleased </small>
-</h1>
-<ul>
-<li>first official release</li>
-</ul>
-</div>
+<a href="#checkr-001" class="anchor" aria-hidden="true"></a>checkr 0.0.1<small> Unreleased </small></h1>
+<ul><li>first official release</li>
+</ul></div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -299,7 +270,7 @@
 </div>
 
 <div class="pkgdown">
-  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9000.</p></p>
+  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p></p>
 </div>
 
       </footer>

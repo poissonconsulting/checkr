@@ -141,13 +141,13 @@ It works on vectors, matrices and arrays which, by definition will always
 be homogenous and lists and data frames which may or may not be homogenous.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>check_homogenous</span><span class='op'>(</span>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>check_homogenous</span><span class='op'>(</span>
   <span class='va'>x</span>,
   strict <span class='op'>=</span> <span class='cn'>FALSE</span>,
   recursive <span class='op'>=</span> <span class='cn'>FALSE</span>,
   x_name <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>,
   error <span class='op'>=</span> <span class='cn'>TRUE</span>
-<span class='op'>)</span></pre>
+<span class='op'>)</span></code></pre></div>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -183,10 +183,14 @@ immediately generate an informative message if the check fails.</p></td>
     <div class='dont-index'><p><code><a href='check_vector.html'>check_vector</a></code>, <code><a href='check_list.html'>check_list</a></code> and <code><a href='check_data.html'>check_data</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>check_homogenous</span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>2</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='warning'>Warning: `check_homogenous()` was deprecated in checkr 0.5.1.</span></div><div class='input'><span class='fu'>check_homogenous</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='warning'>Warning: `check_homogenous()` was deprecated in checkr 0.5.1.</span></div><div class='input'><span class='fu'>check_homogenous</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='cn'>TRUE</span><span class='op'>)</span>, error <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='warning'>Warning: `check_homogenous()` was deprecated in checkr 0.5.1.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: all elements in list(1, TRUE) must inherit from the same class</span></div></pre>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='fu'>check_homogenous</span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>2</span><span class='op'>)</span></span>
+<span class='r-wrn co'><span class='r-pr'>#&gt;</span> <span class='warning'>Warning: </span>`check_homogenous()` was deprecated in checkr 0.5.1.</span>
+<span class='r-in'><span class='fu'>check_homogenous</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-wrn co'><span class='r-pr'>#&gt;</span> <span class='warning'>Warning: </span>`check_homogenous()` was deprecated in checkr 0.5.1.</span>
+<span class='r-in'><span class='fu'>check_homogenous</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='cn'>TRUE</span><span class='op'>)</span>, error <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></span>
+<span class='r-wrn co'><span class='r-pr'>#&gt;</span> <span class='warning'>Warning: </span>`check_homogenous()` was deprecated in checkr 0.5.1.</span>
+<span class='r-wrn co'><span class='r-pr'>#&gt;</span> <span class='warning'>Warning: </span>all elements in list(1, TRUE) must inherit from the same class</span>
+</code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -202,7 +206,7 @@ immediately generate an informative message if the check fails.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9000.</p></p>
+  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p></p>
 </div>
 
       </footer>
