@@ -17,7 +17,12 @@
 check_missing_names <- function(x, names, 
                                    x_name = substitute(x),
                                    error = TRUE) {
-  lifecycle::deprecate_soft("0.5.1", "check_missing_names()", "chk::chk_not_subset(names())")
+  lifecycle::deprecate_soft(
+    "0.5.1", 
+    "check_missing_names()", 
+    NULL,
+    "Please use chk::chk_not_subset(names()) instead."
+  )
   
   x_name <- chk_deparse(x_name)
   
