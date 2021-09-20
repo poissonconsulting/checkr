@@ -1,15 +1,17 @@
 #' Check Attributes
-#' 
+#'
 #' Checks an objects attributes.
 #'
 #' @inheritParams check_list
-#' @param names A flag specifying whether names should be considered an attribute.
-#' @param class A flag specifying whether class should be considered an attribute.
-#' 
+#' @param names A flag specifying whether names should be considered an
+#'   attribute.
+#' @param class A flag specifying whether class should be considered an
+#'   attribute.
+#'
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @seealso \code{\link{check_list}}
 #' @export
-#' 
+#'
 #' @examples
 #' x <- 1
 #' attributes(x) <- list(y = 2L)
@@ -22,7 +24,11 @@ check_attributes <- function(x,
                              class = TRUE,
                              x_name = substitute(x),
                              error = TRUE) {
-  lifecycle::deprecate_soft("0.5.1", "check_attributes()", NULL)
+  lifecycle::deprecate_soft(
+    "0.5.1", 
+    "check_attributes()", 
+    "Pull out attributes with `attr()` and then use appropriate chk function"
+  )
   x_name <- chk_deparse(x_name)
   
   check_flag_internal(names)
@@ -63,7 +69,11 @@ check_no_attributes <- function(x,
                                 class = TRUE,
                                 x_name = substitute(x),
                                 error = TRUE) {
-  lifecycle::deprecate_soft("0.5.1", "check_no_attributes()", NULL)
+  lifecycle::deprecate_soft(
+    "0.5.1", 
+    "check_no_attributes()", 
+    "chk::chk_null(attributes())"
+  )
   x_name <- chk_deparse(x_name)
   
   check_flag_internal(error)
@@ -76,4 +86,3 @@ check_no_attributes <- function(x,
   
   invisible(x)
 }
-
