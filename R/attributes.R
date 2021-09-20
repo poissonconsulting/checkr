@@ -27,6 +27,7 @@ check_attributes <- function(x,
   lifecycle::deprecate_soft(
     "0.5.1", 
     "check_attributes()", 
+    NULL,
     "Pull out attributes with `attr()` and then use appropriate chk function"
   )
   x_name <- chk_deparse(x_name)
@@ -72,12 +73,12 @@ check_no_attributes <- function(x,
   lifecycle::deprecate_soft(
     "0.5.1", 
     "check_no_attributes()", 
-    "chk::chk_null(attributes())"
+    NULL,
+    "Please use chk::chk_null(attributes()) instead"
   )
   x_name <- chk_deparse(x_name)
   
   check_flag_internal(error)
-  
   
   attr <- attributes(x)
   if(!class) attr$class <- NULL
