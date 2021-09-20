@@ -24,9 +24,11 @@ check_attributes(
 
 \item{order}{A flag indicating whether the elements have to occur in the same order as values.}
 
-\item{names}{A flag specifying whether names should be considered an attribute.}
+\item{names}{A flag specifying whether names should be considered an
+attribute.}
 
-\item{class}{A flag specifying whether class should be considered an attribute.}
+\item{class}{A flag specifying whether class should be considered an
+attribute.}
 
 \item{x_name}{A string of the name of the object x.}
 
