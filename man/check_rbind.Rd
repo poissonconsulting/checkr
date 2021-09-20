@@ -21,7 +21,8 @@ check_rbind(
 
 \item{exclusive}{A flag indicating whether other columns are not permitted.}
 
-\item{order}{A flag indicating whether the columns have to occur in the same order.}
+\item{order}{A flag indicating whether the columns have to occur in the same
+order.}
 
 \item{x_name}{A string of the name of the object x.}
 
@@ -34,7 +35,9 @@ immediately generate an informative message if the check fails.}
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Checks whether a data frame has the same columns of the same classes as a second data frame which means they can be \code{\link{rbind}}ed without a problem.
+Checks whether a data frame has the same columns of the same classes as a
+second data frame which means they can be \code{\link{rbind}}ed without a
+problem.
 }
 \examples{
 check_rbind(datasets::mtcars, datasets::mtcars)
