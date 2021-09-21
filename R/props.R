@@ -9,7 +9,11 @@
 #' @export
 check_props <- function(x, x_name = substitute(x),
                        error = TRUE) {
-  lifecycle::deprecate_soft("0.5.1", "check_props()", NULL)
+  lifecycle::deprecate_soft(
+    "0.5.1", 
+    "check_props()", 
+    NULL,
+    "Please use chk::check_values() with values = c(0, 1) instead")
   x_name <- chk_deparse(x_name)
 
   check_flag_internal(error)
