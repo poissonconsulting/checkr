@@ -1,16 +1,19 @@
 #' Check Row Bind
-#' 
-#' Checks whether a data frame has the same columns of the same classes as a second data frame which means they can be \code{\link{rbind}}ed without a problem.
+#'
+#' Checks whether a data frame has the same columns of the same classes as a
+#' second data frame which means they can be \code{\link{rbind}}ed without a
+#' problem.
 #'
 #' @inheritParams params
 #' @param x The first data frame.
 #' @param y The second data frame.
-#' @param order A flag indicating whether the columns have to occur in the same order.
-#' 
+#' @param order A flag indicating whether the columns have to occur in the same
+#'   order.
+#'
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @seealso \code{\link{check_join}}
 #' @export
-#' 
+#'
 #' @examples
 #' check_rbind(datasets::mtcars, datasets::mtcars)
 check_rbind <- function(x,
@@ -20,7 +23,7 @@ check_rbind <- function(x,
                         x_name = substitute(x),
                         y_name = substitute(y),
                         error = TRUE) {
-  lifecycle::deprecate_soft("0.5.1", "check_rbind()", "chk::chk_join()")
+  lifecycle::deprecate_soft("0.5.1", "check_rbind()", "chk::check_data()")
   x_name <- chk_deparse(x_name)
   y_name <- chk_deparse(y_name)
   

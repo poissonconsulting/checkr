@@ -17,7 +17,12 @@
 check_missing_colnames <- function(x, colnames, 
                                    x_name = substitute(x),
                                    error = TRUE) {
-  lifecycle::deprecate_soft("0.5.1", "check_missing_colnames()", "chk::chk_not_subset(names())")
+  lifecycle::deprecate_soft(
+    "0.5.1", 
+    "check_missing_colnames()", 
+    NULL, 
+    "Please use chk::chk_not_subset(names()) instead."
+  )
   
   x_name <- chk_deparse(x_name)
   

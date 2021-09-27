@@ -9,7 +9,9 @@ check_nchar(x, nchar = TRUE, x_name = substitute(x), error = TRUE)
 \arguments{
 \item{x}{The object to check.}
 
-\item{nchar}{A flag indicating whether x should have characters or a missing value indicating no requirements or a count or count range of the number of characters.}
+\item{nchar}{A flag indicating whether x should have characters or a missing
+value indicating no requirements or a count or count range of the number of
+characters.}
 
 \item{x_name}{A string of the name of the object x.}
 

@@ -18,5 +18,6 @@ immediately generate an informative message if the check fails.}
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Checks if x is proportions vector - non-missing dbls between 0 and 1 that sum to 1.
+Checks if x is proportions vector - non-missing dbls between 0 and 1 that sum
+to 1.
 }

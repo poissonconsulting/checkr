@@ -36,9 +36,11 @@ number of elements or a count vector of the permitted number of elements.}
 
 \item{attributes}{A flag indicating whether the vector must or must not have attributes or NA if it doesn't matter.}
 
-\item{names}{A flag specifying whether names should be considered an attribute.}
+\item{names}{A flag specifying whether names should be considered an
+attribute.}
 
-\item{class}{A flag specifying whether class should be considered an attribute.}
+\item{class}{A flag specifying whether class should be considered an
+attribute.}
 
 \item{only}{A flag indicating whether only the actual values are permitted.
 It only affects values with two or less non-missing elements.}

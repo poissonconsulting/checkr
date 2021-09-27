@@ -15,9 +15,11 @@ check_no_attributes(
 \arguments{
 \item{x}{The object to check.}
 
-\item{names}{A flag specifying whether names should be considered an attribute.}
+\item{names}{A flag specifying whether names should be considered an
+attribute.}
 
-\item{class}{A flag specifying whether class should be considered an attribute.}
+\item{class}{A flag specifying whether class should be considered an
+attribute.}
 
 \item{x_name}{A string of the name of the object x.}
 
