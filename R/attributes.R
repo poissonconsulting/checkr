@@ -28,7 +28,7 @@ check_attributes <- function(x,
     "0.5.1", 
     "check_attributes()", 
     NULL,
-    "Pull out attributes with `attr()` and then use appropriate chk function"
+    "Pull out attributes with `attributes()` and then use appropriate chk function"
   )
   x_name <- chk_deparse(x_name)
   

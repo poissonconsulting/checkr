@@ -21,7 +21,7 @@ check_nchar <- function(x,
     "0.5.1", 
     "check_nchar()", 
     NULL, 
-    "Please use `chk::chk_equal()` with nchar() or `chk::chk_match()` instead."
+    "Please use chk::chk_equal(), chk::chk_range(), chk::chk_subset() etc with nchar() instead."
   )
   x_name <- chk_deparse(x_name)
 
