@@ -61,6 +61,7 @@ check_data <- function(x,
       check_colnames(x, colnames = values, x_name = x_name, exclusive = exclusive, order = order)
     }
   }
+  
   check_nrow(x, nrow = nrow, x_name = x_name, error = error)
   
   check_key(x, key = key, x_name = x_name, error = error)
