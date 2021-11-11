@@ -26,8 +26,7 @@ If R CMD check doesn't pass cleanly, it's a good idea to ask for help before con
 The title of your PR should briefly describe the change.
 The body of your PR should contain `Fixes #issue-number`.
 
-*  Begin commit or merge messages with `-` to indicate user facing changes that should be included in NEWS.md. 
-We will use [fledge](https://github.com/krlmlr/fledge) to automatically generate the NEWS.md file.
+*  For user-facing changes, add a bullet to the top of `NEWS.md` (i.e. just below the first header). Follow the style described in <https://style.tidyverse.org/news.html>.
 
 ### Code style
 
@@ -42,5 +41,5 @@ Contributions with test cases included are easier to accept.
 ## Code of Conduct
 
 Please note that the checkr project is released with a
-[Contributor Code of Conduct](/.github/CODE_OF_CONDUCT.md). 
-By contributing to this project you agree to abide by its terms.
+[Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this
+project you agree to abide by its terms.
