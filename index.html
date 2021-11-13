@@ -36,7 +36,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">checkr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.0.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.5.0.9001</span>
       </span>
     </div>
 
@@ -66,7 +66,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/poissonconsulting/checkr/">
+  <a href="https://github.com/poissonconsulting/checkr/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -85,16 +85,16 @@
   <div class="contents col-md-9">
 
 
-<div id="checkr" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#checkr" class="anchor" aria-hidden="true"></a>checkr</h1></div>
+<div class="section level1">
+<div class="page-header"><h1 id="checkr">checkr<a class="anchor" aria-label="anchor" href="#checkr"></a>
+</h1></div>
 <p><code>checkr</code> has been superseded by the <a href="https://github.com/poissonconsulting/chk" class="external-link"><code>chk</code></a> package.</p>
 <p><code>checkr</code> is a light-weight R package of expressive, assertive, pipe-friendly functions to check the properties of common R objects.</p>
 <p>In the case of failure the functions, which are designed to be used in scripts and packages, issue informative error messages.</p>
 <p>For an overview of the functions see the <code>checkr-naming</code> vignette and for a comparison with similar packages see the <code>assertive-programming</code> vignette.</p>
-<div id="demonstration" class="section level2">
-<h2 class="hasAnchor">
-<a href="#demonstration" class="anchor" aria-hidden="true"></a>Demonstration</h2>
+<div class="section level2">
+<h2 id="demonstration">Demonstration<a class="anchor" aria-label="anchor" href="#demonstration"></a>
+</h2>
 <p>The following code demonstrates the <code><a href="reference/check_data.html">check_data()</a></code> function</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/poissonconsulting/checkr" class="external-link">checkr</a></span><span class="op">)</span>
@@ -119,13 +119,13 @@
 <span class="co">#&gt; Warning: dplyr::starwars must not have more than 84 rows</span>
 <span class="co">#&gt; Warning: column 'hair_color' in dplyr::starwars must be a unique key</span></code></pre></div>
 </div>
-<div id="syntax" class="section level2">
-<h2 class="hasAnchor">
-<a href="#syntax" class="anchor" aria-hidden="true"></a>Syntax</h2>
+<div class="section level2">
+<h2 id="syntax">Syntax<a class="anchor" aria-label="anchor" href="#syntax"></a>
+</h2>
 <p><code>checkr</code> uses objects to check the values of other objects using an elegant and expressive syntax.</p>
-<div id="class" class="section level4">
-<h4 class="hasAnchor">
-<a href="#class" class="anchor" aria-hidden="true"></a>Class</h4>
+<div class="section level4">
+<h4 id="class">Class<a class="anchor" aria-label="anchor" href="#class"></a>
+</h4>
 <p>To check the class simply pass an object of the desired class.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">1</span>,<span class="fl">0</span>,<span class="fl">1</span>,<span class="cn">NA</span><span class="op">)</span>
@@ -133,9 +133,9 @@
 <span class="fu"><a href="reference/check_vector.html">check_vector</a></span><span class="op">(</span><span class="va">y</span>, values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/integer.html" class="external-link">integer</a></span><span class="op">(</span><span class="fl">0</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; Error: y must be class integer</span></code></pre></div>
 </div>
-<div id="missing-values" class="section level4">
-<h4 class="hasAnchor">
-<a href="#missing-values" class="anchor" aria-hidden="true"></a>Missing Values</h4>
+<div class="section level4">
+<h4 id="missing-values">Missing Values<a class="anchor" aria-label="anchor" href="#missing-values"></a>
+</h4>
 <p>To check that a vector does not include missing values pass a single non-missing value (of the correct class).</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/check_vector.html">check_vector</a></span><span class="op">(</span><span class="va">y</span>, <span class="fl">1</span><span class="op">)</span>
@@ -148,18 +148,18 @@
 <code class="sourceCode R"><span class="fu"><a href="reference/check_vector.html">check_vector</a></span><span class="op">(</span><span class="va">y</span>, <span class="cn">NA_real_</span><span class="op">)</span>
 <span class="co">#&gt; Error: y must only include missing values</span></code></pre></div>
 </div>
-<div id="range" class="section level4">
-<h4 class="hasAnchor">
-<a href="#range" class="anchor" aria-hidden="true"></a>Range</h4>
+<div class="section level4">
+<h4 id="range">Range<a class="anchor" aria-label="anchor" href="#range"></a>
+</h4>
 <p>To check the range of a vector pass two non-missing values (as well as the missing value if required).</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/check_vector.html">check_vector</a></span><span class="op">(</span><span class="va">y</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">2</span>, <span class="cn">NA</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="reference/check_vector.html">check_vector</a></span><span class="op">(</span><span class="va">y</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1</span>, <span class="op">-</span><span class="fl">10</span>, <span class="cn">NA</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; Error: the values in y must lie between -10 and -1</span></code></pre></div>
 </div>
-<div id="specific-values" class="section level4">
-<h4 class="hasAnchor">
-<a href="#specific-values" class="anchor" aria-hidden="true"></a>Specific Values</h4>
+<div class="section level4">
+<h4 id="specific-values">Specific Values<a class="anchor" aria-label="anchor" href="#specific-values"></a>
+</h4>
 <p>To check the vector only includes specific values pass three or more non-missing values or set <code>only  = TRUE</code>.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/check_vector.html">check_vector</a></span><span class="op">(</span><span class="va">y</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">2</span>, <span class="cn">NA</span><span class="op">)</span><span class="op">)</span>
@@ -169,9 +169,9 @@
 <span class="co">#&gt; Error: y can only include values 1 or 2</span></code></pre></div>
 </div>
 </div>
-<div id="naming-objects" class="section level2">
-<h2 class="hasAnchor">
-<a href="#naming-objects" class="anchor" aria-hidden="true"></a>Naming Objects</h2>
+<div class="section level2">
+<h2 id="naming-objects">Naming Objects<a class="anchor" aria-label="anchor" href="#naming-objects"></a>
+</h2>
 <p>By default, the name of an object is determined from the function call.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/check_vector.html">check_vector</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span>
@@ -186,9 +186,9 @@
 <code class="sourceCode R"><span class="va">y</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu"><a href="reference/check_list.html">check_list</a></span><span class="op">(</span>x_name <span class="op">=</span> <span class="st">"y"</span><span class="op">)</span>
 <span class="co">#&gt; Error: y must be a list</span></code></pre></div>
 </div>
-<div id="scalars" class="section level2">
-<h2 class="hasAnchor">
-<a href="#scalars" class="anchor" aria-hidden="true"></a>Scalars</h2>
+<div class="section level2">
+<h2 id="scalars">Scalars<a class="anchor" aria-label="anchor" href="#scalars"></a>
+</h2>
 <p>The four wrapper functions <code><a href="reference/check_lgl.html">check_lgl()</a></code>, <code><a href="reference/check_int.html">check_int()</a></code>, <code><a href="reference/check_dbl.html">check_dbl()</a></code> and <code>check_str()</code> check whether an object is an attribute-less non-missing scalar logical (flag), integer, double (number) or character (string). They are really useful for checking the types of arguments in functions</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">fun</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span> <span class="fu"><a href="reference/check_lgl.html">check_lgl</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">}</span>
@@ -199,18 +199,18 @@
 <span class="co">#&gt; Error: x must be class logical</span></code></pre></div>
 <p>Additional scalar wrappers are <code><a href="reference/check_date.html">check_date()</a></code> and <code><a href="reference/check_dttm.html">check_dttm()</a></code> for scalar Date and POSIXct objects. Alternatively you can roll your own using the more general <code><a href="reference/check_scalar.html">check_scalar()</a></code> function.</p>
 </div>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor" aria-hidden="true"></a>Installation</h2>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
 <p>To install the latest release version from <a href="https://cran.r-project.org" class="external-link">CRAN</a></p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">install.packages</span>(<span class="st">"checkr"</span>)</span></code></pre></div>
 <p>To install the latest development version from <a href="https://github.com/poissonconsulting/checkr" class="external-link">GitHub</a></p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># install.packages("remotes")</span></span>
 <span id="cb13-2"><a href="#cb13-2"></a>remotes<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"poissonconsulting/checkr"</span>)</span></code></pre></div>
 </div>
-<div id="citation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#citation" class="anchor" aria-hidden="true"></a>Citation</h2>
+<div class="section level2">
+<h2 id="citation">Citation<a class="anchor" aria-label="anchor" href="#citation"></a>
+</h2>
 <div class="sourceCode" id="cb14"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>To cite checkr <span class="cf">in</span> publications use<span class="op">:</span></span>
 <span id="cb14-2"><a href="#cb14-2"></a></span>
 <span id="cb14-3"><a href="#cb14-3"></a><span class="st">  </span>Joe <span class="kw">Thorley</span> (<span class="dv">2018</span>). checkr<span class="op">:</span><span class="st"> </span>An R package <span class="cf">for</span> Assertive Programming.</span>
@@ -230,15 +230,15 @@
 <span id="cb14-17"><a href="#cb14-17"></a>    url =<span class="st"> </span>{http<span class="op">:</span><span class="er">//</span>joss.theoj.org<span class="op">/</span>papers<span class="op">/</span><span class="fl">10.21105</span><span class="op">/</span>joss<span class="fl">.00624</span>},</span>
 <span id="cb14-18"><a href="#cb14-18"></a>  }</span></code></pre></div>
 </div>
-<div id="contribution" class="section level2">
-<h2 class="hasAnchor">
-<a href="#contribution" class="anchor" aria-hidden="true"></a>Contribution</h2>
+<div class="section level2">
+<h2 id="contribution">Contribution<a class="anchor" aria-label="anchor" href="#contribution"></a>
+</h2>
 <p>Please report any <a href="https://github.com/poissonconsulting/checkr/issues" class="external-link">issues</a>.</p>
 <p><a href="https://github.com/poissonconsulting/checkr/pulls" class="external-link">Pull requests</a> are always welcome.</p>
 </div>
-<div id="code-of-conduct" class="section level2">
-<h2 class="hasAnchor">
-<a href="#code-of-conduct" class="anchor" aria-hidden="true"></a>Code of Conduct</h2>
+<div class="section level2">
+<h2 id="code-of-conduct">Code of Conduct<a class="anchor" aria-label="anchor" href="#code-of-conduct"></a>
+</h2>
 <p>Please note that the checkr project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms</p>
 </div>
 </div>
@@ -249,12 +249,9 @@
     <div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=checkr">https://​cloud.r-project.org/​package=checkr</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/poissonconsulting/checkr/">https://​github.com/​poissonconsulting/​checkr/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/poissonconsulting/checkr/issues">https://​github.com/​poissonconsulting/​checkr/​issues</a>
-</li>
+<li><a href="https://cloud.r-project.org/package=checkr" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/poissonconsulting/checkr/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/poissonconsulting/checkr/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 
@@ -262,7 +259,7 @@
 <h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
-<li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
+<li><small><a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
 
@@ -284,9 +281,9 @@
 <div class="developers">
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>Joe Thorley <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-7683-4592" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Joe Thorley <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-7683-4592" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 <li>Poisson Consulting <br><small class="roles"> Copyright holder, funder </small>  </li>
-<li><a href="authors.html">More on authors...</a></li>
+<li><a href="authors.html">More about authors...</a></li>
 </ul>
 </div>
 
@@ -313,7 +310,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.9000.9000.9000.</p>
 </div>
 
       </footer>

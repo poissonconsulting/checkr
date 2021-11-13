@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">checkr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.0.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.5.0.9001</span>
       </span>
     </div>
 
@@ -84,9 +84,9 @@
       <h1 data-toc-skip>checkr Naming Schemes</h1>
                         <h4 data-toc-skip class="author">Joe Thorley</h4>
             
-            <h4 data-toc-skip class="date">2021-07-06</h4>
+            <h4 data-toc-skip class="date">2021-11-13</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/poissonconsulting/checkr/blob/master/vignettes/checkr-naming.Rmd" class="external-link"><code>vignettes/checkr-naming.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/poissonconsulting/checkr/blob/HEAD/vignettes/checkr-naming.Rmd" class="external-link"><code>vignettes/checkr-naming.Rmd</code></a></small>
       <div class="hidden name"><code>checkr-naming.Rmd</code></div>
 
     </div>
@@ -94,15 +94,15 @@
     
     
 <p>The <code>checkr</code> packages provides a series of functions that can be used to check the values and classes of common R objects. Before attempting to use the functions it is worth understanding the checkr function naming schemes.</p>
-<div id="primary-objects" class="section level2">
-<h2 class="hasAnchor">
-<a href="#primary-objects" class="anchor" aria-hidden="true"></a>Primary Objects</h2>
+<div class="section level2">
+<h2 id="primary-objects">Primary Objects<a class="anchor" aria-label="anchor" href="#primary-objects"></a>
+</h2>
 <p>As discussed in the <a href="http://adv-r.had.co.nz/Data-structures.html" class="external-link">Data Structures</a> chapter in Advanced R by Hadley Wickham, the five main object types are defined by their dimensionality (1d, 2d and nd) and whether they are homogenous or heterogenous. Currently the <code><a href="../reference/check_vector.html">check_vector()</a></code>, <code><a href="../reference/check_list.html">check_list()</a></code> and <code><a href="../reference/check_data.html">check_data()</a></code> functions allow the user to check the type and values of the three main type of (atomic) vectors, lists and data frames. The <code><a href="https://rdrr.io/pkg/checkmate/man/checkMatrix.html" class="external-link">check_matrix()</a></code> and <code><a href="https://rdrr.io/pkg/checkmate/man/checkArray.html" class="external-link">check_array()</a></code> equivalents have yet to be implemented. The functions are named according to the type of the object they check.</p>
 <p>It is worth noting that a while a vector, matrix or array will definitely pass the <code><a href="../reference/check_homogenous.html">check_homogenous()</a></code> function, a list or data frame may pass it if all its elements have identical classes.</p>
 </div>
-<div id="scalars" class="section level2">
-<h2 class="hasAnchor">
-<a href="#scalars" class="anchor" aria-hidden="true"></a>Scalars</h2>
+<div class="section level2">
+<h2 id="scalars">Scalars<a class="anchor" aria-label="anchor" href="#scalars"></a>
+</h2>
 <p>In addition to (atomic) vectors the checkr package also identifies scalars which in R are (atomic) vectors with one element. They can be tested using the <code><a href="../reference/check_scalar.html">check_scalar()</a></code> function.</p>
 <p>Often function arguments are scalars of a particular type. For example the default <code><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean()</a></code> function has an argument <code>na.rm</code> which is a logical indicating whether <code>NA</code> values should be stripped. The checkr package provides the following functions to test whether objects are non-missing scalars of particular types:</p>
 <ul>
@@ -126,26 +126,26 @@
 </ul>
 <p>It is also worth noting that almost all the scalar functions include an argument <code>coerce</code> which if set to <code>TRUE</code> tests whether the object satisfies the condition after coercing to the required type. If the test passes then the function returns the coerced object.</p>
 </div>
-<div id="other-objects" class="section level2">
-<h2 class="hasAnchor">
-<a href="#other-objects" class="anchor" aria-hidden="true"></a>Other Objects</h2>
+<div class="section level2">
+<h2 id="other-objects">Other Objects<a class="anchor" aria-label="anchor" href="#other-objects"></a>
+</h2>
 <p>Functions to test whether an object is another type of object include <code><a href="../reference/check_null.html">check_null()</a></code>, <code><a href="../reference/check_environment.html">check_environment()</a></code> and <code><a href="../reference/check_function.html">check_function()</a></code>.</p>
 <p>In addition the <code><a href="../reference/check_classes.html">check_classes()</a></code> and <code><a href="../reference/check_inherits.html">check_inherits()</a></code> functions can be used to check the classes or inheritance of an object.</p>
 </div>
-<div id="function-functions" class="section level2">
-<h2 class="hasAnchor">
-<a href="#function-functions" class="anchor" aria-hidden="true"></a>Function Functions</h2>
+<div class="section level2">
+<h2 id="function-functions">Function Functions<a class="anchor" aria-label="anchor" href="#function-functions"></a>
+</h2>
 <p>Many other checking functions are named according to the main base function that they use. Thus the <code><a href="../reference/check_nrow.html">check_nrow()</a></code> function uses the <code><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow()</a></code> function to check the number of rows while the <code><a href="../reference/check_nlevels.html">check_nlevels()</a></code> function uses the <code><a href="https://rdrr.io/r/base/nlevels.html" class="external-link">nlevels()</a></code> function. It is important to realize that these functions do not check the type of an object but simply whether the return value of the base function(s) is consistent with the user defined conditions.</p>
 <p>Functions which fall in this category include <code><a href="https://rdrr.io/pkg/checkmate/man/checkClass.html" class="external-link">check_class()</a></code>, <code><a href="../reference/check_colnames.html">check_colnames()</a></code>, <code><a href="../reference/check_length.html">check_length()</a></code>, <code><a href="../reference/check_levels.html">check_levels()</a></code>, <code><a href="../reference/check_names.html">check_names()</a></code>, <code><a href="../reference/check_nchar.html">check_nchar()</a></code>, <code><a href="../reference/check_ncol.html">check_ncol()</a></code>, <code><a href="../reference/check_nlevels.html">check_nlevels()</a></code>, <code><a href="../reference/check_nrow.html">check_nrow()</a></code> and <code><a href="../reference/check_sorted.html">check_sorted()</a></code>.</p>
 </div>
-<div id="data-functions" class="section level2">
-<h2 class="hasAnchor">
-<a href="#data-functions" class="anchor" aria-hidden="true"></a>Data Functions</h2>
+<div class="section level2">
+<h2 id="data-functions">Data Functions<a class="anchor" aria-label="anchor" href="#data-functions"></a>
+</h2>
 <p>The <code><a href="../reference/check_join.html">check_join()</a></code> function tests whether the columns in one data frame form a many-to-one join with corresponding columns in a second data frame. The <code><a href="../reference/check_key.html">check_key()</a></code> function tests whether specific columns are unique. They are useful for testing whether a set of data frames can be archived in an relational database.</p>
 </div>
-<div id="miscellaneous-functions" class="section level2">
-<h2 class="hasAnchor">
-<a href="#miscellaneous-functions" class="anchor" aria-hidden="true"></a>Miscellaneous Functions</h2>
+<div class="section level2">
+<h2 id="miscellaneous-functions">Miscellaneous Functions<a class="anchor" aria-label="anchor" href="#miscellaneous-functions"></a>
+</h2>
 <p>The remaining functions which are not captured by the above naming schemes include <code><a href="../reference/checkor.html">checkor()</a></code>, <code><a href="../reference/check_named.html">check_named()</a></code>, <code><a href="../reference/check_pattern.html">check_pattern()</a></code>, <code><a href="../reference/check_grepl.html">check_regex()</a></code>, <code><a href="../reference/check_sorted.html">check_sorted()</a></code>, <code><a href="../reference/check_tzone.html">check_tzone()</a></code>, <code><a href="../reference/check_unique.html">check_unique()</a></code>, <code><a href="../reference/check_unnamed.html">check_unnamed()</a></code> and <code><a href="../reference/check_unused.html">check_unused()</a></code>.</p>
 </div>
   </div>
@@ -167,7 +167,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link external-link">pkgdown</a> 1.6.1.9001.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.9000.9000.9000.</p>
 </div>
 
       </footer>
