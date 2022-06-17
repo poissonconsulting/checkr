@@ -43,7 +43,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -84,7 +84,7 @@
       <h1 data-toc-skip>checkr Naming Schemes</h1>
                         <h4 data-toc-skip class="author">Joe Thorley</h4>
             
-            <h4 data-toc-skip class="date">2021-11-13</h4>
+            <h4 data-toc-skip class="date">2022-06-17</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/poissonconsulting/checkr/blob/HEAD/vignettes/checkr-naming.Rmd" class="external-link"><code>vignettes/checkr-naming.Rmd</code></a></small>
       <div class="hidden name"><code>checkr-naming.Rmd</code></div>
@@ -97,7 +97,7 @@
 <div class="section level2">
 <h2 id="primary-objects">Primary Objects<a class="anchor" aria-label="anchor" href="#primary-objects"></a>
 </h2>
-<p>As discussed in the <a href="http://adv-r.had.co.nz/Data-structures.html" class="external-link">Data Structures</a> chapter in Advanced R by Hadley Wickham, the five main object types are defined by their dimensionality (1d, 2d and nd) and whether they are homogenous or heterogenous. Currently the <code><a href="../reference/check_vector.html">check_vector()</a></code>, <code><a href="../reference/check_list.html">check_list()</a></code> and <code><a href="../reference/check_data.html">check_data()</a></code> functions allow the user to check the type and values of the three main type of (atomic) vectors, lists and data frames. The <code><a href="https://rdrr.io/pkg/checkmate/man/checkMatrix.html" class="external-link">check_matrix()</a></code> and <code><a href="https://rdrr.io/pkg/checkmate/man/checkArray.html" class="external-link">check_array()</a></code> equivalents have yet to be implemented. The functions are named according to the type of the object they check.</p>
+<p>As discussed in the <a href="http://adv-r.had.co.nz/Data-structures.html" class="external-link">Data Structures</a> chapter in Advanced R by Hadley Wickham, the five main object types are defined by their dimensionality (1d, 2d and nd) and whether they are homogenous or heterogenous. Currently the <code><a href="../reference/check_vector.html">check_vector()</a></code>, <code><a href="../reference/check_list.html">check_list()</a></code> and <code><a href="../reference/check_data.html">check_data()</a></code> functions allow the user to check the type and values of the three main type of (atomic) vectors, lists and data frames. The <code><a href="https://mllg.github.io/checkmate/reference/checkMatrix.html" class="external-link">check_matrix()</a></code> and <code><a href="https://mllg.github.io/checkmate/reference/checkArray.html" class="external-link">check_array()</a></code> equivalents have yet to be implemented. The functions are named according to the type of the object they check.</p>
 <p>It is worth noting that a while a vector, matrix or array will definitely pass the <code><a href="../reference/check_homogenous.html">check_homogenous()</a></code> function, a list or data frame may pass it if all its elements have identical classes.</p>
 </div>
 <div class="section level2">
@@ -136,7 +136,7 @@
 <h2 id="function-functions">Function Functions<a class="anchor" aria-label="anchor" href="#function-functions"></a>
 </h2>
 <p>Many other checking functions are named according to the main base function that they use. Thus the <code><a href="../reference/check_nrow.html">check_nrow()</a></code> function uses the <code><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow()</a></code> function to check the number of rows while the <code><a href="../reference/check_nlevels.html">check_nlevels()</a></code> function uses the <code><a href="https://rdrr.io/r/base/nlevels.html" class="external-link">nlevels()</a></code> function. It is important to realize that these functions do not check the type of an object but simply whether the return value of the base function(s) is consistent with the user defined conditions.</p>
-<p>Functions which fall in this category include <code><a href="https://rdrr.io/pkg/checkmate/man/checkClass.html" class="external-link">check_class()</a></code>, <code><a href="../reference/check_colnames.html">check_colnames()</a></code>, <code><a href="../reference/check_length.html">check_length()</a></code>, <code><a href="../reference/check_levels.html">check_levels()</a></code>, <code><a href="../reference/check_names.html">check_names()</a></code>, <code><a href="../reference/check_nchar.html">check_nchar()</a></code>, <code><a href="../reference/check_ncol.html">check_ncol()</a></code>, <code><a href="../reference/check_nlevels.html">check_nlevels()</a></code>, <code><a href="../reference/check_nrow.html">check_nrow()</a></code> and <code><a href="../reference/check_sorted.html">check_sorted()</a></code>.</p>
+<p>Functions which fall in this category include <code><a href="https://mllg.github.io/checkmate/reference/checkClass.html" class="external-link">check_class()</a></code>, <code><a href="../reference/check_colnames.html">check_colnames()</a></code>, <code><a href="../reference/check_length.html">check_length()</a></code>, <code><a href="../reference/check_levels.html">check_levels()</a></code>, <code><a href="../reference/check_names.html">check_names()</a></code>, <code><a href="../reference/check_nchar.html">check_nchar()</a></code>, <code><a href="../reference/check_ncol.html">check_ncol()</a></code>, <code><a href="../reference/check_nlevels.html">check_nlevels()</a></code>, <code><a href="../reference/check_nrow.html">check_nrow()</a></code> and <code><a href="../reference/check_sorted.html">check_sorted()</a></code>.</p>
 </div>
 <div class="section level2">
 <h2 id="data-functions">Data Functions<a class="anchor" aria-label="anchor" href="#data-functions"></a>
@@ -167,7 +167,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.9000.9000.9000.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.9000.</p>
 </div>
 
       </footer>

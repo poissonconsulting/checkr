@@ -27,7 +27,7 @@ The function can check the order of the names and whether other names are permit
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -67,7 +67,8 @@ The function can check the order of the names and whether other names are permit
 The function can check the order of the names and whether other names are permitted.</p>
     </div>
 
-    <div class="ref-usage sourceCode"><pre class="sourceCode r"><code><span class="fu">check_names</span><span class="op">(</span>
+    <div id="ref-usage">
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">check_names</span><span class="op">(</span>
   <span class="va">x</span>,
   names <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></span><span class="op">(</span><span class="fl">0</span><span class="op">)</span>,
   exclusive <span class="op">=</span> <span class="cn">FALSE</span>,
@@ -77,41 +78,57 @@ The function can check the order of the names and whether other names are permit
   x_name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/substitute.html" class="external-link">substitute</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>,
   error <span class="op">=</span> <span class="cn">TRUE</span>
 <span class="op">)</span></code></pre></div>
+    </div>
 
-    <div id="ref-sections">
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>x</dt>
 <dd><p>The object to check.</p></dd>
+
+
 <dt>names</dt>
 <dd><p>A character vector of the names.</p></dd>
+
+
 <dt>exclusive</dt>
 <dd><p>A flag indicating whether other names are not permitted.</p></dd>
+
+
 <dt>order</dt>
 <dd><p>A flag indicating whether the object names have to occur in the same order as names.</p></dd>
+
+
 <dt>unique</dt>
 <dd><p>A flag indicating whether all the object names have to be unique.</p></dd>
+
+
 <dt>complete</dt>
 <dd><p>A flag indicating whether all the possible names have to be represented.</p></dd>
+
+
 <dt>x_name</dt>
 <dd><p>A string of the name of the object x.</p></dd>
+
+
 <dt>error</dt>
 <dd><p>A flag indicating whether to throw an informative error or
 immediately generate an informative message if the check fails.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>An invisible copy of x (if it doesn't throw an error).</p>
+    
+
+<p>An invisible copy of x (if it doesn't throw an error).</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
     <div class="dont-index"><p><code><a href="check_named.html">check_named</a></code></p></div>
     </div>
-    </div>
 
-    <div id="examples">
+    <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="ref-examples sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="va">vec</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span>, y <span class="op">=</span> <span class="fl">2</span>, z <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="va">vec</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span>, y <span class="op">=</span> <span class="fl">2</span>, z <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></span>
 <span class="r-in"><span class="fu">check_names</span><span class="op">(</span><span class="va">vec</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"y"</span>, <span class="st">"x"</span><span class="op">)</span>, error <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>`check_names()` was deprecated in checkr 0.5.1.</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> Please use `chk::check_names()` instead.</span>
@@ -141,7 +158,7 @@ immediately generate an informative message if the check fails.</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.9000.9000.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.9000.</p>
 </div>
 
       </footer></div>

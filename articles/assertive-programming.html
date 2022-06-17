@@ -43,7 +43,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -84,7 +84,7 @@
       <h1 data-toc-skip>Packages for Assertive Programming</h1>
                         <h4 data-toc-skip class="author">Joe Thorley</h4>
             
-            <h4 data-toc-skip class="date">2021-11-13</h4>
+            <h4 data-toc-skip class="date">2022-06-17</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/poissonconsulting/checkr/blob/HEAD/vignettes/assertive-programming.Rmd" class="external-link"><code>vignettes/assertive-programming.Rmd</code></a></small>
       <div class="hidden name"><code>assertive-programming.Rmd</code></div>
@@ -156,17 +156,17 @@
 </h3>
 <p>The <a href="https://github.com/mllg/checkmate" class="external-link"><code>checkmate</code></a> package provides a plethora of functions to check the type and related properties of common objects.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/mllg/checkmate" class="external-link">checkmate</a></span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/pkg/checkmate/man/checkCharacter.html" class="external-link">assert_character</a></span><span class="op">(</span><span class="va">height</span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mllg.github.io/checkmate/" class="external-link">checkmate</a></span><span class="op">)</span>
+<span class="fu"><a href="https://mllg.github.io/checkmate/reference/checkCharacter.html" class="external-link">assert_character</a></span><span class="op">(</span><span class="va">height</span><span class="op">)</span>
 <span class="co">#&gt; Error in eval(expr, envir, enclos): Assertion on 'height' failed: Must be of type 'character', not 'integer'.</span></code></pre></div>
 <p>In a function it behaves as follows</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">my_fun</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/pkg/checkmate/man/checkCharacter.html" class="external-link">assert_character</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>
+<code class="sourceCode R"><span class="va">my_fun</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://mllg.github.io/checkmate/reference/checkCharacter.html" class="external-link">assert_character</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>
 <span class="fu">my_fun</span><span class="op">(</span><span class="va">height</span><span class="op">)</span>
 <span class="co">#&gt; Error in my_fun(height): Assertion on 'x' failed: Must be of type 'character', not 'integer'.</span></code></pre></div>
-<p>In addition, the <code><a href="https://rdrr.io/pkg/checkmate/man/assert.html" class="external-link">assert()</a></code> function allows multiple alternative <code>check**</code> functions (those which return a string of the error message on failure and a <code>TRUE</code> on success) to be combined into one assertion.</p>
+<p>In addition, the <code><a href="https://mllg.github.io/checkmate/reference/assert.html" class="external-link">assert()</a></code> function allows multiple alternative <code>check**</code> functions (those which return a string of the error message on failure and a <code>TRUE</code> on success) to be combined into one assertion.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/checkmate/man/assert.html" class="external-link">assert</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/checkmate/man/checkCharacter.html" class="external-link">checkCharacter</a></span><span class="op">(</span><span class="va">height</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/pkg/checkmate/man/checkFactor.html" class="external-link">checkFactor</a></span><span class="op">(</span><span class="va">height</span><span class="op">)</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://mllg.github.io/checkmate/reference/assert.html" class="external-link">assert</a></span><span class="op">(</span><span class="fu"><a href="https://mllg.github.io/checkmate/reference/checkCharacter.html" class="external-link">checkCharacter</a></span><span class="op">(</span><span class="va">height</span><span class="op">)</span>, <span class="fu"><a href="https://mllg.github.io/checkmate/reference/checkFactor.html" class="external-link">checkFactor</a></span><span class="op">(</span><span class="va">height</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; Error: Assertion failed. One of the following must apply:</span>
 <span class="co">#&gt;  * checkCharacter(height): Must be of type 'character', not 'integer'</span>
 <span class="co">#&gt;  * checkFactor(height): Must be of type 'factor', not 'integer'</span></code></pre></div>
@@ -249,7 +249,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.9000.9000.9000.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.9000.</p>
 </div>
 
       </footer>
