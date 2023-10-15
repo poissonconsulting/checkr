@@ -9,8 +9,6 @@ superseded](https://img.shields.io/badge/lifecycle-superseded-blue.svg)](https:/
 coverage](https://codecov.io/gh/poissonconsulting/checkr/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/checkr?branch=master)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![CRAN
-status](https://www.r-pkg.org/badges/version/checkr)](https://cran.r-project.org/package=checkr)
 [![JOSS](http://joss.theoj.org/papers/10.21105/joss.00624/status.svg)](https://doi.org/10.21105/joss.00624)
 <!-- badges: end -->
 
@@ -169,19 +167,22 @@ using the more general `check_scalar()` function.
 
 ## Installation
 
-To install the latest release version from
-[CRAN](https://cran.r-project.org)
+To install the latest development version from
+[r-universe](https://poissonconsulting.r-universe.dev/checkr).
 
-    install.packages("checkr")
+``` r
+install.packages("checkr", repos = c("https://poissonconsulting.r-universe.dev", "https://cloud.r-project.org"))
+```
 
 To install the latest development version from
 [GitHub](https://github.com/poissonconsulting/checkr)
 
-    # install.packages("remotes")
-    remotes::install_github("poissonconsulting/checkr")
+``` r
+# install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/stable/%s/%s/%s", .Platform$pkgType, R.Version()$os, R.Version()$arch))
+pak::pak("poissonconsulting/checkr")
+```
 
 ## Citation
-
 
     To cite checkr in publications use:
 
