@@ -1,5 +1,5 @@
 test_that("colnames", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   data <- data.frame(x = 1, y = 2, z = 0)
   expect_identical(check_colnames(data, c("y", "x")), data)
   

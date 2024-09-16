@@ -1,5 +1,5 @@
 test_that("class", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   ordered <- ordered(c("1", "3", "0"))
   factor <- factor(c("1", "3", "0"))
   
@@ -10,7 +10,7 @@ test_that("class", {
 })
 
 test_that("levels", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   ordered <- ordered(c("1", "3", "0"))
   factor <- factor(c("1", "3", "0"))
   

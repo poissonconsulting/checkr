@@ -1,5 +1,5 @@
 test_that("check_intersection", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   x1 <- 1:3
   x2 <- 1:4
   expect_identical(check_intersection(x1, x2), x1)

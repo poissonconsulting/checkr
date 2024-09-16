@@ -1,5 +1,5 @@
 test_that("check_datetime errors", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   y <- as.POSIXct("2001-02-03 23:59:59", tz = "UTC")
   expect_identical(check_dttm(y), y)
   expect_error(check_dttm(y, tzone = "PST8PDT"),  
@@ -16,5 +16,5 @@ test_that("check_datetime errors", {
   y <- as.Date("2002-01-02")
   expect_error(check_datetime(y), "y must be class POSIXct")
   y <- NULL
-  expect_error(check_datetime(y), "y must have 1 element")
+  expect_error(check_datetime(y), "y must be an atomic vector")
 })

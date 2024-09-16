@@ -1,5 +1,5 @@
 test_that("check_prob errors", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   y <- 1.0
   expect_identical(check_prob(y), y)
   y <- 1L
@@ -16,7 +16,7 @@ test_that("check_prob errors", {
 })
 
 test_that("check_props errors", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   vec <- c(0.5, 0.5)
   expect_identical(check_props(vec), vec)
   vec <- c(1.0, 1.0)
@@ -24,7 +24,7 @@ test_that("check_props errors", {
 })
 
 test_that("check_prop errors", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   vec <- c(0.5)
   expect_identical(check_prop(vec), vec)
   vec <- c(1.1)
@@ -34,7 +34,7 @@ test_that("check_prop errors", {
 })
 
 test_that("check_probability errors", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   vec <- c(0.5)
   expect_identical(check_probability(vec), vec)
   vec <- c(1.1)

@@ -1,5 +1,5 @@
 test_that("join", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
 data1 <- data.frame(x = 1:2)
 data2 <- data.frame(x = 3:5, y = 2L)
 
@@ -11,7 +11,7 @@ expect_error(check_join(data2, data1, by = c(x = "y")), "data1 column names must
 })
 
 test_that("join different classes", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
 data1 <- data.frame(x = 1:2)
 data2 <- data.frame(x = c("3","4","5"), y = "2")
 
@@ -23,7 +23,7 @@ expect_error(check_join(data2, data1, by = c(x = "y")), "data1 column names must
 })
 
 test_that("join missing values", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
 data1 <- data.frame(x = c(NA, 1:2))
 data2 <- data.frame(x = c("3","4","5"), y = c("2", NA, "2"))
 

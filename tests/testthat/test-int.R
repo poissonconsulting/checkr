@@ -1,5 +1,5 @@
 test_that("check_int errors", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   y <- 2L
   expect_identical(check_int(y), y)
   y <- 2
@@ -15,7 +15,7 @@ test_that("check_int errors", {
 })
 
 test_that("check_pos_int", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   expect_identical(check_pos_int(1L, error = FALSE), 1L)
   expect_error(check_pos_int(0, error = TRUE), "0 must be class integer")
   expect_error(check_pos_int(1:2, error = TRUE), "1:2 must have 1 element")
@@ -26,7 +26,7 @@ test_that("check_pos_int", {
 })
 
 test_that("check_neg_int", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   expect_identical(check_neg_int(-1L, error = FALSE), -1L)
   expect_error(check_neg_int(0, error = TRUE), "0 must be class integer")
   expect_error(check_neg_int(-1:-2, error = TRUE), "-1:-2 must have 1 element")
@@ -37,7 +37,7 @@ test_that("check_neg_int", {
 })
 
 test_that("check_integer", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   expect_identical(check_integer(1L, error = FALSE), 1L)
   expect_identical(check_integer(-1L, error = FALSE), -1L)
   expect_error(check_integer(0.5, error = TRUE), "0.5 must be class integer")

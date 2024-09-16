@@ -1,5 +1,5 @@
 test_that("check_unique errors", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   expect_identical(check_unique(1), 1)
   expect_identical(check_unique(1:2), 1:2)
   expect_identical(check_unique(character(0)), character(0))

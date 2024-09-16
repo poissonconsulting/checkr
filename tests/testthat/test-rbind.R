@@ -1,5 +1,5 @@
 test_that("rbind column names", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   expect_identical(check_rbind(datasets::mtcars, datasets::mtcars), datasets::mtcars)
   expect_identical(check_rbind(datasets::mtcars[c("cyl", "mpg")], 
                                datasets::mtcars[c("mpg", "cyl")]),
@@ -18,7 +18,7 @@ test_that("rbind column names", {
 })
 
 test_that("rbind column names", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   x <- datasets::mtcars[c("cyl", "mpg")]
   y <- x
   expect_identical(check_rbind(x, y), x)

@@ -1,5 +1,5 @@
 test_that("check_lgl errors", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   y <- TRUE
   expect_identical(check_lgl(y), y)
   y <- 2
@@ -12,7 +12,7 @@ test_that("check_lgl errors", {
 })
 
 test_that("check_flag errors", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   y <- TRUE
   expect_identical(check_flag(y), y)
   y <- 2
@@ -25,14 +25,14 @@ test_that("check_flag errors", {
 })
 
 test_that("check_logical errors", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   expect_error(check_logical(1, error = TRUE), "1 must be class logical")
   expect_identical(check_logical(FALSE, error = FALSE), FALSE)
   expect_identical(check_logical(c(FALSE, TRUE), error = FALSE), c(FALSE, TRUE))
 })
 
 test_that("check_flag_na errors", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   y <- TRUE
   expect_identical(check_flag_na(y), y)
   y <- 2

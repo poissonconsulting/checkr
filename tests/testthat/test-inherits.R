@@ -1,5 +1,5 @@
 test_that("check_inherits", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   x <- list()
   class(x) <- c("a", "b")
   

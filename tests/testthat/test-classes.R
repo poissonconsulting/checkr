@@ -1,5 +1,5 @@
 test_that("check_classes", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   x <- list()
   class(x) <- c("a", "b")
   
@@ -17,7 +17,7 @@ test_that("check_classes", {
 })
 
 test_that("check_classes", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   x <- list()
   class(x) <- c("a", "b", "c")
   
