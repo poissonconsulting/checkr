@@ -4,9 +4,9 @@
 
 [![Lifecycle:
 superseded](https://img.shields.io/badge/lifecycle-superseded-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html#superseded)
-[![R-CMD-check](https://github.com/poissonconsulting/checkr/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/checkr/actions)
+[![R-CMD-check](https://github.com/poissonconsulting/checkr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/poissonconsulting/checkr/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
-coverage](https://codecov.io/gh/poissonconsulting/checkr/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/checkr?branch=master)
+coverage](https://codecov.io/gh/poissonconsulting/checkr/graph/badge.svg)](https://app.codecov.io/gh/poissonconsulting/checkr)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![JOSS](http://joss.theoj.org/papers/10.21105/joss.00624/status.svg)](https://doi.org/10.21105/joss.00624)
@@ -42,6 +42,11 @@ check_data(dplyr::starwars, values = list(
   hair_color = c("blond", "brown", "black", NA),
   gender = c("male", "female", "hermaphrodite", "none", NA)), 
     order = TRUE, nrow = c(81, 84), key = "hair_color", error = FALSE)
+#> Warning: `check_data()` was deprecated in checkr 0.5.1.
+#> ℹ Please use `chk::check_data()` instead.
+#> This warning is displayed once every 8 hours.
+#> Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+#> generated.
 #> Warning: dplyr::starwars column names must include 'height', 'name', 'mass',
 #> 'hair_color' and 'gender' in that order
 #> Warning: column height of dplyr::starwars must not include missing values
@@ -67,6 +72,12 @@ To check the class simply pass an object of the desired class.
 ``` r
 y <- c(2,1,0,1,NA)
 check_vector(y, values = numeric(0))
+#> Warning: `check_vector()` was deprecated in checkr 0.5.1.
+#> ℹ Please use chk::chk_vector(), chk::check_dim(), chk::chk_unique(),
+#>   chk::chk_sorted(), chk::chk_named(), and/or chk::check_values() instead.
+#> This warning is displayed once every 8 hours.
+#> Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+#> generated.
 check_vector(y, values = integer(0))
 #> Error: y must be class integer
 ```
@@ -133,7 +144,18 @@ when used in a pipe.
 
 ``` r
 library(magrittr)
+#> 
+#> Attaching package: 'magrittr'
+#> The following objects are masked from 'package:testthat':
+#> 
+#>     equals, is_less_than, not
 y %>% check_list()
+#> Warning: `check_list()` was deprecated in checkr 0.5.1.
+#> ℹ Please use chk::chk_list(), chk::check_dim(), chk::chk_unique(),
+#>   chk::chk_named(), and/or chk::check_values() instead.
+#> This warning is displayed once every 8 hours.
+#> Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+#> generated.
 #> Error: . must be a list
 ```
 
@@ -155,6 +177,11 @@ functions
 ``` r
 fun <- function(x) { check_lgl(x)}
 fun(x = NA)
+#> Warning: `check_lgl()` was deprecated in checkr 0.5.1.
+#> ℹ Please use `chk::chk_lgl()` instead.
+#> This warning is displayed once every 8 hours.
+#> Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+#> generated.
 #> Error: x must not include missing values
 fun(x = TRUE)
 fun(x = 1)
