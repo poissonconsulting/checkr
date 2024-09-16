@@ -16,7 +16,7 @@ Expressive, assertive, pipe-friendly functions to check the properties of common
 
 Other contributors:
 \itemize{
-  \item Evan Amies-Galonski \email{evan@poissonconsulting.ca} (\href{https://orcid.org/-3188}{ORCID}) [contributor]
+  \item Evan Amies-Galonski \email{evan@poissonconsulting.ca} (-3188) [contributor]
   \item Poisson Consulting [copyright holder, funder]
 }
 
