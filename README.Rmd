@@ -19,6 +19,7 @@ knitr::opts_chunk$set(
 [![Codecov test coverage](https://codecov.io/gh/poissonconsulting/checkr/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/checkr?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![JOSS](http://joss.theoj.org/papers/10.21105/joss.00624/status.svg)](https://doi.org/10.21105/joss.00624)
+[![Codecov test coverage](https://codecov.io/gh/poissonconsulting/checkr/graph/badge.svg)](https://app.codecov.io/gh/poissonconsulting/checkr)
 <!-- badges: end -->
 
 # checkr
