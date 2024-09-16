@@ -12,7 +12,7 @@ Description: Expressive, assertive, pipe-friendly functions
   In the case of failure the functions issue informative error messages.
   Superseded by the 'chk' package.
 License: MIT + file LICENSE
-URL: https://github.com/poissonconsulting/checkr
+URL: https://github.com/poissonconsulting/checkr, https://poissonconsulting.github.io/checkr/
 BugReports: https://github.com/poissonconsulting/checkr/issues
 Depends: R (>= 3.5)
 Imports: 
