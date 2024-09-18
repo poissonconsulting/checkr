@@ -15,8 +15,7 @@ License: MIT + file LICENSE
 URL: https://github.com/poissonconsulting/checkr, https://poissonconsulting.github.io/checkr/
 BugReports: https://github.com/poissonconsulting/checkr/issues
 Depends: R (>= 3.5)
-Imports: 
-    err,
+Imports:
     lifecycle
 Suggests:
     assertthat,
@@ -32,6 +31,8 @@ Suggests:
     testthat,
     knitr,
     rmarkdown
+Remotes:
+    poissonconsulting/err
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.2
