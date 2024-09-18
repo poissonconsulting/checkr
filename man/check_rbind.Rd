@@ -36,12 +36,12 @@ An invisible copy of x (if it doesn't throw an error).
 }
 \description{
 Checks whether a data frame has the same columns of the same classes as a
-second data frame which means they can be \code{\link{rbind}}ed without a
+second data frame which means they can be \code{\link[=rbind]{rbind()}}ed without a
 problem.
 }
 \examples{
 check_rbind(datasets::mtcars, datasets::mtcars)
 }
 \seealso{
-\code{\link{check_join}}
+\code{\link[=check_join]{check_join()}}
 }

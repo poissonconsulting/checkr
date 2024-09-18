@@ -6,7 +6,7 @@
 #' @param coerce A flag indicating whether to coerce a factor to a character vector and drop attributes including names.
 #' 
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_int}}
+#' @seealso [check_int()]
 #' @export
 #'
 #' @examples

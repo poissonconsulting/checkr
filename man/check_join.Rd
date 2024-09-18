@@ -45,5 +45,5 @@ check_join(data1, data2, error = FALSE)
 check_join(data1, data2, by = c(x = "y"), error = FALSE)
 }
 \seealso{
-\code{\link{check_data}}
+\code{\link[=check_data]{check_data()}}
 }

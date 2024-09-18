@@ -27,5 +27,5 @@ names(x) <- "y"
 check_unnamed(x, error = FALSE)
 }
 \seealso{
-\code{\link{check_named}}, \code{\link{check_names}} and \code{\link{check_missing_names}}
+\code{\link[=check_named]{check_named()}}, \code{\link[=check_names]{check_names()}} and \code{\link[=check_missing_names]{check_missing_names()}}
 }

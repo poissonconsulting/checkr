@@ -9,7 +9,7 @@
 #' @param unique A flag indicating whether the names must be unique.
 #' 
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_unnamed}}, \code{\link{check_names}} and \code{\link{check_missing_names}}
+#' @seealso [check_unnamed()], [check_names()] and [check_missing_names()]
 #' @export
 #'
 #' @examples

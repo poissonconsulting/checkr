@@ -32,5 +32,5 @@ check_length(NULL, error = FALSE)
 check_length(list(), error = FALSE)
 }
 \seealso{
-\code{\link{check_vector}}, \code{\link{check_list}} and \code{\link{check_data}}
+\code{\link[=check_vector]{check_vector()}}, \code{\link[=check_list]{check_list()}} and \code{\link[=check_data]{check_data()}}
 }

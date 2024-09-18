@@ -5,7 +5,7 @@
 #' @inheritParams params
 #' @param coerce A flag specifying whether to coerce a factor to a character vector and drop attributes including names.
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_character}}
+#' @seealso [check_character()]
 #' @export
 #'
 #' @examples

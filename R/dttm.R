@@ -7,7 +7,7 @@
 #' @param tzone A string of the time zone where "" is the current time zone.
 #' 
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_scalar}}
+#' @seealso [check_scalar()]
 #' @export
 #'
 #' @examples

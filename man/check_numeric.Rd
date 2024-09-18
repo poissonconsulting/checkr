@@ -31,5 +31,5 @@ check_numeric(1L, error = FALSE)
 check_numeric(1:2, error = FALSE)
 }
 \seealso{
-\code{\link{check_number}}
+\code{\link[=check_number]{check_number()}}
 }

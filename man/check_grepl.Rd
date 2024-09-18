@@ -38,5 +38,5 @@ check_grepl("foo", "fo")
 check_grepl("foo", "fo$", error = FALSE)
 }
 \seealso{
-\code{\link{check_nchar}} and \code{\link{check_pattern}}
+\code{\link[=check_nchar]{check_nchar()}} and \code{\link[=check_pattern]{check_pattern()}}
 }

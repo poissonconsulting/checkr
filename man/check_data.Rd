@@ -61,5 +61,5 @@ check_data(z, values = list(
   ), exclusive = TRUE, order = TRUE, nrow = 10L, key = "Longitude", error = FALSE)
 }
 \seealso{
-\code{\link{check_colnames}}, \code{\link{check_nrow}} and \code{\link{check_key}}
+\code{\link[=check_colnames]{check_colnames()}}, \code{\link[=check_nrow]{check_nrow()}} and \code{\link[=check_key]{check_key()}}
 }

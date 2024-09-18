@@ -25,5 +25,5 @@ check_sorted(1:2, error = FALSE)
 check_sorted(2:1, error = FALSE)
 }
 \seealso{
-\code{\link{check_vector}} and \code{\link{check_list}}
+\code{\link[=check_vector]{check_vector()}} and \code{\link[=check_list]{check_list()}}
 }

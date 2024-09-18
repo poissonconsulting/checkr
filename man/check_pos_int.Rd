@@ -28,5 +28,5 @@ check_pos_int(1L, error = FALSE)
 check_pos_int(1:2, error = FALSE)
 }
 \seealso{
-\code{\link{check_int}}
+\code{\link[=check_int]{check_int()}}
 }

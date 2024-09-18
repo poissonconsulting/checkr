@@ -8,7 +8,7 @@
 #' @param order A flag indicating whether the columns have to occur in the same order as colnames.
 #' 
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_missing_colnames}} and \code{\link{check_data}}
+#' @seealso [check_missing_colnames()] and [check_data()]
 #' @export
 #'
 #' @examples

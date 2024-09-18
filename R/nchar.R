@@ -8,7 +8,7 @@
 #'   characters.
 #'
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_pattern}} and \code{\link{check_regex}}
+#' @seealso [check_pattern()] and [check_regex()]
 #' @export
 #'
 #' @examples

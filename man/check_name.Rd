@@ -27,5 +27,5 @@ vec <- c("x", "x.y", "x y")
 check_name(vec, error = FALSE)
 }
 \seealso{
-\code{\link{check_character}}
+\code{\link[=check_character]{check_character()}}
 }

@@ -40,5 +40,5 @@ check_intersection(x1, x2)
 check_intersection(x2, x1, error = FALSE)
 }
 \seealso{
-\code{\link{check_join}}
+\code{\link[=check_join]{check_join()}}
 }

@@ -6,7 +6,7 @@
 #' @param x The data to check.
 #' 
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_levels}} and \code{\link{check_vector}} 
+#' @seealso [check_levels()] and [check_vector()] 
 #' @export
 #'
 #' @examples

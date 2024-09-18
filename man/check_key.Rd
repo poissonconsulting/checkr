@@ -37,5 +37,5 @@ check_key(data, "x", error = FALSE)
 check_key(data, c("y", "x"), error = FALSE)
 }
 \seealso{
-\code{\link{check_data}}
+\code{\link[=check_data]{check_data()}}
 }

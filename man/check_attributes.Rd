@@ -47,5 +47,5 @@ attributes(x) <- list(y = 2L)
 check_attributes(x, values = list(y = 3:4), error = FALSE)
 }
 \seealso{
-\code{\link{check_list}}
+\code{\link[=check_list]{check_list()}}
 }

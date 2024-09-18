@@ -10,7 +10,7 @@
 #' @param unique A flag indicating whether all the object names have to be unique.
 #' 
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_named}}
+#' @seealso [check_named()]
 #' @export
 #'
 #' @examples

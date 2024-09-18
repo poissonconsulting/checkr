@@ -6,7 +6,7 @@
 #' @param coerce A flag indicating whether to coerce a date time (POSIXt scalar) to a Date and remove names.
 #' 
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_datetime}}
+#' @seealso [check_datetime()]
 #' @export
 #'
 #' @examples

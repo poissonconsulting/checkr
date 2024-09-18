@@ -6,7 +6,7 @@
 #' @param coerce A flag indicating whether to coerce a numeric (dbl) whole number vector to an integer vector and drop attributes including names.
 #' 
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_int}}
+#' @seealso [check_int()]
 #' @export
 #'
 #' @examples

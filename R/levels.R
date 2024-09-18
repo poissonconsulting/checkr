@@ -6,10 +6,10 @@
 #' @inheritParams params
 #' @param exclusive A flag indicating whether other levels are not permitted.
 #' @param order A flag indicating whether the object levels have to occur in the same order as names. To check whether x is an ordered factor use
-#' \code{check_vector(x, ordered(1))}.
+#' `check_vector(x, ordered(1))`.
 #' 
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_nlevels}} and \code{\link{check_vector}}
+#' @seealso [check_nlevels()] and [check_vector()]
 #' @export
 #'
 #' @examples

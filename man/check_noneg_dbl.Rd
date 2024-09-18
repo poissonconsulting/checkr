@@ -28,5 +28,5 @@ check_noneg_dbl(0L, error = FALSE)
 check_noneg_dbl(0, error = FALSE)
 }
 \seealso{
-\code{\link{check_dbl}}
+\code{\link[=check_dbl]{check_dbl()}}
 }

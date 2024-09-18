@@ -29,5 +29,5 @@ check_unique(NULL, error = FALSE)
 check_unique(list(), error = FALSE)
 }
 \seealso{
-\code{\link{check_vector}}
+\code{\link[=check_vector]{check_vector()}}
 }

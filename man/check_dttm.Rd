@@ -44,5 +44,5 @@ check_dttm(Sys.Date(), error = FALSE)
 check_dttm(Sys.time(), error = FALSE)
 }
 \seealso{
-\code{\link{check_scalar}}
+\code{\link[=check_scalar]{check_scalar()}}
 }

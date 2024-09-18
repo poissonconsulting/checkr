@@ -1,7 +1,7 @@
 #' Check Row Bind
 #'
 #' Checks whether a data frame has the same columns of the same classes as a
-#' second data frame which means they can be \code{\link{rbind}}ed without a
+#' second data frame which means they can be [rbind()]ed without a
 #' problem.
 #'
 #' @inheritParams params
@@ -11,7 +11,7 @@
 #'   order.
 #'
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_join}}
+#' @seealso [check_join()]
 #' @export
 #'
 #' @examples

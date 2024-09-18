@@ -6,7 +6,7 @@
 #' @param coerce A flag indicating whether to coerce a factor scalar to a string and drop attributes including names.
 #' 
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_scalar}}
+#' @seealso [check_scalar()]
 #' @export
 #'
 #' @examples

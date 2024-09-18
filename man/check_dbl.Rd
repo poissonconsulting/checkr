@@ -31,5 +31,5 @@ check_dbl(1L, error = FALSE)
 check_dbl(c(1,2), error = FALSE)
 }
 \seealso{
-\code{\link{check_scalar}}
+\code{\link[=check_scalar]{check_scalar()}}
 }

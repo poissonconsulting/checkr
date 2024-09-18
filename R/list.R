@@ -11,7 +11,7 @@
 #' @param order A flag indicating whether the elements have to occur in the same order as values.
 #' 
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_length}} and \code{\link{check_unique}}
+#' @seealso [check_length()] and [check_unique()]
 #' @export
 #' 
 #' @examples

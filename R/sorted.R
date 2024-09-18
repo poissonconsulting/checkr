@@ -1,11 +1,11 @@
 #' Check Sorted
 #' 
-#' Checks whether object x is sorted using \code{!is.unsorted(x, na.rm = TRUE)}.
+#' Checks whether object x is sorted using `!is.unsorted(x, na.rm = TRUE)`.
 #' 
 #' @inheritParams params
 #' 
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_vector}} and \code{\link{check_list}}
+#' @seealso [check_vector()] and [check_list()]
 #' @export
 #'
 #' @examples
