@@ -34,5 +34,5 @@ check_prob(1.1, error = FALSE)
 check_prob(c(0, 1), error = FALSE)
 }
 \seealso{
-\code{\link{check_scalar}}
+\code{\link[=check_scalar]{check_scalar()}}
 }

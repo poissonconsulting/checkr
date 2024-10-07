@@ -28,5 +28,5 @@ check_noneg_int(0L, error = FALSE)
 check_noneg_int(1L, error = FALSE)
 }
 \seealso{
-\code{\link{check_int}}
+\code{\link[=check_int]{check_int()}}
 }

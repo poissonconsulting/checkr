@@ -9,7 +9,7 @@
 #'   attribute.
 #'
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_list}}
+#' @seealso [check_list()]
 #' @export
 #'
 #' @examples
@@ -58,7 +58,7 @@ check_attributes <- function(x,
 #' @inheritParams check_list
 #' @inheritParams check_attributes
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_attributes}}
+#' @seealso [check_attributes()]
 #' @export
 #' 
 #' @examples

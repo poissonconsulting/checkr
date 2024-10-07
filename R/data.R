@@ -11,7 +11,7 @@
 #' @param key A character vector of the columns that represent a unique key.
 #' 
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_colnames}}, \code{\link{check_nrow}} and \code{\link{check_key}} 
+#' @seealso [check_colnames()], [check_nrow()] and [check_key()] 
 #' @export
 #' 
 #' @examples

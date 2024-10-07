@@ -6,7 +6,7 @@
 #' @inheritParams params
 #' 
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_vector}}, \code{\link{check_list}} and \code{\link{check_data}}
+#' @seealso [check_vector()], [check_list()] and [check_data()]
 #' @export
 #'
 #' @examples

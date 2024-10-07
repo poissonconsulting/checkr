@@ -28,5 +28,5 @@ check_integer(1L, error = FALSE)
 check_integer(1:2, error = FALSE)
 }
 \seealso{
-\code{\link{check_int}}
+\code{\link[=check_int]{check_int()}}
 }

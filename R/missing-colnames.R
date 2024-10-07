@@ -7,7 +7,7 @@
 #' @param colnames A character vector of the column names that must be missing from x.
 #' 
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_colnames}} and \code{\link{check_data}}
+#' @seealso [check_colnames()] and [check_data()]
 #' @export
 #'
 #' @examples

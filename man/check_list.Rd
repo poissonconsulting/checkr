@@ -50,5 +50,5 @@ check_list(list())
 check_list(list(x1 = 2, x2 = 1:2), values = list(x1 = 1, x2 = 1L))
 }
 \seealso{
-\code{\link{check_length}} and \code{\link{check_unique}}
+\code{\link[=check_length]{check_length()}} and \code{\link[=check_unique]{check_unique()}}
 }

@@ -31,5 +31,5 @@ check_lgl(FALSE, error = FALSE)
 check_lgl(c(FALSE, TRUE), error = FALSE)
 }
 \seealso{
-\code{\link{check_scalar}}
+\code{\link[=check_scalar]{check_scalar()}}
 }

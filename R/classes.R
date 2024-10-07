@@ -10,7 +10,7 @@
 #' @param order A flag indicating whether the object classes have to occur in the same order as classes.
 #' 
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_inherits}}
+#' @seealso [check_inherits()]
 #' @export
 #'
 #' @examples

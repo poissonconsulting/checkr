@@ -1,5 +1,5 @@
 test_that("check_number errors", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   y <- 1.0
   expect_identical(check_number(y), y)
   y <- 1L

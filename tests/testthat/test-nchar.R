@@ -1,5 +1,5 @@
 test_that("nchar", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   expect_identical(check_nchar(1), 1)
   expect_identical(check_nchar(1, 1), 1)
   expect_error(check_nchar(1, 2), "1 must have 2 characters")

@@ -6,7 +6,7 @@
 #' @param regex A string of the regular expression (deprecated for pattern).
 #' 
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_nchar}} and \code{\link{check_pattern}}
+#' @seealso [check_nchar()] and [check_pattern()]
 #' @export
 #'
 #' @examples

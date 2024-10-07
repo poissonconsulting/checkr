@@ -28,5 +28,5 @@ check_missing_colnames(data, c("y", "x", "a"), error = FALSE)
 check_missing_colnames(data, "a", error = FALSE)
 }
 \seealso{
-\code{\link{check_colnames}} and \code{\link{check_data}}
+\code{\link[=check_colnames]{check_colnames()}} and \code{\link[=check_data]{check_data()}}
 }

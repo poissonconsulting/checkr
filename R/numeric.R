@@ -5,7 +5,7 @@
 #' @inheritParams params
 #' @param coerce A flag indicating whether to coerce a integer vector to an double vector and drop attributes including names.
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_number}}
+#' @seealso [check_number()]
 #' @export
 #'
 #' @examples

@@ -1,5 +1,5 @@
 test_that("tzone", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   expect_error(check_tzone(Sys.Date()), 
                "Sys.Date[(][)] time zone must be 'UTC' [(]not 'NULL'[)]")
   expect_error(check_tzone(Sys.time()), 

@@ -27,5 +27,5 @@ check_inherits(list(), "list")
 check_inherits(list(), "numeric", error = FALSE)
 }
 \seealso{
-\code{\link{check_classes}}
+\code{\link[=check_classes]{check_classes()}}
 }

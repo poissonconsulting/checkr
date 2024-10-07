@@ -43,5 +43,5 @@ check_scalar(c(1,2), error = FALSE)
 check_scalar(1, c(2,3), error = FALSE)
 }
 \seealso{
-\code{\link{check_vector}}
+\code{\link[=check_vector]{check_vector()}}
 }

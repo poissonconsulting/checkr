@@ -5,7 +5,7 @@
 #' @inheritParams params
 #' 
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_named}}, \code{\link{check_names}} and \code{\link{check_missing_names}}
+#' @seealso [check_named()], [check_names()] and [check_missing_names()]
 #' @export
 #'
 #' @examples

@@ -1,5 +1,5 @@
 test_that("length1", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   expect_identical(check_homogenous(2), 2)
   expect_identical(check_homogenous(list(1)), list(1))
   

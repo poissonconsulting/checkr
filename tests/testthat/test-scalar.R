@@ -1,5 +1,5 @@
 test_that("scalar", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   expect_error(check_scalar(2, named  = TRUE), "2 must be named")
   x <- 1
   names(x) <- "y"

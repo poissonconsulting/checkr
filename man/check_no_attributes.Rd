@@ -38,5 +38,5 @@ attributes(x) <- list(y = 2L)
 check_no_attributes(x, error = FALSE)
 }
 \seealso{
-\code{\link{check_attributes}}
+\code{\link[=check_attributes]{check_attributes()}}
 }

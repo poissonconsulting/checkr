@@ -8,7 +8,7 @@
 #' @param key A character vector of the column names representing the key.
 #' 
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_data}}
+#' @seealso [check_data()]
 #' @export
 #'
 #' @examples

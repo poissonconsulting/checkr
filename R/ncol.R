@@ -6,7 +6,7 @@
 #' @inheritParams params
 #' 
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_nrow}} and \code{\link{check_data}} 
+#' @seealso [check_nrow()] and [check_data()] 
 #' @export
 #'
 #' @examples

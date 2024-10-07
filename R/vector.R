@@ -44,7 +44,7 @@ check_vector <- function(x,
   check_flag_internal(only)
   check_flag_internal(error)
   
-  if (!is.atomic(x)) err(x_name, " must be an atomic vector")
+  if (is.null(x) || !is.atomic(x)) err(x_name, " must be an atomic vector")
   
   check_length(x, length = length, x_name = x_name, error = error)
   

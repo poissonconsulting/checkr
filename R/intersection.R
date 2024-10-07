@@ -7,7 +7,7 @@
 #' @param all_y A flag indicating whether all the elements in y should have a match in x.
 #' 
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_join}}
+#' @seealso [check_join()]
 #' @export
 #' 
 #' @examples

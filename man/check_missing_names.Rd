@@ -28,5 +28,5 @@ check_missing_names(vec, c("y", "x", "a"), error = FALSE)
 check_missing_names(vec, "a", error = FALSE)
 }
 \seealso{
-\code{\link{check_names}}
+\code{\link[=check_names]{check_names()}}
 }

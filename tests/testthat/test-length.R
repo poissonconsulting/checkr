@@ -1,5 +1,5 @@
 test_that("length1", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   expect_identical(check_length1(2), 2)
   expect_error(check_length1(character(0)), "character[(]0[)] must have 1 element")
   expect_error(check_length1(NULL), "NULL must have 1 element")
@@ -8,7 +8,7 @@ test_that("length1", {
 })
 
 test_that("length", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   expect_identical(check_length(2), 2)
   expect_identical(check_length(character(0), length = 0), character(0))
   expect_error(check_length(NULL), "NULL must have at least 1 element")

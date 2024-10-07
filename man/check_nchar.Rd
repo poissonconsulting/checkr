@@ -28,5 +28,5 @@ Checks the number of characters in the elements of an object.
 check_nchar(c("foo", "bar"), nchar = 3)
 }
 \seealso{
-\code{\link{check_pattern}} and \code{\link{check_regex}}
+\code{\link[=check_pattern]{check_pattern()}} and \code{\link[=check_regex]{check_regex()}}
 }

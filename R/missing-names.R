@@ -7,7 +7,7 @@
 #' @param names A character vector of the names that must be missing from x.
 #' 
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_names}}
+#' @seealso [check_names()]
 #' @export
 #'
 #' @examples

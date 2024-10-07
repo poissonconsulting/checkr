@@ -28,5 +28,5 @@ check_logical(FALSE, error = FALSE)
 check_logical(c(FALSE, TRUE), error = FALSE)
 }
 \seealso{
-\code{\link{check_scalar}}
+\code{\link[=check_scalar]{check_scalar()}}
 }

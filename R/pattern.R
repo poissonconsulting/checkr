@@ -1,12 +1,12 @@
 #' Check Pattern
 #' 
-#' Checks whether all or some of the elements of x match pattern using \code{\link{grepl}}.
+#' Checks whether all or some of the elements of x match pattern using [grepl()].
 #' 
 #' @inheritParams params
 #' @param all A flag indicating whether all or some of the element must match pattern.
 #' 
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_nchar}} and \code{\link{check_regex}}
+#' @seealso [check_nchar()] and [check_regex()]
 #' @export
 check_pattern <- function(x, pattern, all = TRUE,
                           x_name = substitute(x),

@@ -13,12 +13,12 @@ chk_deparse(x)
 A string
 }
 \description{
-\code{chk_deparse} is a wrapper on \code{\link{deparse}} that
+\code{chk_deparse} is a wrapper on \code{\link[=deparse]{deparse()}} that
 sets a missing value to be "NA"
 }
 \examples{
 chk_deparse(1^2)
 }
 \seealso{
-\code{\link{deparse}}
+\code{\link[=deparse]{deparse()}}
 }

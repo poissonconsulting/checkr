@@ -5,7 +5,7 @@
 #' @inheritParams params
 #' 
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_scalar}}
+#' @seealso [check_scalar()]
 #' @export
 #'
 #' @examples
@@ -47,7 +47,7 @@ check_number <- function(x, coerce = FALSE,
 #' @inheritParams params
 #' 
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_dbl}}
+#' @seealso [check_dbl()]
 #' @export
 #'
 #' @examples
@@ -81,7 +81,7 @@ check_pos_dbl <- function(x, coerce = FALSE,
 #' @inheritParams params
 #' 
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_dbl}}
+#' @seealso [check_dbl()]
 #' @export
 #'
 #' @examples
@@ -115,7 +115,7 @@ check_noneg_dbl <- function(x, coerce = FALSE,
 #' @inheritParams params
 #' 
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_dbl}}
+#' @seealso [check_dbl()]
 #' @export
 #'
 #' @examples

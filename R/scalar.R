@@ -7,7 +7,7 @@
 #' @param attributes A flag indicating whether the scalar must or must not have attributes or NA if it doesn't matter if the scalar is named.
 #' 
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_vector}}
+#' @seealso [check_vector()]
 #' @export
 #' @examples 
 #' check_scalar(1)

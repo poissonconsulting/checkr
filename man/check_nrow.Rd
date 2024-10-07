@@ -27,5 +27,5 @@ check_nrow(data.frame(x = integer(0)), error = FALSE)
 check_nrow(data.frame(x = 1:2), nrow = 1, error = FALSE)
 }
 \seealso{
-\code{\link{check_ncol}} and \code{\link{check_data}}
+\code{\link[=check_ncol]{check_ncol()}} and \code{\link[=check_data]{check_data()}}
 }

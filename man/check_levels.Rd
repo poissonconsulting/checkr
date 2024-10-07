@@ -40,5 +40,5 @@ check_levels(1, c("x", "y"), error = FALSE)
 check_levels(factor(1), c("x", "y"), error = FALSE)
 }
 \seealso{
-\code{\link{check_nlevels}} and \code{\link{check_vector}}
+\code{\link[=check_nlevels]{check_nlevels()}} and \code{\link[=check_vector]{check_vector()}}
 }

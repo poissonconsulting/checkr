@@ -27,5 +27,5 @@ check_nlevels(factor(1), error = FALSE)
 check_nlevels(factor(1), nlevels = 2, error = FALSE)
 }
 \seealso{
-\code{\link{check_levels}} and \code{\link{check_vector}}
+\code{\link[=check_levels]{check_levels()}} and \code{\link[=check_vector]{check_vector()}}
 }

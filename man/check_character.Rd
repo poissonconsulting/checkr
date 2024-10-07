@@ -27,5 +27,5 @@ check_character("1", error = FALSE)
 check_character(1:2, error = FALSE)
 }
 \seealso{
-\code{\link{check_int}}
+\code{\link[=check_int]{check_int()}}
 }

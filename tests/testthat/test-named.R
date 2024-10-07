@@ -1,5 +1,5 @@
 test_that("named", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   expect_error(check_named(2), "2 must be named")
   x <- 1
   names(x) <- "y"

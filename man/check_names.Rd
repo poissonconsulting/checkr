@@ -48,5 +48,5 @@ check_names(vec, c("y", "x"), order = TRUE, error = FALSE)
 check_names(vec, c("a"), error = FALSE)
 }
 \seealso{
-\code{\link{check_named}}
+\code{\link[=check_named]{check_named()}}
 }

@@ -6,7 +6,7 @@
 #' @param class A string of the class x should inherit from.
 #' 
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_classes}}
+#' @seealso [check_classes()]
 #' @export
 #'
 #' @examples

@@ -42,5 +42,5 @@ check_colnames(data, c("y", "x"), order = TRUE, error = FALSE)
 check_colnames(data, c("a"), error = FALSE)
 }
 \seealso{
-\code{\link{check_missing_colnames}} and \code{\link{check_data}}
+\code{\link[=check_missing_colnames]{check_missing_colnames()}} and \code{\link[=check_data]{check_data()}}
 }

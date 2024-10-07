@@ -6,7 +6,7 @@
 #' @param coerce A flag indicating whether to coerce a numeric (dbl) whole number to an int and drop attributes including names.
 #' 
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_scalar}}
+#' @seealso [check_scalar()]
 #' @export
 #'
 #' @examples
@@ -38,7 +38,7 @@ check_int <- function(x, coerce = FALSE,
 #' @inheritParams params
 #' @param coerce A flag indicating whether to coerce a numeric (dbl) whole number to an int and drop attributes including names.
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_int}}
+#' @seealso [check_int()]
 #' @export
 #'
 #' @examples
@@ -70,7 +70,7 @@ check_pos_int <- function(x, coerce = FALSE,
 #' @inheritParams params
 #' @param coerce A flag indicating whether to coerce a numeric (dbl) whole number to an int and drop attributes including names.
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_int}}
+#' @seealso [check_int()]
 #' @export
 #'
 #' @examples
@@ -101,7 +101,7 @@ check_neg_int <- function(x, coerce = FALSE,
 #' @inheritParams params
 #' @param coerce A flag indicating whether to coerce a non-negative numeric (dbl) whole number to a count and drop attributes (including names).
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_int}}
+#' @seealso [check_int()]
 #' @export
 #'
 #' @examples
@@ -128,12 +128,12 @@ check_noneg_int <- function(x, coerce = FALSE,
 
 #' Check Count
 #'
-#' Checks if an object is a count (non-negative integer or if \code{coerce = TRUE} non-negative numeric whole number).
+#' Checks if an object is a count (non-negative integer or if `coerce = TRUE` non-negative numeric whole number).
 #'
 #' @inheritParams params
 #' @param coerce A flag indicating whether to coerce a non-negative numeric (dbl) whole number to a count and drop attributes (including names).
 #' @return An invisible copy of x (if it doesn't throw an error).
-#' @seealso \code{\link{check_scalar}}
+#' @seealso [check_scalar()]
 #' @export
 #'
 #' @examples

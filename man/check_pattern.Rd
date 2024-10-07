@@ -22,8 +22,8 @@ immediately generate an informative message if the check fails.}
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Checks whether all or some of the elements of x match pattern using \code{\link{grepl}}.
+Checks whether all or some of the elements of x match pattern using \code{\link[=grepl]{grepl()}}.
 }
 \seealso{
-\code{\link{check_nchar}} and \code{\link{check_regex}}
+\code{\link[=check_nchar]{check_nchar()}} and \code{\link[=check_regex]{check_regex()}}
 }
