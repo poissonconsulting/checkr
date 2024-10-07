@@ -71,8 +71,7 @@ check_class_internal <- function(x,
                " in that order", error = error)
   }
   if("units" %in% class(values)) {
-    if(!requireNamespace("units", quietly = TRUE))
-      err("package 'units' is required to check units")
+    rlang::check_installed("units", reason = "to check units")
     if(!identical(units::deparse_unit(x), units::deparse_unit(values)))
       err(x_name, " must have units '", units::deparse_unit(values), "' not '", units::deparse_unit(x), "'")
   }
