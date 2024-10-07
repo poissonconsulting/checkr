@@ -1,243 +1,82 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>/404.html</loc>
-  </url>
-  <url>
-    <loc>/CODE_OF_CONDUCT.html</loc>
-  </url>
-  <url>
-    <loc>/CONTRIBUTING.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>/SUPPORT.html</loc>
-  </url>
-  <url>
-    <loc>/articles/assertive-programming.html</loc>
-  </url>
-  <url>
-    <loc>/articles/checkr-naming.html</loc>
-  </url>
-  <url>
-    <loc>/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>/authors.html</loc>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-  </url>
-  <url>
-    <loc>/news/index.html</loc>
-  </url>
-  <url>
-    <loc>/pull_request_template.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_attributes.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_character.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_chr.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_classes.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_colnames.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_count.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_data.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_date.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_dbl.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_dttm.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_environment.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_flag_na.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_function.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_grepl.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_homogenous.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_inherits.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_int.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_integer.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_intersection.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_join.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_key.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_length.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_length1.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_levels.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_lgl.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_list.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_logical.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_missing_colnames.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_missing_names.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_name.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_named.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_names.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_nchar.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_ncol.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_neg_dbl.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_neg_int.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_nlevels.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_no_attributes.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_noneg_dbl.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_noneg_int.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_nrow.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_null.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_numeric.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_pattern.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_pos_dbl.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_pos_int.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_prob.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_props.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_rbind.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_scalar.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_sorted.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_tzone.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_unique.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_unnamed.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_unused.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_vector.html</loc>
-  </url>
-  <url>
-    <loc>/reference/checkor.html</loc>
-  </url>
-  <url>
-    <loc>/reference/checkr-package.html</loc>
-  </url>
-  <url>
-    <loc>/reference/chk_deparse.html</loc>
-  </url>
-  <url>
-    <loc>/reference/chk_fail.html</loc>
-  </url>
-  <url>
-    <loc>/reference/chk_max_dbl.html</loc>
-  </url>
-  <url>
-    <loc>/reference/chk_max_int.html</loc>
-  </url>
-  <url>
-    <loc>/reference/chk_min_dbl.html</loc>
-  </url>
-  <url>
-    <loc>/reference/chk_min_int.html</loc>
-  </url>
-  <url>
-    <loc>/reference/chk_tiny_dbl.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/params.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://poissonconsulting.github.io/checkr/404.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/CODE_OF_CONDUCT.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/CONTRIBUTING.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/LICENSE-text.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/LICENSE.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/SUPPORT.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/articles/assertive-programming.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/articles/checkr-naming.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/articles/index.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/authors.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/index.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/news/index.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_attributes.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_character.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_chr.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_classes.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_colnames.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_count.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_data.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_date.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_dbl.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_dttm.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_environment.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_flag_na.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_function.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_grepl.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_homogenous.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_inherits.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_int.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_integer.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_intersection.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_join.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_key.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_length.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_length1.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_levels.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_lgl.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_list.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_logical.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_missing_colnames.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_missing_names.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_name.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_named.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_names.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_nchar.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_ncol.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_neg_dbl.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_neg_int.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_nlevels.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_no_attributes.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_noneg_dbl.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_noneg_int.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_nrow.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_null.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_numeric.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_pattern.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_pos_dbl.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_pos_int.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_prob.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_props.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_rbind.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_scalar.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_sorted.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_tzone.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_unique.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_unnamed.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_unused.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/check_vector.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/checkor.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/checkr-package.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/chk_deparse.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/chk_fail.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/chk_max_dbl.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/chk_max_int.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/chk_min_dbl.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/chk_min_int.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/chk_tiny_dbl.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/index.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/checkr/reference/params.html</loc></url>
 </urlset>
+
