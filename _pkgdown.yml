@@ -1,4 +1,3 @@
 url: https://poissonconsulting.github.io/checkr/
 template:
-  bootstrap: 5
-
+  package: poissontemplate
