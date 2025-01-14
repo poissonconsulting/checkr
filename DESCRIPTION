@@ -40,3 +40,4 @@ RoxygenNote: 7.3.2
 VignetteBuilder: knitr
 Language: en-CA
 Roxygen: list(markdown = TRUE)
+Config/Needs/website: poissonconsulting/poissontemplate
