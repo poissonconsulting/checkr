@@ -8,8 +8,8 @@
 <title>Packages for Assertive Programming • checkr</title>
 <!-- katex math --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script><script src="../katex-auto.js"></script><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/Roboto_Condensed-0.4.10/font.css" rel="stylesheet">
+<link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/Roboto_Condensed-0.4.10/font.css" rel="stylesheet">
 <link href="../deps/Roboto_Mono-0.4.10/font.css" rel="stylesheet">
 <link href="../deps/Playfair_Display-0.4.10/font.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
@@ -65,7 +65,7 @@
                         <h4 data-toc-skip class="author">Joe
 Thorley</h4>
             
-            <h4 data-toc-skip class="date">2025-06-03</h4>
+            <h4 data-toc-skip class="date">2026-06-10</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/poissonconsulting/checkr/blob/main/vignettes/assertive-programming.Rmd" class="external-link"><code>vignettes/assertive-programming.Rmd</code></a></small>
       <div class="d-none name"><code>assertive-programming.Rmd</code></div>
@@ -111,14 +111,16 @@ function.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">height</span> <span class="op">&lt;-</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="va"><a href="https://dplyr.tidyverse.org/reference/starwars.html" class="external-link">starwars</a></span><span class="op">$</span><span class="va">height</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/stopifnot.html" class="external-link">stopifnot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">is.character</a></span><span class="op">(</span><span class="va">height</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error: is.character(height) is not TRUE</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;">:</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> is.character(height) is not TRUE</span></span></code></pre></div>
 <p>The error message is not that helpful if the user doesn’t know what
 <code><a href="https://rdrr.io/r/base/character.html" class="external-link">is.character()</a></code> tests for.</p>
 <p>In a function it behaves as follows:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">my_fun</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/stopifnot.html" class="external-link">stopifnot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">is.character</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu">my_fun</span><span class="op">(</span><span class="va">height</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error in my_fun(height): is.character(x) is not TRUE</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;"> in `my_fun()`:</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> is.character(x) is not TRUE</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="assertthat">assertthat<a class="anchor" aria-label="anchor" href="#assertthat"></a>
@@ -128,14 +130,16 @@ package offers <code><a href="https://rdrr.io/pkg/assertthat/man/assert_that.htm
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">assertthat</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/assertthat/man/assert_that.html" class="external-link">assert_that</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">is.character</a></span><span class="op">(</span><span class="va">height</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error: height is not a character vector</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;">:</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> height is not a character vector</span></span></code></pre></div>
 <p>The error message is a big improvement on
 <code><a href="https://rdrr.io/r/base/stopifnot.html" class="external-link">stopifnot()</a></code>’s.</p>
 <p>In a function it behaves as follows:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">my_fun</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/pkg/assertthat/man/assert_that.html" class="external-link">assert_that</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">is.character</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu">my_fun</span><span class="op">(</span><span class="fu">dplyr</span><span class="fu">::</span><span class="va"><a href="https://dplyr.tidyverse.org/reference/starwars.html" class="external-link">starwars</a></span><span class="op">$</span><span class="va">height</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error: x is not a character vector</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;">:</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> x is not a character vector</span></span></code></pre></div>
 <p>Perhaps the neatest feature is the ability to set your own error
 message for an assertion function using <code><a href="https://rdrr.io/pkg/assertthat/man/on_failure.html" class="external-link">on_failure()</a></code>.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
@@ -144,7 +148,8 @@ message for an assertion function using <code><a href="https://rdrr.io/pkg/asser
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/deparse.html" class="external-link">deparse</a></span><span class="op">(</span><span class="va">call</span><span class="op">$</span><span class="va">x</span><span class="op">)</span>, <span class="st">" must be a character - sort it out!"</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/assertthat/man/assert_that.html" class="external-link">assert_that</a></span><span class="op">(</span><span class="fu">is.character2</span><span class="op">(</span><span class="va">height</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error: height must be a character - sort it out!</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;">:</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> height must be a character - sort it out!</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="checkmate">checkmate<a class="anchor" aria-label="anchor" href="#checkmate"></a>
@@ -155,19 +160,22 @@ properties of common objects.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mllg.github.io/checkmate/" class="external-link">checkmate</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://mllg.github.io/checkmate/reference/checkCharacter.html" class="external-link">assert_character</a></span><span class="op">(</span><span class="va">height</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error: Assertion on 'height' failed: Must be of type 'character', not 'integer'.</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;">:</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> Assertion on 'height' failed: Must be of type 'character', not 'integer'.</span></span></code></pre></div>
 <p>In a function it behaves as follows</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">my_fun</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://mllg.github.io/checkmate/reference/checkCharacter.html" class="external-link">assert_character</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span><span class="fu">my_fun</span><span class="op">(</span><span class="va">height</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error in my_fun(height): Assertion on 'x' failed: Must be of type 'character', not 'integer'.</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;"> in `my_fun()`:</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> Assertion on 'x' failed: Must be of type 'character', not 'integer'.</span></span></code></pre></div>
 <p>In addition, the <code><a href="https://mllg.github.io/checkmate/reference/assert.html" class="external-link">assert()</a></code> function allows multiple
 alternative <code>check**</code> functions (those which return a string
 of the error message on failure and a <code>TRUE</code> on success) to
 be combined into one assertion.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://mllg.github.io/checkmate/reference/assert.html" class="external-link">assert</a></span><span class="op">(</span><span class="fu"><a href="https://mllg.github.io/checkmate/reference/checkCharacter.html" class="external-link">checkCharacter</a></span><span class="op">(</span><span class="va">height</span><span class="op">)</span>, <span class="fu"><a href="https://mllg.github.io/checkmate/reference/checkFactor.html" class="external-link">checkFactor</a></span><span class="op">(</span><span class="va">height</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error: Assertion failed. One of the following must apply:</span></span>
+<span><span class="co">#&gt; <span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;">:</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> Assertion failed. One of the following must apply:</span></span>
 <span><span class="co">#&gt;  * checkCharacter(height): Must be of type 'character', not 'integer'</span></span>
 <span><span class="co">#&gt;  * checkFactor(height): Must be of type 'factor', not 'integer'</span></span></code></pre></div>
 </div>
@@ -183,25 +191,28 @@ objects.</p>
 <span><span class="co">#&gt; Warning: `check_vector()` was deprecated in checkr 0.5.1.</span></span>
 <span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Please use chk::chk_vector(), chk::check_dim(), chk::chk_unique(),</span></span>
 <span><span class="co">#&gt;   chk::chk_sorted(), chk::chk_named(), and/or chk::check_values() instead.</span></span>
-<span><span class="co">#&gt; <span style="color: #555555;">This warning is displayed once every 8 hours.</span></span></span>
+<span><span class="co">#&gt; <span style="color: #555555;">This warning is displayed once per session.</span></span></span>
 <span><span class="co">#&gt; <span style="color: #555555;">Call `lifecycle::last_lifecycle_warnings()` to see where this warning was</span></span></span>
 <span><span class="co">#&gt; <span style="color: #555555;">generated.</span></span></span>
-<span><span class="co">#&gt; Error: height must be class character</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;">:</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> height must be class character</span></span></code></pre></div>
 <p>In a function it behaves as follows:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">my_fun</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="../reference/check_vector.html">check_vector</a></span><span class="op">(</span><span class="va">x</span>, <span class="st">""</span><span class="op">)</span></span>
 <span><span class="fu">my_fun</span><span class="op">(</span><span class="va">height</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error: x must be class character</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;">:</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> x must be class character</span></span></code></pre></div>
 <p>And multiple alternative checks can be combined using the
 <code><a href="../reference/checkor.html">checkor()</a></code> function.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/checkor.html">checkor</a></span><span class="op">(</span><span class="fu"><a href="../reference/check_vector.html">check_vector</a></span><span class="op">(</span><span class="va">height</span>, <span class="st">""</span><span class="op">)</span>, <span class="fu"><a href="../reference/check_vector.html">check_vector</a></span><span class="op">(</span><span class="va">height</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Warning: `checkor()` was deprecated in checkr 0.5.1.</span></span>
 <span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Please use `chk::chkor()` instead.</span></span>
-<span><span class="co">#&gt; <span style="color: #555555;">This warning is displayed once every 8 hours.</span></span></span>
+<span><span class="co">#&gt; <span style="color: #555555;">This warning is displayed once per session.</span></span></span>
 <span><span class="co">#&gt; <span style="color: #555555;">Call `lifecycle::last_lifecycle_warnings()` to see where this warning was</span></span></span>
 <span><span class="co">#&gt; <span style="color: #555555;">generated.</span></span></span>
-<span><span class="co">#&gt; Error: height must be class character OR height must be class numeric</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;">:</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> height must be class character OR height must be class numeric</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
@@ -229,7 +240,8 @@ respectively. This can be very helpful in functions.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">my_fun</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="../reference/check_vector.html">check_vector</a></span><span class="op">(</span><span class="va">x</span>, <span class="st">""</span>, x_name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/substitute.html" class="external-link">substitute</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu">my_fun</span><span class="op">(</span><span class="va">height</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error: height must be class character</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;">:</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> height must be class character</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="speed">Speed<a class="anchor" aria-label="anchor" href="#speed"></a>
@@ -258,7 +270,7 @@ is dependency-free.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
     </footer>
