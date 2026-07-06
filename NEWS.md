@@ -1,3 +1,11 @@
+<!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
+
+# checkr 0.5.0.9002
+
+* Add fledge-bump workflow
+* Add fledge-tag-on-merge workflow
+
+
 - replace hms::as.hms with hms::as_hms
 
 # checkr 0.5.0
