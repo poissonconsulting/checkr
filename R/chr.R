@@ -4,7 +4,7 @@
 #'
 #' @inheritParams params
 #' @param coerce A flag indicating whether to coerce a factor scalar to a string and drop attributes including names.
-#' 
+#'
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @seealso [check_scalar()]
 #' @export
@@ -13,32 +13,32 @@
 #' check_chr(1, error = FALSE)
 #' check_chr("1", error = FALSE)
 #' check_chr(c("1", "2"), error = FALSE)
-check_chr <- function(x,
-                         coerce = FALSE,
-                         x_name = substitute(x),
-                         error = TRUE) {
+check_chr <- function(x, coerce = FALSE, x_name = substitute(x), error = TRUE) {
   lifecycle::deprecate_soft("0.5.1", "check_chr()", "chk::chk_chr()")
   x_name <- chk_deparse(x_name)
-  
+
   check_flag_internal(coerce)
   check_flag_internal(error)
-  
-  if(coerce) {
-    if(is.factor(x)) x <- as.character(x)
-    if(is.character(x)) attributes(x) <- NULL
+
+  if (coerce) {
+    if (is.factor(x)) {
+      x <- as.character(x)
+    }
+    if (is.character(x)) attributes(x) <- NULL
   }
   check_scalar(x, values = character(1), x_name = x_name, error = error)
 }
 
 #' @rdname check_chr
 #' @export
-check_string <- function(x,
-                         coerce = FALSE,
-                         x_name = substitute(x),
-                         error = TRUE) {
+check_string <- function(
+  x,
+  coerce = FALSE,
+  x_name = substitute(x),
+  error = TRUE
+) {
   lifecycle::deprecate_soft("0.5.1", "check_string()", "chk::chk_string()")
   x_name <- chk_deparse(x_name)
-  
+
   check_chr(x, coerce = coerce, x_name = x_name, error = error)
 }
-

@@ -2,7 +2,7 @@ test_that("check_day errors", {
   rlang::local_options(lifecycle_verbosity = "quiet")
   y <- as.Date("2002-01-02")
   expect_identical(check_day(y), y)
-  y <- c(y,y)
+  y <- c(y, y)
   expect_error(check_day(y), "y must have 1 element")
   y <- 2
   expect_error(check_day(y), "y must be class Date")
