@@ -1,5 +1,10 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# checkr 0.5.0.9003
+
+- Same as previous version.
+
+
 # checkr 0.5.0.9002
 
 * Add fledge-bump workflow
