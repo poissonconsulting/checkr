@@ -4,7 +4,7 @@ test_that("list", {
   expect_identical(check_list(x), x)
   expect_identical(check_list(x, values = "x"), x)
   expect_identical(check_list(x, values = list(x = 1)), x)
-  
+
   x <- c(1, 2)
   expect_error(check_list(x), "x must be a list")
 })

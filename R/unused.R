@@ -1,7 +1,7 @@
 #' Check Unused
-#' 
+#'
 #' Checks whether ... is unused. It can only be used in functions.
-#' 
+#'
 #' @inheritParams params
 #' @param ... The arguments to check.
 #' @return An invisible copy of x (if it doesn't throw an error).
@@ -13,7 +13,8 @@
 check_unused <- function(..., x_name = "...", error = TRUE) {
   lifecycle::deprecate_soft("0.5.1", "check_unused()", "chk::chk_unused()")
   check_string_internal(x_name)
-  if(length(list(...)))
+  if (length(list(...))) {
     chk_fail(x_name, " must be unused", error = error)
+  }
   invisible(...)
 }

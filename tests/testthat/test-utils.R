@@ -1,12 +1,12 @@
 test_that("is_range", {
-  expect_true(is_count_range(c(1,2)))
-  expect_true(is_count_range(c(2,1)))
-  expect_true(is_count_range(c(0,1)))
-  expect_true(is_count_range(c(0,0)))
+  expect_true(is_count_range(c(1, 2)))
+  expect_true(is_count_range(c(2, 1)))
+  expect_true(is_count_range(c(0, 1)))
+  expect_true(is_count_range(c(0, 0)))
   expect_true(is_count_range(0))
   expect_true(is_count_range(0L))
-  
-  expect_false(is_count_range(c(0,1,1)))
+
+  expect_false(is_count_range(c(0, 1, 1)))
   expect_false(is_count_range(integer(0)))
   expect_false(is_count_range(c(NA, 1)))
   expect_false(is_count_range(-1))

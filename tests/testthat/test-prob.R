@@ -38,7 +38,10 @@ test_that("check_probability errors", {
   vec <- c(0.5)
   expect_identical(check_probability(vec), vec)
   vec <- c(1.1)
-  expect_error(check_probability(vec), "the values in vec must lie between 0 and 1")
+  expect_error(
+    check_probability(vec),
+    "the values in vec must lie between 0 and 1"
+  )
   vec <- c(0.5, 0.5)
   expect_error(check_probability(vec), "vec must have 1 element")
 })
